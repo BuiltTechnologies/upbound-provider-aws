@@ -19,46 +19,16 @@ type CognitoMemberDefinitionObservation struct {
 type CognitoMemberDefinitionParameters struct {
 
 	// An identifier for an application client. You must create the app client ID using Amazon Cognito.
-	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/cognitoidp/v1beta1.UserPoolClient
-	// +crossplane:generate:reference:extractor=github.com/upbound/upjet/pkg/resource.ExtractResourceID()
-	// +kubebuilder:validation:Optional
-	ClientID *string `json:"clientId,omitempty" tf:"client_id,omitempty"`
-
-	// Reference to a UserPoolClient in cognitoidp to populate clientId.
-	// +kubebuilder:validation:Optional
-	ClientIDRef *v1.Reference `json:"clientIdRef,omitempty" tf:"-"`
-
-	// Selector for a UserPoolClient in cognitoidp to populate clientId.
-	// +kubebuilder:validation:Optional
-	ClientIDSelector *v1.Selector `json:"clientIdSelector,omitempty" tf:"-"`
+	// +kubebuilder:validation:Required
+	ClientID *string `json:"clientId" tf:"client_id,omitempty"`
 
 	// An identifier for a user group.
-	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/cognitoidp/v1beta1.UserGroup
-	// +crossplane:generate:reference:extractor=github.com/upbound/upjet/pkg/resource.ExtractResourceID()
-	// +kubebuilder:validation:Optional
-	UserGroup *string `json:"userGroup,omitempty" tf:"user_group,omitempty"`
-
-	// Reference to a UserGroup in cognitoidp to populate userGroup.
-	// +kubebuilder:validation:Optional
-	UserGroupRef *v1.Reference `json:"userGroupRef,omitempty" tf:"-"`
-
-	// Selector for a UserGroup in cognitoidp to populate userGroup.
-	// +kubebuilder:validation:Optional
-	UserGroupSelector *v1.Selector `json:"userGroupSelector,omitempty" tf:"-"`
+	// +kubebuilder:validation:Required
+	UserGroup *string `json:"userGroup" tf:"user_group,omitempty"`
 
 	// An identifier for a user pool. The user pool must be in the same region as the service that you are calling.
-	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/cognitoidp/v1beta1.UserPoolDomain
-	// +crossplane:generate:reference:extractor=github.com/upbound/upjet/pkg/resource.ExtractParamPath("user_pool_id",false)
-	// +kubebuilder:validation:Optional
-	UserPool *string `json:"userPool,omitempty" tf:"user_pool,omitempty"`
-
-	// Reference to a UserPoolDomain in cognitoidp to populate userPool.
-	// +kubebuilder:validation:Optional
-	UserPoolRef *v1.Reference `json:"userPoolRef,omitempty" tf:"-"`
-
-	// Selector for a UserPoolDomain in cognitoidp to populate userPool.
-	// +kubebuilder:validation:Optional
-	UserPoolSelector *v1.Selector `json:"userPoolSelector,omitempty" tf:"-"`
+	// +kubebuilder:validation:Required
+	UserPool *string `json:"userPool" tf:"user_pool,omitempty"`
 }
 
 type MemberDefinitionObservation struct {

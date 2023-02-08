@@ -127,45 +127,15 @@ func (in *ActionAuthenticateCognitoParameters) DeepCopyInto(out *ActionAuthentic
 		*out = new(string)
 		**out = **in
 	}
-	if in.UserPoolArnRef != nil {
-		in, out := &in.UserPoolArnRef, &out.UserPoolArnRef
-		*out = new(v1.Reference)
-		(*in).DeepCopyInto(*out)
-	}
-	if in.UserPoolArnSelector != nil {
-		in, out := &in.UserPoolArnSelector, &out.UserPoolArnSelector
-		*out = new(v1.Selector)
-		(*in).DeepCopyInto(*out)
-	}
 	if in.UserPoolClientID != nil {
 		in, out := &in.UserPoolClientID, &out.UserPoolClientID
 		*out = new(string)
 		**out = **in
 	}
-	if in.UserPoolClientIDRef != nil {
-		in, out := &in.UserPoolClientIDRef, &out.UserPoolClientIDRef
-		*out = new(v1.Reference)
-		(*in).DeepCopyInto(*out)
-	}
-	if in.UserPoolClientIDSelector != nil {
-		in, out := &in.UserPoolClientIDSelector, &out.UserPoolClientIDSelector
-		*out = new(v1.Selector)
-		(*in).DeepCopyInto(*out)
-	}
 	if in.UserPoolDomain != nil {
 		in, out := &in.UserPoolDomain, &out.UserPoolDomain
 		*out = new(string)
 		**out = **in
-	}
-	if in.UserPoolDomainRef != nil {
-		in, out := &in.UserPoolDomainRef, &out.UserPoolDomainRef
-		*out = new(v1.Reference)
-		(*in).DeepCopyInto(*out)
-	}
-	if in.UserPoolDomainSelector != nil {
-		in, out := &in.UserPoolDomainSelector, &out.UserPoolDomainSelector
-		*out = new(v1.Selector)
-		(*in).DeepCopyInto(*out)
 	}
 }
 

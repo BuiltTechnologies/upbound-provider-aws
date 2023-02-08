@@ -20,17 +20,8 @@ type LifecycleHookObservation struct {
 type LifecycleHookParameters struct {
 
 	// Name of the Auto Scaling group to which you want to assign the lifecycle hook
-	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/autoscaling/v1beta1.AutoscalingGroup
-	// +kubebuilder:validation:Optional
-	AutoscalingGroupName *string `json:"autoscalingGroupName,omitempty" tf:"autoscaling_group_name,omitempty"`
-
-	// Reference to a AutoscalingGroup in autoscaling to populate autoscalingGroupName.
-	// +kubebuilder:validation:Optional
-	AutoscalingGroupNameRef *v1.Reference `json:"autoscalingGroupNameRef,omitempty" tf:"-"`
-
-	// Selector for a AutoscalingGroup in autoscaling to populate autoscalingGroupName.
-	// +kubebuilder:validation:Optional
-	AutoscalingGroupNameSelector *v1.Selector `json:"autoscalingGroupNameSelector,omitempty" tf:"-"`
+	// +kubebuilder:validation:Required
+	AutoscalingGroupName *string `json:"autoscalingGroupName" tf:"autoscaling_group_name,omitempty"`
 
 	// Defines the action the Auto Scaling group should take when the lifecycle hook timeout elapses or if an unexpected failure occurs. The value for this parameter can be either CONTINUE or ABANDON. The default value for this parameter is ABANDON.
 	// +kubebuilder:validation:Optional

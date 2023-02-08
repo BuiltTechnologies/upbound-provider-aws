@@ -361,17 +361,8 @@ type PolicyParameters struct {
 	AdjustmentType *string `json:"adjustmentType,omitempty" tf:"adjustment_type,omitempty"`
 
 	// Name of the autoscaling group.
-	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/autoscaling/v1beta1.AutoscalingGroup
-	// +kubebuilder:validation:Optional
-	AutoscalingGroupName *string `json:"autoscalingGroupName,omitempty" tf:"autoscaling_group_name,omitempty"`
-
-	// Reference to a AutoscalingGroup in autoscaling to populate autoscalingGroupName.
-	// +kubebuilder:validation:Optional
-	AutoscalingGroupNameRef *v1.Reference `json:"autoscalingGroupNameRef,omitempty" tf:"-"`
-
-	// Selector for a AutoscalingGroup in autoscaling to populate autoscalingGroupName.
-	// +kubebuilder:validation:Optional
-	AutoscalingGroupNameSelector *v1.Selector `json:"autoscalingGroupNameSelector,omitempty" tf:"-"`
+	// +kubebuilder:validation:Required
+	AutoscalingGroupName *string `json:"autoscalingGroupName" tf:"autoscaling_group_name,omitempty"`
 
 	// Amount of time, in seconds, after a scaling activity completes and before the next scaling activity can start.
 	// +kubebuilder:validation:Optional

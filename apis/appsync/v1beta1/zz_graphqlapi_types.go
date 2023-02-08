@@ -156,18 +156,8 @@ type GraphQLAPIUserPoolConfigParameters struct {
 	DefaultAction *string `json:"defaultAction" tf:"default_action,omitempty"`
 
 	// User pool ID.
-	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/cognitoidp/v1beta1.UserPool
-	// +crossplane:generate:reference:extractor=github.com/upbound/upjet/pkg/resource.ExtractResourceID()
-	// +kubebuilder:validation:Optional
-	UserPoolID *string `json:"userPoolId,omitempty" tf:"user_pool_id,omitempty"`
-
-	// Reference to a UserPool in cognitoidp to populate userPoolId.
-	// +kubebuilder:validation:Optional
-	UserPoolIDRef *v1.Reference `json:"userPoolIdRef,omitempty" tf:"-"`
-
-	// Selector for a UserPool in cognitoidp to populate userPoolId.
-	// +kubebuilder:validation:Optional
-	UserPoolIDSelector *v1.Selector `json:"userPoolIdSelector,omitempty" tf:"-"`
+	// +kubebuilder:validation:Required
+	UserPoolID *string `json:"userPoolId" tf:"user_pool_id,omitempty"`
 }
 
 type LambdaAuthorizerConfigObservation struct {

@@ -28,48 +28,6 @@ spec:
 
 ---
 
-apiVersion: cognitoidp.aws.upbound.io/v1beta1
-kind: UserPool
-metadata:
-  annotations:
-    meta.upbound.io/example-id: elbv2/v1beta1/lblistenerrule
-  labels:
-    testing.upbound.io/example-name: pool
-  name: pool
-spec:
-  forProvider:
-    region: us-west-1
-
----
-
-apiVersion: cognitoidp.aws.upbound.io/v1beta1
-kind: UserPoolClient
-metadata:
-  annotations:
-    meta.upbound.io/example-id: elbv2/v1beta1/lblistenerrule
-  labels:
-    testing.upbound.io/example-name: client
-  name: client
-spec:
-  forProvider:
-    region: us-west-1
-
----
-
-apiVersion: cognitoidp.aws.upbound.io/v1beta1
-kind: UserPoolDomain
-metadata:
-  annotations:
-    meta.upbound.io/example-id: elbv2/v1beta1/lblistenerrule
-  labels:
-    testing.upbound.io/example-name: domain
-  name: domain
-spec:
-  forProvider:
-    region: us-west-1
-
----
-
 apiVersion: elbv2.aws.upbound.io/v1beta1
 kind: LB
 metadata:

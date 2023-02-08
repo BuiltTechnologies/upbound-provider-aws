@@ -23,34 +23,6 @@ spec:
 
 ---
 
-apiVersion: autoscaling.aws.upbound.io/v1beta1
-kind: AutoscalingGroup
-metadata:
-  annotations:
-    meta.upbound.io/example-id: autoscaling/v1beta1/notification
-  labels:
-    testing.upbound.io/example-name: bar
-  name: bar
-spec:
-  forProvider:
-    region: us-west-1
-
----
-
-apiVersion: autoscaling.aws.upbound.io/v1beta1
-kind: AutoscalingGroup
-metadata:
-  annotations:
-    meta.upbound.io/example-id: autoscaling/v1beta1/notification
-  labels:
-    testing.upbound.io/example-name: foo
-  name: foo
-spec:
-  forProvider:
-    region: us-west-1
-
----
-
 apiVersion: sns.aws.upbound.io/v1beta1
 kind: Topic
 metadata:

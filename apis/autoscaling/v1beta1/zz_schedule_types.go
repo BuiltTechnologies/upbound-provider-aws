@@ -24,17 +24,8 @@ type ScheduleObservation struct {
 type ScheduleParameters struct {
 
 	// The name of the Auto Scaling group.
-	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/autoscaling/v1beta1.AutoscalingGroup
-	// +kubebuilder:validation:Optional
-	AutoscalingGroupName *string `json:"autoscalingGroupName,omitempty" tf:"autoscaling_group_name,omitempty"`
-
-	// Reference to a AutoscalingGroup in autoscaling to populate autoscalingGroupName.
-	// +kubebuilder:validation:Optional
-	AutoscalingGroupNameRef *v1.Reference `json:"autoscalingGroupNameRef,omitempty" tf:"-"`
-
-	// Selector for a AutoscalingGroup in autoscaling to populate autoscalingGroupName.
-	// +kubebuilder:validation:Optional
-	AutoscalingGroupNameSelector *v1.Selector `json:"autoscalingGroupNameSelector,omitempty" tf:"-"`
+	// +kubebuilder:validation:Required
+	AutoscalingGroupName *string `json:"autoscalingGroupName" tf:"autoscaling_group_name,omitempty"`
 
 	// The initial capacity of the Auto Scaling group after the scheduled action runs and the capacity it attempts to maintain. Set to -1 if you don't want to change the desired capacity at the scheduled time. Defaults to 0.
 	// +kubebuilder:validation:Optional

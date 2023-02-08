@@ -74,9 +74,9 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 
 	// autoscaling
 	//
-	"aws_autoscaling_group": config.NameAsIdentifier,
+	// "aws_autoscaling_group": config.NameAsIdentifier,
 	// No terraform import.
-	"aws_autoscaling_attachment": config.IdentifierFromProvider,
+	// "aws_autoscaling_attachment": config.IdentifierFromProvider,
 
 	// DynamoDB Table Items can be imported using the name
 	"aws_dynamodb_table_item": config.IdentifierFromProvider,
@@ -95,37 +95,37 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// cognitoidentity
 	//
 	// us-west-2_abc123
-	"aws_cognito_identity_pool": config.IdentifierFromProvider,
+	// "aws_cognito_identity_pool": config.IdentifierFromProvider,
 	// us-west-2:b64805ad-cb56-40ba-9ffc-f5d8207e6d42
-	"aws_cognito_identity_pool_roles_attachment": config.IdentifierFromProvider,
+	// "aws_cognito_identity_pool_roles_attachment": config.IdentifierFromProvider,
 	// us-west-2_abc123:CorpAD
-	"aws_cognito_identity_pool_provider_principal_tag": config.IdentifierFromProvider,
+	// "aws_cognito_identity_pool_provider_principal_tag": config.IdentifierFromProvider,
 
 	// cognitoidp
 	//
 	// us-west-2_abc123
-	"aws_cognito_user_pool": config.IdentifierFromProvider,
+	// "aws_cognito_user_pool": config.IdentifierFromProvider,
 	// us-west-2_abc123/3ho4ek12345678909nh3fmhpko
-	"aws_cognito_user_pool_client": config.IdentifierFromProvider,
+	// "aws_cognito_user_pool_client": config.IdentifierFromProvider,
 	// auth.example.org
-	"aws_cognito_user_pool_domain": config.IdentifierFromProvider,
+	// "aws_cognito_user_pool_domain": config.IdentifierFromProvider,
 	// us-west-2_ZCTarbt5C,12bu4fuk3mlgqa2rtrujgp6egq
-	"aws_cognito_user_pool_ui_customization": config.IdentifierFromProvider,
+	// "aws_cognito_user_pool_ui_customization": config.IdentifierFromProvider,
 	// Cognito User Groups can be imported using the user_pool_id/name attributes concatenated:
 	// us-east-1_vG78M4goG/user-group
 	// Following configuration does not work: FormattedIdentifierUserDefinedNameLast("name", "/", "user_pool_id")
 	// As it fails with a user group not found sync error
 	// TODO: check if this is due to any diff between Terraform import & apply
 	// implementations. Currently, the API is not normalized.
-	"aws_cognito_user_group": config.IdentifierFromProvider,
+	// "aws_cognito_user_group": config.IdentifierFromProvider,
 	// us-west-2_abc123|https://example.com
-	"aws_cognito_resource_server": config.IdentifierFromProvider,
+	// "aws_cognito_resource_server": config.IdentifierFromProvider,
 	// us-west-2_abc123:CorpAD
-	"aws_cognito_identity_provider": config.IdentifierFromProvider,
+	// "aws_cognito_identity_provider": config.IdentifierFromProvider,
 	// user_pool_id/name: us-east-1_vG78M4goG/user
-	"aws_cognito_user": config.TemplatedStringAsIdentifier("username", "{{ .parameters.user_pool_id }}/{{ .external_name }}"),
+	// "aws_cognito_user": config.TemplatedStringAsIdentifier("username", "{{ .parameters.user_pool_id }}/{{ .external_name }}"),
 	// no doc
-	"aws_cognito_user_in_group": config.IdentifierFromProvider,
+	// "aws_cognito_user_in_group": config.IdentifierFromProvider,
 
 	// ebs
 	//

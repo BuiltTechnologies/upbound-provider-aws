@@ -897,30 +897,10 @@ func (in *CognitoConfigParameters) DeepCopyInto(out *CognitoConfigParameters) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.ClientIDRef != nil {
-		in, out := &in.ClientIDRef, &out.ClientIDRef
-		*out = new(v1.Reference)
-		(*in).DeepCopyInto(*out)
-	}
-	if in.ClientIDSelector != nil {
-		in, out := &in.ClientIDSelector, &out.ClientIDSelector
-		*out = new(v1.Selector)
-		(*in).DeepCopyInto(*out)
-	}
 	if in.UserPool != nil {
 		in, out := &in.UserPool, &out.UserPool
 		*out = new(string)
 		**out = **in
-	}
-	if in.UserPoolRef != nil {
-		in, out := &in.UserPoolRef, &out.UserPoolRef
-		*out = new(v1.Reference)
-		(*in).DeepCopyInto(*out)
-	}
-	if in.UserPoolSelector != nil {
-		in, out := &in.UserPoolSelector, &out.UserPoolSelector
-		*out = new(v1.Selector)
-		(*in).DeepCopyInto(*out)
 	}
 }
 
@@ -957,45 +937,15 @@ func (in *CognitoMemberDefinitionParameters) DeepCopyInto(out *CognitoMemberDefi
 		*out = new(string)
 		**out = **in
 	}
-	if in.ClientIDRef != nil {
-		in, out := &in.ClientIDRef, &out.ClientIDRef
-		*out = new(v1.Reference)
-		(*in).DeepCopyInto(*out)
-	}
-	if in.ClientIDSelector != nil {
-		in, out := &in.ClientIDSelector, &out.ClientIDSelector
-		*out = new(v1.Selector)
-		(*in).DeepCopyInto(*out)
-	}
 	if in.UserGroup != nil {
 		in, out := &in.UserGroup, &out.UserGroup
 		*out = new(string)
 		**out = **in
 	}
-	if in.UserGroupRef != nil {
-		in, out := &in.UserGroupRef, &out.UserGroupRef
-		*out = new(v1.Reference)
-		(*in).DeepCopyInto(*out)
-	}
-	if in.UserGroupSelector != nil {
-		in, out := &in.UserGroupSelector, &out.UserGroupSelector
-		*out = new(v1.Selector)
-		(*in).DeepCopyInto(*out)
-	}
 	if in.UserPool != nil {
 		in, out := &in.UserPool, &out.UserPool
 		*out = new(string)
 		**out = **in
-	}
-	if in.UserPoolRef != nil {
-		in, out := &in.UserPoolRef, &out.UserPoolRef
-		*out = new(v1.Reference)
-		(*in).DeepCopyInto(*out)
-	}
-	if in.UserPoolSelector != nil {
-		in, out := &in.UserPoolSelector, &out.UserPoolSelector
-		*out = new(v1.Selector)
-		(*in).DeepCopyInto(*out)
 	}
 }
 

@@ -8,9 +8,7 @@ metadata:
   name: foobar
 spec:
   forProvider:
-    autoscalingGroupNameSelector:
-      matchLabels:
-        testing.upbound.io/example-name: foobar
+    autoscalingGroupName: ${aws_autoscaling_group.foobar.name}
     defaultResult: CONTINUE
     heartbeatTimeout: 2000
     lifecycleTransition: autoscaling:EC2_INSTANCE_LAUNCHING
@@ -23,29 +21,6 @@ spec:
     roleArnSelector:
       matchLabels:
         testing.upbound.io/example-name: example
-
----
-
-apiVersion: autoscaling.aws.upbound.io/v1beta1
-kind: AutoscalingGroup
-metadata:
-  annotations:
-    meta.upbound.io/example-id: autoscaling/v1beta1/lifecyclehook
-  labels:
-    testing.upbound.io/example-name: foobar
-  name: foobar
-spec:
-  forProvider:
-    availabilityZones:
-    - us-west-2a
-    healthCheckType: EC2
-    region: us-west-1
-    tag:
-    - key: Foo
-      propagateAtLaunch: true
-      value: foo-bar
-    terminationPolicies:
-    - OldestInstance
 
 ---
 

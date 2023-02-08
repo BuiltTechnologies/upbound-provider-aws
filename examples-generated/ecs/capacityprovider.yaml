@@ -22,21 +22,3 @@ spec:
 
 ---
 
-apiVersion: autoscaling.aws.upbound.io/v1beta1
-kind: AutoscalingGroup
-metadata:
-  annotations:
-    meta.upbound.io/example-id: ecs/v1beta1/capacityprovider
-  labels:
-    testing.upbound.io/example-name: test
-  name: test
-spec:
-  forProvider:
-    region: us-west-1
-    tag:
-    - key: AmazonECSManaged
-      propagateAtLaunch: true
-      value: true
-
----
-

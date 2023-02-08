@@ -42,8 +42,6 @@ import (
 	v1beta1codepipeline "github.com/upbound/provider-aws/apis/codepipeline/v1beta1"
 	v1beta1codestarconnections "github.com/upbound/provider-aws/apis/codestarconnections/v1beta1"
 	v1beta1codestarnotifications "github.com/upbound/provider-aws/apis/codestarnotifications/v1beta1"
-	v1beta1cognitoidentity "github.com/upbound/provider-aws/apis/cognitoidentity/v1beta1"
-	v1beta1cognitoidp "github.com/upbound/provider-aws/apis/cognitoidp/v1beta1"
 	v1beta1configservice "github.com/upbound/provider-aws/apis/configservice/v1beta1"
 	v1beta1connect "github.com/upbound/provider-aws/apis/connect/v1beta1"
 	v1beta1cur "github.com/upbound/provider-aws/apis/cur/v1beta1"
@@ -183,8 +181,6 @@ func init() {
 		v1beta1codepipeline.SchemeBuilder.AddToScheme,
 		v1beta1codestarconnections.SchemeBuilder.AddToScheme,
 		v1beta1codestarnotifications.SchemeBuilder.AddToScheme,
-		v1beta1cognitoidentity.SchemeBuilder.AddToScheme,
-		v1beta1cognitoidp.SchemeBuilder.AddToScheme,
 		v1beta1configservice.SchemeBuilder.AddToScheme,
 		v1beta1connect.SchemeBuilder.AddToScheme,
 		v1beta1cur.SchemeBuilder.AddToScheme,

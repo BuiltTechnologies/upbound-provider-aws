@@ -39,46 +39,16 @@ type ActionAuthenticateCognitoParameters struct {
 	SessionTimeout *float64 `json:"sessionTimeout,omitempty" tf:"session_timeout,omitempty"`
 
 	// The ARN of the Cognito user pool.
-	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/cognitoidp/v1beta1.UserPool
-	// +crossplane:generate:reference:extractor=github.com/upbound/upjet/pkg/resource.ExtractParamPath("arn",true)
-	// +kubebuilder:validation:Optional
-	UserPoolArn *string `json:"userPoolArn,omitempty" tf:"user_pool_arn,omitempty"`
-
-	// Reference to a UserPool in cognitoidp to populate userPoolArn.
-	// +kubebuilder:validation:Optional
-	UserPoolArnRef *v1.Reference `json:"userPoolArnRef,omitempty" tf:"-"`
-
-	// Selector for a UserPool in cognitoidp to populate userPoolArn.
-	// +kubebuilder:validation:Optional
-	UserPoolArnSelector *v1.Selector `json:"userPoolArnSelector,omitempty" tf:"-"`
+	// +kubebuilder:validation:Required
+	UserPoolArn *string `json:"userPoolArn" tf:"user_pool_arn,omitempty"`
 
 	// The ID of the Cognito user pool client.
-	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/cognitoidp/v1beta1.UserPoolClient
-	// +crossplane:generate:reference:extractor=github.com/upbound/upjet/pkg/resource.ExtractResourceID()
-	// +kubebuilder:validation:Optional
-	UserPoolClientID *string `json:"userPoolClientId,omitempty" tf:"user_pool_client_id,omitempty"`
-
-	// Reference to a UserPoolClient in cognitoidp to populate userPoolClientId.
-	// +kubebuilder:validation:Optional
-	UserPoolClientIDRef *v1.Reference `json:"userPoolClientIdRef,omitempty" tf:"-"`
-
-	// Selector for a UserPoolClient in cognitoidp to populate userPoolClientId.
-	// +kubebuilder:validation:Optional
-	UserPoolClientIDSelector *v1.Selector `json:"userPoolClientIdSelector,omitempty" tf:"-"`
+	// +kubebuilder:validation:Required
+	UserPoolClientID *string `json:"userPoolClientId" tf:"user_pool_client_id,omitempty"`
 
 	// The domain prefix or fully-qualified domain name of the Cognito user pool.
-	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/cognitoidp/v1beta1.UserPoolDomain
-	// +crossplane:generate:reference:extractor=github.com/upbound/upjet/pkg/resource.ExtractParamPath("domain",false)
-	// +kubebuilder:validation:Optional
-	UserPoolDomain *string `json:"userPoolDomain,omitempty" tf:"user_pool_domain,omitempty"`
-
-	// Reference to a UserPoolDomain in cognitoidp to populate userPoolDomain.
-	// +kubebuilder:validation:Optional
-	UserPoolDomainRef *v1.Reference `json:"userPoolDomainRef,omitempty" tf:"-"`
-
-	// Selector for a UserPoolDomain in cognitoidp to populate userPoolDomain.
-	// +kubebuilder:validation:Optional
-	UserPoolDomainSelector *v1.Selector `json:"userPoolDomainSelector,omitempty" tf:"-"`
+	// +kubebuilder:validation:Required
+	UserPoolDomain *string `json:"userPoolDomain" tf:"user_pool_domain,omitempty"`
 }
 
 type ActionAuthenticateOidcObservation struct {

@@ -9,7 +9,6 @@ import (
 	"context"
 	reference "github.com/crossplane/crossplane-runtime/pkg/reference"
 	errors "github.com/pkg/errors"
-	v1beta14 "github.com/upbound/provider-aws/apis/cognitoidp/v1beta1"
 	v1beta13 "github.com/upbound/provider-aws/apis/ec2/v1beta1"
 	v1beta11 "github.com/upbound/provider-aws/apis/iam/v1beta1"
 	v1beta12 "github.com/upbound/provider-aws/apis/kms/v1beta1"
@@ -538,53 +537,6 @@ func (mg *UserProfile) ResolveReferences(ctx context.Context, c client.Reader) e
 	return nil
 }
 
-// ResolveReferences of this Workforce.
-func (mg *Workforce) ResolveReferences(ctx context.Context, c client.Reader) error {
-	r := reference.NewAPIResolver(c, mg)
-
-	var rsp reference.ResolutionResponse
-	var err error
-
-	for i3 := 0; i3 < len(mg.Spec.ForProvider.CognitoConfig); i3++ {
-		rsp, err = r.Resolve(ctx, reference.ResolutionRequest{
-			CurrentValue: reference.FromPtrValue(mg.Spec.ForProvider.CognitoConfig[i3].ClientID),
-			Extract:      resource.ExtractResourceID(),
-			Reference:    mg.Spec.ForProvider.CognitoConfig[i3].ClientIDRef,
-			Selector:     mg.Spec.ForProvider.CognitoConfig[i3].ClientIDSelector,
-			To: reference.To{
-				List:    &v1beta14.UserPoolClientList{},
-				Managed: &v1beta14.UserPoolClient{},
-			},
-		})
-		if err != nil {
-			return errors.Wrap(err, "mg.Spec.ForProvider.CognitoConfig[i3].ClientID")
-		}
-		mg.Spec.ForProvider.CognitoConfig[i3].ClientID = reference.ToPtrValue(rsp.ResolvedValue)
-		mg.Spec.ForProvider.CognitoConfig[i3].ClientIDRef = rsp.ResolvedReference
-
-	}
-	for i3 := 0; i3 < len(mg.Spec.ForProvider.CognitoConfig); i3++ {
-		rsp, err = r.Resolve(ctx, reference.ResolutionRequest{
-			CurrentValue: reference.FromPtrValue(mg.Spec.ForProvider.CognitoConfig[i3].UserPool),
-			Extract:      resource.ExtractParamPath("user_pool_id", false),
-			Reference:    mg.Spec.ForProvider.CognitoConfig[i3].UserPoolRef,
-			Selector:     mg.Spec.ForProvider.CognitoConfig[i3].UserPoolSelector,
-			To: reference.To{
-				List:    &v1beta14.UserPoolDomainList{},
-				Managed: &v1beta14.UserPoolDomain{},
-			},
-		})
-		if err != nil {
-			return errors.Wrap(err, "mg.Spec.ForProvider.CognitoConfig[i3].UserPool")
-		}
-		mg.Spec.ForProvider.CognitoConfig[i3].UserPool = reference.ToPtrValue(rsp.ResolvedValue)
-		mg.Spec.ForProvider.CognitoConfig[i3].UserPoolRef = rsp.ResolvedReference
-
-	}
-
-	return nil
-}
-
 // ResolveReferences of this Workteam.
 func (mg *Workteam) ResolveReferences(ctx context.Context, c client.Reader) error {
 	r := reference.NewAPIResolver(c, mg)
@@ -592,66 +544,6 @@ func (mg *Workteam) ResolveReferences(ctx context.Context, c client.Reader) erro
 	var rsp reference.ResolutionResponse
 	var err error
 
-	for i3 := 0; i3 < len(mg.Spec.ForProvider.MemberDefinition); i3++ {
-		for i4 := 0; i4 < len(mg.Spec.ForProvider.MemberDefinition[i3].CognitoMemberDefinition); i4++ {
-			rsp, err = r.Resolve(ctx, reference.ResolutionRequest{
-				CurrentValue: reference.FromPtrValue(mg.Spec.ForProvider.MemberDefinition[i3].CognitoMemberDefinition[i4].ClientID),
-				Extract:      resource.ExtractResourceID(),
-				Reference:    mg.Spec.ForProvider.MemberDefinition[i3].CognitoMemberDefinition[i4].ClientIDRef,
-				Selector:     mg.Spec.ForProvider.MemberDefinition[i3].CognitoMemberDefinition[i4].ClientIDSelector,
-				To: reference.To{
-					List:    &v1beta14.UserPoolClientList{},
-					Managed: &v1beta14.UserPoolClient{},
-				},
-			})
-			if err != nil {
-				return errors.Wrap(err, "mg.Spec.ForProvider.MemberDefinition[i3].CognitoMemberDefinition[i4].ClientID")
-			}
-			mg.Spec.ForProvider.MemberDefinition[i3].CognitoMemberDefinition[i4].ClientID = reference.ToPtrValue(rsp.ResolvedValue)
-			mg.Spec.ForProvider.MemberDefinition[i3].CognitoMemberDefinition[i4].ClientIDRef = rsp.ResolvedReference
-
-		}
-	}
-	for i3 := 0; i3 < len(mg.Spec.ForProvider.MemberDefinition); i3++ {
-		for i4 := 0; i4 < len(mg.Spec.ForProvider.MemberDefinition[i3].CognitoMemberDefinition); i4++ {
-			rsp, err = r.Resolve(ctx, reference.ResolutionRequest{
-				CurrentValue: reference.FromPtrValue(mg.Spec.ForProvider.MemberDefinition[i3].CognitoMemberDefinition[i4].UserGroup),
-				Extract:      resource.ExtractResourceID(),
-				Reference:    mg.Spec.ForProvider.MemberDefinition[i3].CognitoMemberDefinition[i4].UserGroupRef,
-				Selector:     mg.Spec.ForProvider.MemberDefinition[i3].CognitoMemberDefinition[i4].UserGroupSelector,
-				To: reference.To{
-					List:    &v1beta14.UserGroupList{},
-					Managed: &v1beta14.UserGroup{},
-				},
-			})
-			if err != nil {
-				return errors.Wrap(err, "mg.Spec.ForProvider.MemberDefinition[i3].CognitoMemberDefinition[i4].UserGroup")
-			}
-			mg.Spec.ForProvider.MemberDefinition[i3].CognitoMemberDefinition[i4].UserGroup = reference.ToPtrValue(rsp.ResolvedValue)
-			mg.Spec.ForProvider.MemberDefinition[i3].CognitoMemberDefinition[i4].UserGroupRef = rsp.ResolvedReference
-
-		}
-	}
-	for i3 := 0; i3 < len(mg.Spec.ForProvider.MemberDefinition); i3++ {
-		for i4 := 0; i4 < len(mg.Spec.ForProvider.MemberDefinition[i3].CognitoMemberDefinition); i4++ {
-			rsp, err = r.Resolve(ctx, reference.ResolutionRequest{
-				CurrentValue: reference.FromPtrValue(mg.Spec.ForProvider.MemberDefinition[i3].CognitoMemberDefinition[i4].UserPool),
-				Extract:      resource.ExtractParamPath("user_pool_id", false),
-				Reference:    mg.Spec.ForProvider.MemberDefinition[i3].CognitoMemberDefinition[i4].UserPoolRef,
-				Selector:     mg.Spec.ForProvider.MemberDefinition[i3].CognitoMemberDefinition[i4].UserPoolSelector,
-				To: reference.To{
-					List:    &v1beta14.UserPoolDomainList{},
-					Managed: &v1beta14.UserPoolDomain{},
-				},
-			})
-			if err != nil {
-				return errors.Wrap(err, "mg.Spec.ForProvider.MemberDefinition[i3].CognitoMemberDefinition[i4].UserPool")
-			}
-			mg.Spec.ForProvider.MemberDefinition[i3].CognitoMemberDefinition[i4].UserPool = reference.ToPtrValue(rsp.ResolvedValue)
-			mg.Spec.ForProvider.MemberDefinition[i3].CognitoMemberDefinition[i4].UserPoolRef = rsp.ResolvedReference
-
-		}
-	}
 	rsp, err = r.Resolve(ctx, reference.ResolutionRequest{
 		CurrentValue: reference.FromPtrValue(mg.Spec.ForProvider.WorkforceName),
 		Extract:      resource.ExtractResourceID(),

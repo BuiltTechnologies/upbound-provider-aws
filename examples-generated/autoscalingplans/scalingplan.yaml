@@ -28,28 +28,3 @@ spec:
 
 ---
 
-apiVersion: autoscaling.aws.upbound.io/v1beta1
-kind: AutoscalingGroup
-metadata:
-  annotations:
-    meta.upbound.io/example-id: autoscalingplans/v1beta1/scalingplan
-  labels:
-    testing.upbound.io/example-name: example
-  name: example
-spec:
-  forProvider:
-    availabilityZones:
-    - ${data.aws_availability_zones.available.names[0]}
-    launchConfigurationSelector:
-      matchLabels:
-        testing.upbound.io/example-name: example
-    maxSize: 3
-    minSize: 0
-    region: us-west-1
-    tags:
-    - key: application
-      propagate_at_launch: true
-      value: example
-
----
-

@@ -18,7 +18,7 @@ import (
 	"github.com/upbound/provider-aws/config/apprunner"
 	"github.com/upbound/provider-aws/config/appstream"
 	"github.com/upbound/provider-aws/config/athena"
-	"github.com/upbound/provider-aws/config/autoscaling"
+	// "github.com/upbound/provider-aws/config/autoscaling"
 	"github.com/upbound/provider-aws/config/backup"
 	"github.com/upbound/provider-aws/config/budgets"
 	"github.com/upbound/provider-aws/config/cloudfront"
@@ -26,8 +26,8 @@ import (
 	"github.com/upbound/provider-aws/config/cloudwatch"
 	"github.com/upbound/provider-aws/config/cloudwatchevents"
 	"github.com/upbound/provider-aws/config/cloudwatchlogs"
-	"github.com/upbound/provider-aws/config/cognitoidentity"
-	"github.com/upbound/provider-aws/config/cognitoidp"
+	// "github.com/upbound/provider-aws/config/cognitoidentity"
+	// "github.com/upbound/provider-aws/config/cognitoidp"
 	"github.com/upbound/provider-aws/config/connect"
 	"github.com/upbound/provider-aws/config/cur"
 	"github.com/upbound/provider-aws/config/dax"
@@ -160,14 +160,14 @@ func GetProvider() *config.Provider {
 		apprunner.Configure,
 		appstream.Configure,
 		athena.Configure,
-		autoscaling.Configure,
+		// autoscaling.Configure,
 		backup.Configure,
 		cloudfront.Configure,
 		cloudsearch.Configure,
 		cloudwatch.Configure,
 		cloudwatchlogs.Configure,
-		cognitoidentity.Configure,
-		cognitoidp.Configure,
+		// cognitoidentity.Configure,
+		// cognitoidp.Configure,
 		connect.Configure,
 		cur.Configure,
 		dax.Configure,

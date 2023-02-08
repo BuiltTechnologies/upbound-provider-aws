@@ -78,8 +78,6 @@ import (
 	datacatalog "github.com/upbound/provider-aws/internal/controller/athena/datacatalog"
 	namedquery "github.com/upbound/provider-aws/internal/controller/athena/namedquery"
 	workgroup "github.com/upbound/provider-aws/internal/controller/athena/workgroup"
-	attachment "github.com/upbound/provider-aws/internal/controller/autoscaling/attachment"
-	autoscalinggroup "github.com/upbound/provider-aws/internal/controller/autoscaling/autoscalinggroup"
 	grouptag "github.com/upbound/provider-aws/internal/controller/autoscaling/grouptag"
 	launchconfiguration "github.com/upbound/provider-aws/internal/controller/autoscaling/launchconfiguration"
 	lifecyclehook "github.com/upbound/provider-aws/internal/controller/autoscaling/lifecyclehook"
@@ -157,18 +155,6 @@ import (
 	connectioncodestarconnections "github.com/upbound/provider-aws/internal/controller/codestarconnections/connection"
 	host "github.com/upbound/provider-aws/internal/controller/codestarconnections/host"
 	notificationrule "github.com/upbound/provider-aws/internal/controller/codestarnotifications/notificationrule"
-	cognitoidentitypoolproviderprincipaltag "github.com/upbound/provider-aws/internal/controller/cognitoidentity/cognitoidentitypoolproviderprincipaltag"
-	pool "github.com/upbound/provider-aws/internal/controller/cognitoidentity/pool"
-	poolrolesattachment "github.com/upbound/provider-aws/internal/controller/cognitoidentity/poolrolesattachment"
-	identityprovider "github.com/upbound/provider-aws/internal/controller/cognitoidp/identityprovider"
-	resourceserver "github.com/upbound/provider-aws/internal/controller/cognitoidp/resourceserver"
-	usercognitoidp "github.com/upbound/provider-aws/internal/controller/cognitoidp/user"
-	usergroup "github.com/upbound/provider-aws/internal/controller/cognitoidp/usergroup"
-	useringroup "github.com/upbound/provider-aws/internal/controller/cognitoidp/useringroup"
-	userpool "github.com/upbound/provider-aws/internal/controller/cognitoidp/userpool"
-	userpoolclient "github.com/upbound/provider-aws/internal/controller/cognitoidp/userpoolclient"
-	userpooldomain "github.com/upbound/provider-aws/internal/controller/cognitoidp/userpooldomain"
-	userpooluicustomization "github.com/upbound/provider-aws/internal/controller/cognitoidp/userpooluicustomization"
 	awsconfigurationrecorderstatus "github.com/upbound/provider-aws/internal/controller/configservice/awsconfigurationrecorderstatus"
 	configrule "github.com/upbound/provider-aws/internal/controller/configservice/configrule"
 	configurationaggregator "github.com/upbound/provider-aws/internal/controller/configservice/configurationaggregator"
@@ -368,14 +354,14 @@ import (
 	replicationgroup "github.com/upbound/provider-aws/internal/controller/elasticache/replicationgroup"
 	subnetgroupelasticache "github.com/upbound/provider-aws/internal/controller/elasticache/subnetgroup"
 	userelasticache "github.com/upbound/provider-aws/internal/controller/elasticache/user"
-	usergroupelasticache "github.com/upbound/provider-aws/internal/controller/elasticache/usergroup"
+	usergroup "github.com/upbound/provider-aws/internal/controller/elasticache/usergroup"
 	applicationelasticbeanstalk "github.com/upbound/provider-aws/internal/controller/elasticbeanstalk/application"
 	configurationtemplate "github.com/upbound/provider-aws/internal/controller/elasticbeanstalk/configurationtemplate"
 	domainelasticsearch "github.com/upbound/provider-aws/internal/controller/elasticsearch/domain"
 	pipelineelastictranscoder "github.com/upbound/provider-aws/internal/controller/elastictranscoder/pipeline"
 	preset "github.com/upbound/provider-aws/internal/controller/elastictranscoder/preset"
 	appcookiestickinesspolicy "github.com/upbound/provider-aws/internal/controller/elb/appcookiestickinesspolicy"
-	attachmentelb "github.com/upbound/provider-aws/internal/controller/elb/attachment"
+	attachment "github.com/upbound/provider-aws/internal/controller/elb/attachment"
 	backendserverpolicy "github.com/upbound/provider-aws/internal/controller/elb/backendserverpolicy"
 	elb "github.com/upbound/provider-aws/internal/controller/elb/elb"
 	lbcookiestickinesspolicy "github.com/upbound/provider-aws/internal/controller/elb/lbcookiestickinesspolicy"
@@ -859,8 +845,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		datacatalog.Setup,
 		namedquery.Setup,
 		workgroup.Setup,
-		attachment.Setup,
-		autoscalinggroup.Setup,
 		grouptag.Setup,
 		launchconfiguration.Setup,
 		lifecyclehook.Setup,
@@ -938,18 +922,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		connectioncodestarconnections.Setup,
 		host.Setup,
 		notificationrule.Setup,
-		cognitoidentitypoolproviderprincipaltag.Setup,
-		pool.Setup,
-		poolrolesattachment.Setup,
-		identityprovider.Setup,
-		resourceserver.Setup,
-		usercognitoidp.Setup,
-		usergroup.Setup,
-		useringroup.Setup,
-		userpool.Setup,
-		userpoolclient.Setup,
-		userpooldomain.Setup,
-		userpooluicustomization.Setup,
 		awsconfigurationrecorderstatus.Setup,
 		configrule.Setup,
 		configurationaggregator.Setup,
@@ -1149,14 +1121,14 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		replicationgroup.Setup,
 		subnetgroupelasticache.Setup,
 		userelasticache.Setup,
-		usergroupelasticache.Setup,
+		usergroup.Setup,
 		applicationelasticbeanstalk.Setup,
 		configurationtemplate.Setup,
 		domainelasticsearch.Setup,
 		pipelineelastictranscoder.Setup,
 		preset.Setup,
 		appcookiestickinesspolicy.Setup,
-		attachmentelb.Setup,
+		attachment.Setup,
 		backendserverpolicy.Setup,
 		elb.Setup,
 		lbcookiestickinesspolicy.Setup,

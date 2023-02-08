@@ -11,15 +11,9 @@ spec:
     description: example
     memberDefinition:
     - cognitoMemberDefinition:
-      - clientIdSelector:
-          matchLabels:
-            testing.upbound.io/example-name: example
-        userGroupSelector:
-          matchLabels:
-            testing.upbound.io/example-name: example
-        userPoolSelector:
-          matchLabels:
-            testing.upbound.io/example-name: example
+      - clientId: ${aws_cognito_user_pool_client.example.id}
+        userGroup: ${aws_cognito_user_group.example.id}
+        userPool: ${aws_cognito_user_pool_domain.example.user_pool_id}
     region: us-west-1
     workforceNameSelector:
       matchLabels:
