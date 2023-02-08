@@ -345,16 +345,6 @@ func (in *ServerParameters) DeepCopyInto(out *ServerParameters) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.CertificateRef != nil {
-		in, out := &in.CertificateRef, &out.CertificateRef
-		*out = new(v1.Reference)
-		(*in).DeepCopyInto(*out)
-	}
-	if in.CertificateSelector != nil {
-		in, out := &in.CertificateSelector, &out.CertificateSelector
-		*out = new(v1.Selector)
-		(*in).DeepCopyInto(*out)
-	}
 	if in.DirectoryID != nil {
 		in, out := &in.DirectoryID, &out.DirectoryID
 		*out = new(string)

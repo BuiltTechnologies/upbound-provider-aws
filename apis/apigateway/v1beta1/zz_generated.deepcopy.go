@@ -1777,16 +1777,6 @@ func (in *DomainNameParameters) DeepCopyInto(out *DomainNameParameters) {
 		*out = new(string)
 		**out = **in
 	}
-	if in.CertificateArnRef != nil {
-		in, out := &in.CertificateArnRef, &out.CertificateArnRef
-		*out = new(v1.Reference)
-		(*in).DeepCopyInto(*out)
-	}
-	if in.CertificateArnSelector != nil {
-		in, out := &in.CertificateArnSelector, &out.CertificateArnSelector
-		*out = new(v1.Selector)
-		(*in).DeepCopyInto(*out)
-	}
 	if in.CertificateBody != nil {
 		in, out := &in.CertificateBody, &out.CertificateBody
 		*out = new(string)
@@ -1840,16 +1830,6 @@ func (in *DomainNameParameters) DeepCopyInto(out *DomainNameParameters) {
 		in, out := &in.RegionalCertificateArn, &out.RegionalCertificateArn
 		*out = new(string)
 		**out = **in
-	}
-	if in.RegionalCertificateArnRef != nil {
-		in, out := &in.RegionalCertificateArnRef, &out.RegionalCertificateArnRef
-		*out = new(v1.Reference)
-		(*in).DeepCopyInto(*out)
-	}
-	if in.RegionalCertificateArnSelector != nil {
-		in, out := &in.RegionalCertificateArnSelector, &out.RegionalCertificateArnSelector
-		*out = new(v1.Selector)
-		(*in).DeepCopyInto(*out)
 	}
 	if in.RegionalCertificateName != nil {
 		in, out := &in.RegionalCertificateName, &out.RegionalCertificateName

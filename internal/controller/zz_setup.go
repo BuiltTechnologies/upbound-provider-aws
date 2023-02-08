@@ -11,11 +11,6 @@ import (
 
 	analyzer "github.com/upbound/provider-aws/internal/controller/accessanalyzer/analyzer"
 	alternatecontact "github.com/upbound/provider-aws/internal/controller/account/alternatecontact"
-	certificate "github.com/upbound/provider-aws/internal/controller/acm/certificate"
-	certificatevalidation "github.com/upbound/provider-aws/internal/controller/acm/certificatevalidation"
-	certificateacmpca "github.com/upbound/provider-aws/internal/controller/acmpca/certificate"
-	certificateauthority "github.com/upbound/provider-aws/internal/controller/acmpca/certificateauthority"
-	certificateauthoritycertificate "github.com/upbound/provider-aws/internal/controller/acmpca/certificateauthoritycertificate"
 	alertmanagerdefinition "github.com/upbound/provider-aws/internal/controller/amp/alertmanagerdefinition"
 	rulegroupnamespace "github.com/upbound/provider-aws/internal/controller/amp/rulegroupnamespace"
 	workspace "github.com/upbound/provider-aws/internal/controller/amp/workspace"
@@ -47,18 +42,6 @@ import (
 	usageplan "github.com/upbound/provider-aws/internal/controller/apigateway/usageplan"
 	usageplankey "github.com/upbound/provider-aws/internal/controller/apigateway/usageplankey"
 	vpclink "github.com/upbound/provider-aws/internal/controller/apigateway/vpclink"
-	api "github.com/upbound/provider-aws/internal/controller/apigatewayv2/api"
-	apimapping "github.com/upbound/provider-aws/internal/controller/apigatewayv2/apimapping"
-	authorizerapigatewayv2 "github.com/upbound/provider-aws/internal/controller/apigatewayv2/authorizer"
-	deploymentapigatewayv2 "github.com/upbound/provider-aws/internal/controller/apigatewayv2/deployment"
-	domainnameapigatewayv2 "github.com/upbound/provider-aws/internal/controller/apigatewayv2/domainname"
-	integrationapigatewayv2 "github.com/upbound/provider-aws/internal/controller/apigatewayv2/integration"
-	integrationresponseapigatewayv2 "github.com/upbound/provider-aws/internal/controller/apigatewayv2/integrationresponse"
-	modelapigatewayv2 "github.com/upbound/provider-aws/internal/controller/apigatewayv2/model"
-	route "github.com/upbound/provider-aws/internal/controller/apigatewayv2/route"
-	routeresponse "github.com/upbound/provider-aws/internal/controller/apigatewayv2/routeresponse"
-	stageapigatewayv2 "github.com/upbound/provider-aws/internal/controller/apigatewayv2/stage"
-	vpclinkapigatewayv2 "github.com/upbound/provider-aws/internal/controller/apigatewayv2/vpclink"
 	policy "github.com/upbound/provider-aws/internal/controller/appautoscaling/policy"
 	scheduledaction "github.com/upbound/provider-aws/internal/controller/appautoscaling/scheduledaction"
 	target "github.com/upbound/provider-aws/internal/controller/appautoscaling/target"
@@ -72,7 +55,7 @@ import (
 	eventintegration "github.com/upbound/provider-aws/internal/controller/appintegrations/eventintegration"
 	gatewayroute "github.com/upbound/provider-aws/internal/controller/appmesh/gatewayroute"
 	mesh "github.com/upbound/provider-aws/internal/controller/appmesh/mesh"
-	routeappmesh "github.com/upbound/provider-aws/internal/controller/appmesh/route"
+	route "github.com/upbound/provider-aws/internal/controller/appmesh/route"
 	virtualgateway "github.com/upbound/provider-aws/internal/controller/appmesh/virtualgateway"
 	virtualnode "github.com/upbound/provider-aws/internal/controller/appmesh/virtualnode"
 	virtualrouter "github.com/upbound/provider-aws/internal/controller/appmesh/virtualrouter"
@@ -243,7 +226,7 @@ import (
 	publicvirtualinterface "github.com/upbound/provider-aws/internal/controller/directconnect/publicvirtualinterface"
 	transitvirtualinterface "github.com/upbound/provider-aws/internal/controller/directconnect/transitvirtualinterface"
 	lifecyclepolicy "github.com/upbound/provider-aws/internal/controller/dlm/lifecyclepolicy"
-	certificatedms "github.com/upbound/provider-aws/internal/controller/dms/certificate"
+	certificate "github.com/upbound/provider-aws/internal/controller/dms/certificate"
 	endpoint "github.com/upbound/provider-aws/internal/controller/dms/endpoint"
 	eventsubscription "github.com/upbound/provider-aws/internal/controller/dms/eventsubscription"
 	replicationinstance "github.com/upbound/provider-aws/internal/controller/dms/replicationinstance"
@@ -812,11 +795,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
 		analyzer.Setup,
 		alternatecontact.Setup,
-		certificate.Setup,
-		certificatevalidation.Setup,
-		certificateacmpca.Setup,
-		certificateauthority.Setup,
-		certificateauthoritycertificate.Setup,
 		alertmanagerdefinition.Setup,
 		rulegroupnamespace.Setup,
 		workspace.Setup,
@@ -848,18 +826,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		usageplan.Setup,
 		usageplankey.Setup,
 		vpclink.Setup,
-		api.Setup,
-		apimapping.Setup,
-		authorizerapigatewayv2.Setup,
-		deploymentapigatewayv2.Setup,
-		domainnameapigatewayv2.Setup,
-		integrationapigatewayv2.Setup,
-		integrationresponseapigatewayv2.Setup,
-		modelapigatewayv2.Setup,
-		route.Setup,
-		routeresponse.Setup,
-		stageapigatewayv2.Setup,
-		vpclinkapigatewayv2.Setup,
 		policy.Setup,
 		scheduledaction.Setup,
 		target.Setup,
@@ -873,7 +839,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		eventintegration.Setup,
 		gatewayroute.Setup,
 		mesh.Setup,
-		routeappmesh.Setup,
+		route.Setup,
 		virtualgateway.Setup,
 		virtualnode.Setup,
 		virtualrouter.Setup,
@@ -1044,7 +1010,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		publicvirtualinterface.Setup,
 		transitvirtualinterface.Setup,
 		lifecyclepolicy.Setup,
-		certificatedms.Setup,
+		certificate.Setup,
 		endpoint.Setup,
 		eventsubscription.Setup,
 		replicationinstance.Setup,

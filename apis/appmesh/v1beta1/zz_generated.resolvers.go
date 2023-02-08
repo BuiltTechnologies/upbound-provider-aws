@@ -9,8 +9,7 @@ import (
 	"context"
 	reference "github.com/crossplane/crossplane-runtime/pkg/reference"
 	errors "github.com/pkg/errors"
-	v1beta1 "github.com/upbound/provider-aws/apis/acm/v1beta1"
-	v1beta11 "github.com/upbound/provider-aws/apis/servicediscovery/v1beta1"
+	v1beta1 "github.com/upbound/provider-aws/apis/servicediscovery/v1beta1"
 	resource "github.com/upbound/upjet/pkg/resource"
 	client "sigs.k8s.io/controller-runtime/pkg/client"
 )
@@ -157,43 +156,6 @@ func (mg *Route) ResolveReferences(ctx context.Context, c client.Reader) error {
 	return nil
 }
 
-// ResolveReferences of this VirtualGateway.
-func (mg *VirtualGateway) ResolveReferences(ctx context.Context, c client.Reader) error {
-	r := reference.NewAPIResolver(c, mg)
-
-	var rsp reference.ResolutionResponse
-	var err error
-
-	for i3 := 0; i3 < len(mg.Spec.ForProvider.Spec); i3++ {
-		for i4 := 0; i4 < len(mg.Spec.ForProvider.Spec[i3].Listener); i4++ {
-			for i5 := 0; i5 < len(mg.Spec.ForProvider.Spec[i3].Listener[i4].TLS); i5++ {
-				for i6 := 0; i6 < len(mg.Spec.ForProvider.Spec[i3].Listener[i4].TLS[i5].Certificate); i6++ {
-					for i7 := 0; i7 < len(mg.Spec.ForProvider.Spec[i3].Listener[i4].TLS[i5].Certificate[i6].Acm); i7++ {
-						rsp, err = r.Resolve(ctx, reference.ResolutionRequest{
-							CurrentValue: reference.FromPtrValue(mg.Spec.ForProvider.Spec[i3].Listener[i4].TLS[i5].Certificate[i6].Acm[i7].CertificateArn),
-							Extract:      resource.ExtractParamPath("arn", true),
-							Reference:    mg.Spec.ForProvider.Spec[i3].Listener[i4].TLS[i5].Certificate[i6].Acm[i7].CertificateArnRef,
-							Selector:     mg.Spec.ForProvider.Spec[i3].Listener[i4].TLS[i5].Certificate[i6].Acm[i7].CertificateArnSelector,
-							To: reference.To{
-								List:    &v1beta1.CertificateList{},
-								Managed: &v1beta1.Certificate{},
-							},
-						})
-						if err != nil {
-							return errors.Wrap(err, "mg.Spec.ForProvider.Spec[i3].Listener[i4].TLS[i5].Certificate[i6].Acm[i7].CertificateArn")
-						}
-						mg.Spec.ForProvider.Spec[i3].Listener[i4].TLS[i5].Certificate[i6].Acm[i7].CertificateArn = reference.ToPtrValue(rsp.ResolvedValue)
-						mg.Spec.ForProvider.Spec[i3].Listener[i4].TLS[i5].Certificate[i6].Acm[i7].CertificateArnRef = rsp.ResolvedReference
-
-					}
-				}
-			}
-		}
-	}
-
-	return nil
-}
-
 // ResolveReferences of this VirtualNode.
 func (mg *VirtualNode) ResolveReferences(ctx context.Context, c client.Reader) error {
 	r := reference.NewAPIResolver(c, mg)
@@ -226,8 +188,8 @@ func (mg *VirtualNode) ResolveReferences(ctx context.Context, c client.Reader) e
 					Reference:    mg.Spec.ForProvider.Spec[i3].ServiceDiscovery[i4].AwsCloudMap[i5].NamespaceNameRef,
 					Selector:     mg.Spec.ForProvider.Spec[i3].ServiceDiscovery[i4].AwsCloudMap[i5].NamespaceNameSelector,
 					To: reference.To{
-						List:    &v1beta11.HTTPNamespaceList{},
-						Managed: &v1beta11.HTTPNamespace{},
+						List:    &v1beta1.HTTPNamespaceList{},
+						Managed: &v1beta1.HTTPNamespace{},
 					},
 				})
 				if err != nil {

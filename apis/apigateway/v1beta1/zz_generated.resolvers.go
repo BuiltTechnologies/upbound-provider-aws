@@ -9,8 +9,7 @@ import (
 	"context"
 	reference "github.com/crossplane/crossplane-runtime/pkg/reference"
 	errors "github.com/pkg/errors"
-	v1beta12 "github.com/upbound/provider-aws/apis/acm/v1beta1"
-	v1beta13 "github.com/upbound/provider-aws/apis/elbv2/v1beta1"
+	v1beta12 "github.com/upbound/provider-aws/apis/elbv2/v1beta1"
 	v1beta1 "github.com/upbound/provider-aws/apis/iam/v1beta1"
 	v1beta11 "github.com/upbound/provider-aws/apis/lambda/v1beta1"
 	common "github.com/upbound/provider-aws/config/common"
@@ -234,48 +233,6 @@ func (mg *DocumentationVersion) ResolveReferences(ctx context.Context, c client.
 	}
 	mg.Spec.ForProvider.RestAPIID = reference.ToPtrValue(rsp.ResolvedValue)
 	mg.Spec.ForProvider.RestAPIIDRef = rsp.ResolvedReference
-
-	return nil
-}
-
-// ResolveReferences of this DomainName.
-func (mg *DomainName) ResolveReferences(ctx context.Context, c client.Reader) error {
-	r := reference.NewAPIResolver(c, mg)
-
-	var rsp reference.ResolutionResponse
-	var err error
-
-	rsp, err = r.Resolve(ctx, reference.ResolutionRequest{
-		CurrentValue: reference.FromPtrValue(mg.Spec.ForProvider.CertificateArn),
-		Extract:      resource.ExtractParamPath("certificate_arn", false),
-		Reference:    mg.Spec.ForProvider.CertificateArnRef,
-		Selector:     mg.Spec.ForProvider.CertificateArnSelector,
-		To: reference.To{
-			List:    &v1beta12.CertificateValidationList{},
-			Managed: &v1beta12.CertificateValidation{},
-		},
-	})
-	if err != nil {
-		return errors.Wrap(err, "mg.Spec.ForProvider.CertificateArn")
-	}
-	mg.Spec.ForProvider.CertificateArn = reference.ToPtrValue(rsp.ResolvedValue)
-	mg.Spec.ForProvider.CertificateArnRef = rsp.ResolvedReference
-
-	rsp, err = r.Resolve(ctx, reference.ResolutionRequest{
-		CurrentValue: reference.FromPtrValue(mg.Spec.ForProvider.RegionalCertificateArn),
-		Extract:      resource.ExtractParamPath("certificate_arn", false),
-		Reference:    mg.Spec.ForProvider.RegionalCertificateArnRef,
-		Selector:     mg.Spec.ForProvider.RegionalCertificateArnSelector,
-		To: reference.To{
-			List:    &v1beta12.CertificateValidationList{},
-			Managed: &v1beta12.CertificateValidation{},
-		},
-	})
-	if err != nil {
-		return errors.Wrap(err, "mg.Spec.ForProvider.RegionalCertificateArn")
-	}
-	mg.Spec.ForProvider.RegionalCertificateArn = reference.ToPtrValue(rsp.ResolvedValue)
-	mg.Spec.ForProvider.RegionalCertificateArnRef = rsp.ResolvedReference
 
 	return nil
 }
@@ -892,8 +849,8 @@ func (mg *VPCLink) ResolveReferences(ctx context.Context, c client.Reader) error
 		References:    mg.Spec.ForProvider.TargetArnRefs,
 		Selector:      mg.Spec.ForProvider.TargetArnSelector,
 		To: reference.To{
-			List:    &v1beta13.LBList{},
-			Managed: &v1beta13.LB{},
+			List:    &v1beta12.LBList{},
+			Managed: &v1beta12.LB{},
 		},
 	})
 	if err != nil {

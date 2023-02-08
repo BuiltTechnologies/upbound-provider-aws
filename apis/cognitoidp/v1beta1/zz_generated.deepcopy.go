@@ -2388,16 +2388,6 @@ func (in *UserPoolDomainParameters) DeepCopyInto(out *UserPoolDomainParameters) 
 		*out = new(string)
 		**out = **in
 	}
-	if in.CertificateArnRef != nil {
-		in, out := &in.CertificateArnRef, &out.CertificateArnRef
-		*out = new(v1.Reference)
-		(*in).DeepCopyInto(*out)
-	}
-	if in.CertificateArnSelector != nil {
-		in, out := &in.CertificateArnSelector, &out.CertificateArnSelector
-		*out = new(v1.Selector)
-		(*in).DeepCopyInto(*out)
-	}
 	if in.Domain != nil {
 		in, out := &in.Domain, &out.Domain
 		*out = new(string)
