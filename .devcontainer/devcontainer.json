@@ -1,0 +1,54 @@
+{
+    "name": "${containerWorkspaceFolderBasename}",
+    "build": {
+        "args": {
+            "GH_TOKEN": "${localEnv:GH_TOKEN}"
+        }
+    },
+    "containerEnv": {
+        "AWS_CLI_AUTO_PROMPT": "on-partial",
+        "AWS_DEFAULT_REGION": "us-east-2",
+        "EDITOR": "/usr/bin/vi",
+        "FZF_DEFAULT_COMMAND": "fd --type f --hidden --follow --exclude .git",
+        "FZF_DEFAULT_OPTS": "--height 40% --layout=reverse --border",
+        "GH_TOKEN": "${localEnv:GH_TOKEN}",
+        "LANG": "en_US.UTF-8",
+        "LC_ALL": "en_US.UTF-8",
+        "LC_CTYPE": "en_US.UTF-8",
+        "TF_LOG_PATH": "${containerWorkspaceFolder}/tmp/tf.log"
+    },
+    "remoteEnv": {
+        // Pass in the host directory for Docker mount commands from inside the container
+        // https://code.visualstudio.com/remote/advancedcontainers/use-docker-kubernetes
+        "HOST_PROJECT_PATH": "${localWorkspaceFolder}"
+    },
+    "containerUser": "vscode",
+    "overrideCommand": false,
+    "dockerFile": "Dockerfile",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "golang.go",
+                "hashicorp.terraform",
+                "mhutchie.git-graph",
+            ]
+        }
+    },
+    "mounts": [
+        "source=vsc-${containerWorkspaceFolderBasename},target=/root/.vscode-server/extensions,type=volume",
+        "source=${localEnv:HOME}/.aws,target=/home/vscode/.aws,type=bind,consistency=cached",
+        "source=${localEnv:HOME}/.config,target=/home/vscode/.config,type=bind,consistency=cached",
+        "source=${localEnv:HOME}/.kube,target=/home/vscode/.kube-host,type=bind,consistency=cached,readonly",
+        "source=${localEnv:HOME}/.password-store,target=/home/vscode/.password-store,type=bind,consistency=cached",
+        "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached",
+        "source=${localEnv:HOME}/dotfiles/.tmux.conf,target=/home/vscode/.tmux.conf,type=bind,consistency=cached",
+        "source=${localEnv:HOME}/dotfiles/ssh/config,target=/home/vscode/.ssh/config,type=bind,consistency=cached",
+        "source=${localEnv:HOME}/dotfiles/ssh/config.d,target=/home/vscode/.ssh/config.d,type=bind,consistency=cached",
+        "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind"
+    ],
+    "runArgs": [
+        "--init"
+    ],
+    "initializeCommand": "bash -i .devcontainer/devcontainer-init.sh",
+    "postCreateCommand": "bash -i .devcontainer/devcontainer-post.sh",
+}

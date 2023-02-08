@@ -1,0 +1,38 @@
+# aws
+alias kw='/usr/local/bin/key_wrap.bash'
+alias bp='kw bitpusher'
+alias kwd='kw dev'
+alias kwp='kw prod'
+
+# eksadmin group access
+alias kwbp='/usr/local/bin/key_wrap_bp.bash'
+
+# aws:eks
+alias k='kubectl'
+alias kr='kubectl --kubeconfig tmp/kubeconfig.yaml'
+alias dpod='kubectl run shpod --restart=Never --rm -it --image=bretfisher/shpod'
+
+# k8s
+alias kdesc='kubectl describe'
+alias kevt="kubectl get events --sort-by='.metadata.creationTimestamp'"
+
+# docker
+alias drun='docker run --rm -it -v "${PWD}":/app -w /app'
+
+# python
+alias python=python3
+
+# terraform
+alias tf=terraform
+alias tf-clean='find . -type d -name ".terraform*" -prune -exec rm -rf {} \;'
+
+# system
+# watch: allows it to work with aliases, https://stackoverflow.com/a/54814811/17330086
+alias watch='watch '
+
+# bitpusher
+alias kcl='kubectl --kubeconfig=`ls kubeconfig_* | head -1`'
+alias flux='bp flux'
+
+# telepresence
+alias tp='telepresence'

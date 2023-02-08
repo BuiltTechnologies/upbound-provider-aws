@@ -1,0 +1,147 @@
+# bump the .version file contents
+# expected file contents: version=v1.2.3
+bump() {
+  if [ ! -f ".version" ]; then
+    echo ".version file missing"
+    return 1
+  fi
+
+  # bump [MAJOR|MINOR|PATCH|custom_value]
+  local LEVEL=${1}
+  if [[ ${LEVEL,,} =~ ^major ]]; then
+    echo "current: $(cat .version)"
+    sed -r -i.bak 's/(.*?=v)([[:digit:]]+)(.*)/echo "\1$((\2+1)).0.0"/e' .version
+  elif [[ ${LEVEL,,} =~ ^minor ]]; then
+    echo "current: $(cat .version)"
+    sed -r -i.bak 's/(.*?=v[[:digit:]]+\.)([[:digit:]]+)(.*)/echo "\1$((\2+1)).0"/e' .version
+  elif [[ ${LEVEL,,} =~ ^patch ]]; then
+    echo "current: $(cat .version)"
+    sed -r -i.bak 's/(.*?=v[[:digit:]]+\.[[:digit:]]+\.)([[:digit:]]+)/echo "\1$((\2+1))"/e' .version
+  elif [[ ${LEVEL,,} =~ ^[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+-[[:alpha:][:digit:].\-]+$ ]]; then
+    echo "current: $(cat .version)"
+    echo "version=v${LEVEL}" > .version
+  else
+    echo "unsupported bump level: ${LEVEL}; specify [MAJOR|MINOR|PATCH|custom pre-release]"
+    return 1
+  fi
+
+  echo "new:     $(cat .version)"
+  rm -f .version.bak
+}
+
+# https://github.com/warrensbox/terraform-switcher#automation
+cdtfswitch(){
+  builtin cd "$@";
+  cdir=$PWD;
+  if [ -e "$cdir/.terraform-version" ]; then
+    tfswitch
+  fi
+}
+alias cd='cdtfswitch'
+
+# https://stackoverflow.com/a/47453572/17330086
+getpod(){
+  # get pod name by selector; e.g. getpod mailhog
+  bp kubectl get pods -l app=$1 -o jsonpath="{.items[0].metadata.name}"
+}
+
+shpod(){
+  # shell into a pod by selector; e.g. shpod mailhog
+  bp kubectl exec -it $(getpod $1) -- bash
+}
+
+# https://stackoverflow.com/a/51931477/17330086
+evtpod(){
+  bp kubectl get event --field-selector involvedObject.name=$(getpod $1)
+}
+
+# switch to a prompt for k8s
+# https://github.com/jonmosco/kube-ps1
+kps1(){
+  export KUBE_PS1_SYMBOL_ENABLE=false
+  source ~/kube-ps1/kube-ps1.sh
+  # bold blue working directory
+  PS1='\[\033[1;34m\]\w\[\033[00m\] $(kube_ps1) \$ '
+}
+
+delete_last_git_tag(){
+  tag=$(git for-each-ref --sort=-creatordate --format '%(refname:short)' refs/tags | head -1 -)
+  git tag -d $tag
+}
+
+ecrlogin(){
+  declare -A ACCT_MAP
+  ACCT_MAP['bp']='333356559612'
+  ACCT_MAP['dev']='833816692833'
+
+  declare -A CMD_MAP
+  CMD_MAP['bp']='bp'
+  CMD_MAP['dev']='kwd'
+
+  local acct=${1:-dev}
+  local region=${2:-us-east-1}
+
+  if [ $acct != 'dev' ] && [ $acct != 'bp' ]; then
+    echo "COMMAND: ecrlogin [bp|dev] [<aws_region>]"
+    echo "  account bp:  ${ACCT_MAP['bp']}"
+    echo "  account dev: ${ACCT_MAP['dev']}"
+    echo "default: ecrlogin dev us-east-1"
+    return 1
+  fi
+
+  echo "logging into ECR for AWS Account: ${ACCT_MAP[$acct]} in Region: $region"
+  eval "${CMD_MAP[$acct]} aws ecr get-login-password --region ${region} | docker login --username AWS --password-stdin ${ACCT_MAP[$acct]}.dkr.ecr.${region}.amazonaws.com"
+}
+
+# get the kubeconfig for a cluster
+get_kconfig(){
+  # name of secret matches the cluster name in crossplane-system namespace
+  local cluster=$1
+  kubectl -n crossplane-system get secret $1 --output jsonpath="{.data.kubeconfig}"
+}
+
+# get & save the kubeconfig for a cluster locally
+save_kconfig(){
+  local cluster=$1
+  local dest=${2:-tmp/kubeconfig.yaml}
+  get_kconfig $cluster | base64 -d > $dest
+}
+
+function kgetall {
+  local namespace=$1
+  for i in $(kubectl api-resources --verbs=list --namespaced -o name | grep -v "events.events.k8s.io" | grep -v "events" | sort | uniq); do
+    echo "Resource:" $i
+    kubectl -n ${namespace} get --ignore-not-found ${i}
+  done
+}
+
+update_regcred() {
+  declare -A ACCT_MAP
+  ACCT_MAP['bp']='333356559612'
+  ACCT_MAP['dev']='833816692833'
+
+  local acct=${1:-bp}
+  local region=${2:-us-east-2}
+  local namespace=crossplane-system
+
+  if [ $acct != 'dev' ] && [ $acct != 'bp' ]; then
+    echo "COMMAND: update_regcred [bp|dev] [<aws_region>]"
+    echo "  account bp:  ${ACCT_MAP['bp']}"
+    echo "  account dev: ${ACCT_MAP['dev']}"
+    echo "default: update_regcred bp us-east-2"
+    return 1
+  fi
+
+  echo "updating ECR creds in ns $namespace for AWS Account: ${ACCT_MAP[$acct]} in Region: $region"
+  kubectl delete secret regcred-$acct-$region --ignore-not-found
+  eval "kubectl create secret docker-registry regcred-$acct-$region \
+    --namespace $namespace \
+    --docker-server=${ACCT_MAP[$acct]}.dkr.ecr.$region.amazonaws.com \
+    --docker-username=AWS \
+    --docker-password=$(aws ecr get-login-password)"
+}
+
+rm_finalizers() {
+  local crd=$1
+  kubectl patch -p '{"metadata":{"finalizers":[]}}' --type=merge $1
+}
