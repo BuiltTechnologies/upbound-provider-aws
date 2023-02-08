@@ -11,9 +11,6 @@ import (
 
 	analyzer "github.com/upbound/provider-aws/internal/controller/accessanalyzer/analyzer"
 	alternatecontact "github.com/upbound/provider-aws/internal/controller/account/alternatecontact"
-	alertmanagerdefinition "github.com/upbound/provider-aws/internal/controller/amp/alertmanagerdefinition"
-	rulegroupnamespace "github.com/upbound/provider-aws/internal/controller/amp/rulegroupnamespace"
-	workspace "github.com/upbound/provider-aws/internal/controller/amp/workspace"
 	app "github.com/upbound/provider-aws/internal/controller/amplify/app"
 	backendenvironment "github.com/upbound/provider-aws/internal/controller/amplify/backendenvironment"
 	branch "github.com/upbound/provider-aws/internal/controller/amplify/branch"
@@ -424,7 +421,7 @@ import (
 	workflow "github.com/upbound/provider-aws/internal/controller/glue/workflow"
 	licenseassociation "github.com/upbound/provider-aws/internal/controller/grafana/licenseassociation"
 	roleassociation "github.com/upbound/provider-aws/internal/controller/grafana/roleassociation"
-	workspacegrafana "github.com/upbound/provider-aws/internal/controller/grafana/workspace"
+	workspace "github.com/upbound/provider-aws/internal/controller/grafana/workspace"
 	workspacesamlconfiguration "github.com/upbound/provider-aws/internal/controller/grafana/workspacesamlconfiguration"
 	detector "github.com/upbound/provider-aws/internal/controller/guardduty/detector"
 	filter "github.com/upbound/provider-aws/internal/controller/guardduty/filter"
@@ -795,9 +792,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
 		analyzer.Setup,
 		alternatecontact.Setup,
-		alertmanagerdefinition.Setup,
-		rulegroupnamespace.Setup,
-		workspace.Setup,
 		app.Setup,
 		backendenvironment.Setup,
 		branch.Setup,
@@ -1208,7 +1202,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		workflow.Setup,
 		licenseassociation.Setup,
 		roleassociation.Setup,
-		workspacegrafana.Setup,
+		workspace.Setup,
 		workspacesamlconfiguration.Setup,
 		detector.Setup,
 		filter.Setup,

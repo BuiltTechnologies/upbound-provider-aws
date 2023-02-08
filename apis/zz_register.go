@@ -12,7 +12,6 @@ import (
 
 	v1beta1 "github.com/upbound/provider-aws/apis/accessanalyzer/v1beta1"
 	v1beta1account "github.com/upbound/provider-aws/apis/account/v1beta1"
-	v1beta1amp "github.com/upbound/provider-aws/apis/amp/v1beta1"
 	v1beta1amplify "github.com/upbound/provider-aws/apis/amplify/v1beta1"
 	v1beta1apigateway "github.com/upbound/provider-aws/apis/apigateway/v1beta1"
 	v1beta1appautoscaling "github.com/upbound/provider-aws/apis/appautoscaling/v1beta1"
@@ -154,7 +153,6 @@ func init() {
 	AddToSchemes = append(AddToSchemes,
 		v1beta1.SchemeBuilder.AddToScheme,
 		v1beta1account.SchemeBuilder.AddToScheme,
-		v1beta1amp.SchemeBuilder.AddToScheme,
 		v1beta1amplify.SchemeBuilder.AddToScheme,
 		v1beta1apigateway.SchemeBuilder.AddToScheme,
 		v1beta1appautoscaling.SchemeBuilder.AddToScheme,
