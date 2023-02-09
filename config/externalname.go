@@ -2039,35 +2039,35 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	//
 	// No import
 	// TODO: For now API is not normalized. While testing resource we can check the actual ID and normalize the API.
-	"aws_ses_active_receipt_rule_set": config.IdentifierFromProvider,
+	// "aws_ses_active_receipt_rule_set": config.IdentifierFromProvider,
 	// SES Configuration Sets can be imported using their name
-	"aws_ses_configuration_set": config.NameAsIdentifier,
+	// "aws_ses_configuration_set": config.NameAsIdentifier,
 	// DKIM tokens can be imported using the domain attribute
-	"aws_ses_domain_dkim": config.ParameterAsIdentifier("domain"),
+	// "aws_ses_domain_dkim": config.ParameterAsIdentifier("domain"),
 	// SES domain identities can be imported using the domain name.
-	"aws_ses_domain_identity": config.IdentifierFromProvider,
+	// "aws_ses_domain_identity": config.IdentifierFromProvider,
 	// MAIL FROM domain can be imported using the domain attribute
-	"aws_ses_domain_mail_from": config.IdentifierFromProvider,
+	// "aws_ses_domain_mail_from": config.IdentifierFromProvider,
 	// SES email identities can be imported using the email address.
-	"aws_ses_email_identity": config.IdentifierFromProvider,
+	// "aws_ses_email_identity": config.IdentifierFromProvider,
 	// SES event destinations can be imported using configuration_set_name together with the event destination's name
 	// Example: some-configuration-set-test/event-destination-sns
-	"aws_ses_event_destination": config.TemplatedStringAsIdentifier("name", "{{ .parameters.configuration_set_name }}/{{ .external_name }}"),
+	// "aws_ses_event_destination": config.TemplatedStringAsIdentifier("name", "{{ .parameters.configuration_set_name }}/{{ .external_name }}"),
 	// Identity Notification Topics can be imported using the ID of the record. The ID is made up as IDENTITY|TYPE where IDENTITY is the SES Identity and TYPE is the Notification Type.
 	// Example: 'example.com|Bounce'
-	"aws_ses_identity_notification_topic": config.IdentifierFromProvider,
+	// "aws_ses_identity_notification_topic": config.IdentifierFromProvider,
 	// SES Identity Policies can be imported using the identity and policy name, separated by a pipe character (|)
 	// Example: 'example.com|example'
-	"aws_ses_identity_policy": config.IdentifierFromProvider,
+	// "aws_ses_identity_policy": config.IdentifierFromProvider,
 	// SES Receipt Filter can be imported using their name
-	"aws_ses_receipt_filter": config.NameAsIdentifier,
+	// "aws_ses_receipt_filter": config.NameAsIdentifier,
 	// SES receipt rules can be imported using the ruleset name and rule name separated by :
 	// Example: my_rule_set:my_rule
-	"aws_ses_receipt_rule": config.IdentifierFromProvider,
+	// "aws_ses_receipt_rule": config.IdentifierFromProvider,
 	// SES receipt rule sets can be imported using the rule set name
-	"aws_ses_receipt_rule_set": config.IdentifierFromProvider,
+	// "aws_ses_receipt_rule_set": config.IdentifierFromProvider,
 	// SES templates can be imported using the template name
-	"aws_ses_template": config.NameAsIdentifier,
+	// "aws_ses_template": config.NameAsIdentifier,
 
 	// signer
 	//
@@ -2086,39 +2086,39 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	//
 	// Network Firewall Policies can be imported using their ARN
 	// Example: arn:aws:network-firewall:us-west-1:123456789012:firewall-policy/example
-	"aws_networkfirewall_firewall_policy": config.TemplatedStringAsIdentifier("name", "arn:aws:network-firewall:{{ .parameters.region }}:{{ .setup.client_metadata.account_id }}:firewall-policy/{{ .external_name }}"),
+	// "aws_networkfirewall_firewall_policy": config.TemplatedStringAsIdentifier("name", "arn:aws:network-firewall:{{ .parameters.region }}:{{ .setup.client_metadata.account_id }}:firewall-policy/{{ .external_name }}"),
 	// Network Firewall Rule Groups can be imported using their ARN
 	// Example: arn:aws:network-firewall:us-west-1:123456789012:stateful-rulegroup/example
-	"aws_networkfirewall_rule_group": config.TemplatedStringAsIdentifier("", "arn:aws:network-firewall:{{ .parameters.region }}:{{ .setup.client_metadata.account_id }}:stateful-rulegroup/{{ .external_name }}"),
+	// "aws_networkfirewall_rule_group": config.TemplatedStringAsIdentifier("", "arn:aws:network-firewall:{{ .parameters.region }}:{{ .setup.client_metadata.account_id }}:stateful-rulegroup/{{ .external_name }}"),
 
 	// networkmanager
 	//
 	// aws_networkmanager_global_network can be imported using the global network ID
-	"aws_networkmanager_global_network": config.IdentifierFromProvider,
+	// "aws_networkmanager_global_network": config.IdentifierFromProvider,
 	// aws_networkmanager_site can be imported using the site ARN
 	// Example: arn:aws:networkmanager::123456789012:site/global-network-0d47f6t230mz46dy4/site-444555aaabbb11223
-	"aws_networkmanager_site": config.IdentifierFromProvider,
+	// "aws_networkmanager_site": config.IdentifierFromProvider,
 	// aws_networkmanager_link can be imported using the link ARN
 	// Example: arn:aws:networkmanager::123456789012:link/global-network-0d47f6t230mz46dy4/link-444555aaabbb11223
-	"aws_networkmanager_link": config.IdentifierFromProvider,
+	// "aws_networkmanager_link": config.IdentifierFromProvider,
 	// aws_networkmanager_link_association can be imported using the global network ID, link ID and device ID
 	// Example: global-network-0d47f6t230mz46dy4,link-444555aaabbb11223,device-07f6fd08867abc123
-	"aws_networkmanager_link_association": config.TemplatedStringAsIdentifier("", "{{ .parameters.global_network_id }},{{ .parameters.link_id }},{{ .parameters.device_id }}"),
+	// "aws_networkmanager_link_association": config.TemplatedStringAsIdentifier("", "{{ .parameters.global_network_id }},{{ .parameters.link_id }},{{ .parameters.device_id }}"),
 	// aws_networkmanager_device can be imported using the device ARN
 	// Example: arn:aws:networkmanager::123456789012:device/global-network-0d47f6t230mz46dy4/device-07f6fd08867abc123
-	"aws_networkmanager_device": config.IdentifierFromProvider,
+	// "aws_networkmanager_device": config.IdentifierFromProvider,
 	// aws_networkmanager_connection can be imported using the connection ARN
 	// Example: arn:aws:networkmanager::123456789012:device/global-network-0d47f6t230mz46dy4/connection-07f6fd08867abc123
-	"aws_networkmanager_connection": config.IdentifierFromProvider,
+	// "aws_networkmanager_connection": config.IdentifierFromProvider,
 	// aws_networkmanager_transit_gateway_registration can be imported using the global network ID and transit gateway ARN
 	// Example: global-network-0d47f6t230mz46dy4,arn:aws:ec2:us-west-2:123456789012:transit-gateway/tgw-123abc05e04123abc
-	"aws_networkmanager_transit_gateway_registration": config.TemplatedStringAsIdentifier("", "{{ .parameters.global_network_id }},{{ .parameters.transit_gateway_arn }}"),
+	// "aws_networkmanager_transit_gateway_registration": config.TemplatedStringAsIdentifier("", "{{ .parameters.global_network_id }},{{ .parameters.transit_gateway_arn }}"),
 	// aws_networkmanager_transit_gateway_connect_peer_association can be imported using the global network ID and customer gateway ARN
 	// Example: global-network-0d47f6t230mz46dy4,arn:aws:ec2:us-west-2:123456789012:transit-gateway-connect-peer/tgw-connect-peer-12345678
-	"aws_networkmanager_transit_gateway_connect_peer_association": config.TemplatedStringAsIdentifier("", "{{ .parameters.global_network_id }},arn:aws:ec2:{{ .parameters.region }}:{{ .setup.client_metadata.account_id }}:transit-gateway-connect-peer/{{ .parameters.transit_gateway_connect_peer_arn }}"),
+	// "aws_networkmanager_transit_gateway_connect_peer_association": config.TemplatedStringAsIdentifier("", "{{ .parameters.global_network_id }},arn:aws:ec2:{{ .parameters.region }}:{{ .setup.client_metadata.account_id }}:transit-gateway-connect-peer/{{ .parameters.transit_gateway_connect_peer_arn }}"),
 	// aws_networkmanager_customer_gateway_association can be imported using the global network ID and customer gateway ARN
 	// Example: global-network-0d47f6t230mz46dy4,arn:aws:ec2:us-west-2:123456789012:customer-gateway/cgw-123abc05e04123abc
-	"aws_networkmanager_customer_gateway_association": config.TemplatedStringAsIdentifier("", "{{ .parameters.global_network_id }},arn:aws:ec2:{{ .parameters.region }}:{{ .setup.client_metadata.account_id }}:customer-gateway/{{ .parameters.customer_gateway_arn }}"),
+	// "aws_networkmanager_customer_gateway_association": config.TemplatedStringAsIdentifier("", "{{ .parameters.global_network_id }},arn:aws:ec2:{{ .parameters.region }}:{{ .setup.client_metadata.account_id }}:customer-gateway/{{ .parameters.customer_gateway_arn }}"),
 
 	// waf
 	//
@@ -2201,67 +2201,67 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// xray
 	//
 	// XRay Encryption Config can be imported using the region name
-	"aws_xray_encryption_config": config.IdentifierFromProvider,
+	// "aws_xray_encryption_config": config.IdentifierFromProvider,
 	// XRay Groups can be imported using the ARN
 	// Example: arn:aws:xray:us-west-2:1234567890:group/example-group/TNGX7SW5U6QY36T4ZMOUA3HVLBYCZTWDIOOXY3CJAXTHSS3YCWUA
-	"aws_xray_group": config.IdentifierFromProvider,
+	// "aws_xray_group": config.IdentifierFromProvider,
 	// XRay Sampling Rules can be imported using the name
-	"aws_xray_sampling_rule": config.ParameterAsIdentifier("rule_name"),
+	// "aws_xray_sampling_rule": config.ParameterAsIdentifier("rule_name"),
 
 	// workspaces
 	//
 	// Workspaces directory can be imported using the directory ID
-	"aws_workspaces_directory": config.IdentifierFromProvider,
+	// "aws_workspaces_directory": config.IdentifierFromProvider,
 	// WorkSpaces IP groups can be imported using their GroupID
-	"aws_workspaces_ip_group": config.IdentifierFromProvider,
+	// "aws_workspaces_ip_group": config.IdentifierFromProvider,
 
 	// opsworks
 	//
 	// OpsWorks stacks can be imported using the id
-	"aws_opsworks_stack": config.IdentifierFromProvider,
+	// "aws_opsworks_stack": config.IdentifierFromProvider,
 	// OpsWorks static web server Layers can be imported using the id
-	"aws_opsworks_static_web_layer": config.IdentifierFromProvider,
+	// "aws_opsworks_static_web_layer": config.IdentifierFromProvider,
 	// No import
 	// TODO: For now API is not normalized. While testing resource we can check the actual ID and normalize the API.
-	"aws_opsworks_user_profile": config.IdentifierFromProvider,
+	// "aws_opsworks_user_profile": config.IdentifierFromProvider,
 	// OpsWorks Custom Layers can be imported using the id
-	"aws_opsworks_custom_layer": config.IdentifierFromProvider,
+	// "aws_opsworks_custom_layer": config.IdentifierFromProvider,
 	// Opsworks Application can be imported using the id
-	"aws_opsworks_application": config.IdentifierFromProvider,
+	// "aws_opsworks_application": config.IdentifierFromProvider,
 	// No import
 	// TODO: For now API is not normalized. While testing resource we can check the actual ID and normalize the API.
-	"aws_opsworks_ecs_cluster_layer": config.IdentifierFromProvider,
+	// "aws_opsworks_ecs_cluster_layer": config.IdentifierFromProvider,
 	// No import
 	// TODO: For now API is not normalized. While testing resource we can check the actual ID and normalize the API.
-	"aws_opsworks_ganglia_layer": config.IdentifierFromProvider,
+	// "aws_opsworks_ganglia_layer": config.IdentifierFromProvider,
 	// No import
 	// TODO: For now API is not normalized. While testing resource we can check the actual ID and normalize the API.
-	"aws_opsworks_haproxy_layer": config.IdentifierFromProvider,
+	// "aws_opsworks_haproxy_layer": config.IdentifierFromProvider,
 	// Opsworks Instances can be imported using the instance id
-	"aws_opsworks_instance": config.IdentifierFromProvider,
+	// "aws_opsworks_instance": config.IdentifierFromProvider,
 	// No import
 	// TODO: For now API is not normalized. While testing resource we can check the actual ID and normalize the API.
-	"aws_opsworks_java_app_layer": config.IdentifierFromProvider,
+	// "aws_opsworks_java_app_layer": config.IdentifierFromProvider,
 	// No import
 	// TODO: For now API is not normalized. While testing resource we can check the actual ID and normalize the API.
-	"aws_opsworks_memcached_layer": config.IdentifierFromProvider,
+	// "aws_opsworks_memcached_layer": config.IdentifierFromProvider,
 	// No import
 	// TODO: For now API is not normalized. While testing resource we can check the actual ID and normalize the API.
-	"aws_opsworks_mysql_layer": config.IdentifierFromProvider,
+	// "aws_opsworks_mysql_layer": config.IdentifierFromProvider,
 	// No import
 	// TODO: For now API is not normalized. While testing resource we can check the actual ID and normalize the API.
-	"aws_opsworks_nodejs_app_layer": config.IdentifierFromProvider,
+	// "aws_opsworks_nodejs_app_layer": config.IdentifierFromProvider,
 	// OpsWorks PHP Application Layers can be imported using the id
-	"aws_opsworks_php_app_layer": config.IdentifierFromProvider,
+	// "aws_opsworks_php_app_layer": config.IdentifierFromProvider,
 	// No import
 	// TODO: For now API is not normalized. While testing resource we can check the actual ID and normalize the API.
-	"aws_opsworks_rails_app_layer": config.IdentifierFromProvider,
+	// "aws_opsworks_rails_app_layer": config.IdentifierFromProvider,
 	// No import
 	// TODO: For now API is not normalized. While testing resource we can check the actual ID and normalize the API.
-	"aws_opsworks_rds_db_instance": config.IdentifierFromProvider,
+	// "aws_opsworks_rds_db_instance": config.IdentifierFromProvider,
 	// No import
 	// TODO: For now API is not normalized. While testing resource we can check the actual ID and normalize the API.
-	"aws_opsworks_permission": config.IdentifierFromProvider,
+	// "aws_opsworks_permission": config.IdentifierFromProvider,
 }
 
 func lambdaFunctionURL() config.ExternalName {

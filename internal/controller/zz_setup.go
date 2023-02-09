@@ -366,37 +366,9 @@ import (
 	parametergroupmemorydb "github.com/upbound/provider-aws/internal/controller/memorydb/parametergroup"
 	snapshot "github.com/upbound/provider-aws/internal/controller/memorydb/snapshot"
 	subnetgroupmemorydb "github.com/upbound/provider-aws/internal/controller/memorydb/subnetgroup"
-	firewallpolicy "github.com/upbound/provider-aws/internal/controller/networkfirewall/firewallpolicy"
-	rulegroup "github.com/upbound/provider-aws/internal/controller/networkfirewall/rulegroup"
-	connectionnetworkmanager "github.com/upbound/provider-aws/internal/controller/networkmanager/connection"
-	customergatewayassociation "github.com/upbound/provider-aws/internal/controller/networkmanager/customergatewayassociation"
-	device "github.com/upbound/provider-aws/internal/controller/networkmanager/device"
-	globalnetwork "github.com/upbound/provider-aws/internal/controller/networkmanager/globalnetwork"
-	link "github.com/upbound/provider-aws/internal/controller/networkmanager/link"
-	linkassociation "github.com/upbound/provider-aws/internal/controller/networkmanager/linkassociation"
-	site "github.com/upbound/provider-aws/internal/controller/networkmanager/site"
-	transitgatewayconnectpeerassociation "github.com/upbound/provider-aws/internal/controller/networkmanager/transitgatewayconnectpeerassociation"
-	transitgatewayregistration "github.com/upbound/provider-aws/internal/controller/networkmanager/transitgatewayregistration"
 	domainopensearch "github.com/upbound/provider-aws/internal/controller/opensearch/domain"
 	domainpolicy "github.com/upbound/provider-aws/internal/controller/opensearch/domainpolicy"
 	domainsamloptions "github.com/upbound/provider-aws/internal/controller/opensearch/domainsamloptions"
-	applicationopsworks "github.com/upbound/provider-aws/internal/controller/opsworks/application"
-	customlayer "github.com/upbound/provider-aws/internal/controller/opsworks/customlayer"
-	ecsclusterlayer "github.com/upbound/provider-aws/internal/controller/opsworks/ecsclusterlayer"
-	ganglialayer "github.com/upbound/provider-aws/internal/controller/opsworks/ganglialayer"
-	haproxylayer "github.com/upbound/provider-aws/internal/controller/opsworks/haproxylayer"
-	instanceopsworks "github.com/upbound/provider-aws/internal/controller/opsworks/instance"
-	javaapplayer "github.com/upbound/provider-aws/internal/controller/opsworks/javaapplayer"
-	memcachedlayer "github.com/upbound/provider-aws/internal/controller/opsworks/memcachedlayer"
-	mysqllayer "github.com/upbound/provider-aws/internal/controller/opsworks/mysqllayer"
-	nodejsapplayer "github.com/upbound/provider-aws/internal/controller/opsworks/nodejsapplayer"
-	permissionopsworks "github.com/upbound/provider-aws/internal/controller/opsworks/permission"
-	phpapplayer "github.com/upbound/provider-aws/internal/controller/opsworks/phpapplayer"
-	railsapplayer "github.com/upbound/provider-aws/internal/controller/opsworks/railsapplayer"
-	rdsdbinstance "github.com/upbound/provider-aws/internal/controller/opsworks/rdsdbinstance"
-	stackopsworks "github.com/upbound/provider-aws/internal/controller/opsworks/stack"
-	staticweblayer "github.com/upbound/provider-aws/internal/controller/opsworks/staticweblayer"
-	userprofile "github.com/upbound/provider-aws/internal/controller/opsworks/userprofile"
 	accountorganizations "github.com/upbound/provider-aws/internal/controller/organizations/account"
 	delegatedadministrator "github.com/upbound/provider-aws/internal/controller/organizations/delegatedadministrator"
 	organization "github.com/upbound/provider-aws/internal/controller/organizations/organization"
@@ -515,19 +487,6 @@ import (
 	publicdnsnamespace "github.com/upbound/provider-aws/internal/controller/servicediscovery/publicdnsnamespace"
 	serviceservicediscovery "github.com/upbound/provider-aws/internal/controller/servicediscovery/service"
 	servicequota "github.com/upbound/provider-aws/internal/controller/servicequotas/servicequota"
-	activereceiptruleset "github.com/upbound/provider-aws/internal/controller/ses/activereceiptruleset"
-	configurationset "github.com/upbound/provider-aws/internal/controller/ses/configurationset"
-	domaindkim "github.com/upbound/provider-aws/internal/controller/ses/domaindkim"
-	domainidentity "github.com/upbound/provider-aws/internal/controller/ses/domainidentity"
-	domainmailfrom "github.com/upbound/provider-aws/internal/controller/ses/domainmailfrom"
-	emailidentity "github.com/upbound/provider-aws/internal/controller/ses/emailidentity"
-	eventdestination "github.com/upbound/provider-aws/internal/controller/ses/eventdestination"
-	identitynotificationtopic "github.com/upbound/provider-aws/internal/controller/ses/identitynotificationtopic"
-	identitypolicy "github.com/upbound/provider-aws/internal/controller/ses/identitypolicy"
-	receiptfilter "github.com/upbound/provider-aws/internal/controller/ses/receiptfilter"
-	receiptrule "github.com/upbound/provider-aws/internal/controller/ses/receiptrule"
-	receiptruleset "github.com/upbound/provider-aws/internal/controller/ses/receiptruleset"
-	template "github.com/upbound/provider-aws/internal/controller/ses/template"
 	activity "github.com/upbound/provider-aws/internal/controller/sfn/activity"
 	statemachine "github.com/upbound/provider-aws/internal/controller/sfn/statemachine"
 	signingjob "github.com/upbound/provider-aws/internal/controller/signer/signingjob"
@@ -554,11 +513,6 @@ import (
 	domainswf "github.com/upbound/provider-aws/internal/controller/swf/domain"
 	database "github.com/upbound/provider-aws/internal/controller/timestreamwrite/database"
 	tabletimestreamwrite "github.com/upbound/provider-aws/internal/controller/timestreamwrite/table"
-	directoryworkspaces "github.com/upbound/provider-aws/internal/controller/workspaces/directory"
-	ipgroup "github.com/upbound/provider-aws/internal/controller/workspaces/ipgroup"
-	encryptionconfig "github.com/upbound/provider-aws/internal/controller/xray/encryptionconfig"
-	groupxray "github.com/upbound/provider-aws/internal/controller/xray/group"
-	samplingrule "github.com/upbound/provider-aws/internal/controller/xray/samplingrule"
 )
 
 // Setup creates all controllers with the supplied logger and adds them to
@@ -922,37 +876,9 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		parametergroupmemorydb.Setup,
 		snapshot.Setup,
 		subnetgroupmemorydb.Setup,
-		firewallpolicy.Setup,
-		rulegroup.Setup,
-		connectionnetworkmanager.Setup,
-		customergatewayassociation.Setup,
-		device.Setup,
-		globalnetwork.Setup,
-		link.Setup,
-		linkassociation.Setup,
-		site.Setup,
-		transitgatewayconnectpeerassociation.Setup,
-		transitgatewayregistration.Setup,
 		domainopensearch.Setup,
 		domainpolicy.Setup,
 		domainsamloptions.Setup,
-		applicationopsworks.Setup,
-		customlayer.Setup,
-		ecsclusterlayer.Setup,
-		ganglialayer.Setup,
-		haproxylayer.Setup,
-		instanceopsworks.Setup,
-		javaapplayer.Setup,
-		memcachedlayer.Setup,
-		mysqllayer.Setup,
-		nodejsapplayer.Setup,
-		permissionopsworks.Setup,
-		phpapplayer.Setup,
-		railsapplayer.Setup,
-		rdsdbinstance.Setup,
-		stackopsworks.Setup,
-		staticweblayer.Setup,
-		userprofile.Setup,
 		accountorganizations.Setup,
 		delegatedadministrator.Setup,
 		organization.Setup,
@@ -1071,19 +997,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		publicdnsnamespace.Setup,
 		serviceservicediscovery.Setup,
 		servicequota.Setup,
-		activereceiptruleset.Setup,
-		configurationset.Setup,
-		domaindkim.Setup,
-		domainidentity.Setup,
-		domainmailfrom.Setup,
-		emailidentity.Setup,
-		eventdestination.Setup,
-		identitynotificationtopic.Setup,
-		identitypolicy.Setup,
-		receiptfilter.Setup,
-		receiptrule.Setup,
-		receiptruleset.Setup,
-		template.Setup,
 		activity.Setup,
 		statemachine.Setup,
 		signingjob.Setup,
@@ -1110,11 +1023,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		domainswf.Setup,
 		database.Setup,
 		tabletimestreamwrite.Setup,
-		directoryworkspaces.Setup,
-		ipgroup.Setup,
-		encryptionconfig.Setup,
-		groupxray.Setup,
-		samplingrule.Setup,
 	} {
 		if err := setup(mgr, o); err != nil {
 			return err

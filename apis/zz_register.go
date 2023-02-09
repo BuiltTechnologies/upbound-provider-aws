@@ -76,10 +76,7 @@ import (
 	v1beta1mediapackage "github.com/upbound/provider-aws/apis/mediapackage/v1beta1"
 	v1beta1mediastore "github.com/upbound/provider-aws/apis/mediastore/v1beta1"
 	v1beta1memorydb "github.com/upbound/provider-aws/apis/memorydb/v1beta1"
-	v1beta1networkfirewall "github.com/upbound/provider-aws/apis/networkfirewall/v1beta1"
-	v1beta1networkmanager "github.com/upbound/provider-aws/apis/networkmanager/v1beta1"
 	v1beta1opensearch "github.com/upbound/provider-aws/apis/opensearch/v1beta1"
-	v1beta1opsworks "github.com/upbound/provider-aws/apis/opsworks/v1beta1"
 	v1beta1organizations "github.com/upbound/provider-aws/apis/organizations/v1beta1"
 	v1beta1pinpoint "github.com/upbound/provider-aws/apis/pinpoint/v1beta1"
 	v1beta1qldb "github.com/upbound/provider-aws/apis/qldb/v1beta1"
@@ -100,7 +97,6 @@ import (
 	v1beta1servicecatalog "github.com/upbound/provider-aws/apis/servicecatalog/v1beta1"
 	v1beta1servicediscovery "github.com/upbound/provider-aws/apis/servicediscovery/v1beta1"
 	v1beta1servicequotas "github.com/upbound/provider-aws/apis/servicequotas/v1beta1"
-	v1beta1ses "github.com/upbound/provider-aws/apis/ses/v1beta1"
 	v1beta1sfn "github.com/upbound/provider-aws/apis/sfn/v1beta1"
 	v1beta1signer "github.com/upbound/provider-aws/apis/signer/v1beta1"
 	v1beta1simpledb "github.com/upbound/provider-aws/apis/simpledb/v1beta1"
@@ -111,8 +107,6 @@ import (
 	v1beta1timestreamwrite "github.com/upbound/provider-aws/apis/timestreamwrite/v1beta1"
 	v1alpha1 "github.com/upbound/provider-aws/apis/v1alpha1"
 	v1beta1apis "github.com/upbound/provider-aws/apis/v1beta1"
-	v1beta1workspaces "github.com/upbound/provider-aws/apis/workspaces/v1beta1"
-	v1beta1xray "github.com/upbound/provider-aws/apis/xray/v1beta1"
 )
 
 func init() {
@@ -184,10 +178,7 @@ func init() {
 		v1beta1mediapackage.SchemeBuilder.AddToScheme,
 		v1beta1mediastore.SchemeBuilder.AddToScheme,
 		v1beta1memorydb.SchemeBuilder.AddToScheme,
-		v1beta1networkfirewall.SchemeBuilder.AddToScheme,
-		v1beta1networkmanager.SchemeBuilder.AddToScheme,
 		v1beta1opensearch.SchemeBuilder.AddToScheme,
-		v1beta1opsworks.SchemeBuilder.AddToScheme,
 		v1beta1organizations.SchemeBuilder.AddToScheme,
 		v1beta1pinpoint.SchemeBuilder.AddToScheme,
 		v1beta1qldb.SchemeBuilder.AddToScheme,
@@ -208,7 +199,6 @@ func init() {
 		v1beta1servicecatalog.SchemeBuilder.AddToScheme,
 		v1beta1servicediscovery.SchemeBuilder.AddToScheme,
 		v1beta1servicequotas.SchemeBuilder.AddToScheme,
-		v1beta1ses.SchemeBuilder.AddToScheme,
 		v1beta1sfn.SchemeBuilder.AddToScheme,
 		v1beta1signer.SchemeBuilder.AddToScheme,
 		v1beta1simpledb.SchemeBuilder.AddToScheme,
@@ -219,8 +209,6 @@ func init() {
 		v1beta1timestreamwrite.SchemeBuilder.AddToScheme,
 		v1alpha1.SchemeBuilder.AddToScheme,
 		v1beta1apis.SchemeBuilder.AddToScheme,
-		v1beta1workspaces.SchemeBuilder.AddToScheme,
-		v1beta1xray.SchemeBuilder.AddToScheme,
 	)
 }
 
