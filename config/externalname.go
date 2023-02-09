@@ -916,9 +916,9 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// licensemanager
 	//
 	// License configurations can be imported in the form resource_arn,license_configuration_arn
-	"aws_licensemanager_association": FormattedIdentifierFromProvider(",", "resource_arn", "license_configuration_arn"),
+	// "aws_licensemanager_association": FormattedIdentifierFromProvider(",", "resource_arn", "license_configuration_arn"),
 	// License configurations can be imported using the id
-	"aws_licensemanager_license_configuration": config.IdentifierFromProvider,
+	// "aws_licensemanager_license_configuration": config.IdentifierFromProvider,
 
 	// lambda
 	//
@@ -957,13 +957,13 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// athena
 	//
 	// Athena Workgroups can be imported using their name
-	"aws_athena_workgroup": config.NameAsIdentifier,
+	// "aws_athena_workgroup": config.NameAsIdentifier,
 	// Data catalogs can be imported using their name
-	"aws_athena_data_catalog": config.NameAsIdentifier,
+	// "aws_athena_data_catalog": config.NameAsIdentifier,
 	// Athena Databases can be imported using their name
-	"aws_athena_database": config.NameAsIdentifier,
+	// "aws_athena_database": config.NameAsIdentifier,
 	// Athena Named Query can be imported using the query ID
-	"aws_athena_named_query": config.IdentifierFromProvider,
+	// "aws_athena_named_query": config.IdentifierFromProvider,
 
 	// cloudwatchlogs
 	//
@@ -1015,9 +1015,9 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// iot
 	//
 	// IoT policies can be imported using the name
-	"aws_iot_policy": config.NameAsIdentifier,
+	// "aws_iot_policy": config.NameAsIdentifier,
 	// IOT Things can be imported using the name
-	"aws_iot_thing": config.NameAsIdentifier,
+	// "aws_iot_thing": config.NameAsIdentifier,
 
 	// kafka
 	//
@@ -1884,32 +1884,32 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	//
 	// No import
 	// TODO: For now API is not normalized. While testing resource we can check the actual ID and normalize the API.
-	"aws_iot_certificate": config.IdentifierFromProvider,
+	// "aws_iot_certificate": config.IdentifierFromProvider,
 	// No import
 	// TODO: For now API is not normalized. While testing resource we can check the actual ID and normalize the API.
-	"aws_iot_indexing_configuration": config.IdentifierFromProvider,
+	// "aws_iot_indexing_configuration": config.IdentifierFromProvider,
 	// No import
 	// TODO: For now API is not normalized. While testing resource we can check the actual ID and normalize the API.
-	"aws_iot_logging_options": config.IdentifierFromProvider,
+	// "aws_iot_logging_options": config.IdentifierFromProvider,
 	// No import
 	// TODO: For now API is not normalized. While testing resource we can check the actual ID and normalize the API.
-	"aws_iot_policy_attachment": config.IdentifierFromProvider,
+	// "aws_iot_policy_attachment": config.IdentifierFromProvider,
 	// IoT fleet provisioning templates can be imported using the name
-	"aws_iot_provisioning_template": config.NameAsIdentifier,
+	// "aws_iot_provisioning_template": config.NameAsIdentifier,
 	// IOT Role Alias can be imported via the alias
-	"aws_iot_role_alias": config.IdentifierFromProvider,
+	// "aws_iot_role_alias": config.IdentifierFromProvider,
 	// IoT Things Groups can be imported using the name
-	"aws_iot_thing_group": config.NameAsIdentifier,
+	// "aws_iot_thing_group": config.NameAsIdentifier,
 	// IoT Thing Group Membership can be imported using the thing group name and thing name
 	// thing_group_name/thing_name
-	"aws_iot_thing_group_membership": FormattedIdentifierFromProvider("/", "thing_group_name", "thing_name"),
+	// "aws_iot_thing_group_membership": FormattedIdentifierFromProvider("/", "thing_group_name", "thing_name"),
 	// No import
 	// TODO: For now API is not normalized. While testing resource we can check the actual ID and normalize the API.
-	"aws_iot_thing_principal_attachment": config.IdentifierFromProvider,
+	// "aws_iot_thing_principal_attachment": config.IdentifierFromProvider,
 	// IOT Thing Types can be imported using the name
-	"aws_iot_thing_type": config.IdentifierFromProvider,
+	// "aws_iot_thing_type": config.IdentifierFromProvider,
 	// IoT Topic Rules can be imported using the name
-	"aws_iot_topic_rule": config.NameAsIdentifier,
+	// "aws_iot_topic_rule": config.NameAsIdentifier,
 
 	// sagemaker
 	//

@@ -74,10 +74,6 @@ import (
 	function "github.com/upbound/provider-aws/internal/controller/appsync/function"
 	graphqlapi "github.com/upbound/provider-aws/internal/controller/appsync/graphqlapi"
 	resolver "github.com/upbound/provider-aws/internal/controller/appsync/resolver"
-	database "github.com/upbound/provider-aws/internal/controller/athena/database"
-	datacatalog "github.com/upbound/provider-aws/internal/controller/athena/datacatalog"
-	namedquery "github.com/upbound/provider-aws/internal/controller/athena/namedquery"
-	workgroup "github.com/upbound/provider-aws/internal/controller/athena/workgroup"
 	grouptag "github.com/upbound/provider-aws/internal/controller/autoscaling/grouptag"
 	launchconfiguration "github.com/upbound/provider-aws/internal/controller/autoscaling/launchconfiguration"
 	lifecyclehook "github.com/upbound/provider-aws/internal/controller/autoscaling/lifecyclehook"
@@ -393,19 +389,6 @@ import (
 	assessmenttarget "github.com/upbound/provider-aws/internal/controller/inspector/assessmenttarget"
 	assessmenttemplate "github.com/upbound/provider-aws/internal/controller/inspector/assessmenttemplate"
 	resourcegroup "github.com/upbound/provider-aws/internal/controller/inspector/resourcegroup"
-	certificateiot "github.com/upbound/provider-aws/internal/controller/iot/certificate"
-	indexingconfiguration "github.com/upbound/provider-aws/internal/controller/iot/indexingconfiguration"
-	loggingoptions "github.com/upbound/provider-aws/internal/controller/iot/loggingoptions"
-	policyiot "github.com/upbound/provider-aws/internal/controller/iot/policy"
-	policyattachment "github.com/upbound/provider-aws/internal/controller/iot/policyattachment"
-	provisioningtemplate "github.com/upbound/provider-aws/internal/controller/iot/provisioningtemplate"
-	rolealias "github.com/upbound/provider-aws/internal/controller/iot/rolealias"
-	thing "github.com/upbound/provider-aws/internal/controller/iot/thing"
-	thinggroup "github.com/upbound/provider-aws/internal/controller/iot/thinggroup"
-	thinggroupmembership "github.com/upbound/provider-aws/internal/controller/iot/thinggroupmembership"
-	thingprincipalattachment "github.com/upbound/provider-aws/internal/controller/iot/thingprincipalattachment"
-	thingtype "github.com/upbound/provider-aws/internal/controller/iot/thingtype"
-	topicrule "github.com/upbound/provider-aws/internal/controller/iot/topicrule"
 	clusterkafka "github.com/upbound/provider-aws/internal/controller/kafka/cluster"
 	configuration "github.com/upbound/provider-aws/internal/controller/kafka/configuration"
 	keyspace "github.com/upbound/provider-aws/internal/controller/keyspaces/keyspace"
@@ -434,8 +417,6 @@ import (
 	layerversionpermission "github.com/upbound/provider-aws/internal/controller/lambda/layerversionpermission"
 	permissionlambda "github.com/upbound/provider-aws/internal/controller/lambda/permission"
 	provisionedconcurrencyconfig "github.com/upbound/provider-aws/internal/controller/lambda/provisionedconcurrencyconfig"
-	association "github.com/upbound/provider-aws/internal/controller/licensemanager/association"
-	licenseconfiguration "github.com/upbound/provider-aws/internal/controller/licensemanager/licenseconfiguration"
 	domainlightsail "github.com/upbound/provider-aws/internal/controller/lightsail/domain"
 	instancelightsail "github.com/upbound/provider-aws/internal/controller/lightsail/instance"
 	instancepublicports "github.com/upbound/provider-aws/internal/controller/lightsail/instancepublicports"
@@ -493,7 +474,7 @@ import (
 	organization "github.com/upbound/provider-aws/internal/controller/organizations/organization"
 	organizationalunit "github.com/upbound/provider-aws/internal/controller/organizations/organizationalunit"
 	policyorganizations "github.com/upbound/provider-aws/internal/controller/organizations/policy"
-	policyattachmentorganizations "github.com/upbound/provider-aws/internal/controller/organizations/policyattachment"
+	policyattachment "github.com/upbound/provider-aws/internal/controller/organizations/policyattachment"
 	apppinpoint "github.com/upbound/provider-aws/internal/controller/pinpoint/app"
 	smschannel "github.com/upbound/provider-aws/internal/controller/pinpoint/smschannel"
 	providerconfig "github.com/upbound/provider-aws/internal/controller/providerconfig"
@@ -660,7 +641,7 @@ import (
 	queuesqs "github.com/upbound/provider-aws/internal/controller/sqs/queue"
 	queuepolicy "github.com/upbound/provider-aws/internal/controller/sqs/queuepolicy"
 	activation "github.com/upbound/provider-aws/internal/controller/ssm/activation"
-	associationssm "github.com/upbound/provider-aws/internal/controller/ssm/association"
+	association "github.com/upbound/provider-aws/internal/controller/ssm/association"
 	document "github.com/upbound/provider-aws/internal/controller/ssm/document"
 	maintenancewindow "github.com/upbound/provider-aws/internal/controller/ssm/maintenancewindow"
 	maintenancewindowtarget "github.com/upbound/provider-aws/internal/controller/ssm/maintenancewindowtarget"
@@ -670,7 +651,7 @@ import (
 	patchgroup "github.com/upbound/provider-aws/internal/controller/ssm/patchgroup"
 	resourcedatasync "github.com/upbound/provider-aws/internal/controller/ssm/resourcedatasync"
 	domainswf "github.com/upbound/provider-aws/internal/controller/swf/domain"
-	databasetimestreamwrite "github.com/upbound/provider-aws/internal/controller/timestreamwrite/database"
+	database "github.com/upbound/provider-aws/internal/controller/timestreamwrite/database"
 	tabletimestreamwrite "github.com/upbound/provider-aws/internal/controller/timestreamwrite/table"
 	bytematchset "github.com/upbound/provider-aws/internal/controller/waf/bytematchset"
 	geomatchset "github.com/upbound/provider-aws/internal/controller/waf/geomatchset"
@@ -772,10 +753,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		function.Setup,
 		graphqlapi.Setup,
 		resolver.Setup,
-		database.Setup,
-		datacatalog.Setup,
-		namedquery.Setup,
-		workgroup.Setup,
 		grouptag.Setup,
 		launchconfiguration.Setup,
 		lifecyclehook.Setup,
@@ -1091,19 +1068,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		assessmenttarget.Setup,
 		assessmenttemplate.Setup,
 		resourcegroup.Setup,
-		certificateiot.Setup,
-		indexingconfiguration.Setup,
-		loggingoptions.Setup,
-		policyiot.Setup,
-		policyattachment.Setup,
-		provisioningtemplate.Setup,
-		rolealias.Setup,
-		thing.Setup,
-		thinggroup.Setup,
-		thinggroupmembership.Setup,
-		thingprincipalattachment.Setup,
-		thingtype.Setup,
-		topicrule.Setup,
 		clusterkafka.Setup,
 		configuration.Setup,
 		keyspace.Setup,
@@ -1132,8 +1096,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		layerversionpermission.Setup,
 		permissionlambda.Setup,
 		provisionedconcurrencyconfig.Setup,
-		association.Setup,
-		licenseconfiguration.Setup,
 		domainlightsail.Setup,
 		instancelightsail.Setup,
 		instancepublicports.Setup,
@@ -1191,7 +1153,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		organization.Setup,
 		organizationalunit.Setup,
 		policyorganizations.Setup,
-		policyattachmentorganizations.Setup,
+		policyattachment.Setup,
 		apppinpoint.Setup,
 		smschannel.Setup,
 		providerconfig.Setup,
@@ -1358,7 +1320,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		queuesqs.Setup,
 		queuepolicy.Setup,
 		activation.Setup,
-		associationssm.Setup,
+		association.Setup,
 		document.Setup,
 		maintenancewindow.Setup,
 		maintenancewindowtarget.Setup,
@@ -1368,7 +1330,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		patchgroup.Setup,
 		resourcedatasync.Setup,
 		domainswf.Setup,
-		databasetimestreamwrite.Setup,
+		database.Setup,
 		tabletimestreamwrite.Setup,
 		bytematchset.Setup,
 		geomatchset.Setup,

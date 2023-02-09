@@ -22,7 +22,6 @@ import (
 	v1beta1apprunner "github.com/upbound/provider-aws/apis/apprunner/v1beta1"
 	v1beta1appstream "github.com/upbound/provider-aws/apis/appstream/v1beta1"
 	v1beta1appsync "github.com/upbound/provider-aws/apis/appsync/v1beta1"
-	v1beta1athena "github.com/upbound/provider-aws/apis/athena/v1beta1"
 	v1beta1autoscaling "github.com/upbound/provider-aws/apis/autoscaling/v1beta1"
 	v1beta1autoscalingplans "github.com/upbound/provider-aws/apis/autoscalingplans/v1beta1"
 	v1beta1batch "github.com/upbound/provider-aws/apis/batch/v1beta1"
@@ -76,7 +75,6 @@ import (
 	v1beta1iam "github.com/upbound/provider-aws/apis/iam/v1beta1"
 	v1beta1imagebuilder "github.com/upbound/provider-aws/apis/imagebuilder/v1beta1"
 	v1beta1inspector "github.com/upbound/provider-aws/apis/inspector/v1beta1"
-	v1beta1iot "github.com/upbound/provider-aws/apis/iot/v1beta1"
 	v1beta1kafka "github.com/upbound/provider-aws/apis/kafka/v1beta1"
 	v1beta1keyspaces "github.com/upbound/provider-aws/apis/keyspaces/v1beta1"
 	v1beta1kinesis "github.com/upbound/provider-aws/apis/kinesis/v1beta1"
@@ -85,7 +83,6 @@ import (
 	v1beta1kinesisvideo "github.com/upbound/provider-aws/apis/kinesisvideo/v1beta1"
 	v1beta1kms "github.com/upbound/provider-aws/apis/kms/v1beta1"
 	v1beta1lambda "github.com/upbound/provider-aws/apis/lambda/v1beta1"
-	v1beta1licensemanager "github.com/upbound/provider-aws/apis/licensemanager/v1beta1"
 	v1beta1lightsail "github.com/upbound/provider-aws/apis/lightsail/v1beta1"
 	v1beta1macie2 "github.com/upbound/provider-aws/apis/macie2/v1beta1"
 	v1beta1mediaconvert "github.com/upbound/provider-aws/apis/mediaconvert/v1beta1"
@@ -151,7 +148,6 @@ func init() {
 		v1beta1apprunner.SchemeBuilder.AddToScheme,
 		v1beta1appstream.SchemeBuilder.AddToScheme,
 		v1beta1appsync.SchemeBuilder.AddToScheme,
-		v1beta1athena.SchemeBuilder.AddToScheme,
 		v1beta1autoscaling.SchemeBuilder.AddToScheme,
 		v1beta1autoscalingplans.SchemeBuilder.AddToScheme,
 		v1beta1batch.SchemeBuilder.AddToScheme,
@@ -205,7 +201,6 @@ func init() {
 		v1beta1iam.SchemeBuilder.AddToScheme,
 		v1beta1imagebuilder.SchemeBuilder.AddToScheme,
 		v1beta1inspector.SchemeBuilder.AddToScheme,
-		v1beta1iot.SchemeBuilder.AddToScheme,
 		v1beta1kafka.SchemeBuilder.AddToScheme,
 		v1beta1keyspaces.SchemeBuilder.AddToScheme,
 		v1beta1kinesis.SchemeBuilder.AddToScheme,
@@ -214,7 +209,6 @@ func init() {
 		v1beta1kinesisvideo.SchemeBuilder.AddToScheme,
 		v1beta1kms.SchemeBuilder.AddToScheme,
 		v1beta1lambda.SchemeBuilder.AddToScheme,
-		v1beta1licensemanager.SchemeBuilder.AddToScheme,
 		v1beta1lightsail.SchemeBuilder.AddToScheme,
 		v1beta1macie2.SchemeBuilder.AddToScheme,
 		v1beta1mediaconvert.SchemeBuilder.AddToScheme,

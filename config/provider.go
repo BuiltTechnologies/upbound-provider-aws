@@ -17,7 +17,8 @@ import (
 	// "github.com/upbound/provider-aws/config/apigatewayv2"
 	"github.com/upbound/provider-aws/config/apprunner"
 	"github.com/upbound/provider-aws/config/appstream"
-	"github.com/upbound/provider-aws/config/athena"
+
+	// "github.com/upbound/provider-aws/config/athena"
 	// "github.com/upbound/provider-aws/config/autoscaling"
 	// "github.com/upbound/provider-aws/config/backup"
 	"github.com/upbound/provider-aws/config/budgets"
@@ -26,6 +27,7 @@ import (
 	"github.com/upbound/provider-aws/config/cloudwatch"
 	"github.com/upbound/provider-aws/config/cloudwatchevents"
 	"github.com/upbound/provider-aws/config/cloudwatchlogs"
+
 	// "github.com/upbound/provider-aws/config/cognitoidentity"
 	// "github.com/upbound/provider-aws/config/cognitoidp"
 	"github.com/upbound/provider-aws/config/connect"
@@ -33,6 +35,7 @@ import (
 	"github.com/upbound/provider-aws/config/dax"
 	"github.com/upbound/provider-aws/config/devicefarm"
 	"github.com/upbound/provider-aws/config/directconnect"
+
 	// "github.com/upbound/provider-aws/config/docdb"
 	"github.com/upbound/provider-aws/config/ds"
 	"github.com/upbound/provider-aws/config/dynamodb"
@@ -49,6 +52,7 @@ import (
 	"github.com/upbound/provider-aws/config/elbv2"
 	"github.com/upbound/provider-aws/config/firehose"
 	"github.com/upbound/provider-aws/config/fsx"
+
 	// "github.com/upbound/provider-aws/config/gamelift"
 	"github.com/upbound/provider-aws/config/globalaccelerator"
 	// "github.com/upbound/provider-aws/config/glue"
@@ -59,9 +63,10 @@ import (
 	"github.com/upbound/provider-aws/config/kinesisanalytics"
 	kinesisanalytics2 "github.com/upbound/provider-aws/config/kinesisanalyticsv2"
 	"github.com/upbound/provider-aws/config/kms"
+
 	// "github.com/upbound/provider-aws/config/lakeformation"
 	"github.com/upbound/provider-aws/config/lambda"
-	"github.com/upbound/provider-aws/config/licensemanager"
+	// "github.com/upbound/provider-aws/config/licensemanager"
 	// "github.com/upbound/provider-aws/config/mq"
 	// "github.com/upbound/provider-aws/config/neptune"
 	"github.com/upbound/provider-aws/config/networkmanager"
@@ -159,7 +164,7 @@ func GetProvider() *config.Provider {
 		// apigatewayv2.Configure,
 		apprunner.Configure,
 		appstream.Configure,
-		athena.Configure,
+		// athena.Configure,
 		// autoscaling.Configure,
 		// backup.Configure,
 		// cloudfront.Configure,
@@ -198,7 +203,7 @@ func GetProvider() *config.Provider {
 		kms.Configure,
 		// lakeformation.Configure,
 		lambda.Configure,
-		licensemanager.Configure,
+		// licensemanager.Configure,
 		// mq.Configure,
 		// neptune.Configure,
 		opensearch.Configure,
