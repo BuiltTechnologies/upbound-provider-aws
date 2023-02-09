@@ -9,8 +9,7 @@ import (
 	"context"
 	reference "github.com/crossplane/crossplane-runtime/pkg/reference"
 	errors "github.com/pkg/errors"
-	v1beta11 "github.com/upbound/provider-aws/apis/iam/v1beta1"
-	v1beta1 "github.com/upbound/provider-aws/apis/organizations/v1beta1"
+	v1beta1 "github.com/upbound/provider-aws/apis/iam/v1beta1"
 	common "github.com/upbound/provider-aws/config/common"
 	resource "github.com/upbound/upjet/pkg/resource"
 	client "sigs.k8s.io/controller-runtime/pkg/client"
@@ -101,24 +100,6 @@ func (mg *Permission) ResolveReferences(ctx context.Context, c client.Reader) er
 	var rsp reference.ResolutionResponse
 	var err error
 
-	for i3 := 0; i3 < len(mg.Spec.ForProvider.Condition); i3++ {
-		rsp, err = r.Resolve(ctx, reference.ResolutionRequest{
-			CurrentValue: reference.FromPtrValue(mg.Spec.ForProvider.Condition[i3].Value),
-			Extract:      resource.ExtractResourceID(),
-			Reference:    mg.Spec.ForProvider.Condition[i3].ValueRef,
-			Selector:     mg.Spec.ForProvider.Condition[i3].ValueSelector,
-			To: reference.To{
-				List:    &v1beta1.OrganizationList{},
-				Managed: &v1beta1.Organization{},
-			},
-		})
-		if err != nil {
-			return errors.Wrap(err, "mg.Spec.ForProvider.Condition[i3].Value")
-		}
-		mg.Spec.ForProvider.Condition[i3].Value = reference.ToPtrValue(rsp.ResolvedValue)
-		mg.Spec.ForProvider.Condition[i3].ValueRef = rsp.ResolvedReference
-
-	}
 	rsp, err = r.Resolve(ctx, reference.ResolutionRequest{
 		CurrentValue: reference.FromPtrValue(mg.Spec.ForProvider.EventBusName),
 		Extract:      reference.ExternalName(),
@@ -167,8 +148,8 @@ func (mg *Rule) ResolveReferences(ctx context.Context, c client.Reader) error {
 		Reference:    mg.Spec.ForProvider.RoleArnRef,
 		Selector:     mg.Spec.ForProvider.RoleArnSelector,
 		To: reference.To{
-			List:    &v1beta11.RoleList{},
-			Managed: &v1beta11.Role{},
+			List:    &v1beta1.RoleList{},
+			Managed: &v1beta1.Role{},
 		},
 	})
 	if err != nil {
@@ -209,8 +190,8 @@ func (mg *Target) ResolveReferences(ctx context.Context, c client.Reader) error 
 		Reference:    mg.Spec.ForProvider.RoleArnRef,
 		Selector:     mg.Spec.ForProvider.RoleArnSelector,
 		To: reference.To{
-			List:    &v1beta11.RoleList{},
-			Managed: &v1beta11.Role{},
+			List:    &v1beta1.RoleList{},
+			Managed: &v1beta1.Role{},
 		},
 	})
 	if err != nil {

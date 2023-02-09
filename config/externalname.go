@@ -1311,22 +1311,22 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// appsync
 	//
 	// aws_appsync_api_cache can be imported using the AppSync API ID
-	"aws_appsync_api_cache": config.IdentifierFromProvider,
+	// "aws_appsync_api_cache": config.IdentifierFromProvider,
 	// aws_appsync_api_key can be imported using the AppSync API ID and key separated by :
-	"aws_appsync_api_key": TemplatedStringAsIdentifierWithNoName("{{ .parameters.api_id }}:{{ .external_name }}"),
+	// "aws_appsync_api_key": TemplatedStringAsIdentifierWithNoName("{{ .parameters.api_id }}:{{ .external_name }}"),
 	// aws_appsync_datasource can be imported with their api_id, a hyphen, and name
-	"aws_appsync_datasource": config.TemplatedStringAsIdentifier("name", "{{ .parameters.api_id }}-{{ .external_name }}"),
+	// "aws_appsync_datasource": config.TemplatedStringAsIdentifier("name", "{{ .parameters.api_id }}-{{ .external_name }}"),
 	// aws_appsync_function can be imported using the AppSync API ID and Function ID separated by -
-	"aws_appsync_function": config.IdentifierFromProvider,
+	// "aws_appsync_function": config.IdentifierFromProvider,
 	// AppSync GraphQL API can be imported using the GraphQL API ID
-	"aws_appsync_graphql_api": config.IdentifierFromProvider,
+	// "aws_appsync_graphql_api": config.IdentifierFromProvider,
 	// aws_appsync_resolver can be imported with their api_id, a hyphen, type, a hypen and field
-	"aws_appsync_resolver": config.TemplatedStringAsIdentifier("", "{{ .parameters.api_id }}-{{ .parameters.type }}-{{ .parameters.field }}"),
+	// "aws_appsync_resolver": config.TemplatedStringAsIdentifier("", "{{ .parameters.api_id }}-{{ .parameters.type }}-{{ .parameters.field }}"),
 
 	// accessanalyzer
 	//
 	// Access Analyzer Analyzers can be imported using the analyzer_name
-	"aws_accessanalyzer_analyzer": config.ParameterAsIdentifier("analyzer_name"),
+	// "aws_accessanalyzer_analyzer": config.ParameterAsIdentifier("analyzer_name"),
 
 	// account
 	//
@@ -1336,13 +1336,13 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// amplify
 	//
 	// Amplify App can be imported using Amplify App ID (appId)
-	"aws_amplify_app": config.IdentifierFromProvider,
+	// "aws_amplify_app": config.IdentifierFromProvider,
 	// Amplify branch can be imported using app_id and branch_name: d2ypk4k47z8u6/master
-	"aws_amplify_branch": config.TemplatedStringAsIdentifier("branch_name", "{{ .parameters.app_id }}/{{ .external_name }}"),
+	// "aws_amplify_branch": config.TemplatedStringAsIdentifier("branch_name", "{{ .parameters.app_id }}/{{ .external_name }}"),
 	// Amplify backend environment can be imported using app_id and environment_name: d2ypk4k47z8u6/example
-	"aws_amplify_backend_environment": config.TemplatedStringAsIdentifier("environment_name", "{{ .parameters.app_id }}/{{ .external_name }}"),
+	// "aws_amplify_backend_environment": config.TemplatedStringAsIdentifier("environment_name", "{{ .parameters.app_id }}/{{ .external_name }}"),
 	// Amplify webhook can be imported using a webhook ID
-	"aws_amplify_webhook": config.IdentifierFromProvider,
+	// "aws_amplify_webhook": config.IdentifierFromProvider,
 
 	// cur
 	//
@@ -1352,59 +1352,59 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// dataexchange
 	//
 	// DataExchange DataSets can be imported by their arn
-	"aws_dataexchange_data_set": config.IdentifierFromProvider,
+	// "aws_dataexchange_data_set": config.IdentifierFromProvider,
 	// DataExchange Revisions can be imported by their data-set-id:revision-id
-	"aws_dataexchange_revision": config.IdentifierFromProvider,
+	// "aws_dataexchange_revision": config.IdentifierFromProvider,
 
 	// datapipeline
 	//
 	// aws_datapipeline_pipeline can be imported by using the id (Pipeline ID)
-	"aws_datapipeline_pipeline": config.IdentifierFromProvider,
+	// "aws_datapipeline_pipeline": config.IdentifierFromProvider,
 
 	// detective
 	//
 	// aws_detective_graph can be imported using the ARN
-	"aws_detective_graph": config.IdentifierFromProvider,
+	// "aws_detective_graph": config.IdentifierFromProvider,
 	// aws_detective_member can be imported using the ARN of the graph followed by the account ID of the member account
-	"aws_detective_member": config.IdentifierFromProvider,
+	// "aws_detective_member": config.IdentifierFromProvider,
 	// aws_detective_invitation_accepter can be imported using the graph ARN
-	"aws_detective_invitation_accepter": config.IdentifierFromProvider,
+	// "aws_detective_invitation_accepter": config.IdentifierFromProvider,
 
 	// devicefarm
 	//
 	// DeviceFarm Projects can be imported by their arn
-	"aws_devicefarm_project": config.IdentifierFromProvider,
+	// "aws_devicefarm_project": config.IdentifierFromProvider,
 	// DeviceFarm Instance Profiles can be imported by their arn
-	"aws_devicefarm_instance_profile": config.IdentifierFromProvider,
+	// "aws_devicefarm_instance_profile": config.IdentifierFromProvider,
 	// DeviceFarm Device Pools can be imported by their arn
-	"aws_devicefarm_device_pool": config.IdentifierFromProvider,
+	// "aws_devicefarm_device_pool": config.IdentifierFromProvider,
 	// DeviceFarm Network Profiles can be imported by their arn
-	"aws_devicefarm_network_profile": config.IdentifierFromProvider,
+	// "aws_devicefarm_network_profile": config.IdentifierFromProvider,
 	// DeviceFarm Uploads can be imported by their arn
-	"aws_devicefarm_upload": config.IdentifierFromProvider,
+	// "aws_devicefarm_upload": config.IdentifierFromProvider,
 	// DeviceFarm Test Grid Projects can be imported by their arn
-	"aws_devicefarm_test_grid_project": config.IdentifierFromProvider,
+	// "aws_devicefarm_test_grid_project": config.IdentifierFromProvider,
 
 	// organization
 	//
 	// imported by using the account id, which is provider-generated
-	"aws_organizations_account": config.IdentifierFromProvider,
+	// "aws_organizations_account": config.IdentifierFromProvider,
 	// imported by using the account ID and its service principal:
 	// 123456789012/config.amazonaws.com
-	"aws_organizations_delegated_administrator": FormattedIdentifierFromProvider("/", "account_id", "service_principal"),
+	// "aws_organizations_delegated_administrator": FormattedIdentifierFromProvider("/", "account_id", "service_principal"),
 	//  imported by using the id, which is a Cloud provider-generated string:
 	// o-1234567
-	"aws_organizations_organization": config.IdentifierFromProvider,
+	// "aws_organizations_organization": config.IdentifierFromProvider,
 	// imported by using the id, which is a Cloud provider-generated string:
 	// ou-1234567
-	"aws_organizations_organizational_unit": config.IdentifierFromProvider,
+	// "aws_organizations_organizational_unit": config.IdentifierFromProvider,
 	// imported by using the policy ID,
 	// which is a Cloud provider-generated string:
 	// p-12345678
-	"aws_organizations_policy": config.IdentifierFromProvider,
+	// "aws_organizations_policy": config.IdentifierFromProvider,
 	// imported by using the target ID and policy ID
 	// 123456789012:p-12345678
-	"aws_organizations_policy_attachment": FormattedIdentifierFromProvider(":", "target_id", "policy_id"),
+	// "aws_organizations_policy_attachment": FormattedIdentifierFromProvider(":", "target_id", "policy_id"),
 
 	// batch
 	//
@@ -1414,9 +1414,9 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// budgets
 	//
 	// Budgets can be imported using AccountID:BudgetName
-	"aws_budgets_budget": config.TemplatedStringAsIdentifier("name", "{{ .setup.client_metadata.account_id }}:{{ .external_name }}"),
+	// "aws_budgets_budget": config.TemplatedStringAsIdentifier("name", "{{ .setup.client_metadata.account_id }}:{{ .external_name }}"),
 	// Budgets can be imported using AccountID:ActionID:BudgetName
-	"aws_budgets_budget_action": config.IdentifierFromProvider,
+	// "aws_budgets_budget_action": config.IdentifierFromProvider,
 
 	// chime
 	//
@@ -1644,16 +1644,16 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	//
 	// imported using the tag option ID, which has provider-generated
 	// random parts: tag-pjtvagohlyo3m
-	"aws_servicecatalog_tag_option": config.IdentifierFromProvider,
+	// "aws_servicecatalog_tag_option": config.IdentifierFromProvider,
 	// imported using the service catalog portfolio id,
 	// which has provider-generated random parts:
 	// port-12344321
-	"aws_servicecatalog_portfolio": config.IdentifierFromProvider,
+	// "aws_servicecatalog_portfolio": config.IdentifierFromProvider,
 	// imported using the portfolio share ID: port-12344321:ACCOUNT:123456789012
 	// TODO: looks like we can generate the above ID using:
 	// portfolio_id:type:principal_id
 	// but this has to be validated
-	"aws_servicecatalog_portfolio_share": config.IdentifierFromProvider,
+	// "aws_servicecatalog_portfolio_share": config.IdentifierFromProvider,
 	// imported using the accept language, principal ARN, and portfolio ID, separated by a comma:
 	// en,arn:aws:iam::123456789012:user/Eleanor,port-68656c6c6f
 	// TODO: looks like we can generated the above id using:
@@ -1663,10 +1663,10 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// However, accept_language is optional. We had better make it required as
 	// the default is provided by Terraform (and we have no means to default
 	// the generated CRD fields as of now)
-	"aws_servicecatalog_principal_portfolio_association": config.IdentifierFromProvider,
+	// "aws_servicecatalog_principal_portfolio_association": config.IdentifierFromProvider,
 	// imported using the product ID, which has provider-generated random parts:
 	// prod-dnigbtea24ste
-	"aws_servicecatalog_product": config.IdentifierFromProvider,
+	// "aws_servicecatalog_product": config.IdentifierFromProvider,
 	// imported using the accept language, portfolio ID, and product ID:
 	// en:port-68656c6c6f:prod-dnigbtea24ste
 	// TODO: looks like we can generated the above id using:
@@ -1676,16 +1676,16 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// However, accept_language is optional. We had better make it required as
 	// the default is provided by Terraform (and we have no means to default
 	// the generated CRD fields as of now)
-	"aws_servicecatalog_product_portfolio_association": config.IdentifierFromProvider,
+	// "aws_servicecatalog_product_portfolio_association": config.IdentifierFromProvider,
 	// imported using the constraint ID, which has random parts
 	// generated by the provider: cons-nmdkb6cgxfcrs
-	"aws_servicecatalog_constraint": config.IdentifierFromProvider,
+	// "aws_servicecatalog_constraint": config.IdentifierFromProvider,
 	// imported using the tag option ID and resource ID:
 	// tag-pjtvyakdlyo3m:prod-dnigbtea24ste
-	"aws_servicecatalog_tag_option_resource_association": FormattedIdentifierFromProvider(":", "tag_option_id", "resource_id"),
+	// "aws_servicecatalog_tag_option_resource_association": FormattedIdentifierFromProvider(":", "tag_option_id", "resource_id"),
 	// imported using the budget name and resource ID:
 	// budget-pjtvyakdlyo3m:prod-dnigbtea24ste
-	"aws_servicecatalog_budget_resource_association": config.IdentifierFromProvider,
+	// "aws_servicecatalog_budget_resource_association": config.IdentifierFromProvider,
 	// imported using the provisioning artifact ID and product ID separated by a colon:
 	// pa-ij2b6lusy6dec:prod-el3an0rma3
 	// we could make the product_id attribute the name identifier
@@ -1693,10 +1693,10 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// artifact id, but product id does not does not look like to
 	// be a good external-name for this resource as this is the
 	// provisioning artifact resource.
-	"aws_servicecatalog_provisioning_artifact": config.IdentifierFromProvider,
+	// "aws_servicecatalog_provisioning_artifact": config.IdentifierFromProvider,
 	// imported using the service action ID. which has provider-generated
 	// random parts: act-f1w12eperfslh
-	"aws_servicecatalog_service_action": config.IdentifierFromProvider,
+	// "aws_servicecatalog_service_action": config.IdentifierFromProvider,
 
 	// keyspaces
 	//

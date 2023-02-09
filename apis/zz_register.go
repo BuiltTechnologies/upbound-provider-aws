@@ -10,17 +10,13 @@ package apis
 import (
 	"k8s.io/apimachinery/pkg/runtime"
 
-	v1beta1 "github.com/upbound/provider-aws/apis/accessanalyzer/v1beta1"
-	v1beta1account "github.com/upbound/provider-aws/apis/account/v1beta1"
-	v1beta1amplify "github.com/upbound/provider-aws/apis/amplify/v1beta1"
+	v1beta1 "github.com/upbound/provider-aws/apis/account/v1beta1"
 	v1beta1appconfig "github.com/upbound/provider-aws/apis/appconfig/v1beta1"
 	v1beta1appflow "github.com/upbound/provider-aws/apis/appflow/v1beta1"
 	v1beta1appintegrations "github.com/upbound/provider-aws/apis/appintegrations/v1beta1"
-	v1beta1appsync "github.com/upbound/provider-aws/apis/appsync/v1beta1"
 	v1beta1autoscaling "github.com/upbound/provider-aws/apis/autoscaling/v1beta1"
 	v1beta1autoscalingplans "github.com/upbound/provider-aws/apis/autoscalingplans/v1beta1"
 	v1beta1batch "github.com/upbound/provider-aws/apis/batch/v1beta1"
-	v1beta1budgets "github.com/upbound/provider-aws/apis/budgets/v1beta1"
 	v1beta1chime "github.com/upbound/provider-aws/apis/chime/v1beta1"
 	v1beta1cloud9 "github.com/upbound/provider-aws/apis/cloud9/v1beta1"
 	v1beta1cloudcontrol "github.com/upbound/provider-aws/apis/cloudcontrol/v1beta1"
@@ -30,10 +26,6 @@ import (
 	v1beta1cloudwatchevents "github.com/upbound/provider-aws/apis/cloudwatchevents/v1beta1"
 	v1beta1cloudwatchlogs "github.com/upbound/provider-aws/apis/cloudwatchlogs/v1beta1"
 	v1beta1cur "github.com/upbound/provider-aws/apis/cur/v1beta1"
-	v1beta1dataexchange "github.com/upbound/provider-aws/apis/dataexchange/v1beta1"
-	v1beta1datapipeline "github.com/upbound/provider-aws/apis/datapipeline/v1beta1"
-	v1beta1detective "github.com/upbound/provider-aws/apis/detective/v1beta1"
-	v1beta1devicefarm "github.com/upbound/provider-aws/apis/devicefarm/v1beta1"
 	v1beta1directconnect "github.com/upbound/provider-aws/apis/directconnect/v1beta1"
 	v1beta1dlm "github.com/upbound/provider-aws/apis/dlm/v1beta1"
 	v1beta1dms "github.com/upbound/provider-aws/apis/dms/v1beta1"
@@ -70,7 +62,6 @@ import (
 	v1beta1mediapackage "github.com/upbound/provider-aws/apis/mediapackage/v1beta1"
 	v1beta1mediastore "github.com/upbound/provider-aws/apis/mediastore/v1beta1"
 	v1beta1memorydb "github.com/upbound/provider-aws/apis/memorydb/v1beta1"
-	v1beta1organizations "github.com/upbound/provider-aws/apis/organizations/v1beta1"
 	v1beta1pinpoint "github.com/upbound/provider-aws/apis/pinpoint/v1beta1"
 	v1beta1qldb "github.com/upbound/provider-aws/apis/qldb/v1beta1"
 	v1beta1quicksight "github.com/upbound/provider-aws/apis/quicksight/v1beta1"
@@ -87,7 +78,6 @@ import (
 	v1beta1secretsmanager "github.com/upbound/provider-aws/apis/secretsmanager/v1beta1"
 	v1beta1securityhub "github.com/upbound/provider-aws/apis/securityhub/v1beta1"
 	v1beta1serverlessrepo "github.com/upbound/provider-aws/apis/serverlessrepo/v1beta1"
-	v1beta1servicecatalog "github.com/upbound/provider-aws/apis/servicecatalog/v1beta1"
 	v1beta1servicequotas "github.com/upbound/provider-aws/apis/servicequotas/v1beta1"
 	v1beta1signer "github.com/upbound/provider-aws/apis/signer/v1beta1"
 	v1beta1simpledb "github.com/upbound/provider-aws/apis/simpledb/v1beta1"
@@ -104,16 +94,12 @@ func init() {
 	// Register the types with the Scheme so the components can map objects to GroupVersionKinds and back
 	AddToSchemes = append(AddToSchemes,
 		v1beta1.SchemeBuilder.AddToScheme,
-		v1beta1account.SchemeBuilder.AddToScheme,
-		v1beta1amplify.SchemeBuilder.AddToScheme,
 		v1beta1appconfig.SchemeBuilder.AddToScheme,
 		v1beta1appflow.SchemeBuilder.AddToScheme,
 		v1beta1appintegrations.SchemeBuilder.AddToScheme,
-		v1beta1appsync.SchemeBuilder.AddToScheme,
 		v1beta1autoscaling.SchemeBuilder.AddToScheme,
 		v1beta1autoscalingplans.SchemeBuilder.AddToScheme,
 		v1beta1batch.SchemeBuilder.AddToScheme,
-		v1beta1budgets.SchemeBuilder.AddToScheme,
 		v1beta1chime.SchemeBuilder.AddToScheme,
 		v1beta1cloud9.SchemeBuilder.AddToScheme,
 		v1beta1cloudcontrol.SchemeBuilder.AddToScheme,
@@ -123,10 +109,6 @@ func init() {
 		v1beta1cloudwatchevents.SchemeBuilder.AddToScheme,
 		v1beta1cloudwatchlogs.SchemeBuilder.AddToScheme,
 		v1beta1cur.SchemeBuilder.AddToScheme,
-		v1beta1dataexchange.SchemeBuilder.AddToScheme,
-		v1beta1datapipeline.SchemeBuilder.AddToScheme,
-		v1beta1detective.SchemeBuilder.AddToScheme,
-		v1beta1devicefarm.SchemeBuilder.AddToScheme,
 		v1beta1directconnect.SchemeBuilder.AddToScheme,
 		v1beta1dlm.SchemeBuilder.AddToScheme,
 		v1beta1dms.SchemeBuilder.AddToScheme,
@@ -163,7 +145,6 @@ func init() {
 		v1beta1mediapackage.SchemeBuilder.AddToScheme,
 		v1beta1mediastore.SchemeBuilder.AddToScheme,
 		v1beta1memorydb.SchemeBuilder.AddToScheme,
-		v1beta1organizations.SchemeBuilder.AddToScheme,
 		v1beta1pinpoint.SchemeBuilder.AddToScheme,
 		v1beta1qldb.SchemeBuilder.AddToScheme,
 		v1beta1quicksight.SchemeBuilder.AddToScheme,
@@ -180,7 +161,6 @@ func init() {
 		v1beta1secretsmanager.SchemeBuilder.AddToScheme,
 		v1beta1securityhub.SchemeBuilder.AddToScheme,
 		v1beta1serverlessrepo.SchemeBuilder.AddToScheme,
-		v1beta1servicecatalog.SchemeBuilder.AddToScheme,
 		v1beta1servicequotas.SchemeBuilder.AddToScheme,
 		v1beta1signer.SchemeBuilder.AddToScheme,
 		v1beta1simpledb.SchemeBuilder.AddToScheme,

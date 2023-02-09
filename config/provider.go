@@ -21,7 +21,7 @@ import (
 	// "github.com/upbound/provider-aws/config/athena"
 	// "github.com/upbound/provider-aws/config/autoscaling"
 	// "github.com/upbound/provider-aws/config/backup"
-	"github.com/upbound/provider-aws/config/budgets"
+	// "github.com/upbound/provider-aws/config/budgets"
 	// "github.com/upbound/provider-aws/config/cloudfront"
 	// "github.com/upbound/provider-aws/config/cloudsearch"
 	"github.com/upbound/provider-aws/config/cloudwatch"
@@ -33,7 +33,7 @@ import (
 	// "github.com/upbound/provider-aws/config/connect"
 	"github.com/upbound/provider-aws/config/cur"
 	// "github.com/upbound/provider-aws/config/dax"
-	"github.com/upbound/provider-aws/config/devicefarm"
+	// "github.com/upbound/provider-aws/config/devicefarm"
 	"github.com/upbound/provider-aws/config/directconnect"
 
 	// "github.com/upbound/provider-aws/config/docdb"
@@ -72,7 +72,7 @@ import (
 	// "github.com/upbound/provider-aws/config/networkmanager"
 	// "github.com/upbound/provider-aws/config/opensearch"
 	// "github.com/upbound/provider-aws/config/opsworks"
-	"github.com/upbound/provider-aws/config/organization"
+	// "github.com/upbound/provider-aws/config/organization"
 	"github.com/upbound/provider-aws/config/qldb"
 	"github.com/upbound/provider-aws/config/rds"
 
@@ -83,7 +83,7 @@ import (
 	"github.com/upbound/provider-aws/config/s3"
 	// "github.com/upbound/provider-aws/config/sagemaker"
 	"github.com/upbound/provider-aws/config/secretsmanager"
-	"github.com/upbound/provider-aws/config/servicecatalog"
+	// "github.com/upbound/provider-aws/config/servicecatalog"
 	// "github.com/upbound/provider-aws/config/servicediscovery"
 	// "github.com/upbound/provider-aws/config/sfn"
 	"github.com/upbound/provider-aws/config/sns"
@@ -177,7 +177,7 @@ func GetProvider() *config.Provider {
 		// connect.Configure,
 		cur.Configure,
 		// dax.Configure,
-		devicefarm.Configure,
+		// devicefarm.Configure,
 		// docdb.Configure,
 		dynamodb.Configure,
 		ebs.Configure,
@@ -215,10 +215,10 @@ func GetProvider() *config.Provider {
 		route53recoverycontrolconfig.Configure,
 		s3.Configure,
 		secretsmanager.Configure,
-		servicecatalog.Configure,
-		organization.Configure,
+		// servicecatalog.Configure,
+		// organization.Configure,
 		cloudwatchevents.Configure,
-		budgets.Configure,
+		// budgets.Configure,
 		// servicediscovery.Configure,
 		// sfn.Configure,
 		sns.Configure,

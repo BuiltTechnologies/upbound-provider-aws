@@ -9,12 +9,7 @@ import (
 
 	"github.com/upbound/upjet/pkg/controller"
 
-	analyzer "github.com/upbound/provider-aws/internal/controller/accessanalyzer/analyzer"
 	alternatecontact "github.com/upbound/provider-aws/internal/controller/account/alternatecontact"
-	app "github.com/upbound/provider-aws/internal/controller/amplify/app"
-	backendenvironment "github.com/upbound/provider-aws/internal/controller/amplify/backendenvironment"
-	branch "github.com/upbound/provider-aws/internal/controller/amplify/branch"
-	webhook "github.com/upbound/provider-aws/internal/controller/amplify/webhook"
 	application "github.com/upbound/provider-aws/internal/controller/appconfig/application"
 	configurationprofile "github.com/upbound/provider-aws/internal/controller/appconfig/configurationprofile"
 	deployment "github.com/upbound/provider-aws/internal/controller/appconfig/deployment"
@@ -23,12 +18,6 @@ import (
 	hostedconfigurationversion "github.com/upbound/provider-aws/internal/controller/appconfig/hostedconfigurationversion"
 	flow "github.com/upbound/provider-aws/internal/controller/appflow/flow"
 	eventintegration "github.com/upbound/provider-aws/internal/controller/appintegrations/eventintegration"
-	apicache "github.com/upbound/provider-aws/internal/controller/appsync/apicache"
-	apikey "github.com/upbound/provider-aws/internal/controller/appsync/apikey"
-	datasource "github.com/upbound/provider-aws/internal/controller/appsync/datasource"
-	function "github.com/upbound/provider-aws/internal/controller/appsync/function"
-	graphqlapi "github.com/upbound/provider-aws/internal/controller/appsync/graphqlapi"
-	resolver "github.com/upbound/provider-aws/internal/controller/appsync/resolver"
 	grouptag "github.com/upbound/provider-aws/internal/controller/autoscaling/grouptag"
 	launchconfiguration "github.com/upbound/provider-aws/internal/controller/autoscaling/launchconfiguration"
 	lifecyclehook "github.com/upbound/provider-aws/internal/controller/autoscaling/lifecyclehook"
@@ -37,8 +26,6 @@ import (
 	schedule "github.com/upbound/provider-aws/internal/controller/autoscaling/schedule"
 	scalingplan "github.com/upbound/provider-aws/internal/controller/autoscalingplans/scalingplan"
 	schedulingpolicy "github.com/upbound/provider-aws/internal/controller/batch/schedulingpolicy"
-	budget "github.com/upbound/provider-aws/internal/controller/budgets/budget"
-	budgetaction "github.com/upbound/provider-aws/internal/controller/budgets/budgetaction"
 	voiceconnector "github.com/upbound/provider-aws/internal/controller/chime/voiceconnector"
 	voiceconnectorgroup "github.com/upbound/provider-aws/internal/controller/chime/voiceconnectorgroup"
 	voiceconnectorlogging "github.com/upbound/provider-aws/internal/controller/chime/voiceconnectorlogging"
@@ -74,18 +61,6 @@ import (
 	stream "github.com/upbound/provider-aws/internal/controller/cloudwatchlogs/stream"
 	subscriptionfilter "github.com/upbound/provider-aws/internal/controller/cloudwatchlogs/subscriptionfilter"
 	reportdefinition "github.com/upbound/provider-aws/internal/controller/cur/reportdefinition"
-	dataset "github.com/upbound/provider-aws/internal/controller/dataexchange/dataset"
-	revision "github.com/upbound/provider-aws/internal/controller/dataexchange/revision"
-	pipeline "github.com/upbound/provider-aws/internal/controller/datapipeline/pipeline"
-	graph "github.com/upbound/provider-aws/internal/controller/detective/graph"
-	invitationaccepter "github.com/upbound/provider-aws/internal/controller/detective/invitationaccepter"
-	member "github.com/upbound/provider-aws/internal/controller/detective/member"
-	devicepool "github.com/upbound/provider-aws/internal/controller/devicefarm/devicepool"
-	instanceprofile "github.com/upbound/provider-aws/internal/controller/devicefarm/instanceprofile"
-	networkprofile "github.com/upbound/provider-aws/internal/controller/devicefarm/networkprofile"
-	project "github.com/upbound/provider-aws/internal/controller/devicefarm/project"
-	testgridproject "github.com/upbound/provider-aws/internal/controller/devicefarm/testgridproject"
-	upload "github.com/upbound/provider-aws/internal/controller/devicefarm/upload"
 	bgppeer "github.com/upbound/provider-aws/internal/controller/directconnect/bgppeer"
 	connectiondirectconnect "github.com/upbound/provider-aws/internal/controller/directconnect/connection"
 	connectionassociation "github.com/upbound/provider-aws/internal/controller/directconnect/connectionassociation"
@@ -231,7 +206,7 @@ import (
 	applicationelasticbeanstalk "github.com/upbound/provider-aws/internal/controller/elasticbeanstalk/application"
 	configurationtemplate "github.com/upbound/provider-aws/internal/controller/elasticbeanstalk/configurationtemplate"
 	domain "github.com/upbound/provider-aws/internal/controller/elasticsearch/domain"
-	pipelineelastictranscoder "github.com/upbound/provider-aws/internal/controller/elastictranscoder/pipeline"
+	pipeline "github.com/upbound/provider-aws/internal/controller/elastictranscoder/pipeline"
 	preset "github.com/upbound/provider-aws/internal/controller/elastictranscoder/preset"
 	appcookiestickinesspolicy "github.com/upbound/provider-aws/internal/controller/elb/appcookiestickinesspolicy"
 	attachment "github.com/upbound/provider-aws/internal/controller/elb/attachment"
@@ -260,14 +235,14 @@ import (
 	licenseassociation "github.com/upbound/provider-aws/internal/controller/grafana/licenseassociation"
 	detector "github.com/upbound/provider-aws/internal/controller/guardduty/detector"
 	filter "github.com/upbound/provider-aws/internal/controller/guardduty/filter"
-	memberguardduty "github.com/upbound/provider-aws/internal/controller/guardduty/member"
+	member "github.com/upbound/provider-aws/internal/controller/guardduty/member"
 	accesskey "github.com/upbound/provider-aws/internal/controller/iam/accesskey"
 	accountalias "github.com/upbound/provider-aws/internal/controller/iam/accountalias"
 	accountpasswordpolicy "github.com/upbound/provider-aws/internal/controller/iam/accountpasswordpolicy"
 	groupiam "github.com/upbound/provider-aws/internal/controller/iam/group"
 	groupmembership "github.com/upbound/provider-aws/internal/controller/iam/groupmembership"
 	grouppolicyattachment "github.com/upbound/provider-aws/internal/controller/iam/grouppolicyattachment"
-	instanceprofileiam "github.com/upbound/provider-aws/internal/controller/iam/instanceprofile"
+	instanceprofile "github.com/upbound/provider-aws/internal/controller/iam/instanceprofile"
 	openidconnectprovider "github.com/upbound/provider-aws/internal/controller/iam/openidconnectprovider"
 	policyiam "github.com/upbound/provider-aws/internal/controller/iam/policy"
 	role "github.com/upbound/provider-aws/internal/controller/iam/role"
@@ -310,7 +285,7 @@ import (
 	aliaslambda "github.com/upbound/provider-aws/internal/controller/lambda/alias"
 	codesigningconfig "github.com/upbound/provider-aws/internal/controller/lambda/codesigningconfig"
 	eventsourcemapping "github.com/upbound/provider-aws/internal/controller/lambda/eventsourcemapping"
-	functionlambda "github.com/upbound/provider-aws/internal/controller/lambda/function"
+	function "github.com/upbound/provider-aws/internal/controller/lambda/function"
 	functioneventinvokeconfig "github.com/upbound/provider-aws/internal/controller/lambda/functioneventinvokeconfig"
 	functionurl "github.com/upbound/provider-aws/internal/controller/lambda/functionurl"
 	invocation "github.com/upbound/provider-aws/internal/controller/lambda/invocation"
@@ -328,7 +303,7 @@ import (
 	classificationjob "github.com/upbound/provider-aws/internal/controller/macie2/classificationjob"
 	customdataidentifier "github.com/upbound/provider-aws/internal/controller/macie2/customdataidentifier"
 	findingsfilter "github.com/upbound/provider-aws/internal/controller/macie2/findingsfilter"
-	invitationacceptermacie2 "github.com/upbound/provider-aws/internal/controller/macie2/invitationaccepter"
+	invitationaccepter "github.com/upbound/provider-aws/internal/controller/macie2/invitationaccepter"
 	membermacie2 "github.com/upbound/provider-aws/internal/controller/macie2/member"
 	queue "github.com/upbound/provider-aws/internal/controller/mediaconvert/queue"
 	channel "github.com/upbound/provider-aws/internal/controller/mediapackage/channel"
@@ -339,13 +314,7 @@ import (
 	parametergroup "github.com/upbound/provider-aws/internal/controller/memorydb/parametergroup"
 	snapshot "github.com/upbound/provider-aws/internal/controller/memorydb/snapshot"
 	subnetgroup "github.com/upbound/provider-aws/internal/controller/memorydb/subnetgroup"
-	accountorganizations "github.com/upbound/provider-aws/internal/controller/organizations/account"
-	delegatedadministrator "github.com/upbound/provider-aws/internal/controller/organizations/delegatedadministrator"
-	organization "github.com/upbound/provider-aws/internal/controller/organizations/organization"
-	organizationalunit "github.com/upbound/provider-aws/internal/controller/organizations/organizationalunit"
-	policyorganizations "github.com/upbound/provider-aws/internal/controller/organizations/policy"
-	policyattachment "github.com/upbound/provider-aws/internal/controller/organizations/policyattachment"
-	apppinpoint "github.com/upbound/provider-aws/internal/controller/pinpoint/app"
+	app "github.com/upbound/provider-aws/internal/controller/pinpoint/app"
 	smschannel "github.com/upbound/provider-aws/internal/controller/pinpoint/smschannel"
 	providerconfig "github.com/upbound/provider-aws/internal/controller/providerconfig"
 	ledger "github.com/upbound/provider-aws/internal/controller/qldb/ledger"
@@ -441,17 +410,6 @@ import (
 	productsubscription "github.com/upbound/provider-aws/internal/controller/securityhub/productsubscription"
 	standardssubscription "github.com/upbound/provider-aws/internal/controller/securityhub/standardssubscription"
 	cloudformationstack "github.com/upbound/provider-aws/internal/controller/serverlessrepo/cloudformationstack"
-	budgetresourceassociation "github.com/upbound/provider-aws/internal/controller/servicecatalog/budgetresourceassociation"
-	constraint "github.com/upbound/provider-aws/internal/controller/servicecatalog/constraint"
-	portfolio "github.com/upbound/provider-aws/internal/controller/servicecatalog/portfolio"
-	portfolioshare "github.com/upbound/provider-aws/internal/controller/servicecatalog/portfolioshare"
-	principalportfolioassociation "github.com/upbound/provider-aws/internal/controller/servicecatalog/principalportfolioassociation"
-	product "github.com/upbound/provider-aws/internal/controller/servicecatalog/product"
-	productportfolioassociation "github.com/upbound/provider-aws/internal/controller/servicecatalog/productportfolioassociation"
-	provisioningartifact "github.com/upbound/provider-aws/internal/controller/servicecatalog/provisioningartifact"
-	serviceaction "github.com/upbound/provider-aws/internal/controller/servicecatalog/serviceaction"
-	tagoption "github.com/upbound/provider-aws/internal/controller/servicecatalog/tagoption"
-	tagoptionresourceassociation "github.com/upbound/provider-aws/internal/controller/servicecatalog/tagoptionresourceassociation"
 	servicequota "github.com/upbound/provider-aws/internal/controller/servicequotas/servicequota"
 	signingjob "github.com/upbound/provider-aws/internal/controller/signer/signingjob"
 	signingprofile "github.com/upbound/provider-aws/internal/controller/signer/signingprofile"
@@ -483,12 +441,7 @@ import (
 // the supplied manager.
 func Setup(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
-		analyzer.Setup,
 		alternatecontact.Setup,
-		app.Setup,
-		backendenvironment.Setup,
-		branch.Setup,
-		webhook.Setup,
 		application.Setup,
 		configurationprofile.Setup,
 		deployment.Setup,
@@ -497,12 +450,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		hostedconfigurationversion.Setup,
 		flow.Setup,
 		eventintegration.Setup,
-		apicache.Setup,
-		apikey.Setup,
-		datasource.Setup,
-		function.Setup,
-		graphqlapi.Setup,
-		resolver.Setup,
 		grouptag.Setup,
 		launchconfiguration.Setup,
 		lifecyclehook.Setup,
@@ -511,8 +458,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		schedule.Setup,
 		scalingplan.Setup,
 		schedulingpolicy.Setup,
-		budget.Setup,
-		budgetaction.Setup,
 		voiceconnector.Setup,
 		voiceconnectorgroup.Setup,
 		voiceconnectorlogging.Setup,
@@ -548,18 +493,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		stream.Setup,
 		subscriptionfilter.Setup,
 		reportdefinition.Setup,
-		dataset.Setup,
-		revision.Setup,
-		pipeline.Setup,
-		graph.Setup,
-		invitationaccepter.Setup,
-		member.Setup,
-		devicepool.Setup,
-		instanceprofile.Setup,
-		networkprofile.Setup,
-		project.Setup,
-		testgridproject.Setup,
-		upload.Setup,
 		bgppeer.Setup,
 		connectiondirectconnect.Setup,
 		connectionassociation.Setup,
@@ -705,7 +638,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		applicationelasticbeanstalk.Setup,
 		configurationtemplate.Setup,
 		domain.Setup,
-		pipelineelastictranscoder.Setup,
+		pipeline.Setup,
 		preset.Setup,
 		appcookiestickinesspolicy.Setup,
 		attachment.Setup,
@@ -734,14 +667,14 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		licenseassociation.Setup,
 		detector.Setup,
 		filter.Setup,
-		memberguardduty.Setup,
+		member.Setup,
 		accesskey.Setup,
 		accountalias.Setup,
 		accountpasswordpolicy.Setup,
 		groupiam.Setup,
 		groupmembership.Setup,
 		grouppolicyattachment.Setup,
-		instanceprofileiam.Setup,
+		instanceprofile.Setup,
 		openidconnectprovider.Setup,
 		policyiam.Setup,
 		role.Setup,
@@ -784,7 +717,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		aliaslambda.Setup,
 		codesigningconfig.Setup,
 		eventsourcemapping.Setup,
-		functionlambda.Setup,
+		function.Setup,
 		functioneventinvokeconfig.Setup,
 		functionurl.Setup,
 		invocation.Setup,
@@ -802,7 +735,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		classificationjob.Setup,
 		customdataidentifier.Setup,
 		findingsfilter.Setup,
-		invitationacceptermacie2.Setup,
+		invitationaccepter.Setup,
 		membermacie2.Setup,
 		queue.Setup,
 		channel.Setup,
@@ -813,13 +746,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		parametergroup.Setup,
 		snapshot.Setup,
 		subnetgroup.Setup,
-		accountorganizations.Setup,
-		delegatedadministrator.Setup,
-		organization.Setup,
-		organizationalunit.Setup,
-		policyorganizations.Setup,
-		policyattachment.Setup,
-		apppinpoint.Setup,
+		app.Setup,
 		smschannel.Setup,
 		providerconfig.Setup,
 		ledger.Setup,
@@ -915,17 +842,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		productsubscription.Setup,
 		standardssubscription.Setup,
 		cloudformationstack.Setup,
-		budgetresourceassociation.Setup,
-		constraint.Setup,
-		portfolio.Setup,
-		portfolioshare.Setup,
-		principalportfolioassociation.Setup,
-		product.Setup,
-		productportfolioassociation.Setup,
-		provisioningartifact.Setup,
-		serviceaction.Setup,
-		tagoption.Setup,
-		tagoptionresourceassociation.Setup,
 		servicequota.Setup,
 		signingjob.Setup,
 		signingprofile.Setup,
