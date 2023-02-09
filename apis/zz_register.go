@@ -29,7 +29,6 @@ import (
 	v1beta1directconnect "github.com/upbound/provider-aws/apis/directconnect/v1beta1"
 	v1beta1dlm "github.com/upbound/provider-aws/apis/dlm/v1beta1"
 	v1beta1dms "github.com/upbound/provider-aws/apis/dms/v1beta1"
-	v1beta1ds "github.com/upbound/provider-aws/apis/ds/v1beta1"
 	v1beta1dynamodb "github.com/upbound/provider-aws/apis/dynamodb/v1beta1"
 	v1beta1ec2 "github.com/upbound/provider-aws/apis/ec2/v1beta1"
 	v1beta1ecr "github.com/upbound/provider-aws/apis/ecr/v1beta1"
@@ -37,7 +36,6 @@ import (
 	v1beta1eks "github.com/upbound/provider-aws/apis/eks/v1beta1"
 	v1beta1elasticbeanstalk "github.com/upbound/provider-aws/apis/elasticbeanstalk/v1beta1"
 	v1beta1elasticsearch "github.com/upbound/provider-aws/apis/elasticsearch/v1beta1"
-	v1beta1elastictranscoder "github.com/upbound/provider-aws/apis/elastictranscoder/v1beta1"
 	v1beta1elb "github.com/upbound/provider-aws/apis/elb/v1beta1"
 	v1beta1elbv2 "github.com/upbound/provider-aws/apis/elbv2/v1beta1"
 	v1beta1emr "github.com/upbound/provider-aws/apis/emr/v1beta1"
@@ -49,7 +47,6 @@ import (
 	v1beta1iam "github.com/upbound/provider-aws/apis/iam/v1beta1"
 	v1beta1imagebuilder "github.com/upbound/provider-aws/apis/imagebuilder/v1beta1"
 	v1beta1inspector "github.com/upbound/provider-aws/apis/inspector/v1beta1"
-	v1beta1keyspaces "github.com/upbound/provider-aws/apis/keyspaces/v1beta1"
 	v1beta1kinesis "github.com/upbound/provider-aws/apis/kinesis/v1beta1"
 	v1beta1kinesisanalytics "github.com/upbound/provider-aws/apis/kinesisanalytics/v1beta1"
 	v1beta1kinesisanalyticsv2 "github.com/upbound/provider-aws/apis/kinesisanalyticsv2/v1beta1"
@@ -58,9 +55,6 @@ import (
 	v1beta1lambda "github.com/upbound/provider-aws/apis/lambda/v1beta1"
 	v1beta1lightsail "github.com/upbound/provider-aws/apis/lightsail/v1beta1"
 	v1beta1macie2 "github.com/upbound/provider-aws/apis/macie2/v1beta1"
-	v1beta1mediaconvert "github.com/upbound/provider-aws/apis/mediaconvert/v1beta1"
-	v1beta1mediapackage "github.com/upbound/provider-aws/apis/mediapackage/v1beta1"
-	v1beta1mediastore "github.com/upbound/provider-aws/apis/mediastore/v1beta1"
 	v1beta1memorydb "github.com/upbound/provider-aws/apis/memorydb/v1beta1"
 	v1beta1pinpoint "github.com/upbound/provider-aws/apis/pinpoint/v1beta1"
 	v1beta1qldb "github.com/upbound/provider-aws/apis/qldb/v1beta1"
@@ -112,7 +106,6 @@ func init() {
 		v1beta1directconnect.SchemeBuilder.AddToScheme,
 		v1beta1dlm.SchemeBuilder.AddToScheme,
 		v1beta1dms.SchemeBuilder.AddToScheme,
-		v1beta1ds.SchemeBuilder.AddToScheme,
 		v1beta1dynamodb.SchemeBuilder.AddToScheme,
 		v1beta1ec2.SchemeBuilder.AddToScheme,
 		v1beta1ecr.SchemeBuilder.AddToScheme,
@@ -120,7 +113,6 @@ func init() {
 		v1beta1eks.SchemeBuilder.AddToScheme,
 		v1beta1elasticbeanstalk.SchemeBuilder.AddToScheme,
 		v1beta1elasticsearch.SchemeBuilder.AddToScheme,
-		v1beta1elastictranscoder.SchemeBuilder.AddToScheme,
 		v1beta1elb.SchemeBuilder.AddToScheme,
 		v1beta1elbv2.SchemeBuilder.AddToScheme,
 		v1beta1emr.SchemeBuilder.AddToScheme,
@@ -132,7 +124,6 @@ func init() {
 		v1beta1iam.SchemeBuilder.AddToScheme,
 		v1beta1imagebuilder.SchemeBuilder.AddToScheme,
 		v1beta1inspector.SchemeBuilder.AddToScheme,
-		v1beta1keyspaces.SchemeBuilder.AddToScheme,
 		v1beta1kinesis.SchemeBuilder.AddToScheme,
 		v1beta1kinesisanalytics.SchemeBuilder.AddToScheme,
 		v1beta1kinesisanalyticsv2.SchemeBuilder.AddToScheme,
@@ -141,9 +132,6 @@ func init() {
 		v1beta1lambda.SchemeBuilder.AddToScheme,
 		v1beta1lightsail.SchemeBuilder.AddToScheme,
 		v1beta1macie2.SchemeBuilder.AddToScheme,
-		v1beta1mediaconvert.SchemeBuilder.AddToScheme,
-		v1beta1mediapackage.SchemeBuilder.AddToScheme,
-		v1beta1mediastore.SchemeBuilder.AddToScheme,
 		v1beta1memorydb.SchemeBuilder.AddToScheme,
 		v1beta1pinpoint.SchemeBuilder.AddToScheme,
 		v1beta1qldb.SchemeBuilder.AddToScheme,

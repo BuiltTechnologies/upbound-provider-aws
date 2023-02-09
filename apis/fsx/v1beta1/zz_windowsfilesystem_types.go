@@ -94,18 +94,8 @@ type WindowsFileSystemObservation struct {
 type WindowsFileSystemParameters struct {
 
 	// The ID for an existing Microsoft Active Directory instance that the file system should join when it's created. Cannot be specified with self_managed_active_directory.
-	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/ds/v1beta1.Directory
-	// +crossplane:generate:reference:extractor=github.com/upbound/upjet/pkg/resource.ExtractResourceID()
 	// +kubebuilder:validation:Optional
 	ActiveDirectoryID *string `json:"activeDirectoryId,omitempty" tf:"active_directory_id,omitempty"`
-
-	// Reference to a Directory in ds to populate activeDirectoryId.
-	// +kubebuilder:validation:Optional
-	ActiveDirectoryIDRef *v1.Reference `json:"activeDirectoryIdRef,omitempty" tf:"-"`
-
-	// Selector for a Directory in ds to populate activeDirectoryId.
-	// +kubebuilder:validation:Optional
-	ActiveDirectoryIDSelector *v1.Selector `json:"activeDirectoryIdSelector,omitempty" tf:"-"`
 
 	// An array DNS alias names that you want to associate with the Amazon FSx file system.  For more information, see Working with DNS Aliases
 	// +kubebuilder:validation:Optional

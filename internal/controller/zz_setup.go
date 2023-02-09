@@ -84,7 +84,6 @@ import (
 	replicationinstance "github.com/upbound/provider-aws/internal/controller/dms/replicationinstance"
 	replicationsubnetgroup "github.com/upbound/provider-aws/internal/controller/dms/replicationsubnetgroup"
 	replicationtask "github.com/upbound/provider-aws/internal/controller/dms/replicationtask"
-	directory "github.com/upbound/provider-aws/internal/controller/ds/directory"
 	contributorinsights "github.com/upbound/provider-aws/internal/controller/dynamodb/contributorinsights"
 	globaltable "github.com/upbound/provider-aws/internal/controller/dynamodb/globaltable"
 	kinesisstreamingdestination "github.com/upbound/provider-aws/internal/controller/dynamodb/kinesisstreamingdestination"
@@ -206,8 +205,6 @@ import (
 	applicationelasticbeanstalk "github.com/upbound/provider-aws/internal/controller/elasticbeanstalk/application"
 	configurationtemplate "github.com/upbound/provider-aws/internal/controller/elasticbeanstalk/configurationtemplate"
 	domain "github.com/upbound/provider-aws/internal/controller/elasticsearch/domain"
-	pipeline "github.com/upbound/provider-aws/internal/controller/elastictranscoder/pipeline"
-	preset "github.com/upbound/provider-aws/internal/controller/elastictranscoder/preset"
 	appcookiestickinesspolicy "github.com/upbound/provider-aws/internal/controller/elb/appcookiestickinesspolicy"
 	attachment "github.com/upbound/provider-aws/internal/controller/elb/attachment"
 	backendserverpolicy "github.com/upbound/provider-aws/internal/controller/elb/backendserverpolicy"
@@ -267,8 +264,6 @@ import (
 	assessmenttarget "github.com/upbound/provider-aws/internal/controller/inspector/assessmenttarget"
 	assessmenttemplate "github.com/upbound/provider-aws/internal/controller/inspector/assessmenttemplate"
 	resourcegroup "github.com/upbound/provider-aws/internal/controller/inspector/resourcegroup"
-	keyspace "github.com/upbound/provider-aws/internal/controller/keyspaces/keyspace"
-	tablekeyspaces "github.com/upbound/provider-aws/internal/controller/keyspaces/table"
 	streamkinesis "github.com/upbound/provider-aws/internal/controller/kinesis/stream"
 	streamconsumer "github.com/upbound/provider-aws/internal/controller/kinesis/streamconsumer"
 	applicationkinesisanalytics "github.com/upbound/provider-aws/internal/controller/kinesisanalytics/application"
@@ -305,10 +300,6 @@ import (
 	findingsfilter "github.com/upbound/provider-aws/internal/controller/macie2/findingsfilter"
 	invitationaccepter "github.com/upbound/provider-aws/internal/controller/macie2/invitationaccepter"
 	membermacie2 "github.com/upbound/provider-aws/internal/controller/macie2/member"
-	queue "github.com/upbound/provider-aws/internal/controller/mediaconvert/queue"
-	channel "github.com/upbound/provider-aws/internal/controller/mediapackage/channel"
-	container "github.com/upbound/provider-aws/internal/controller/mediastore/container"
-	containerpolicy "github.com/upbound/provider-aws/internal/controller/mediastore/containerpolicy"
 	acl "github.com/upbound/provider-aws/internal/controller/memorydb/acl"
 	clustermemorydb "github.com/upbound/provider-aws/internal/controller/memorydb/cluster"
 	parametergroup "github.com/upbound/provider-aws/internal/controller/memorydb/parametergroup"
@@ -420,7 +411,7 @@ import (
 	topic "github.com/upbound/provider-aws/internal/controller/sns/topic"
 	topicpolicy "github.com/upbound/provider-aws/internal/controller/sns/topicpolicy"
 	topicsubscription "github.com/upbound/provider-aws/internal/controller/sns/topicsubscription"
-	queuesqs "github.com/upbound/provider-aws/internal/controller/sqs/queue"
+	queue "github.com/upbound/provider-aws/internal/controller/sqs/queue"
 	queuepolicy "github.com/upbound/provider-aws/internal/controller/sqs/queuepolicy"
 	activation "github.com/upbound/provider-aws/internal/controller/ssm/activation"
 	association "github.com/upbound/provider-aws/internal/controller/ssm/association"
@@ -516,7 +507,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		replicationinstance.Setup,
 		replicationsubnetgroup.Setup,
 		replicationtask.Setup,
-		directory.Setup,
 		contributorinsights.Setup,
 		globaltable.Setup,
 		kinesisstreamingdestination.Setup,
@@ -638,8 +628,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		applicationelasticbeanstalk.Setup,
 		configurationtemplate.Setup,
 		domain.Setup,
-		pipeline.Setup,
-		preset.Setup,
 		appcookiestickinesspolicy.Setup,
 		attachment.Setup,
 		backendserverpolicy.Setup,
@@ -699,8 +687,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		assessmenttarget.Setup,
 		assessmenttemplate.Setup,
 		resourcegroup.Setup,
-		keyspace.Setup,
-		tablekeyspaces.Setup,
 		streamkinesis.Setup,
 		streamconsumer.Setup,
 		applicationkinesisanalytics.Setup,
@@ -737,10 +723,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		findingsfilter.Setup,
 		invitationaccepter.Setup,
 		membermacie2.Setup,
-		queue.Setup,
-		channel.Setup,
-		container.Setup,
-		containerpolicy.Setup,
 		acl.Setup,
 		clustermemorydb.Setup,
 		parametergroup.Setup,
@@ -852,7 +834,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		topic.Setup,
 		topicpolicy.Setup,
 		topicsubscription.Setup,
-		queuesqs.Setup,
+		queue.Setup,
 		queuepolicy.Setup,
 		activation.Setup,
 		association.Setup,

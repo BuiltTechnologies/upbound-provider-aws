@@ -9,7 +9,6 @@ import (
 	"context"
 	reference "github.com/crossplane/crossplane-runtime/pkg/reference"
 	errors "github.com/pkg/errors"
-	v1beta12 "github.com/upbound/provider-aws/apis/ds/v1beta1"
 	v1beta11 "github.com/upbound/provider-aws/apis/ec2/v1beta1"
 	v1beta1 "github.com/upbound/provider-aws/apis/kms/v1beta1"
 	common "github.com/upbound/provider-aws/config/common"
@@ -236,22 +235,6 @@ func (mg *WindowsFileSystem) ResolveReferences(ctx context.Context, c client.Rea
 	var rsp reference.ResolutionResponse
 	var mrsp reference.MultiResolutionResponse
 	var err error
-
-	rsp, err = r.Resolve(ctx, reference.ResolutionRequest{
-		CurrentValue: reference.FromPtrValue(mg.Spec.ForProvider.ActiveDirectoryID),
-		Extract:      resource.ExtractResourceID(),
-		Reference:    mg.Spec.ForProvider.ActiveDirectoryIDRef,
-		Selector:     mg.Spec.ForProvider.ActiveDirectoryIDSelector,
-		To: reference.To{
-			List:    &v1beta12.DirectoryList{},
-			Managed: &v1beta12.Directory{},
-		},
-	})
-	if err != nil {
-		return errors.Wrap(err, "mg.Spec.ForProvider.ActiveDirectoryID")
-	}
-	mg.Spec.ForProvider.ActiveDirectoryID = reference.ToPtrValue(rsp.ResolvedValue)
-	mg.Spec.ForProvider.ActiveDirectoryIDRef = rsp.ResolvedReference
 
 	rsp, err = r.Resolve(ctx, reference.ResolutionRequest{
 		CurrentValue: reference.FromPtrValue(mg.Spec.ForProvider.KMSKeyID),

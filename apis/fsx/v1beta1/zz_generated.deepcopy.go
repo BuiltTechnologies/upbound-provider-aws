@@ -2284,16 +2284,6 @@ func (in *WindowsFileSystemParameters) DeepCopyInto(out *WindowsFileSystemParame
 		*out = new(string)
 		**out = **in
 	}
-	if in.ActiveDirectoryIDRef != nil {
-		in, out := &in.ActiveDirectoryIDRef, &out.ActiveDirectoryIDRef
-		*out = new(v1.Reference)
-		(*in).DeepCopyInto(*out)
-	}
-	if in.ActiveDirectoryIDSelector != nil {
-		in, out := &in.ActiveDirectoryIDSelector, &out.ActiveDirectoryIDSelector
-		*out = new(v1.Selector)
-		(*in).DeepCopyInto(*out)
-	}
 	if in.Aliases != nil {
 		in, out := &in.Aliases, &out.Aliases
 		*out = make([]*string, len(*in))

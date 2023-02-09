@@ -1701,10 +1701,10 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// keyspaces
 	//
 	// Use the name to import a keyspace
-	"aws_keyspaces_keyspace": config.NameAsIdentifier,
+	// "aws_keyspaces_keyspace": config.NameAsIdentifier,
 	// Use the keyspace_name and table_name separated by / to import a table
 	// my_keyspace/my_table
-	"aws_keyspaces_table": FormattedIdentifierFromProvider("/", "keyspace_name", "table_name"),
+	// "aws_keyspaces_table": FormattedIdentifierFromProvider("/", "keyspace_name", "table_name"),
 
 	// route53recoveryreadiness
 	//
@@ -1766,14 +1766,14 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// ds
 	//
 	// DirectoryService directories can be imported using the directory id
-	"aws_directory_service_directory": config.IdentifierFromProvider,
+	// "aws_directory_service_directory": config.IdentifierFromProvider,
 
 	// elastictranscoder
 	//
 	// Elastic Transcoder pipelines can be imported using the id
-	"aws_elastictranscoder_pipeline": config.IdentifierFromProvider,
+	// "aws_elastictranscoder_pipeline": config.IdentifierFromProvider,
 	// Elastic Transcoder presets can be imported using the id
-	"aws_elastictranscoder_preset": config.IdentifierFromProvider,
+	// "aws_elastictranscoder_preset": config.IdentifierFromProvider,
 
 	// schemas
 	//
@@ -1787,14 +1787,14 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// mediapackage
 	//
 	// Media Package Channels can be imported via the channel ID
-	"aws_media_package_channel": config.IdentifierFromProvider,
+	// "aws_media_package_channel": config.IdentifierFromProvider,
 
 	// mediastore
 	//
 	// MediaStore Container can be imported using the MediaStore Container Name
-	"aws_media_store_container": config.NameAsIdentifier,
+	// "aws_media_store_container": config.NameAsIdentifier,
 	// MediaStore Container Policy can be imported using the MediaStore Container Name
-	"aws_media_store_container_policy": FormattedIdentifierFromProvider("", "container_name"),
+	// "aws_media_store_container_policy": FormattedIdentifierFromProvider("", "container_name"),
 
 	// macie2
 	//
@@ -1814,7 +1814,7 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// mediaconvert
 	//
 	// Media Convert Queue can be imported via the queue name
-	"aws_media_convert_queue": config.NameAsIdentifier,
+	// "aws_media_convert_queue": config.NameAsIdentifier,
 
 	// servicequotas
 	//

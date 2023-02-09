@@ -8,9 +8,7 @@ metadata:
   name: example
 spec:
   forProvider:
-    activeDirectoryIdSelector:
-      matchLabels:
-        testing.upbound.io/example-name: example
+    activeDirectoryId: ${aws_directory_service_directory.example.id}
     kmsKeyIdSelector:
       matchLabels:
         testing.upbound.io/example-name: example
