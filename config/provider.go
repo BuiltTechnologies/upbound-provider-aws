@@ -15,8 +15,8 @@ import (
 	// "github.com/upbound/provider-aws/config/acmpca"
 	// "github.com/upbound/provider-aws/config/apigateway"
 	// "github.com/upbound/provider-aws/config/apigatewayv2"
-	"github.com/upbound/provider-aws/config/apprunner"
-	"github.com/upbound/provider-aws/config/appstream"
+	// "github.com/upbound/provider-aws/config/apprunner"
+	// "github.com/upbound/provider-aws/config/appstream"
 
 	// "github.com/upbound/provider-aws/config/athena"
 	// "github.com/upbound/provider-aws/config/autoscaling"
@@ -163,8 +163,8 @@ func GetProvider() *config.Provider {
 		// acmpca.Configure,
 		// apigateway.Configure,
 		// apigatewayv2.Configure,
-		apprunner.Configure,
-		appstream.Configure,
+		// apprunner.Configure,
+		// appstream.Configure,
 		// athena.Configure,
 		// autoscaling.Configure,
 		// backup.Configure,

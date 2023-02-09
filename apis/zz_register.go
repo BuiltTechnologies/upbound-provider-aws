@@ -16,9 +16,6 @@ import (
 	v1beta1appconfig "github.com/upbound/provider-aws/apis/appconfig/v1beta1"
 	v1beta1appflow "github.com/upbound/provider-aws/apis/appflow/v1beta1"
 	v1beta1appintegrations "github.com/upbound/provider-aws/apis/appintegrations/v1beta1"
-	v1beta1appmesh "github.com/upbound/provider-aws/apis/appmesh/v1beta1"
-	v1beta1apprunner "github.com/upbound/provider-aws/apis/apprunner/v1beta1"
-	v1beta1appstream "github.com/upbound/provider-aws/apis/appstream/v1beta1"
 	v1beta1appsync "github.com/upbound/provider-aws/apis/appsync/v1beta1"
 	v1beta1autoscaling "github.com/upbound/provider-aws/apis/autoscaling/v1beta1"
 	v1beta1autoscalingplans "github.com/upbound/provider-aws/apis/autoscalingplans/v1beta1"
@@ -131,9 +128,6 @@ func init() {
 		v1beta1appconfig.SchemeBuilder.AddToScheme,
 		v1beta1appflow.SchemeBuilder.AddToScheme,
 		v1beta1appintegrations.SchemeBuilder.AddToScheme,
-		v1beta1appmesh.SchemeBuilder.AddToScheme,
-		v1beta1apprunner.SchemeBuilder.AddToScheme,
-		v1beta1appstream.SchemeBuilder.AddToScheme,
 		v1beta1appsync.SchemeBuilder.AddToScheme,
 		v1beta1autoscaling.SchemeBuilder.AddToScheme,
 		v1beta1autoscalingplans.SchemeBuilder.AddToScheme,

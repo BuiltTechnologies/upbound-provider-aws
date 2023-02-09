@@ -23,24 +23,6 @@ import (
 	hostedconfigurationversion "github.com/upbound/provider-aws/internal/controller/appconfig/hostedconfigurationversion"
 	flow "github.com/upbound/provider-aws/internal/controller/appflow/flow"
 	eventintegration "github.com/upbound/provider-aws/internal/controller/appintegrations/eventintegration"
-	gatewayroute "github.com/upbound/provider-aws/internal/controller/appmesh/gatewayroute"
-	mesh "github.com/upbound/provider-aws/internal/controller/appmesh/mesh"
-	route "github.com/upbound/provider-aws/internal/controller/appmesh/route"
-	virtualgateway "github.com/upbound/provider-aws/internal/controller/appmesh/virtualgateway"
-	virtualnode "github.com/upbound/provider-aws/internal/controller/appmesh/virtualnode"
-	virtualrouter "github.com/upbound/provider-aws/internal/controller/appmesh/virtualrouter"
-	virtualservice "github.com/upbound/provider-aws/internal/controller/appmesh/virtualservice"
-	autoscalingconfigurationversion "github.com/upbound/provider-aws/internal/controller/apprunner/autoscalingconfigurationversion"
-	connection "github.com/upbound/provider-aws/internal/controller/apprunner/connection"
-	service "github.com/upbound/provider-aws/internal/controller/apprunner/service"
-	vpcconnector "github.com/upbound/provider-aws/internal/controller/apprunner/vpcconnector"
-	directoryconfig "github.com/upbound/provider-aws/internal/controller/appstream/directoryconfig"
-	fleet "github.com/upbound/provider-aws/internal/controller/appstream/fleet"
-	fleetstackassociation "github.com/upbound/provider-aws/internal/controller/appstream/fleetstackassociation"
-	imagebuilder "github.com/upbound/provider-aws/internal/controller/appstream/imagebuilder"
-	stack "github.com/upbound/provider-aws/internal/controller/appstream/stack"
-	user "github.com/upbound/provider-aws/internal/controller/appstream/user"
-	userstackassociation "github.com/upbound/provider-aws/internal/controller/appstream/userstackassociation"
 	apicache "github.com/upbound/provider-aws/internal/controller/appsync/apicache"
 	apikey "github.com/upbound/provider-aws/internal/controller/appsync/apikey"
 	datasource "github.com/upbound/provider-aws/internal/controller/appsync/datasource"
@@ -67,7 +49,7 @@ import (
 	environmentec2 "github.com/upbound/provider-aws/internal/controller/cloud9/environmentec2"
 	environmentmembership "github.com/upbound/provider-aws/internal/controller/cloud9/environmentmembership"
 	resource "github.com/upbound/provider-aws/internal/controller/cloudcontrol/resource"
-	stackcloudformation "github.com/upbound/provider-aws/internal/controller/cloudformation/stack"
+	stack "github.com/upbound/provider-aws/internal/controller/cloudformation/stack"
 	stackset "github.com/upbound/provider-aws/internal/controller/cloudformation/stackset"
 	eventdatastore "github.com/upbound/provider-aws/internal/controller/cloudtrail/eventdatastore"
 	trail "github.com/upbound/provider-aws/internal/controller/cloudtrail/trail"
@@ -79,7 +61,7 @@ import (
 	archive "github.com/upbound/provider-aws/internal/controller/cloudwatchevents/archive"
 	bus "github.com/upbound/provider-aws/internal/controller/cloudwatchevents/bus"
 	buspolicy "github.com/upbound/provider-aws/internal/controller/cloudwatchevents/buspolicy"
-	connectioncloudwatchevents "github.com/upbound/provider-aws/internal/controller/cloudwatchevents/connection"
+	connection "github.com/upbound/provider-aws/internal/controller/cloudwatchevents/connection"
 	permission "github.com/upbound/provider-aws/internal/controller/cloudwatchevents/permission"
 	rule "github.com/upbound/provider-aws/internal/controller/cloudwatchevents/rule"
 	target "github.com/upbound/provider-aws/internal/controller/cloudwatchevents/target"
@@ -183,7 +165,7 @@ import (
 	networkinterfaceattachment "github.com/upbound/provider-aws/internal/controller/ec2/networkinterfaceattachment"
 	networkinterfacesgattachment "github.com/upbound/provider-aws/internal/controller/ec2/networkinterfacesgattachment"
 	placementgroup "github.com/upbound/provider-aws/internal/controller/ec2/placementgroup"
-	routeec2 "github.com/upbound/provider-aws/internal/controller/ec2/route"
+	route "github.com/upbound/provider-aws/internal/controller/ec2/route"
 	routetable "github.com/upbound/provider-aws/internal/controller/ec2/routetable"
 	routetableassociation "github.com/upbound/provider-aws/internal/controller/ec2/routetableassociation"
 	securitygroup "github.com/upbound/provider-aws/internal/controller/ec2/securitygroup"
@@ -251,7 +233,7 @@ import (
 	capacityprovider "github.com/upbound/provider-aws/internal/controller/ecs/capacityprovider"
 	clusterecs "github.com/upbound/provider-aws/internal/controller/ecs/cluster"
 	clustercapacityproviders "github.com/upbound/provider-aws/internal/controller/ecs/clustercapacityproviders"
-	serviceecs "github.com/upbound/provider-aws/internal/controller/ecs/service"
+	service "github.com/upbound/provider-aws/internal/controller/ecs/service"
 	taskdefinition "github.com/upbound/provider-aws/internal/controller/ecs/taskdefinition"
 	accesspoint "github.com/upbound/provider-aws/internal/controller/efs/accesspoint"
 	backuppolicy "github.com/upbound/provider-aws/internal/controller/efs/backuppolicy"
@@ -268,7 +250,7 @@ import (
 	parametergroupelasticache "github.com/upbound/provider-aws/internal/controller/elasticache/parametergroup"
 	replicationgroup "github.com/upbound/provider-aws/internal/controller/elasticache/replicationgroup"
 	subnetgroupelasticache "github.com/upbound/provider-aws/internal/controller/elasticache/subnetgroup"
-	userelasticache "github.com/upbound/provider-aws/internal/controller/elasticache/user"
+	user "github.com/upbound/provider-aws/internal/controller/elasticache/user"
 	usergroup "github.com/upbound/provider-aws/internal/controller/elasticache/usergroup"
 	applicationelasticbeanstalk "github.com/upbound/provider-aws/internal/controller/elasticbeanstalk/application"
 	configurationtemplate "github.com/upbound/provider-aws/internal/controller/elasticbeanstalk/configurationtemplate"
@@ -640,24 +622,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		hostedconfigurationversion.Setup,
 		flow.Setup,
 		eventintegration.Setup,
-		gatewayroute.Setup,
-		mesh.Setup,
-		route.Setup,
-		virtualgateway.Setup,
-		virtualnode.Setup,
-		virtualrouter.Setup,
-		virtualservice.Setup,
-		autoscalingconfigurationversion.Setup,
-		connection.Setup,
-		service.Setup,
-		vpcconnector.Setup,
-		directoryconfig.Setup,
-		fleet.Setup,
-		fleetstackassociation.Setup,
-		imagebuilder.Setup,
-		stack.Setup,
-		user.Setup,
-		userstackassociation.Setup,
 		apicache.Setup,
 		apikey.Setup,
 		datasource.Setup,
@@ -684,7 +648,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		environmentec2.Setup,
 		environmentmembership.Setup,
 		resource.Setup,
-		stackcloudformation.Setup,
+		stack.Setup,
 		stackset.Setup,
 		eventdatastore.Setup,
 		trail.Setup,
@@ -696,7 +660,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		archive.Setup,
 		bus.Setup,
 		buspolicy.Setup,
-		connectioncloudwatchevents.Setup,
+		connection.Setup,
 		permission.Setup,
 		rule.Setup,
 		target.Setup,
@@ -800,7 +764,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		networkinterfaceattachment.Setup,
 		networkinterfacesgattachment.Setup,
 		placementgroup.Setup,
-		routeec2.Setup,
+		route.Setup,
 		routetable.Setup,
 		routetableassociation.Setup,
 		securitygroup.Setup,
@@ -868,7 +832,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		capacityprovider.Setup,
 		clusterecs.Setup,
 		clustercapacityproviders.Setup,
-		serviceecs.Setup,
+		service.Setup,
 		taskdefinition.Setup,
 		accesspoint.Setup,
 		backuppolicy.Setup,
@@ -885,7 +849,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		parametergroupelasticache.Setup,
 		replicationgroup.Setup,
 		subnetgroupelasticache.Setup,
-		userelasticache.Setup,
+		user.Setup,
 		usergroup.Setup,
 		applicationelasticbeanstalk.Setup,
 		configurationtemplate.Setup,

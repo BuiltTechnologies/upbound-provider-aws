@@ -1248,48 +1248,48 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// apprunner
 	//
 	// App Runner AutoScaling Configuration Versions can be imported by using the arn
-	"aws_apprunner_auto_scaling_configuration_version": config.IdentifierFromProvider,
+	// "aws_apprunner_auto_scaling_configuration_version": config.IdentifierFromProvider,
 	// App Runner Connections can be imported by using the connection_name
-	"aws_apprunner_connection": config.ParameterAsIdentifier("connection_name"),
+	// "aws_apprunner_connection": config.ParameterAsIdentifier("connection_name"),
 	// App Runner Services can be imported by using the arn
-	"aws_apprunner_service": config.IdentifierFromProvider,
+	// "aws_apprunner_service": config.IdentifierFromProvider,
 	// App Runner vpc connector can be imported by using the arn
-	"aws_apprunner_vpc_connector": config.IdentifierFromProvider,
+	// "aws_apprunner_vpc_connector": config.IdentifierFromProvider,
 
 	// appstream
 	//
 	// aws_appstream_directory_config can be imported using the id
-	"aws_appstream_directory_config": config.IdentifierFromProvider,
+	// "aws_appstream_directory_config": config.IdentifierFromProvider,
 	// aws_appstream_fleet can be imported using the id
-	"aws_appstream_fleet": config.IdentifierFromProvider,
+	// "aws_appstream_fleet": config.IdentifierFromProvider,
 	// AppStream Stack Fleet Association can be imported by using the fleet_name and stack_name separated by a slash (/)
-	"aws_appstream_fleet_stack_association": config.TemplatedStringAsIdentifier("", "{{ .parameters.fleet_name }}/{{ .parameters.stack_name}}"),
+	// "aws_appstream_fleet_stack_association": config.TemplatedStringAsIdentifier("", "{{ .parameters.fleet_name }}/{{ .parameters.stack_name}}"),
 	// aws_appstream_image_builder can be imported using the name
-	"aws_appstream_image_builder": config.NameAsIdentifier,
+	// "aws_appstream_image_builder": config.NameAsIdentifier,
 	// aws_appstream_stack can be imported using the id
-	"aws_appstream_stack": config.IdentifierFromProvider,
+	// "aws_appstream_stack": config.IdentifierFromProvider,
 	// aws_appstream_user can be imported using the user_name and authentication_type separated by a slash (/)
-	"aws_appstream_user": config.TemplatedStringAsIdentifier("user_name", "{{ .external_name }}/{{ .parameters.authentication_type }}"),
+	// "aws_appstream_user": config.TemplatedStringAsIdentifier("user_name", "{{ .external_name }}/{{ .parameters.authentication_type }}"),
 	// AppStream User Stack Association can be imported by using the user_name, authentication_type, and stack_name, separated by a slash (/)
-	"aws_appstream_user_stack_association": config.TemplatedStringAsIdentifier("", "{{ .parameters.user_name }}/{{ .parameters.authentication_type }}/{{ .parameters.stack_name }}/"),
+	// "aws_appstream_user_stack_association": config.TemplatedStringAsIdentifier("", "{{ .parameters.user_name }}/{{ .parameters.authentication_type }}/{{ .parameters.stack_name }}/"),
 
 	// appmesh
 	//
 	// App Mesh service meshes can be imported using the name
-	"aws_appmesh_mesh": config.NameAsIdentifier,
+	// "aws_appmesh_mesh": config.NameAsIdentifier,
 	// App Mesh virtual nodes can be imported using mesh_name together with the virtual node's name: simpleapp/serviceBv1
-	"aws_appmesh_virtual_node": config.IdentifierFromProvider,
+	// "aws_appmesh_virtual_node": config.IdentifierFromProvider,
 	// App Mesh virtual routers can be imported using mesh_name together with the virtual router's name: simpleapp/serviceB
-	"aws_appmesh_virtual_router": config.IdentifierFromProvider,
+	// "aws_appmesh_virtual_router": config.IdentifierFromProvider,
 	// App Mesh virtual gateway can be imported using mesh_name together with the virtual gateway's name: mesh/gw1
-	"aws_appmesh_virtual_gateway": config.IdentifierFromProvider,
+	// "aws_appmesh_virtual_gateway": config.IdentifierFromProvider,
 	// App Mesh virtual services can be imported using mesh_name together with the virtual service's name: simpleapp/servicea.simpleapp.local
-	"aws_appmesh_virtual_service": config.IdentifierFromProvider,
+	// "aws_appmesh_virtual_service": config.IdentifierFromProvider,
 	// mesh/gw1/example-gateway-route
-	"aws_appmesh_gateway_route": config.IdentifierFromProvider,
+	// "aws_appmesh_gateway_route": config.IdentifierFromProvider,
 	// App Mesh virtual routes can be imported using mesh_name and virtual_router_name together with the route's name, e.g.,
 	// simpleapp/serviceB/serviceB-route
-	"aws_appmesh_route": config.IdentifierFromProvider,
+	// "aws_appmesh_route": config.IdentifierFromProvider,
 
 	// configservice
 	//
