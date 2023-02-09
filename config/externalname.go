@@ -534,48 +534,48 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 
 	// rds
 	//
-	"aws_rds_cluster":        config.ParameterAsIdentifier("cluster_identifier"),
-	"aws_db_instance":        config.ParameterAsIdentifier("identifier"),
-	"aws_db_parameter_group": config.NameAsIdentifier,
-	"aws_db_subnet_group":    config.NameAsIdentifier,
+	// "aws_rds_cluster":        config.ParameterAsIdentifier("cluster_identifier"),
+	// "aws_db_instance":        config.ParameterAsIdentifier("identifier"),
+	// "aws_db_parameter_group": config.NameAsIdentifier,
+	// "aws_db_subnet_group":    config.NameAsIdentifier,
 	// aws_db_instance_role_association can be imported using the DB Instance Identifier and IAM Role ARN separated by a comma
 	// $ terraform import aws_db_instance_role_association.example my-db-instance,arn:aws:iam::123456789012:role/my-role
-	"aws_db_instance_role_association": config.IdentifierFromProvider,
+	// "aws_db_instance_role_association": config.IdentifierFromProvider,
 	// DB Option groups can be imported using the name
-	"aws_db_option_group": config.NameAsIdentifier,
+	// "aws_db_option_group": config.NameAsIdentifier,
 	// DB proxies can be imported using the name
-	"aws_db_proxy": config.NameAsIdentifier,
+	// "aws_db_proxy": config.NameAsIdentifier,
 	// DB proxy default target groups can be imported using the db_proxy_name
-	"aws_db_proxy_default_target_group": config.IdentifierFromProvider,
+	// "aws_db_proxy_default_target_group": config.IdentifierFromProvider,
 	// DB proxy endpoints can be imported using the DB-PROXY-NAME/DB-PROXY-ENDPOINT-NAME
-	"aws_db_proxy_endpoint": config.TemplatedStringAsIdentifier("db_proxy_endpoint_name", "{{ .external_name }}/{{ .parameters.db_proxy_name }}"),
+	// "aws_db_proxy_endpoint": config.TemplatedStringAsIdentifier("db_proxy_endpoint_name", "{{ .external_name }}/{{ .parameters.db_proxy_name }}"),
 	// RDS DB Proxy Targets can be imported using the db_proxy_name, target_group_name, target type (e.g., RDS_INSTANCE or TRACKED_CLUSTER), and resource identifier separated by forward slashes (/)
-	"aws_db_proxy_target": config.IdentifierFromProvider,
+	// "aws_db_proxy_target": config.IdentifierFromProvider,
 	// DB Security groups can be imported using the name
-	"aws_db_security_group": config.NameAsIdentifier,
+	// "aws_db_security_group": config.NameAsIdentifier,
 	// aws_db_snapshot can be imported by using the snapshot identifier
-	"aws_db_snapshot": config.ParameterAsIdentifier("db_snapshot_identifier"),
+	// "aws_db_snapshot": config.ParameterAsIdentifier("db_snapshot_identifier"),
 	// RDS Aurora Cluster Database Activity Streams can be imported using the resource_arn
-	"aws_rds_cluster_activity_stream": config.IdentifierFromProvider,
+	// "aws_rds_cluster_activity_stream": config.IdentifierFromProvider,
 	// RDS Clusters Endpoint can be imported using the cluster_endpoint_identifier
-	"aws_rds_cluster_endpoint": config.ParameterAsIdentifier("cluster_endpoint_identifier"),
+	// "aws_rds_cluster_endpoint": config.ParameterAsIdentifier("cluster_endpoint_identifier"),
 	// RDS Cluster Instances can be imported using the identifier
-	"aws_rds_cluster_instance": config.ParameterAsIdentifier("identifier"),
+	// "aws_rds_cluster_instance": config.ParameterAsIdentifier("identifier"),
 	// RDS Cluster Parameter Groups can be imported using the name
-	"aws_rds_cluster_parameter_group": config.NameAsIdentifier,
+	// "aws_rds_cluster_parameter_group": config.NameAsIdentifier,
 	// aws_rds_cluster_role_association can be imported using the DB Cluster Identifier and IAM Role ARN separated by a comma (,)
 	// $ terraform import aws_rds_cluster_role_association.example my-db-cluster,arn:aws:iam::123456789012:role/my-role
-	"aws_rds_cluster_role_association": FormattedIdentifierFromProvider(",", "db_cluster_identifier", "role_arn"),
+	// "aws_rds_cluster_role_association": FormattedIdentifierFromProvider(",", "db_cluster_identifier", "role_arn"),
 	// aws_rds_global_cluster can be imported by using the RDS Global Cluster identifie
-	"aws_rds_global_cluster": config.ParameterAsIdentifier("global_cluster_identifier"),
+	// "aws_rds_global_cluster": config.ParameterAsIdentifier("global_cluster_identifier"),
 	// aws_db_cluster_snapshot can be imported by using the cluster snapshot identifier
-	"aws_db_cluster_snapshot": config.IdentifierFromProvider,
+	// "aws_db_cluster_snapshot": config.IdentifierFromProvider,
 	// DB Event Subscriptions can be imported using the name
-	"aws_db_event_subscription": config.NameAsIdentifier,
+	// "aws_db_event_subscription": config.NameAsIdentifier,
 	// RDS instance automated backups replication can be imported using the arn
-	"aws_db_instance_automated_backups_replication": config.IdentifierFromProvider,
+	// "aws_db_instance_automated_backups_replication": config.IdentifierFromProvider,
 	// aws_db_snapshot_copy can be imported by using the snapshot identifier
-	"aws_db_snapshot_copy": config.IdentifierFromProvider,
+	// "aws_db_snapshot_copy": config.IdentifierFromProvider,
 
 	// route53
 	//

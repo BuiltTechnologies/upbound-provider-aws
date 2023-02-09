@@ -42,6 +42,7 @@ import (
 	"github.com/upbound/provider-aws/config/ebs"
 	"github.com/upbound/provider-aws/config/ec2"
 	"github.com/upbound/provider-aws/config/ecr"
+
 	// "github.com/upbound/provider-aws/config/ecrpublic"
 	// "github.com/upbound/provider-aws/config/ecs"
 	// "github.com/upbound/provider-aws/config/efs"
@@ -51,6 +52,7 @@ import (
 	"github.com/upbound/provider-aws/config/elb"
 	"github.com/upbound/provider-aws/config/elbv2"
 	"github.com/upbound/provider-aws/config/firehose"
+
 	// "github.com/upbound/provider-aws/config/fsx"
 
 	// "github.com/upbound/provider-aws/config/gamelift"
@@ -74,13 +76,14 @@ import (
 	// "github.com/upbound/provider-aws/config/opsworks"
 	// "github.com/upbound/provider-aws/config/organization"
 	// "github.com/upbound/provider-aws/config/qldb"
-	"github.com/upbound/provider-aws/config/rds"
+	// "github.com/upbound/provider-aws/config/rds"
 
 	// "github.com/upbound/provider-aws/config/redshift"
 	"github.com/upbound/provider-aws/config/route53"
 	// "github.com/upbound/provider-aws/config/route53recoverycontrolconfig"
 	"github.com/upbound/provider-aws/config/route53resolver"
 	"github.com/upbound/provider-aws/config/s3"
+
 	// "github.com/upbound/provider-aws/config/sagemaker"
 	"github.com/upbound/provider-aws/config/secretsmanager"
 	// "github.com/upbound/provider-aws/config/servicecatalog"
@@ -208,7 +211,7 @@ func GetProvider() *config.Provider {
 		// mq.Configure,
 		// neptune.Configure,
 		// opensearch.Configure,
-		rds.Configure,
+		// rds.Configure,
 		// redshift.Configure,
 		route53.Configure,
 		route53resolver.Configure,
