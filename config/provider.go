@@ -78,7 +78,7 @@ import (
 
 	// "github.com/upbound/provider-aws/config/redshift"
 	"github.com/upbound/provider-aws/config/route53"
-	"github.com/upbound/provider-aws/config/route53recoverycontrolconfig"
+	// "github.com/upbound/provider-aws/config/route53recoverycontrolconfig"
 	"github.com/upbound/provider-aws/config/route53resolver"
 	"github.com/upbound/provider-aws/config/s3"
 	// "github.com/upbound/provider-aws/config/sagemaker"
@@ -212,7 +212,7 @@ func GetProvider() *config.Provider {
 		// redshift.Configure,
 		route53.Configure,
 		route53resolver.Configure,
-		route53recoverycontrolconfig.Configure,
+		// route53recoverycontrolconfig.Configure,
 		s3.Configure,
 		secretsmanager.Configure,
 		// servicecatalog.Configure,

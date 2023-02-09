@@ -1144,21 +1144,21 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// eventbridge
 	//
 	// Imported using name
-	"aws_cloudwatch_event_api_destination": config.NameAsIdentifier,
+	// "aws_cloudwatch_event_api_destination": config.NameAsIdentifier,
 	// Imported using name
-	"aws_cloudwatch_event_archive": config.NameAsIdentifier,
+	// "aws_cloudwatch_event_archive": config.NameAsIdentifier,
 	// Imported using name
-	"aws_cloudwatch_event_bus": config.NameAsIdentifier,
+	// "aws_cloudwatch_event_bus": config.NameAsIdentifier,
 	// Imported using event_bus_name
-	"aws_cloudwatch_event_bus_policy": config.IdentifierFromProvider,
+	// "aws_cloudwatch_event_bus_policy": config.IdentifierFromProvider,
 	// Imported using name
-	"aws_cloudwatch_event_connection": config.NameAsIdentifier,
+	// "aws_cloudwatch_event_connection": config.NameAsIdentifier,
 	// Imported using event_bus_name/statement_id
-	"aws_cloudwatch_event_permission": FormattedIdentifierFromProvider("/", "event_bus_name", "statement_id"),
+	// "aws_cloudwatch_event_permission": FormattedIdentifierFromProvider("/", "event_bus_name", "statement_id"),
 	// Imported using event_bus_name/rule_name
-	"aws_cloudwatch_event_rule": FormattedIdentifierUserDefinedNameLast("name", "/", "event_bus_name"),
+	// "aws_cloudwatch_event_rule": FormattedIdentifierUserDefinedNameLast("name", "/", "event_bus_name"),
 	// Imported using event_bus_name/rule_name/target_id
-	"aws_cloudwatch_event_target": FormattedIdentifierFromProvider("/", "event_bus_name", "rule", "target_id"),
+	// "aws_cloudwatch_event_target": FormattedIdentifierFromProvider("/", "event_bus_name", "rule", "target_id"),
 
 	// cloudwatch
 	//
@@ -1549,7 +1549,7 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// serverlessapplicationrepository
 	//
 	// imported using the CloudFormation Stack name
-	"aws_serverlessapplicationrepository_cloudformation_stack": config.IdentifierFromProvider,
+	// "aws_serverlessapplicationrepository_cloudformation_stack": config.IdentifierFromProvider,
 
 	// directconnect
 	//
@@ -1746,7 +1746,7 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// dlm
 	//
 	// DLM lifecycle policies can be imported by their policy ID
-	"aws_dlm_lifecycle_policy": config.IdentifierFromProvider,
+	// "aws_dlm_lifecycle_policy": config.IdentifierFromProvider,
 
 	// dms
 	//
@@ -1778,11 +1778,11 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// schemas
 	//
 	// EventBridge discoverers can be imported using the id
-	"aws_schemas_discoverer": config.IdentifierFromProvider,
+	// "aws_schemas_discoverer": config.IdentifierFromProvider,
 	// EventBridge schema registries can be imported using the name
-	"aws_schemas_registry": config.NameAsIdentifier,
+	// "aws_schemas_registry": config.NameAsIdentifier,
 	// EventBridge schema can be imported using the name and registry_name
-	"aws_schemas_schema": FormattedIdentifierFromProvider("/", "name", "registry_name"),
+	// "aws_schemas_schema": FormattedIdentifierFromProvider("/", "name", "registry_name"),
 
 	// mediapackage
 	//
@@ -1820,7 +1820,7 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	//
 	// aws_servicequotas_service_quota can be imported by using the service code and quota code, separated by a front slash (/)
 	// vpc/L-F678F1CE
-	"aws_servicequotas_service_quota": FormattedIdentifierFromProvider("/", "service_code", "quota_code"),
+	// "aws_servicequotas_service_quota": FormattedIdentifierFromProvider("/", "service_code", "quota_code"),
 
 	// pinpoint
 	//
@@ -1977,16 +1977,16 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	//
 	// Imported using ARN that has a random substring:
 	// arn:aws:route53-recovery-control::313517334327:cluster/f9ae13be-a11e-4ec7-8522-94a70468e6ea
-	"aws_route53recoverycontrolconfig_cluster": config.IdentifierFromProvider,
+	// "aws_route53recoverycontrolconfig_cluster": config.IdentifierFromProvider,
 	// Imported using ARN that has a random substring:
 	// arn:aws:route53-recovery-control::313517334327:controlpanel/1bfba17df8684f5dab0467b71424f7e8
-	"aws_route53recoverycontrolconfig_control_panel": config.IdentifierFromProvider,
+	// "aws_route53recoverycontrolconfig_control_panel": config.IdentifierFromProvider,
 	// Imported using ARN that has a random substring:
 	// arn:aws:route53-recovery-control::313517334327:controlpanel/abd5fbfc052d4844a082dbf400f61da8/routingcontrol/d5d90e587870494b
-	"aws_route53recoverycontrolconfig_routing_control": config.IdentifierFromProvider,
+	// "aws_route53recoverycontrolconfig_routing_control": config.IdentifierFromProvider,
 	// Imported using ARN that has a random substring:
 	// arn:aws:route53-recovery-control::313517334327:controlpanel/1bfba17df8684f5dab0467b71424f7e8/safetyrule/3bacc77003364c0f
-	"aws_route53recoverycontrolconfig_safety_rule": config.IdentifierFromProvider,
+	// "aws_route53recoverycontrolconfig_safety_rule": config.IdentifierFromProvider,
 
 	// memorydb
 	//
@@ -2027,13 +2027,13 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	//
 	// Inspector Assessment Targets can be imported via their Amazon Resource Name (ARN)
 	// Example: arn:aws:inspector:us-east-1:123456789012:target/0-xxxxxxx
-	"aws_inspector_assessment_target": config.IdentifierFromProvider,
+	// "aws_inspector_assessment_target": config.IdentifierFromProvider,
 	// aws_inspector_assessment_template can be imported by using the template assessment ARN
 	// Example: arn:aws:inspector:us-west-2:123456789012:target/0-9IaAzhGR/template/0-WEcjR8CH
-	"aws_inspector_assessment_template": config.IdentifierFromProvider,
+	// "aws_inspector_assessment_template": config.IdentifierFromProvider,
 	// No import
 	// TODO: For now API is not normalized. While testing resource we can check the actual ID and normalize the API.
-	"aws_inspector_resource_group": config.IdentifierFromProvider,
+	// "aws_inspector_resource_group": config.IdentifierFromProvider,
 
 	// ses
 	//
@@ -2080,7 +2080,7 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// simpledb
 	//
 	// SimpleDB Domains can be imported using the name
-	"aws_simpledb_domain": config.NameAsIdentifier,
+	// "aws_simpledb_domain": config.NameAsIdentifier,
 
 	// networkfirewall
 	//
@@ -2173,15 +2173,15 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// swf
 	//
 	// SWF Domains can be imported using the name
-	"aws_swf_domain": config.NameAsIdentifier,
+	// "aws_swf_domain": config.NameAsIdentifier,
 
 	// timestreamwrite
 	//
 	// Timestream databases can be imported using the database_name
-	"aws_timestreamwrite_database": config.ParameterAsIdentifier("database_name"),
+	// "aws_timestreamwrite_database": config.ParameterAsIdentifier("database_name"),
 	// Timestream tables can be imported using the table_name and database_name separate by a colon (:)
 	// Example: ExampleTable:ExampleDatabase
-	"aws_timestreamwrite_table": config.TemplatedStringAsIdentifier("", "{{ .parameters.table_name }}:{{ .parameters.database_name }}"),
+	// "aws_timestreamwrite_table": config.TemplatedStringAsIdentifier("", "{{ .parameters.table_name }}:{{ .parameters.database_name }}"),
 
 	// wafv2
 	//
@@ -2196,7 +2196,7 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// elasticsearch
 	//
 	// Elasticsearch domains can be imported using the domain_name
-	"aws_elasticsearch_domain": config.TemplatedStringAsIdentifier("domain_name", "arn:aws:es:{{ .setup.configuration.region }}:{{ .setup.client_metadata.account_id }}:domain/{{ .external_name }}"),
+	// "aws_elasticsearch_domain": config.TemplatedStringAsIdentifier("domain_name", "arn:aws:es:{{ .setup.configuration.region }}:{{ .setup.client_metadata.account_id }}:domain/{{ .external_name }}"),
 
 	// xray
 	//

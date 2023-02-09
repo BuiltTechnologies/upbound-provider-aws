@@ -16,14 +16,6 @@ import (
 	dashboard "github.com/upbound/provider-aws/internal/controller/cloudwatch/dashboard"
 	metricalarm "github.com/upbound/provider-aws/internal/controller/cloudwatch/metricalarm"
 	metricstream "github.com/upbound/provider-aws/internal/controller/cloudwatch/metricstream"
-	apidestination "github.com/upbound/provider-aws/internal/controller/cloudwatchevents/apidestination"
-	archive "github.com/upbound/provider-aws/internal/controller/cloudwatchevents/archive"
-	bus "github.com/upbound/provider-aws/internal/controller/cloudwatchevents/bus"
-	buspolicy "github.com/upbound/provider-aws/internal/controller/cloudwatchevents/buspolicy"
-	connection "github.com/upbound/provider-aws/internal/controller/cloudwatchevents/connection"
-	permission "github.com/upbound/provider-aws/internal/controller/cloudwatchevents/permission"
-	rule "github.com/upbound/provider-aws/internal/controller/cloudwatchevents/rule"
-	target "github.com/upbound/provider-aws/internal/controller/cloudwatchevents/target"
 	definition "github.com/upbound/provider-aws/internal/controller/cloudwatchlogs/definition"
 	destination "github.com/upbound/provider-aws/internal/controller/cloudwatchlogs/destination"
 	destinationpolicy "github.com/upbound/provider-aws/internal/controller/cloudwatchlogs/destinationpolicy"
@@ -32,7 +24,6 @@ import (
 	resourcepolicy "github.com/upbound/provider-aws/internal/controller/cloudwatchlogs/resourcepolicy"
 	stream "github.com/upbound/provider-aws/internal/controller/cloudwatchlogs/stream"
 	subscriptionfilter "github.com/upbound/provider-aws/internal/controller/cloudwatchlogs/subscriptionfilter"
-	lifecyclepolicy "github.com/upbound/provider-aws/internal/controller/dlm/lifecyclepolicy"
 	certificate "github.com/upbound/provider-aws/internal/controller/dms/certificate"
 	endpoint "github.com/upbound/provider-aws/internal/controller/dms/endpoint"
 	eventsubscription "github.com/upbound/provider-aws/internal/controller/dms/eventsubscription"
@@ -139,7 +130,7 @@ import (
 	vpngateway "github.com/upbound/provider-aws/internal/controller/ec2/vpngateway"
 	vpngatewayattachment "github.com/upbound/provider-aws/internal/controller/ec2/vpngatewayattachment"
 	vpngatewayroutepropagation "github.com/upbound/provider-aws/internal/controller/ec2/vpngatewayroutepropagation"
-	lifecyclepolicyecr "github.com/upbound/provider-aws/internal/controller/ecr/lifecyclepolicy"
+	lifecyclepolicy "github.com/upbound/provider-aws/internal/controller/ecr/lifecyclepolicy"
 	pullthroughcacherule "github.com/upbound/provider-aws/internal/controller/ecr/pullthroughcacherule"
 	registrypolicy "github.com/upbound/provider-aws/internal/controller/ecr/registrypolicy"
 	registryscanningconfiguration "github.com/upbound/provider-aws/internal/controller/ecr/registryscanningconfiguration"
@@ -157,7 +148,6 @@ import (
 	fargateprofile "github.com/upbound/provider-aws/internal/controller/eks/fargateprofile"
 	identityproviderconfig "github.com/upbound/provider-aws/internal/controller/eks/identityproviderconfig"
 	nodegroup "github.com/upbound/provider-aws/internal/controller/eks/nodegroup"
-	domain "github.com/upbound/provider-aws/internal/controller/elasticsearch/domain"
 	appcookiestickinesspolicy "github.com/upbound/provider-aws/internal/controller/elb/appcookiestickinesspolicy"
 	attachment "github.com/upbound/provider-aws/internal/controller/elb/attachment"
 	backendserverpolicy "github.com/upbound/provider-aws/internal/controller/elb/backendserverpolicy"
@@ -195,9 +185,6 @@ import (
 	userpolicyattachment "github.com/upbound/provider-aws/internal/controller/iam/userpolicyattachment"
 	usersshkey "github.com/upbound/provider-aws/internal/controller/iam/usersshkey"
 	virtualmfadevice "github.com/upbound/provider-aws/internal/controller/iam/virtualmfadevice"
-	assessmenttarget "github.com/upbound/provider-aws/internal/controller/inspector/assessmenttarget"
-	assessmenttemplate "github.com/upbound/provider-aws/internal/controller/inspector/assessmenttemplate"
-	resourcegroup "github.com/upbound/provider-aws/internal/controller/inspector/resourcegroup"
 	streamkinesis "github.com/upbound/provider-aws/internal/controller/kinesis/stream"
 	streamconsumer "github.com/upbound/provider-aws/internal/controller/kinesis/streamconsumer"
 	application "github.com/upbound/provider-aws/internal/controller/kinesisanalytics/application"
@@ -220,7 +207,7 @@ import (
 	invocation "github.com/upbound/provider-aws/internal/controller/lambda/invocation"
 	layerversion "github.com/upbound/provider-aws/internal/controller/lambda/layerversion"
 	layerversionpermission "github.com/upbound/provider-aws/internal/controller/lambda/layerversionpermission"
-	permissionlambda "github.com/upbound/provider-aws/internal/controller/lambda/permission"
+	permission "github.com/upbound/provider-aws/internal/controller/lambda/permission"
 	provisionedconcurrencyconfig "github.com/upbound/provider-aws/internal/controller/lambda/provisionedconcurrencyconfig"
 	providerconfig "github.com/upbound/provider-aws/internal/controller/providerconfig"
 	clusterrds "github.com/upbound/provider-aws/internal/controller/rds/cluster"
@@ -254,12 +241,8 @@ import (
 	trafficpolicyinstance "github.com/upbound/provider-aws/internal/controller/route53/trafficpolicyinstance"
 	vpcassociationauthorization "github.com/upbound/provider-aws/internal/controller/route53/vpcassociationauthorization"
 	zone "github.com/upbound/provider-aws/internal/controller/route53/zone"
-	clusterroute53recoverycontrolconfig "github.com/upbound/provider-aws/internal/controller/route53recoverycontrolconfig/cluster"
-	controlpanel "github.com/upbound/provider-aws/internal/controller/route53recoverycontrolconfig/controlpanel"
-	routingcontrol "github.com/upbound/provider-aws/internal/controller/route53recoverycontrolconfig/routingcontrol"
-	safetyrule "github.com/upbound/provider-aws/internal/controller/route53recoverycontrolconfig/safetyrule"
 	endpointroute53resolver "github.com/upbound/provider-aws/internal/controller/route53resolver/endpoint"
-	ruleroute53resolver "github.com/upbound/provider-aws/internal/controller/route53resolver/rule"
+	rule "github.com/upbound/provider-aws/internal/controller/route53resolver/rule"
 	ruleassociation "github.com/upbound/provider-aws/internal/controller/route53resolver/ruleassociation"
 	bucket "github.com/upbound/provider-aws/internal/controller/s3/bucket"
 	bucketaccelerateconfiguration "github.com/upbound/provider-aws/internal/controller/s3/bucketaccelerateconfiguration"
@@ -291,19 +274,13 @@ import (
 	multiregionaccesspointpolicy "github.com/upbound/provider-aws/internal/controller/s3control/multiregionaccesspointpolicy"
 	objectlambdaaccesspoint "github.com/upbound/provider-aws/internal/controller/s3control/objectlambdaaccesspoint"
 	objectlambdaaccesspointpolicy "github.com/upbound/provider-aws/internal/controller/s3control/objectlambdaaccesspointpolicy"
-	discoverer "github.com/upbound/provider-aws/internal/controller/schemas/discoverer"
-	registry "github.com/upbound/provider-aws/internal/controller/schemas/registry"
-	schema "github.com/upbound/provider-aws/internal/controller/schemas/schema"
 	secret "github.com/upbound/provider-aws/internal/controller/secretsmanager/secret"
 	secretpolicy "github.com/upbound/provider-aws/internal/controller/secretsmanager/secretpolicy"
 	secretrotation "github.com/upbound/provider-aws/internal/controller/secretsmanager/secretrotation"
 	secretversion "github.com/upbound/provider-aws/internal/controller/secretsmanager/secretversion"
-	cloudformationstack "github.com/upbound/provider-aws/internal/controller/serverlessrepo/cloudformationstack"
-	servicequota "github.com/upbound/provider-aws/internal/controller/servicequotas/servicequota"
 	signingjob "github.com/upbound/provider-aws/internal/controller/signer/signingjob"
 	signingprofile "github.com/upbound/provider-aws/internal/controller/signer/signingprofile"
 	signingprofilepermission "github.com/upbound/provider-aws/internal/controller/signer/signingprofilepermission"
-	domainsimpledb "github.com/upbound/provider-aws/internal/controller/simpledb/domain"
 	platformapplication "github.com/upbound/provider-aws/internal/controller/sns/platformapplication"
 	smspreferences "github.com/upbound/provider-aws/internal/controller/sns/smspreferences"
 	topic "github.com/upbound/provider-aws/internal/controller/sns/topic"
@@ -321,9 +298,6 @@ import (
 	patchbaseline "github.com/upbound/provider-aws/internal/controller/ssm/patchbaseline"
 	patchgroup "github.com/upbound/provider-aws/internal/controller/ssm/patchgroup"
 	resourcedatasync "github.com/upbound/provider-aws/internal/controller/ssm/resourcedatasync"
-	domainswf "github.com/upbound/provider-aws/internal/controller/swf/domain"
-	database "github.com/upbound/provider-aws/internal/controller/timestreamwrite/database"
-	tabletimestreamwrite "github.com/upbound/provider-aws/internal/controller/timestreamwrite/table"
 )
 
 // Setup creates all controllers with the supplied logger and adds them to
@@ -337,14 +311,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		dashboard.Setup,
 		metricalarm.Setup,
 		metricstream.Setup,
-		apidestination.Setup,
-		archive.Setup,
-		bus.Setup,
-		buspolicy.Setup,
-		connection.Setup,
-		permission.Setup,
-		rule.Setup,
-		target.Setup,
 		definition.Setup,
 		destination.Setup,
 		destinationpolicy.Setup,
@@ -353,7 +319,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		resourcepolicy.Setup,
 		stream.Setup,
 		subscriptionfilter.Setup,
-		lifecyclepolicy.Setup,
 		certificate.Setup,
 		endpoint.Setup,
 		eventsubscription.Setup,
@@ -460,7 +425,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		vpngateway.Setup,
 		vpngatewayattachment.Setup,
 		vpngatewayroutepropagation.Setup,
-		lifecyclepolicyecr.Setup,
+		lifecyclepolicy.Setup,
 		pullthroughcacherule.Setup,
 		registrypolicy.Setup,
 		registryscanningconfiguration.Setup,
@@ -478,7 +443,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		fargateprofile.Setup,
 		identityproviderconfig.Setup,
 		nodegroup.Setup,
-		domain.Setup,
 		appcookiestickinesspolicy.Setup,
 		attachment.Setup,
 		backendserverpolicy.Setup,
@@ -516,9 +480,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		userpolicyattachment.Setup,
 		usersshkey.Setup,
 		virtualmfadevice.Setup,
-		assessmenttarget.Setup,
-		assessmenttemplate.Setup,
-		resourcegroup.Setup,
 		streamkinesis.Setup,
 		streamconsumer.Setup,
 		application.Setup,
@@ -541,7 +502,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		invocation.Setup,
 		layerversion.Setup,
 		layerversionpermission.Setup,
-		permissionlambda.Setup,
+		permission.Setup,
 		provisionedconcurrencyconfig.Setup,
 		providerconfig.Setup,
 		clusterrds.Setup,
@@ -575,12 +536,8 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		trafficpolicyinstance.Setup,
 		vpcassociationauthorization.Setup,
 		zone.Setup,
-		clusterroute53recoverycontrolconfig.Setup,
-		controlpanel.Setup,
-		routingcontrol.Setup,
-		safetyrule.Setup,
 		endpointroute53resolver.Setup,
-		ruleroute53resolver.Setup,
+		rule.Setup,
 		ruleassociation.Setup,
 		bucket.Setup,
 		bucketaccelerateconfiguration.Setup,
@@ -612,19 +569,13 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		multiregionaccesspointpolicy.Setup,
 		objectlambdaaccesspoint.Setup,
 		objectlambdaaccesspointpolicy.Setup,
-		discoverer.Setup,
-		registry.Setup,
-		schema.Setup,
 		secret.Setup,
 		secretpolicy.Setup,
 		secretrotation.Setup,
 		secretversion.Setup,
-		cloudformationstack.Setup,
-		servicequota.Setup,
 		signingjob.Setup,
 		signingprofile.Setup,
 		signingprofilepermission.Setup,
-		domainsimpledb.Setup,
 		platformapplication.Setup,
 		smspreferences.Setup,
 		topic.Setup,
@@ -642,9 +593,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		patchbaseline.Setup,
 		patchgroup.Setup,
 		resourcedatasync.Setup,
-		domainswf.Setup,
-		database.Setup,
-		tabletimestreamwrite.Setup,
 	} {
 		if err := setup(mgr, o); err != nil {
 			return err

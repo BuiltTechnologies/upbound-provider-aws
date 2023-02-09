@@ -13,21 +13,17 @@ import (
 	v1beta1 "github.com/upbound/provider-aws/apis/autoscaling/v1beta1"
 	v1beta1cloudtrail "github.com/upbound/provider-aws/apis/cloudtrail/v1beta1"
 	v1beta1cloudwatch "github.com/upbound/provider-aws/apis/cloudwatch/v1beta1"
-	v1beta1cloudwatchevents "github.com/upbound/provider-aws/apis/cloudwatchevents/v1beta1"
 	v1beta1cloudwatchlogs "github.com/upbound/provider-aws/apis/cloudwatchlogs/v1beta1"
-	v1beta1dlm "github.com/upbound/provider-aws/apis/dlm/v1beta1"
 	v1beta1dms "github.com/upbound/provider-aws/apis/dms/v1beta1"
 	v1beta1dynamodb "github.com/upbound/provider-aws/apis/dynamodb/v1beta1"
 	v1beta1ec2 "github.com/upbound/provider-aws/apis/ec2/v1beta1"
 	v1beta1ecr "github.com/upbound/provider-aws/apis/ecr/v1beta1"
 	v1beta1efs "github.com/upbound/provider-aws/apis/efs/v1beta1"
 	v1beta1eks "github.com/upbound/provider-aws/apis/eks/v1beta1"
-	v1beta1elasticsearch "github.com/upbound/provider-aws/apis/elasticsearch/v1beta1"
 	v1beta1elb "github.com/upbound/provider-aws/apis/elb/v1beta1"
 	v1beta1elbv2 "github.com/upbound/provider-aws/apis/elbv2/v1beta1"
 	v1beta1firehose "github.com/upbound/provider-aws/apis/firehose/v1beta1"
 	v1beta1iam "github.com/upbound/provider-aws/apis/iam/v1beta1"
-	v1beta1inspector "github.com/upbound/provider-aws/apis/inspector/v1beta1"
 	v1beta1kinesis "github.com/upbound/provider-aws/apis/kinesis/v1beta1"
 	v1beta1kinesisanalytics "github.com/upbound/provider-aws/apis/kinesisanalytics/v1beta1"
 	v1beta1kinesisanalyticsv2 "github.com/upbound/provider-aws/apis/kinesisanalyticsv2/v1beta1"
@@ -37,21 +33,14 @@ import (
 	v1beta1rds "github.com/upbound/provider-aws/apis/rds/v1beta1"
 	v1beta1resourcegroups "github.com/upbound/provider-aws/apis/resourcegroups/v1beta1"
 	v1beta1route53 "github.com/upbound/provider-aws/apis/route53/v1beta1"
-	v1beta1route53recoverycontrolconfig "github.com/upbound/provider-aws/apis/route53recoverycontrolconfig/v1beta1"
 	v1beta1route53resolver "github.com/upbound/provider-aws/apis/route53resolver/v1beta1"
 	v1beta1s3 "github.com/upbound/provider-aws/apis/s3/v1beta1"
 	v1beta1s3control "github.com/upbound/provider-aws/apis/s3control/v1beta1"
-	v1beta1schemas "github.com/upbound/provider-aws/apis/schemas/v1beta1"
 	v1beta1secretsmanager "github.com/upbound/provider-aws/apis/secretsmanager/v1beta1"
-	v1beta1serverlessrepo "github.com/upbound/provider-aws/apis/serverlessrepo/v1beta1"
-	v1beta1servicequotas "github.com/upbound/provider-aws/apis/servicequotas/v1beta1"
 	v1beta1signer "github.com/upbound/provider-aws/apis/signer/v1beta1"
-	v1beta1simpledb "github.com/upbound/provider-aws/apis/simpledb/v1beta1"
 	v1beta1sns "github.com/upbound/provider-aws/apis/sns/v1beta1"
 	v1beta1sqs "github.com/upbound/provider-aws/apis/sqs/v1beta1"
 	v1beta1ssm "github.com/upbound/provider-aws/apis/ssm/v1beta1"
-	v1beta1swf "github.com/upbound/provider-aws/apis/swf/v1beta1"
-	v1beta1timestreamwrite "github.com/upbound/provider-aws/apis/timestreamwrite/v1beta1"
 	v1alpha1 "github.com/upbound/provider-aws/apis/v1alpha1"
 	v1beta1apis "github.com/upbound/provider-aws/apis/v1beta1"
 )
@@ -62,21 +51,17 @@ func init() {
 		v1beta1.SchemeBuilder.AddToScheme,
 		v1beta1cloudtrail.SchemeBuilder.AddToScheme,
 		v1beta1cloudwatch.SchemeBuilder.AddToScheme,
-		v1beta1cloudwatchevents.SchemeBuilder.AddToScheme,
 		v1beta1cloudwatchlogs.SchemeBuilder.AddToScheme,
-		v1beta1dlm.SchemeBuilder.AddToScheme,
 		v1beta1dms.SchemeBuilder.AddToScheme,
 		v1beta1dynamodb.SchemeBuilder.AddToScheme,
 		v1beta1ec2.SchemeBuilder.AddToScheme,
 		v1beta1ecr.SchemeBuilder.AddToScheme,
 		v1beta1efs.SchemeBuilder.AddToScheme,
 		v1beta1eks.SchemeBuilder.AddToScheme,
-		v1beta1elasticsearch.SchemeBuilder.AddToScheme,
 		v1beta1elb.SchemeBuilder.AddToScheme,
 		v1beta1elbv2.SchemeBuilder.AddToScheme,
 		v1beta1firehose.SchemeBuilder.AddToScheme,
 		v1beta1iam.SchemeBuilder.AddToScheme,
-		v1beta1inspector.SchemeBuilder.AddToScheme,
 		v1beta1kinesis.SchemeBuilder.AddToScheme,
 		v1beta1kinesisanalytics.SchemeBuilder.AddToScheme,
 		v1beta1kinesisanalyticsv2.SchemeBuilder.AddToScheme,
@@ -86,21 +71,14 @@ func init() {
 		v1beta1rds.SchemeBuilder.AddToScheme,
 		v1beta1resourcegroups.SchemeBuilder.AddToScheme,
 		v1beta1route53.SchemeBuilder.AddToScheme,
-		v1beta1route53recoverycontrolconfig.SchemeBuilder.AddToScheme,
 		v1beta1route53resolver.SchemeBuilder.AddToScheme,
 		v1beta1s3.SchemeBuilder.AddToScheme,
 		v1beta1s3control.SchemeBuilder.AddToScheme,
-		v1beta1schemas.SchemeBuilder.AddToScheme,
 		v1beta1secretsmanager.SchemeBuilder.AddToScheme,
-		v1beta1serverlessrepo.SchemeBuilder.AddToScheme,
-		v1beta1servicequotas.SchemeBuilder.AddToScheme,
 		v1beta1signer.SchemeBuilder.AddToScheme,
-		v1beta1simpledb.SchemeBuilder.AddToScheme,
 		v1beta1sns.SchemeBuilder.AddToScheme,
 		v1beta1sqs.SchemeBuilder.AddToScheme,
 		v1beta1ssm.SchemeBuilder.AddToScheme,
-		v1beta1swf.SchemeBuilder.AddToScheme,
-		v1beta1timestreamwrite.SchemeBuilder.AddToScheme,
 		v1alpha1.SchemeBuilder.AddToScheme,
 		v1beta1apis.SchemeBuilder.AddToScheme,
 	)
