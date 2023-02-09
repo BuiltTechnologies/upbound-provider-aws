@@ -9,27 +9,7 @@ import (
 
 	"github.com/upbound/upjet/pkg/controller"
 
-	alternatecontact "github.com/upbound/provider-aws/internal/controller/account/alternatecontact"
-	grouptag "github.com/upbound/provider-aws/internal/controller/autoscaling/grouptag"
 	launchconfiguration "github.com/upbound/provider-aws/internal/controller/autoscaling/launchconfiguration"
-	lifecyclehook "github.com/upbound/provider-aws/internal/controller/autoscaling/lifecyclehook"
-	notification "github.com/upbound/provider-aws/internal/controller/autoscaling/notification"
-	policy "github.com/upbound/provider-aws/internal/controller/autoscaling/policy"
-	schedule "github.com/upbound/provider-aws/internal/controller/autoscaling/schedule"
-	scalingplan "github.com/upbound/provider-aws/internal/controller/autoscalingplans/scalingplan"
-	schedulingpolicy "github.com/upbound/provider-aws/internal/controller/batch/schedulingpolicy"
-	voiceconnector "github.com/upbound/provider-aws/internal/controller/chime/voiceconnector"
-	voiceconnectorgroup "github.com/upbound/provider-aws/internal/controller/chime/voiceconnectorgroup"
-	voiceconnectorlogging "github.com/upbound/provider-aws/internal/controller/chime/voiceconnectorlogging"
-	voiceconnectororigination "github.com/upbound/provider-aws/internal/controller/chime/voiceconnectororigination"
-	voiceconnectorstreaming "github.com/upbound/provider-aws/internal/controller/chime/voiceconnectorstreaming"
-	voiceconnectortermination "github.com/upbound/provider-aws/internal/controller/chime/voiceconnectortermination"
-	voiceconnectorterminationcredentials "github.com/upbound/provider-aws/internal/controller/chime/voiceconnectorterminationcredentials"
-	environmentec2 "github.com/upbound/provider-aws/internal/controller/cloud9/environmentec2"
-	environmentmembership "github.com/upbound/provider-aws/internal/controller/cloud9/environmentmembership"
-	resource "github.com/upbound/provider-aws/internal/controller/cloudcontrol/resource"
-	stack "github.com/upbound/provider-aws/internal/controller/cloudformation/stack"
-	stackset "github.com/upbound/provider-aws/internal/controller/cloudformation/stackset"
 	eventdatastore "github.com/upbound/provider-aws/internal/controller/cloudtrail/eventdatastore"
 	trail "github.com/upbound/provider-aws/internal/controller/cloudtrail/trail"
 	compositealarm "github.com/upbound/provider-aws/internal/controller/cloudwatch/compositealarm"
@@ -52,7 +32,6 @@ import (
 	resourcepolicy "github.com/upbound/provider-aws/internal/controller/cloudwatchlogs/resourcepolicy"
 	stream "github.com/upbound/provider-aws/internal/controller/cloudwatchlogs/stream"
 	subscriptionfilter "github.com/upbound/provider-aws/internal/controller/cloudwatchlogs/subscriptionfilter"
-	reportdefinition "github.com/upbound/provider-aws/internal/controller/cur/reportdefinition"
 	lifecyclepolicy "github.com/upbound/provider-aws/internal/controller/dlm/lifecyclepolicy"
 	certificate "github.com/upbound/provider-aws/internal/controller/dms/certificate"
 	endpoint "github.com/upbound/provider-aws/internal/controller/dms/endpoint"
@@ -186,7 +165,7 @@ import (
 	lbcookiestickinesspolicy "github.com/upbound/provider-aws/internal/controller/elb/lbcookiestickinesspolicy"
 	lbsslnegotiationpolicy "github.com/upbound/provider-aws/internal/controller/elb/lbsslnegotiationpolicy"
 	listenerpolicy "github.com/upbound/provider-aws/internal/controller/elb/listenerpolicy"
-	policyelb "github.com/upbound/provider-aws/internal/controller/elb/policy"
+	policy "github.com/upbound/provider-aws/internal/controller/elb/policy"
 	proxyprotocolpolicy "github.com/upbound/provider-aws/internal/controller/elb/proxyprotocolpolicy"
 	lb "github.com/upbound/provider-aws/internal/controller/elbv2/lb"
 	lblistener "github.com/upbound/provider-aws/internal/controller/elbv2/lblistener"
@@ -243,16 +222,7 @@ import (
 	layerversionpermission "github.com/upbound/provider-aws/internal/controller/lambda/layerversionpermission"
 	permissionlambda "github.com/upbound/provider-aws/internal/controller/lambda/permission"
 	provisionedconcurrencyconfig "github.com/upbound/provider-aws/internal/controller/lambda/provisionedconcurrencyconfig"
-	domainlightsail "github.com/upbound/provider-aws/internal/controller/lightsail/domain"
-	instancelightsail "github.com/upbound/provider-aws/internal/controller/lightsail/instance"
-	instancepublicports "github.com/upbound/provider-aws/internal/controller/lightsail/instancepublicports"
-	keypairlightsail "github.com/upbound/provider-aws/internal/controller/lightsail/keypair"
-	staticip "github.com/upbound/provider-aws/internal/controller/lightsail/staticip"
-	staticipattachment "github.com/upbound/provider-aws/internal/controller/lightsail/staticipattachment"
 	providerconfig "github.com/upbound/provider-aws/internal/controller/providerconfig"
-	groupquicksight "github.com/upbound/provider-aws/internal/controller/quicksight/group"
-	userquicksight "github.com/upbound/provider-aws/internal/controller/quicksight/user"
-	resourceshare "github.com/upbound/provider-aws/internal/controller/ram/resourceshare"
 	clusterrds "github.com/upbound/provider-aws/internal/controller/rds/cluster"
 	clusteractivitystream "github.com/upbound/provider-aws/internal/controller/rds/clusteractivitystream"
 	clusterendpoint "github.com/upbound/provider-aws/internal/controller/rds/clusterendpoint"
@@ -328,14 +298,6 @@ import (
 	secretpolicy "github.com/upbound/provider-aws/internal/controller/secretsmanager/secretpolicy"
 	secretrotation "github.com/upbound/provider-aws/internal/controller/secretsmanager/secretrotation"
 	secretversion "github.com/upbound/provider-aws/internal/controller/secretsmanager/secretversion"
-	account "github.com/upbound/provider-aws/internal/controller/securityhub/account"
-	actiontarget "github.com/upbound/provider-aws/internal/controller/securityhub/actiontarget"
-	findingaggregator "github.com/upbound/provider-aws/internal/controller/securityhub/findingaggregator"
-	insight "github.com/upbound/provider-aws/internal/controller/securityhub/insight"
-	inviteaccepter "github.com/upbound/provider-aws/internal/controller/securityhub/inviteaccepter"
-	member "github.com/upbound/provider-aws/internal/controller/securityhub/member"
-	productsubscription "github.com/upbound/provider-aws/internal/controller/securityhub/productsubscription"
-	standardssubscription "github.com/upbound/provider-aws/internal/controller/securityhub/standardssubscription"
 	cloudformationstack "github.com/upbound/provider-aws/internal/controller/serverlessrepo/cloudformationstack"
 	servicequota "github.com/upbound/provider-aws/internal/controller/servicequotas/servicequota"
 	signingjob "github.com/upbound/provider-aws/internal/controller/signer/signingjob"
@@ -368,27 +330,7 @@ import (
 // the supplied manager.
 func Setup(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
-		alternatecontact.Setup,
-		grouptag.Setup,
 		launchconfiguration.Setup,
-		lifecyclehook.Setup,
-		notification.Setup,
-		policy.Setup,
-		schedule.Setup,
-		scalingplan.Setup,
-		schedulingpolicy.Setup,
-		voiceconnector.Setup,
-		voiceconnectorgroup.Setup,
-		voiceconnectorlogging.Setup,
-		voiceconnectororigination.Setup,
-		voiceconnectorstreaming.Setup,
-		voiceconnectortermination.Setup,
-		voiceconnectorterminationcredentials.Setup,
-		environmentec2.Setup,
-		environmentmembership.Setup,
-		resource.Setup,
-		stack.Setup,
-		stackset.Setup,
 		eventdatastore.Setup,
 		trail.Setup,
 		compositealarm.Setup,
@@ -411,7 +353,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		resourcepolicy.Setup,
 		stream.Setup,
 		subscriptionfilter.Setup,
-		reportdefinition.Setup,
 		lifecyclepolicy.Setup,
 		certificate.Setup,
 		endpoint.Setup,
@@ -545,7 +486,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		lbcookiestickinesspolicy.Setup,
 		lbsslnegotiationpolicy.Setup,
 		listenerpolicy.Setup,
-		policyelb.Setup,
+		policy.Setup,
 		proxyprotocolpolicy.Setup,
 		lb.Setup,
 		lblistener.Setup,
@@ -602,16 +543,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		layerversionpermission.Setup,
 		permissionlambda.Setup,
 		provisionedconcurrencyconfig.Setup,
-		domainlightsail.Setup,
-		instancelightsail.Setup,
-		instancepublicports.Setup,
-		keypairlightsail.Setup,
-		staticip.Setup,
-		staticipattachment.Setup,
 		providerconfig.Setup,
-		groupquicksight.Setup,
-		userquicksight.Setup,
-		resourceshare.Setup,
 		clusterrds.Setup,
 		clusteractivitystream.Setup,
 		clusterendpoint.Setup,
@@ -687,14 +619,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		secretpolicy.Setup,
 		secretrotation.Setup,
 		secretversion.Setup,
-		account.Setup,
-		actiontarget.Setup,
-		findingaggregator.Setup,
-		insight.Setup,
-		inviteaccepter.Setup,
-		member.Setup,
-		productsubscription.Setup,
-		standardssubscription.Setup,
 		cloudformationstack.Setup,
 		servicequota.Setup,
 		signingjob.Setup,

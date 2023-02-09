@@ -31,7 +31,7 @@ import (
 	// "github.com/upbound/provider-aws/config/cognitoidentity"
 	// "github.com/upbound/provider-aws/config/cognitoidp"
 	// "github.com/upbound/provider-aws/config/connect"
-	"github.com/upbound/provider-aws/config/cur"
+	// "github.com/upbound/provider-aws/config/cur"
 	// "github.com/upbound/provider-aws/config/dax"
 	// "github.com/upbound/provider-aws/config/devicefarm"
 	// "github.com/upbound/provider-aws/config/directconnect"
@@ -175,7 +175,7 @@ func GetProvider() *config.Provider {
 		// cognitoidentity.Configure,
 		// cognitoidp.Configure,
 		// connect.Configure,
-		cur.Configure,
+		// cur.Configure,
 		// dax.Configure,
 		// devicefarm.Configure,
 		// docdb.Configure,

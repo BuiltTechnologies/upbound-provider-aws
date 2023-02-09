@@ -1031,7 +1031,7 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// ram
 	//
 	// Resource shares can be imported using the id
-	"aws_ram_resource_share": config.IdentifierFromProvider,
+	// "aws_ram_resource_share": config.IdentifierFromProvider,
 
 	// redshift
 	//
@@ -1331,7 +1331,7 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// account
 	//
 	// The Alternate Contact for the current account can be imported using the alternate_contact_type
-	"aws_account_alternate_contact": config.TemplatedStringAsIdentifier("", "{{ .parameters.alternate_contact_type }}"),
+	// "aws_account_alternate_contact": config.TemplatedStringAsIdentifier("", "{{ .parameters.alternate_contact_type }}"),
 
 	// amplify
 	//
@@ -1347,7 +1347,7 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// cur
 	//
 	// Report Definitions can be imported using the report_name
-	"aws_cur_report_definition": config.ParameterAsIdentifier("report_name"),
+	// "aws_cur_report_definition": config.ParameterAsIdentifier("report_name"),
 
 	// dataexchange
 	//
@@ -1409,7 +1409,7 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// batch
 	//
 	// Batch Scheduling Policy can be imported using the arn: arn:aws:batch:us-east-1:123456789012:scheduling-policy/sample
-	"aws_batch_scheduling_policy": config.TemplatedStringAsIdentifier("name", "arn:aws:batch:{{ .setup.configuration.region }}:{{ .setup.client_metadata.account_id }}:scheduling-policy/{{ .external_name }}"),
+	// "aws_batch_scheduling_policy": config.TemplatedStringAsIdentifier("name", "arn:aws:batch:{{ .setup.configuration.region }}:{{ .setup.client_metadata.account_id }}:scheduling-policy/{{ .external_name }}"),
 
 	// budgets
 	//
@@ -1421,130 +1421,130 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// chime
 	//
 	// Configuration Recorder can be imported using the name
-	"aws_chime_voice_connector": config.NameAsIdentifier,
+	// "aws_chime_voice_connector": config.NameAsIdentifier,
 	// Configuration Recorder can be imported using the name
-	"aws_chime_voice_connector_group": config.NameAsIdentifier,
+	// "aws_chime_voice_connector_group": config.NameAsIdentifier,
 	// Chime Voice Connector Logging can be imported using the voice_connector_id
-	"aws_chime_voice_connector_logging": config.IdentifierFromProvider,
+	// "aws_chime_voice_connector_logging": config.IdentifierFromProvider,
 	// Chime Voice Connector Origination can be imported using the voice_connector_id
-	"aws_chime_voice_connector_origination": config.IdentifierFromProvider,
+	// "aws_chime_voice_connector_origination": config.IdentifierFromProvider,
 	// Chime Voice Connector Streaming can be imported using the voice_connector_id
-	"aws_chime_voice_connector_streaming": config.IdentifierFromProvider,
+	// "aws_chime_voice_connector_streaming": config.IdentifierFromProvider,
 	// Chime Voice Connector Termination can be imported using the voice_connector_id
-	"aws_chime_voice_connector_termination": config.IdentifierFromProvider,
+	// "aws_chime_voice_connector_termination": config.IdentifierFromProvider,
 	// Chime Voice Connector Termination Credentials can be imported using the voice_connector_id
-	"aws_chime_voice_connector_termination_credentials": config.IdentifierFromProvider,
+	// "aws_chime_voice_connector_termination_credentials": config.IdentifierFromProvider,
 
 	// quicksight
 	//
 	// QuickSight Group can be imported using the aws account id, namespace and group name separated by /
 	// 123456789123/default/tf-example
-	"aws_quicksight_group": FormattedIdentifierFromProvider("/", "aws_account_id", "namespace", "group_name"),
+	// "aws_quicksight_group": FormattedIdentifierFromProvider("/", "aws_account_id", "namespace", "group_name"),
 	// No import
 	// TODO: For now API is not normalized. While testing resource we can check the actual ID and normalize the API.
-	"aws_quicksight_user": config.IdentifierFromProvider,
+	// "aws_quicksight_user": config.IdentifierFromProvider,
 
 	// lightsail
 	//
 	// No import
 	// TODO: For now API is not normalized. While testing resource we can check the actual ID and normalize the API.
-	"aws_lightsail_domain": config.IdentifierFromProvider,
+	// "aws_lightsail_domain": config.IdentifierFromProvider,
 	// Lightsail Instances can be imported using their name
-	"aws_lightsail_instance": config.NameAsIdentifier,
+	// "aws_lightsail_instance": config.NameAsIdentifier,
 	// No import
 	// TODO: For now API is not normalized. While testing resource we can check the actual ID and normalize the API.
-	"aws_lightsail_instance_public_ports": config.IdentifierFromProvider,
+	// "aws_lightsail_instance_public_ports": config.IdentifierFromProvider,
 	// No import
 	// TODO: For now API is not normalized. While testing resource we can check the actual ID and normalize the API.
-	"aws_lightsail_key_pair": config.IdentifierFromProvider,
+	// "aws_lightsail_key_pair": config.IdentifierFromProvider,
 	// No import
 	// TODO: For now API is not normalized. While testing resource we can check the actual ID and normalize the API.
-	"aws_lightsail_static_ip": config.IdentifierFromProvider,
+	// "aws_lightsail_static_ip": config.IdentifierFromProvider,
 	// No import
 	// TODO: For now API is not normalized. While testing resource we can check the actual ID and normalize the API.
-	"aws_lightsail_static_ip_attachment": config.IdentifierFromProvider,
+	// "aws_lightsail_static_ip_attachment": config.IdentifierFromProvider,
 
 	// cloud9
 	//
 	// No import
-	"aws_cloud9_environment_ec2": config.IdentifierFromProvider,
+	// "aws_cloud9_environment_ec2": config.IdentifierFromProvider,
 	// Cloud9 environment membership can be imported using the environment-id#user-arn
-	"aws_cloud9_environment_membership": config.TemplatedStringAsIdentifier("", "{{ .parameters.environment_id }}#{{ .parameters.user_arn }}"),
+	// "aws_cloud9_environment_membership": config.TemplatedStringAsIdentifier("", "{{ .parameters.environment_id }}#{{ .parameters.user_arn }}"),
 
 	// cloudcontrol
 	//
 	// No import
-	"aws_cloudcontrolapi_resource": config.IdentifierFromProvider,
+	// "aws_cloudcontrolapi_resource": config.IdentifierFromProvider,
 
 	// securityhub
 	//
 	// An existing Security Hub enabled account can be imported using the AWS account ID
-	"aws_securityhub_account": config.IdentifierFromProvider,
+	// "aws_securityhub_account": config.IdentifierFromProvider,
 	// imported using the action target ARN:
 	// arn:aws:securityhub:eu-west-1:312940875350:action/custom/a
 	// TODO: following configuration assumes the `a` in the above ARN
 	// is the security hub custom action identifier
-	"aws_securityhub_action_target": config.TemplatedStringAsIdentifier("identifier", "arn:aws:securityhub:{{ .setup.configuration.region }}:{{ .setup.client_metadata.account_id }}:action/custom/{{ .external_name }}"),
+	// "aws_securityhub_action_target": config.TemplatedStringAsIdentifier("identifier", "arn:aws:securityhub:{{ .setup.configuration.region }}:{{ .setup.client_metadata.account_id }}:action/custom/{{ .external_name }}"),
 	// imported using the arn that has a random substring:
 	// arn:aws:securityhub:eu-west-1:123456789098:finding-aggregator/abcd1234-abcd-1234-1234-abcdef123456
-	"aws_securityhub_finding_aggregator": config.IdentifierFromProvider,
+	// "aws_securityhub_finding_aggregator": config.IdentifierFromProvider,
 	// imported using the ARN that has a random substring:
 	// arn:aws:securityhub:us-west-2:1234567890:insight/1234567890/custom/91299ed7-abd0-4e44-a858-d0b15e37141a
-	"aws_securityhub_insight": config.IdentifierFromProvider,
+	// "aws_securityhub_insight": config.IdentifierFromProvider,
 	// imported using security hub member account ID
-	"aws_securityhub_member": FormattedIdentifierFromProvider("", "account_id"),
+	// "aws_securityhub_member": FormattedIdentifierFromProvider("", "account_id"),
 	// imported in the form product_arn,arn:
 	// arn:aws:securityhub:eu-west-1:733251395267:product/alertlogic/althreatmanagement,arn:aws:securityhub:eu-west-1:123456789012:product-subscription/alertlogic/althreatmanagement
 	// looks like it's possible to derive the external-name from
 	// the product_arn argument according to the above example
 	// (by replacing product by product-subscription), which makes this
 	// a special case of FormattedIdentifierFromProvider
-	"aws_securityhub_product_subscription": func() config.ExternalName {
-		e := config.IdentifierFromProvider
-		e.GetIDFn = func(_ context.Context, _ string, parameters map[string]interface{}, _ map[string]interface{}) (string, error) {
-			val, ok := parameters["product_arn"]
-			if !ok {
-				return "", errors.New("product_arn cannot be empty")
-			}
-			s, ok := val.(string)
-			if !ok {
-				return "", errors.New("product_arn needs to be a string")
-			}
-			return fmt.Sprintf("%s,%s", s, strings.Replace(s, ":product", ":product-subscription", 1)), nil
-		}
-		return e
-	}(),
+	// "aws_securityhub_product_subscription": func() config.ExternalName {
+	// 	e := config.IdentifierFromProvider
+	// 	e.GetIDFn = func(_ context.Context, _ string, parameters map[string]interface{}, _ map[string]interface{}) (string, error) {
+	// 		val, ok := parameters["product_arn"]
+	// 		if !ok {
+	// 			return "", errors.New("product_arn cannot be empty")
+	// 		}
+	// 		s, ok := val.(string)
+	// 		if !ok {
+	// 			return "", errors.New("product_arn needs to be a string")
+	// 		}
+	// 		return fmt.Sprintf("%s,%s", s, strings.Replace(s, ":product", ":product-subscription", 1)), nil
+	// 	}
+	// 	return e
+	// }(),
 	// imported using the standards subscription ARN:
 	// arn:aws:securityhub:eu-west-1:123456789012:subscription/pci-dss/v/3.2.1
-	"aws_securityhub_standards_subscription": FormattedIdentifierFromProvider("", "standards_arn"),
+	// "aws_securityhub_standards_subscription": FormattedIdentifierFromProvider("", "standards_arn"),
 	// imported using the account ID
-	"aws_securityhub_invite_accepter": config.IdentifierFromProvider,
+	// "aws_securityhub_invite_accepter": config.IdentifierFromProvider,
 
 	// cloudformation
 	//
 	// config.NameAsIdentifier did not work, the identifier for the resource turned out to be an ARN
 	// arn:aws:cloudformation:us-west-1:123456789123:stack/networking-stack/1e691240-6f2c-11ed-8f91-06094dc221f3
-	"aws_cloudformation_stack": TemplatedStringAsIdentifierWithNoName("arn:aws:cloudformation:{{ .parameters.region }}:{{ .client_metadata.account_id }}:stack/{{ .parameters.name }}/{{ .external_name }}"),
+	// "aws_cloudformation_stack": TemplatedStringAsIdentifierWithNoName("arn:aws:cloudformation:{{ .parameters.region }}:{{ .client_metadata.account_id }}:stack/{{ .parameters.name }}/{{ .external_name }}"),
 	// CloudFormation StackSets can be imported using the name
-	"aws_cloudformation_stack_set": config.NameAsIdentifier,
+	// "aws_cloudformation_stack_set": config.NameAsIdentifier,
 
 	// autoscaling
 	//
 	// aws_autoscaling_group_tag can be imported by using the ASG name and key, separated by a comma (,)
-	"aws_autoscaling_group_tag": config.IdentifierFromProvider,
+	// "aws_autoscaling_group_tag": config.IdentifierFromProvider,
 	// AutoScaling Lifecycle Hooks can be imported using the role autoscaling_group_name and name separated by /
-	"aws_autoscaling_lifecycle_hook": config.TemplatedStringAsIdentifier("name", "{{ .parameters.autoscaling_group_name }}/{{ .external_name }}"),
+	// "aws_autoscaling_lifecycle_hook": config.TemplatedStringAsIdentifier("name", "{{ .parameters.autoscaling_group_name }}/{{ .external_name }}"),
 	// No import
-	"aws_autoscaling_notification": config.IdentifierFromProvider,
+	// "aws_autoscaling_notification": config.IdentifierFromProvider,
 	// AutoScaling scaling policy can be imported using the role autoscaling_group_name and name separated by /
-	"aws_autoscaling_policy": config.TemplatedStringAsIdentifier("name", "{{ .parameters.autoscaling_group_name }}/{{ .external_name }}"),
+	// "aws_autoscaling_policy": config.TemplatedStringAsIdentifier("name", "{{ .parameters.autoscaling_group_name }}/{{ .external_name }}"),
 	// AutoScaling ScheduledAction can be imported using the auto-scaling-group-name and scheduled-action-name: auto-scaling-group-name/scheduled-action-name
-	"aws_autoscaling_schedule": config.TemplatedStringAsIdentifier("scheduled_action_name", "{{ .parameters.autoscaling_group_name }}/{{ .external_name }}"),
+	// "aws_autoscaling_schedule": config.TemplatedStringAsIdentifier("scheduled_action_name", "{{ .parameters.autoscaling_group_name }}/{{ .external_name }}"),
 
 	// autoscalingplans
 	//
 	// Auto Scaling scaling plans can be imported using the name
-	"aws_autoscalingplans_scaling_plan": config.IdentifierFromProvider,
+	// "aws_autoscalingplans_scaling_plan": config.IdentifierFromProvider,
 
 	// serverlessapplicationrepository
 	//

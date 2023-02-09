@@ -10,19 +10,11 @@ package apis
 import (
 	"k8s.io/apimachinery/pkg/runtime"
 
-	v1beta1 "github.com/upbound/provider-aws/apis/account/v1beta1"
-	v1beta1autoscaling "github.com/upbound/provider-aws/apis/autoscaling/v1beta1"
-	v1beta1autoscalingplans "github.com/upbound/provider-aws/apis/autoscalingplans/v1beta1"
-	v1beta1batch "github.com/upbound/provider-aws/apis/batch/v1beta1"
-	v1beta1chime "github.com/upbound/provider-aws/apis/chime/v1beta1"
-	v1beta1cloud9 "github.com/upbound/provider-aws/apis/cloud9/v1beta1"
-	v1beta1cloudcontrol "github.com/upbound/provider-aws/apis/cloudcontrol/v1beta1"
-	v1beta1cloudformation "github.com/upbound/provider-aws/apis/cloudformation/v1beta1"
+	v1beta1 "github.com/upbound/provider-aws/apis/autoscaling/v1beta1"
 	v1beta1cloudtrail "github.com/upbound/provider-aws/apis/cloudtrail/v1beta1"
 	v1beta1cloudwatch "github.com/upbound/provider-aws/apis/cloudwatch/v1beta1"
 	v1beta1cloudwatchevents "github.com/upbound/provider-aws/apis/cloudwatchevents/v1beta1"
 	v1beta1cloudwatchlogs "github.com/upbound/provider-aws/apis/cloudwatchlogs/v1beta1"
-	v1beta1cur "github.com/upbound/provider-aws/apis/cur/v1beta1"
 	v1beta1dlm "github.com/upbound/provider-aws/apis/dlm/v1beta1"
 	v1beta1dms "github.com/upbound/provider-aws/apis/dms/v1beta1"
 	v1beta1dynamodb "github.com/upbound/provider-aws/apis/dynamodb/v1beta1"
@@ -42,9 +34,6 @@ import (
 	v1beta1kinesisvideo "github.com/upbound/provider-aws/apis/kinesisvideo/v1beta1"
 	v1beta1kms "github.com/upbound/provider-aws/apis/kms/v1beta1"
 	v1beta1lambda "github.com/upbound/provider-aws/apis/lambda/v1beta1"
-	v1beta1lightsail "github.com/upbound/provider-aws/apis/lightsail/v1beta1"
-	v1beta1quicksight "github.com/upbound/provider-aws/apis/quicksight/v1beta1"
-	v1beta1ram "github.com/upbound/provider-aws/apis/ram/v1beta1"
 	v1beta1rds "github.com/upbound/provider-aws/apis/rds/v1beta1"
 	v1beta1resourcegroups "github.com/upbound/provider-aws/apis/resourcegroups/v1beta1"
 	v1beta1route53 "github.com/upbound/provider-aws/apis/route53/v1beta1"
@@ -54,7 +43,6 @@ import (
 	v1beta1s3control "github.com/upbound/provider-aws/apis/s3control/v1beta1"
 	v1beta1schemas "github.com/upbound/provider-aws/apis/schemas/v1beta1"
 	v1beta1secretsmanager "github.com/upbound/provider-aws/apis/secretsmanager/v1beta1"
-	v1beta1securityhub "github.com/upbound/provider-aws/apis/securityhub/v1beta1"
 	v1beta1serverlessrepo "github.com/upbound/provider-aws/apis/serverlessrepo/v1beta1"
 	v1beta1servicequotas "github.com/upbound/provider-aws/apis/servicequotas/v1beta1"
 	v1beta1signer "github.com/upbound/provider-aws/apis/signer/v1beta1"
@@ -72,18 +60,10 @@ func init() {
 	// Register the types with the Scheme so the components can map objects to GroupVersionKinds and back
 	AddToSchemes = append(AddToSchemes,
 		v1beta1.SchemeBuilder.AddToScheme,
-		v1beta1autoscaling.SchemeBuilder.AddToScheme,
-		v1beta1autoscalingplans.SchemeBuilder.AddToScheme,
-		v1beta1batch.SchemeBuilder.AddToScheme,
-		v1beta1chime.SchemeBuilder.AddToScheme,
-		v1beta1cloud9.SchemeBuilder.AddToScheme,
-		v1beta1cloudcontrol.SchemeBuilder.AddToScheme,
-		v1beta1cloudformation.SchemeBuilder.AddToScheme,
 		v1beta1cloudtrail.SchemeBuilder.AddToScheme,
 		v1beta1cloudwatch.SchemeBuilder.AddToScheme,
 		v1beta1cloudwatchevents.SchemeBuilder.AddToScheme,
 		v1beta1cloudwatchlogs.SchemeBuilder.AddToScheme,
-		v1beta1cur.SchemeBuilder.AddToScheme,
 		v1beta1dlm.SchemeBuilder.AddToScheme,
 		v1beta1dms.SchemeBuilder.AddToScheme,
 		v1beta1dynamodb.SchemeBuilder.AddToScheme,
@@ -103,9 +83,6 @@ func init() {
 		v1beta1kinesisvideo.SchemeBuilder.AddToScheme,
 		v1beta1kms.SchemeBuilder.AddToScheme,
 		v1beta1lambda.SchemeBuilder.AddToScheme,
-		v1beta1lightsail.SchemeBuilder.AddToScheme,
-		v1beta1quicksight.SchemeBuilder.AddToScheme,
-		v1beta1ram.SchemeBuilder.AddToScheme,
 		v1beta1rds.SchemeBuilder.AddToScheme,
 		v1beta1resourcegroups.SchemeBuilder.AddToScheme,
 		v1beta1route53.SchemeBuilder.AddToScheme,
@@ -115,7 +92,6 @@ func init() {
 		v1beta1s3control.SchemeBuilder.AddToScheme,
 		v1beta1schemas.SchemeBuilder.AddToScheme,
 		v1beta1secretsmanager.SchemeBuilder.AddToScheme,
-		v1beta1securityhub.SchemeBuilder.AddToScheme,
 		v1beta1serverlessrepo.SchemeBuilder.AddToScheme,
 		v1beta1servicequotas.SchemeBuilder.AddToScheme,
 		v1beta1signer.SchemeBuilder.AddToScheme,
