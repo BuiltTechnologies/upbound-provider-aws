@@ -113,18 +113,8 @@ type EcsTargetParameters struct {
 	TaskCount *float64 `json:"taskCount,omitempty" tf:"task_count,omitempty"`
 
 	// The ARN of the task definition to use if the event target is an Amazon ECS cluster.
-	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/ecs/v1beta1.TaskDefinition
-	// +crossplane:generate:reference:extractor=github.com/upbound/upjet/pkg/resource.ExtractParamPath("arn",true)
-	// +kubebuilder:validation:Optional
-	TaskDefinitionArn *string `json:"taskDefinitionArn,omitempty" tf:"task_definition_arn,omitempty"`
-
-	// Reference to a TaskDefinition in ecs to populate taskDefinitionArn.
-	// +kubebuilder:validation:Optional
-	TaskDefinitionArnRef *v1.Reference `json:"taskDefinitionArnRef,omitempty" tf:"-"`
-
-	// Selector for a TaskDefinition in ecs to populate taskDefinitionArn.
-	// +kubebuilder:validation:Optional
-	TaskDefinitionArnSelector *v1.Selector `json:"taskDefinitionArnSelector,omitempty" tf:"-"`
+	// +kubebuilder:validation:Required
+	TaskDefinitionArn *string `json:"taskDefinitionArn" tf:"task_definition_arn,omitempty"`
 }
 
 type HTTPTargetObservation struct {

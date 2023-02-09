@@ -352,22 +352,22 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 
 	// ecrpublic
 	//
-	"aws_ecrpublic_repository": config.ParameterAsIdentifier("repository_name"),
+	// "aws_ecrpublic_repository": config.ParameterAsIdentifier("repository_name"),
 	// Imported using the repository name.
-	"aws_ecrpublic_repository_policy": config.IdentifierFromProvider,
+	// "aws_ecrpublic_repository_policy": config.IdentifierFromProvider,
 
 	// ecs
 	//
-	"aws_ecs_cluster":           config.NameAsIdentifier,
-	"aws_ecs_service":           config.NameAsIdentifier,
-	"aws_ecs_capacity_provider": config.TemplatedStringAsIdentifier("name", "arn:aws:ecs:{{ .setup.configuration.region }}:{{ .setup.client_metadata.account_id }}:capacity-provider/{{ .external_name }}"),
+	// "aws_ecs_cluster":           config.NameAsIdentifier,
+	// "aws_ecs_service":           config.NameAsIdentifier,
+	// "aws_ecs_capacity_provider": config.TemplatedStringAsIdentifier("name", "arn:aws:ecs:{{ .setup.configuration.region }}:{{ .setup.client_metadata.account_id }}:capacity-provider/{{ .external_name }}"),
 	// Imported using ARN that has a random substring, revision at the end:
 	// arn:aws:ecs:us-east-1:012345678910:task-definition/mytaskfamily:123
-	"aws_ecs_task_definition": config.IdentifierFromProvider,
+	// "aws_ecs_task_definition": config.IdentifierFromProvider,
 	// ECS Account Setting defaults can be imported using the name
-	"aws_ecs_account_setting_default": config.IdentifierFromProvider,
+	// "aws_ecs_account_setting_default": config.IdentifierFromProvider,
 	// ECS cluster capacity providers can be imported using the cluster_name attribute
-	"aws_ecs_cluster_capacity_providers": config.IdentifierFromProvider,
+	// "aws_ecs_cluster_capacity_providers": config.IdentifierFromProvider,
 
 	// eks
 	//

@@ -227,14 +227,6 @@ import (
 	replicationconfiguration "github.com/upbound/provider-aws/internal/controller/ecr/replicationconfiguration"
 	repository "github.com/upbound/provider-aws/internal/controller/ecr/repository"
 	repositorypolicy "github.com/upbound/provider-aws/internal/controller/ecr/repositorypolicy"
-	repositoryecrpublic "github.com/upbound/provider-aws/internal/controller/ecrpublic/repository"
-	repositorypolicyecrpublic "github.com/upbound/provider-aws/internal/controller/ecrpublic/repositorypolicy"
-	accountsettingdefault "github.com/upbound/provider-aws/internal/controller/ecs/accountsettingdefault"
-	capacityprovider "github.com/upbound/provider-aws/internal/controller/ecs/capacityprovider"
-	clusterecs "github.com/upbound/provider-aws/internal/controller/ecs/cluster"
-	clustercapacityproviders "github.com/upbound/provider-aws/internal/controller/ecs/clustercapacityproviders"
-	service "github.com/upbound/provider-aws/internal/controller/ecs/service"
-	taskdefinition "github.com/upbound/provider-aws/internal/controller/ecs/taskdefinition"
 	accesspoint "github.com/upbound/provider-aws/internal/controller/efs/accesspoint"
 	backuppolicy "github.com/upbound/provider-aws/internal/controller/efs/backuppolicy"
 	filesystem "github.com/upbound/provider-aws/internal/controller/efs/filesystem"
@@ -485,7 +477,7 @@ import (
 	httpnamespace "github.com/upbound/provider-aws/internal/controller/servicediscovery/httpnamespace"
 	privatednsnamespace "github.com/upbound/provider-aws/internal/controller/servicediscovery/privatednsnamespace"
 	publicdnsnamespace "github.com/upbound/provider-aws/internal/controller/servicediscovery/publicdnsnamespace"
-	serviceservicediscovery "github.com/upbound/provider-aws/internal/controller/servicediscovery/service"
+	service "github.com/upbound/provider-aws/internal/controller/servicediscovery/service"
 	servicequota "github.com/upbound/provider-aws/internal/controller/servicequotas/servicequota"
 	activity "github.com/upbound/provider-aws/internal/controller/sfn/activity"
 	statemachine "github.com/upbound/provider-aws/internal/controller/sfn/statemachine"
@@ -737,14 +729,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		replicationconfiguration.Setup,
 		repository.Setup,
 		repositorypolicy.Setup,
-		repositoryecrpublic.Setup,
-		repositorypolicyecrpublic.Setup,
-		accountsettingdefault.Setup,
-		capacityprovider.Setup,
-		clusterecs.Setup,
-		clustercapacityproviders.Setup,
-		service.Setup,
-		taskdefinition.Setup,
 		accesspoint.Setup,
 		backuppolicy.Setup,
 		filesystem.Setup,
@@ -995,7 +979,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		httpnamespace.Setup,
 		privatednsnamespace.Setup,
 		publicdnsnamespace.Setup,
-		serviceservicediscovery.Setup,
+		service.Setup,
 		servicequota.Setup,
 		activity.Setup,
 		statemachine.Setup,

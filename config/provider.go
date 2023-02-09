@@ -42,8 +42,8 @@ import (
 	"github.com/upbound/provider-aws/config/ebs"
 	"github.com/upbound/provider-aws/config/ec2"
 	"github.com/upbound/provider-aws/config/ecr"
-	"github.com/upbound/provider-aws/config/ecrpublic"
-	"github.com/upbound/provider-aws/config/ecs"
+	// "github.com/upbound/provider-aws/config/ecrpublic"
+	// "github.com/upbound/provider-aws/config/ecs"
 	"github.com/upbound/provider-aws/config/efs"
 	"github.com/upbound/provider-aws/config/eks"
 	"github.com/upbound/provider-aws/config/elasticache"
@@ -183,8 +183,8 @@ func GetProvider() *config.Provider {
 		ebs.Configure,
 		ec2.Configure,
 		ecr.Configure,
-		ecrpublic.Configure,
-		ecs.Configure,
+		// ecrpublic.Configure,
+		// ecs.Configure,
 		efs.Configure,
 		eks.Configure,
 		elasticache.Configure,
