@@ -19,9 +19,9 @@ import (
 	"github.com/upbound/provider-aws/config/appstream"
 	"github.com/upbound/provider-aws/config/athena"
 	// "github.com/upbound/provider-aws/config/autoscaling"
-	"github.com/upbound/provider-aws/config/backup"
+	// "github.com/upbound/provider-aws/config/backup"
 	"github.com/upbound/provider-aws/config/budgets"
-	"github.com/upbound/provider-aws/config/cloudfront"
+	// "github.com/upbound/provider-aws/config/cloudfront"
 	"github.com/upbound/provider-aws/config/cloudsearch"
 	"github.com/upbound/provider-aws/config/cloudwatch"
 	"github.com/upbound/provider-aws/config/cloudwatchevents"
@@ -33,7 +33,7 @@ import (
 	"github.com/upbound/provider-aws/config/dax"
 	"github.com/upbound/provider-aws/config/devicefarm"
 	"github.com/upbound/provider-aws/config/directconnect"
-	"github.com/upbound/provider-aws/config/docdb"
+	// "github.com/upbound/provider-aws/config/docdb"
 	"github.com/upbound/provider-aws/config/ds"
 	"github.com/upbound/provider-aws/config/dynamodb"
 	"github.com/upbound/provider-aws/config/ebs"
@@ -49,10 +49,10 @@ import (
 	"github.com/upbound/provider-aws/config/elbv2"
 	"github.com/upbound/provider-aws/config/firehose"
 	"github.com/upbound/provider-aws/config/fsx"
-	"github.com/upbound/provider-aws/config/gamelift"
+	// "github.com/upbound/provider-aws/config/gamelift"
 	"github.com/upbound/provider-aws/config/globalaccelerator"
 	// "github.com/upbound/provider-aws/config/glue"
-	"github.com/upbound/provider-aws/config/grafana"
+	// "github.com/upbound/provider-aws/config/grafana"
 	"github.com/upbound/provider-aws/config/iam"
 	"github.com/upbound/provider-aws/config/kafka"
 	"github.com/upbound/provider-aws/config/kinesis"
@@ -82,7 +82,7 @@ import (
 	"github.com/upbound/provider-aws/config/sfn"
 	"github.com/upbound/provider-aws/config/sns"
 	"github.com/upbound/provider-aws/config/sqs"
-	"github.com/upbound/provider-aws/config/transfer"
+	// "github.com/upbound/provider-aws/config/transfer"
 )
 
 var (
@@ -161,8 +161,8 @@ func GetProvider() *config.Provider {
 		appstream.Configure,
 		athena.Configure,
 		// autoscaling.Configure,
-		backup.Configure,
-		cloudfront.Configure,
+		// backup.Configure,
+		// cloudfront.Configure,
 		cloudsearch.Configure,
 		cloudwatch.Configure,
 		cloudwatchlogs.Configure,
@@ -172,7 +172,7 @@ func GetProvider() *config.Provider {
 		cur.Configure,
 		dax.Configure,
 		devicefarm.Configure,
-		docdb.Configure,
+		// docdb.Configure,
 		dynamodb.Configure,
 		ebs.Configure,
 		ec2.Configure,
@@ -186,10 +186,10 @@ func GetProvider() *config.Provider {
 		elb.Configure,
 		elbv2.Configure,
 		firehose.Configure,
-		gamelift.Configure,
+		// gamelift.Configure,
 		globalaccelerator.Configure,
 		// glue.Configure,
-		grafana.Configure,
+		// grafana.Configure,
 		iam.Configure,
 		kafka.Configure,
 		kinesis.Configure,
@@ -217,7 +217,7 @@ func GetProvider() *config.Provider {
 		sfn.Configure,
 		sns.Configure,
 		sqs.Configure,
-		transfer.Configure,
+		// transfer.Configure,
 		directconnect.Configure,
 		ds.Configure,
 		qldb.Configure,

@@ -36,18 +36,8 @@ type LicenseAssociationParameters struct {
 	Region *string `json:"region" tf:"-"`
 
 	// The workspace id.
-	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/grafana/v1beta1.Workspace
-	// +crossplane:generate:reference:extractor=github.com/upbound/upjet/pkg/resource.ExtractResourceID()
-	// +kubebuilder:validation:Optional
-	WorkspaceID *string `json:"workspaceId,omitempty" tf:"workspace_id,omitempty"`
-
-	// Reference to a Workspace in grafana to populate workspaceId.
-	// +kubebuilder:validation:Optional
-	WorkspaceIDRef *v1.Reference `json:"workspaceIdRef,omitempty" tf:"-"`
-
-	// Selector for a Workspace in grafana to populate workspaceId.
-	// +kubebuilder:validation:Optional
-	WorkspaceIDSelector *v1.Selector `json:"workspaceIdSelector,omitempty" tf:"-"`
+	// +kubebuilder:validation:Required
+	WorkspaceID *string `json:"workspaceId" tf:"workspace_id,omitempty"`
 }
 
 // LicenseAssociationSpec defines the desired state of LicenseAssociation

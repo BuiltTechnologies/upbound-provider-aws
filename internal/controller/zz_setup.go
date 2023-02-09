@@ -85,16 +85,6 @@ import (
 	policyautoscaling "github.com/upbound/provider-aws/internal/controller/autoscaling/policy"
 	schedule "github.com/upbound/provider-aws/internal/controller/autoscaling/schedule"
 	scalingplan "github.com/upbound/provider-aws/internal/controller/autoscalingplans/scalingplan"
-	framework "github.com/upbound/provider-aws/internal/controller/backup/framework"
-	globalsettings "github.com/upbound/provider-aws/internal/controller/backup/globalsettings"
-	plan "github.com/upbound/provider-aws/internal/controller/backup/plan"
-	regionsettings "github.com/upbound/provider-aws/internal/controller/backup/regionsettings"
-	reportplan "github.com/upbound/provider-aws/internal/controller/backup/reportplan"
-	selection "github.com/upbound/provider-aws/internal/controller/backup/selection"
-	vault "github.com/upbound/provider-aws/internal/controller/backup/vault"
-	vaultlockconfiguration "github.com/upbound/provider-aws/internal/controller/backup/vaultlockconfiguration"
-	vaultnotifications "github.com/upbound/provider-aws/internal/controller/backup/vaultnotifications"
-	vaultpolicy "github.com/upbound/provider-aws/internal/controller/backup/vaultpolicy"
 	schedulingpolicy "github.com/upbound/provider-aws/internal/controller/batch/schedulingpolicy"
 	budget "github.com/upbound/provider-aws/internal/controller/budgets/budget"
 	budgetaction "github.com/upbound/provider-aws/internal/controller/budgets/budgetaction"
@@ -110,18 +100,6 @@ import (
 	resourcecloudcontrol "github.com/upbound/provider-aws/internal/controller/cloudcontrol/resource"
 	stackcloudformation "github.com/upbound/provider-aws/internal/controller/cloudformation/stack"
 	stackset "github.com/upbound/provider-aws/internal/controller/cloudformation/stackset"
-	cachepolicy "github.com/upbound/provider-aws/internal/controller/cloudfront/cachepolicy"
-	distribution "github.com/upbound/provider-aws/internal/controller/cloudfront/distribution"
-	fieldlevelencryptionconfig "github.com/upbound/provider-aws/internal/controller/cloudfront/fieldlevelencryptionconfig"
-	fieldlevelencryptionprofile "github.com/upbound/provider-aws/internal/controller/cloudfront/fieldlevelencryptionprofile"
-	functioncloudfront "github.com/upbound/provider-aws/internal/controller/cloudfront/function"
-	keygroup "github.com/upbound/provider-aws/internal/controller/cloudfront/keygroup"
-	monitoringsubscription "github.com/upbound/provider-aws/internal/controller/cloudfront/monitoringsubscription"
-	originaccessidentity "github.com/upbound/provider-aws/internal/controller/cloudfront/originaccessidentity"
-	originrequestpolicy "github.com/upbound/provider-aws/internal/controller/cloudfront/originrequestpolicy"
-	publickey "github.com/upbound/provider-aws/internal/controller/cloudfront/publickey"
-	realtimelogconfig "github.com/upbound/provider-aws/internal/controller/cloudfront/realtimelogconfig"
-	responseheaderspolicy "github.com/upbound/provider-aws/internal/controller/cloudfront/responseheaderspolicy"
 	domain "github.com/upbound/provider-aws/internal/controller/cloudsearch/domain"
 	domainserviceaccesspolicy "github.com/upbound/provider-aws/internal/controller/cloudsearch/domainserviceaccesspolicy"
 	eventdatastore "github.com/upbound/provider-aws/internal/controller/cloudtrail/eventdatastore"
@@ -215,13 +193,6 @@ import (
 	replicationinstance "github.com/upbound/provider-aws/internal/controller/dms/replicationinstance"
 	replicationsubnetgroup "github.com/upbound/provider-aws/internal/controller/dms/replicationsubnetgroup"
 	replicationtask "github.com/upbound/provider-aws/internal/controller/dms/replicationtask"
-	clusterdocdb "github.com/upbound/provider-aws/internal/controller/docdb/cluster"
-	clusterinstance "github.com/upbound/provider-aws/internal/controller/docdb/clusterinstance"
-	clusterparametergroup "github.com/upbound/provider-aws/internal/controller/docdb/clusterparametergroup"
-	clustersnapshot "github.com/upbound/provider-aws/internal/controller/docdb/clustersnapshot"
-	eventsubscriptiondocdb "github.com/upbound/provider-aws/internal/controller/docdb/eventsubscription"
-	globalcluster "github.com/upbound/provider-aws/internal/controller/docdb/globalcluster"
-	subnetgroupdocdb "github.com/upbound/provider-aws/internal/controller/docdb/subnetgroup"
 	directory "github.com/upbound/provider-aws/internal/controller/ds/directory"
 	contributorinsights "github.com/upbound/provider-aws/internal/controller/dynamodb/contributorinsights"
 	globaltable "github.com/upbound/provider-aws/internal/controller/dynamodb/globaltable"
@@ -382,20 +353,12 @@ import (
 	ontapfilesystem "github.com/upbound/provider-aws/internal/controller/fsx/ontapfilesystem"
 	ontapstoragevirtualmachine "github.com/upbound/provider-aws/internal/controller/fsx/ontapstoragevirtualmachine"
 	windowsfilesystem "github.com/upbound/provider-aws/internal/controller/fsx/windowsfilesystem"
-	alias "github.com/upbound/provider-aws/internal/controller/gamelift/alias"
-	build "github.com/upbound/provider-aws/internal/controller/gamelift/build"
-	fleetgamelift "github.com/upbound/provider-aws/internal/controller/gamelift/fleet"
-	gamesessionqueue "github.com/upbound/provider-aws/internal/controller/gamelift/gamesessionqueue"
-	script "github.com/upbound/provider-aws/internal/controller/gamelift/script"
-	vaultglacier "github.com/upbound/provider-aws/internal/controller/glacier/vault"
+	vault "github.com/upbound/provider-aws/internal/controller/glacier/vault"
 	vaultlock "github.com/upbound/provider-aws/internal/controller/glacier/vaultlock"
 	accelerator "github.com/upbound/provider-aws/internal/controller/globalaccelerator/accelerator"
 	endpointgroup "github.com/upbound/provider-aws/internal/controller/globalaccelerator/endpointgroup"
 	listener "github.com/upbound/provider-aws/internal/controller/globalaccelerator/listener"
 	licenseassociation "github.com/upbound/provider-aws/internal/controller/grafana/licenseassociation"
-	roleassociation "github.com/upbound/provider-aws/internal/controller/grafana/roleassociation"
-	workspace "github.com/upbound/provider-aws/internal/controller/grafana/workspace"
-	workspacesamlconfiguration "github.com/upbound/provider-aws/internal/controller/grafana/workspacesamlconfiguration"
 	detector "github.com/upbound/provider-aws/internal/controller/guardduty/detector"
 	filter "github.com/upbound/provider-aws/internal/controller/guardduty/filter"
 	memberguardduty "github.com/upbound/provider-aws/internal/controller/guardduty/member"
@@ -453,7 +416,7 @@ import (
 	applicationkinesisanalyticsv2 "github.com/upbound/provider-aws/internal/controller/kinesisanalyticsv2/application"
 	applicationsnapshot "github.com/upbound/provider-aws/internal/controller/kinesisanalyticsv2/applicationsnapshot"
 	streamkinesisvideo "github.com/upbound/provider-aws/internal/controller/kinesisvideo/stream"
-	aliaskms "github.com/upbound/provider-aws/internal/controller/kms/alias"
+	alias "github.com/upbound/provider-aws/internal/controller/kms/alias"
 	ciphertext "github.com/upbound/provider-aws/internal/controller/kms/ciphertext"
 	externalkey "github.com/upbound/provider-aws/internal/controller/kms/externalkey"
 	grant "github.com/upbound/provider-aws/internal/controller/kms/grant"
@@ -549,14 +512,14 @@ import (
 	clusterrds "github.com/upbound/provider-aws/internal/controller/rds/cluster"
 	clusteractivitystream "github.com/upbound/provider-aws/internal/controller/rds/clusteractivitystream"
 	clusterendpoint "github.com/upbound/provider-aws/internal/controller/rds/clusterendpoint"
-	clusterinstancerds "github.com/upbound/provider-aws/internal/controller/rds/clusterinstance"
-	clusterparametergrouprds "github.com/upbound/provider-aws/internal/controller/rds/clusterparametergroup"
+	clusterinstance "github.com/upbound/provider-aws/internal/controller/rds/clusterinstance"
+	clusterparametergroup "github.com/upbound/provider-aws/internal/controller/rds/clusterparametergroup"
 	clusterroleassociation "github.com/upbound/provider-aws/internal/controller/rds/clusterroleassociation"
-	clustersnapshotrds "github.com/upbound/provider-aws/internal/controller/rds/clustersnapshot"
+	clustersnapshot "github.com/upbound/provider-aws/internal/controller/rds/clustersnapshot"
 	dbinstanceautomatedbackupsreplication "github.com/upbound/provider-aws/internal/controller/rds/dbinstanceautomatedbackupsreplication"
 	dbsnapshotcopy "github.com/upbound/provider-aws/internal/controller/rds/dbsnapshotcopy"
 	eventsubscriptionrds "github.com/upbound/provider-aws/internal/controller/rds/eventsubscription"
-	globalclusterrds "github.com/upbound/provider-aws/internal/controller/rds/globalcluster"
+	globalcluster "github.com/upbound/provider-aws/internal/controller/rds/globalcluster"
 	instancerds "github.com/upbound/provider-aws/internal/controller/rds/instance"
 	instanceroleassociation "github.com/upbound/provider-aws/internal/controller/rds/instanceroleassociation"
 	optiongroup "github.com/upbound/provider-aws/internal/controller/rds/optiongroup"
@@ -716,8 +679,6 @@ import (
 	domainswf "github.com/upbound/provider-aws/internal/controller/swf/domain"
 	databasetimestreamwrite "github.com/upbound/provider-aws/internal/controller/timestreamwrite/database"
 	tabletimestreamwrite "github.com/upbound/provider-aws/internal/controller/timestreamwrite/table"
-	server "github.com/upbound/provider-aws/internal/controller/transfer/server"
-	usertransfer "github.com/upbound/provider-aws/internal/controller/transfer/user"
 	bytematchset "github.com/upbound/provider-aws/internal/controller/waf/bytematchset"
 	geomatchset "github.com/upbound/provider-aws/internal/controller/waf/geomatchset"
 	ipset "github.com/upbound/provider-aws/internal/controller/waf/ipset"
@@ -829,16 +790,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		policyautoscaling.Setup,
 		schedule.Setup,
 		scalingplan.Setup,
-		framework.Setup,
-		globalsettings.Setup,
-		plan.Setup,
-		regionsettings.Setup,
-		reportplan.Setup,
-		selection.Setup,
-		vault.Setup,
-		vaultlockconfiguration.Setup,
-		vaultnotifications.Setup,
-		vaultpolicy.Setup,
 		schedulingpolicy.Setup,
 		budget.Setup,
 		budgetaction.Setup,
@@ -854,18 +805,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		resourcecloudcontrol.Setup,
 		stackcloudformation.Setup,
 		stackset.Setup,
-		cachepolicy.Setup,
-		distribution.Setup,
-		fieldlevelencryptionconfig.Setup,
-		fieldlevelencryptionprofile.Setup,
-		functioncloudfront.Setup,
-		keygroup.Setup,
-		monitoringsubscription.Setup,
-		originaccessidentity.Setup,
-		originrequestpolicy.Setup,
-		publickey.Setup,
-		realtimelogconfig.Setup,
-		responseheaderspolicy.Setup,
 		domain.Setup,
 		domainserviceaccesspolicy.Setup,
 		eventdatastore.Setup,
@@ -959,13 +898,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		replicationinstance.Setup,
 		replicationsubnetgroup.Setup,
 		replicationtask.Setup,
-		clusterdocdb.Setup,
-		clusterinstance.Setup,
-		clusterparametergroup.Setup,
-		clustersnapshot.Setup,
-		eventsubscriptiondocdb.Setup,
-		globalcluster.Setup,
-		subnetgroupdocdb.Setup,
 		directory.Setup,
 		contributorinsights.Setup,
 		globaltable.Setup,
@@ -1126,20 +1058,12 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		ontapfilesystem.Setup,
 		ontapstoragevirtualmachine.Setup,
 		windowsfilesystem.Setup,
-		alias.Setup,
-		build.Setup,
-		fleetgamelift.Setup,
-		gamesessionqueue.Setup,
-		script.Setup,
-		vaultglacier.Setup,
+		vault.Setup,
 		vaultlock.Setup,
 		accelerator.Setup,
 		endpointgroup.Setup,
 		listener.Setup,
 		licenseassociation.Setup,
-		roleassociation.Setup,
-		workspace.Setup,
-		workspacesamlconfiguration.Setup,
 		detector.Setup,
 		filter.Setup,
 		memberguardduty.Setup,
@@ -1197,7 +1121,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		applicationkinesisanalyticsv2.Setup,
 		applicationsnapshot.Setup,
 		streamkinesisvideo.Setup,
-		aliaskms.Setup,
+		alias.Setup,
 		ciphertext.Setup,
 		externalkey.Setup,
 		grant.Setup,
@@ -1293,14 +1217,14 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		clusterrds.Setup,
 		clusteractivitystream.Setup,
 		clusterendpoint.Setup,
-		clusterinstancerds.Setup,
-		clusterparametergrouprds.Setup,
+		clusterinstance.Setup,
+		clusterparametergroup.Setup,
 		clusterroleassociation.Setup,
-		clustersnapshotrds.Setup,
+		clustersnapshot.Setup,
 		dbinstanceautomatedbackupsreplication.Setup,
 		dbsnapshotcopy.Setup,
 		eventsubscriptionrds.Setup,
-		globalclusterrds.Setup,
+		globalcluster.Setup,
 		instancerds.Setup,
 		instanceroleassociation.Setup,
 		optiongroup.Setup,
@@ -1460,8 +1384,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		domainswf.Setup,
 		databasetimestreamwrite.Setup,
 		tabletimestreamwrite.Setup,
-		server.Setup,
-		usertransfer.Setup,
 		bytematchset.Setup,
 		geomatchset.Setup,
 		ipset.Setup,

@@ -701,30 +701,30 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// cloudfront
 	//
 	// Cloudfront Cache Policies can be imported using the id
-	"aws_cloudfront_cache_policy": config.IdentifierFromProvider,
+	// "aws_cloudfront_cache_policy": config.IdentifierFromProvider,
 	// Cloudfront Distributions can be imported using the id
-	"aws_cloudfront_distribution": config.IdentifierFromProvider,
+	// "aws_cloudfront_distribution": config.IdentifierFromProvider,
 	// Cloudfront Field Level Encryption Config can be imported using the id
-	"aws_cloudfront_field_level_encryption_config": config.IdentifierFromProvider,
+	// "aws_cloudfront_field_level_encryption_config": config.IdentifierFromProvider,
 	// Cloudfront Field Level Encryption Profile can be imported using the id
-	"aws_cloudfront_field_level_encryption_profile": config.IdentifierFromProvider,
+	// "aws_cloudfront_field_level_encryption_profile": config.IdentifierFromProvider,
 	// CloudFront Functions can be imported using the name
-	"aws_cloudfront_function": config.NameAsIdentifier,
+	// "aws_cloudfront_function": config.NameAsIdentifier,
 	// CloudFront Key Group can be imported using the id
-	"aws_cloudfront_key_group": config.IdentifierFromProvider,
+	// "aws_cloudfront_key_group": config.IdentifierFromProvider,
 	// CloudFront monitoring subscription can be imported using the id
-	"aws_cloudfront_monitoring_subscription": config.IdentifierFromProvider,
+	// "aws_cloudfront_monitoring_subscription": config.IdentifierFromProvider,
 	// Cloudfront Origin Access Identities can be imported using the id
-	"aws_cloudfront_origin_access_identity": config.IdentifierFromProvider,
+	// "aws_cloudfront_origin_access_identity": config.IdentifierFromProvider,
 	// No import documented, but https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudfront_origin_request_policy#name
-	"aws_cloudfront_origin_request_policy": config.NameAsIdentifier,
+	// "aws_cloudfront_origin_request_policy": config.NameAsIdentifier,
 	// CloudFront Public Key can be imported using the id
-	"aws_cloudfront_public_key": config.IdentifierFromProvider,
+	// "aws_cloudfront_public_key": config.IdentifierFromProvider,
 	// CloudFront real-time log configurations can be imported using the ARN,
 	// $ terraform import aws_cloudfront_realtime_log_config.example arn:aws:cloudfront::111122223333:realtime-log-config/ExampleNameForRealtimeLogConfig
-	"aws_cloudfront_realtime_log_config": config.IdentifierFromProvider,
+	// "aws_cloudfront_realtime_log_config": config.IdentifierFromProvider,
 	// Cloudfront Response Headers Policies can be imported using the id
-	"aws_cloudfront_response_headers_policy": config.IdentifierFromProvider,
+	// "aws_cloudfront_response_headers_policy": config.IdentifierFromProvider,
 
 	// resource groups
 
@@ -734,19 +734,19 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// docdb
 	//
 	// DocDB Clusters can be imported using the cluster_identifier
-	"aws_docdb_cluster": config.ParameterAsIdentifier("cluster_identifier"),
+	// "aws_docdb_cluster": config.ParameterAsIdentifier("cluster_identifier"),
 	// aws_docdb_global_cluster can be imported by using the Global Cluster id
-	"aws_docdb_global_cluster": config.IdentifierFromProvider,
+	// "aws_docdb_global_cluster": config.IdentifierFromProvider,
 	// DocDB Cluster Instances can be imported using the identifier
-	"aws_docdb_cluster_instance": config.ParameterAsIdentifier("identifier"),
+	// "aws_docdb_cluster_instance": config.ParameterAsIdentifier("identifier"),
 	// DocumentDB Subnet groups can be imported using the name
-	"aws_docdb_subnet_group": config.NameAsIdentifier,
+	// "aws_docdb_subnet_group": config.NameAsIdentifier,
 	// DocumentDB Cluster Parameter Groups can be imported using the name
-	"aws_docdb_cluster_parameter_group": config.NameAsIdentifier,
+	// "aws_docdb_cluster_parameter_group": config.NameAsIdentifier,
 	// aws_docdb_cluster_snapshot can be imported by using the cluster snapshot identifier
-	"aws_docdb_cluster_snapshot": config.ParameterAsIdentifier("db_cluster_snapshot_identifier"),
+	// "aws_docdb_cluster_snapshot": config.ParameterAsIdentifier("db_cluster_snapshot_identifier"),
 	// DocDB Event Subscriptions can be imported using the name
-	"aws_docdb_event_subscription": config.NameAsIdentifier,
+	// "aws_docdb_event_subscription": config.NameAsIdentifier,
 
 	// efs
 	//
@@ -797,9 +797,9 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// transfer
 	//
 	// Transfer Servers can be imported using the id
-	"aws_transfer_server": config.IdentifierFromProvider,
+	// "aws_transfer_server": config.IdentifierFromProvider,
 	// Transfer Users can be imported using the server_id and user_name separated by /
-	"aws_transfer_user": FormattedIdentifierUserDefinedNameLast("user_name", "/", "server_id"),
+	// "aws_transfer_user": FormattedIdentifierUserDefinedNameLast("user_name", "/", "server_id"),
 
 	// dynamodb
 	//
@@ -821,47 +821,47 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// backup
 	//
 	// Backup Framework can be imported using the id which corresponds to the name of the Backup Framework
-	"aws_backup_framework": config.IdentifierFromProvider,
+	// "aws_backup_framework": config.IdentifierFromProvider,
 	// Backup Global Settings can be imported using the id
-	"aws_backup_global_settings": config.IdentifierFromProvider,
+	// "aws_backup_global_settings": config.IdentifierFromProvider,
 	// Backup Plan can be imported using the id
-	"aws_backup_plan": config.IdentifierFromProvider,
+	// "aws_backup_plan": config.IdentifierFromProvider,
 	// Backup vault can be imported using the name
-	"aws_backup_vault": config.NameAsIdentifier,
+	// "aws_backup_vault": config.NameAsIdentifier,
 	// Backup Region Settings can be imported using the region
-	"aws_backup_region_settings": config.IdentifierFromProvider,
+	// "aws_backup_region_settings": config.IdentifierFromProvider,
 	// Backup Report Plan can be imported using the id which corresponds to the name of the Backup Report Plan
-	"aws_backup_report_plan": config.IdentifierFromProvider,
+	// "aws_backup_report_plan": config.IdentifierFromProvider,
 	// Backup selection can be imported using the role plan_id and id separated by | plan-id|selection-id
-	"aws_backup_selection": config.IdentifierFromProvider,
+	// "aws_backup_selection": config.IdentifierFromProvider,
 	// Backup vault lock configuration can be imported using the name of the backup vault
-	"aws_backup_vault_lock_configuration": config.IdentifierFromProvider,
+	// "aws_backup_vault_lock_configuration": config.IdentifierFromProvider,
 	// Backup vault notifications can be imported using the name of the backup vault
-	"aws_backup_vault_notifications": config.IdentifierFromProvider,
+	// "aws_backup_vault_notifications": config.IdentifierFromProvider,
 	// Backup vault policy can be imported using the name of the backup vault
-	"aws_backup_vault_policy": config.IdentifierFromProvider,
+	// "aws_backup_vault_policy": config.IdentifierFromProvider,
 
 	// grafana
 	//
 	// Grafana Workspace can be imported using the workspace's id
-	"aws_grafana_workspace": config.IdentifierFromProvider,
+	// "aws_grafana_workspace": config.IdentifierFromProvider,
 	// No import
-	"aws_grafana_role_association": config.IdentifierFromProvider,
+	// "aws_grafana_role_association": config.IdentifierFromProvider,
 	// Grafana Workspace SAML configuration can be imported using the workspace's id
-	"aws_grafana_workspace_saml_configuration": FormattedIdentifierFromProvider("", "workspace_id"),
+	// "aws_grafana_workspace_saml_configuration": FormattedIdentifierFromProvider("", "workspace_id"),
 
 	// gamelift
 	//
 	// GameLift Aliases can be imported using the ID
-	"aws_gamelift_alias": config.IdentifierFromProvider,
+	// "aws_gamelift_alias": config.IdentifierFromProvider,
 	// GameLift Builds can be imported using the ID
-	"aws_gamelift_build": config.IdentifierFromProvider,
+	// "aws_gamelift_build": config.IdentifierFromProvider,
 	// GameLift Fleets can be imported using the ID
-	"aws_gamelift_fleet": config.IdentifierFromProvider,
+	// "aws_gamelift_fleet": config.IdentifierFromProvider,
 	// GameLift Game Session Queues can be imported by their name
-	"aws_gamelift_game_session_queue": config.NameAsIdentifier,
+	// "aws_gamelift_game_session_queue": config.NameAsIdentifier,
 	// GameLift Scripts can be imported using the ID
-	"aws_gamelift_script": config.IdentifierFromProvider,
+	// "aws_gamelift_script": config.IdentifierFromProvider,
 
 	// kinesis
 	//

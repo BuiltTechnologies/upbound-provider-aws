@@ -25,14 +25,12 @@ import (
 	v1beta1athena "github.com/upbound/provider-aws/apis/athena/v1beta1"
 	v1beta1autoscaling "github.com/upbound/provider-aws/apis/autoscaling/v1beta1"
 	v1beta1autoscalingplans "github.com/upbound/provider-aws/apis/autoscalingplans/v1beta1"
-	v1beta1backup "github.com/upbound/provider-aws/apis/backup/v1beta1"
 	v1beta1batch "github.com/upbound/provider-aws/apis/batch/v1beta1"
 	v1beta1budgets "github.com/upbound/provider-aws/apis/budgets/v1beta1"
 	v1beta1chime "github.com/upbound/provider-aws/apis/chime/v1beta1"
 	v1beta1cloud9 "github.com/upbound/provider-aws/apis/cloud9/v1beta1"
 	v1beta1cloudcontrol "github.com/upbound/provider-aws/apis/cloudcontrol/v1beta1"
 	v1beta1cloudformation "github.com/upbound/provider-aws/apis/cloudformation/v1beta1"
-	v1beta1cloudfront "github.com/upbound/provider-aws/apis/cloudfront/v1beta1"
 	v1beta1cloudsearch "github.com/upbound/provider-aws/apis/cloudsearch/v1beta1"
 	v1beta1cloudtrail "github.com/upbound/provider-aws/apis/cloudtrail/v1beta1"
 	v1beta1cloudwatch "github.com/upbound/provider-aws/apis/cloudwatch/v1beta1"
@@ -54,7 +52,6 @@ import (
 	v1beta1directconnect "github.com/upbound/provider-aws/apis/directconnect/v1beta1"
 	v1beta1dlm "github.com/upbound/provider-aws/apis/dlm/v1beta1"
 	v1beta1dms "github.com/upbound/provider-aws/apis/dms/v1beta1"
-	v1beta1docdb "github.com/upbound/provider-aws/apis/docdb/v1beta1"
 	v1beta1ds "github.com/upbound/provider-aws/apis/ds/v1beta1"
 	v1beta1dynamodb "github.com/upbound/provider-aws/apis/dynamodb/v1beta1"
 	v1beta1ec2 "github.com/upbound/provider-aws/apis/ec2/v1beta1"
@@ -72,7 +69,6 @@ import (
 	v1beta1emr "github.com/upbound/provider-aws/apis/emr/v1beta1"
 	v1beta1firehose "github.com/upbound/provider-aws/apis/firehose/v1beta1"
 	v1beta1fsx "github.com/upbound/provider-aws/apis/fsx/v1beta1"
-	v1beta1gamelift "github.com/upbound/provider-aws/apis/gamelift/v1beta1"
 	v1beta1glacier "github.com/upbound/provider-aws/apis/glacier/v1beta1"
 	v1beta1globalaccelerator "github.com/upbound/provider-aws/apis/globalaccelerator/v1beta1"
 	v1beta1grafana "github.com/upbound/provider-aws/apis/grafana/v1beta1"
@@ -133,7 +129,6 @@ import (
 	v1beta1ssm "github.com/upbound/provider-aws/apis/ssm/v1beta1"
 	v1beta1swf "github.com/upbound/provider-aws/apis/swf/v1beta1"
 	v1beta1timestreamwrite "github.com/upbound/provider-aws/apis/timestreamwrite/v1beta1"
-	v1beta1transfer "github.com/upbound/provider-aws/apis/transfer/v1beta1"
 	v1alpha1 "github.com/upbound/provider-aws/apis/v1alpha1"
 	v1beta1apis "github.com/upbound/provider-aws/apis/v1beta1"
 	v1beta1waf "github.com/upbound/provider-aws/apis/waf/v1beta1"
@@ -161,14 +156,12 @@ func init() {
 		v1beta1athena.SchemeBuilder.AddToScheme,
 		v1beta1autoscaling.SchemeBuilder.AddToScheme,
 		v1beta1autoscalingplans.SchemeBuilder.AddToScheme,
-		v1beta1backup.SchemeBuilder.AddToScheme,
 		v1beta1batch.SchemeBuilder.AddToScheme,
 		v1beta1budgets.SchemeBuilder.AddToScheme,
 		v1beta1chime.SchemeBuilder.AddToScheme,
 		v1beta1cloud9.SchemeBuilder.AddToScheme,
 		v1beta1cloudcontrol.SchemeBuilder.AddToScheme,
 		v1beta1cloudformation.SchemeBuilder.AddToScheme,
-		v1beta1cloudfront.SchemeBuilder.AddToScheme,
 		v1beta1cloudsearch.SchemeBuilder.AddToScheme,
 		v1beta1cloudtrail.SchemeBuilder.AddToScheme,
 		v1beta1cloudwatch.SchemeBuilder.AddToScheme,
@@ -190,7 +183,6 @@ func init() {
 		v1beta1directconnect.SchemeBuilder.AddToScheme,
 		v1beta1dlm.SchemeBuilder.AddToScheme,
 		v1beta1dms.SchemeBuilder.AddToScheme,
-		v1beta1docdb.SchemeBuilder.AddToScheme,
 		v1beta1ds.SchemeBuilder.AddToScheme,
 		v1beta1dynamodb.SchemeBuilder.AddToScheme,
 		v1beta1ec2.SchemeBuilder.AddToScheme,
@@ -208,7 +200,6 @@ func init() {
 		v1beta1emr.SchemeBuilder.AddToScheme,
 		v1beta1firehose.SchemeBuilder.AddToScheme,
 		v1beta1fsx.SchemeBuilder.AddToScheme,
-		v1beta1gamelift.SchemeBuilder.AddToScheme,
 		v1beta1glacier.SchemeBuilder.AddToScheme,
 		v1beta1globalaccelerator.SchemeBuilder.AddToScheme,
 		v1beta1grafana.SchemeBuilder.AddToScheme,
@@ -269,7 +260,6 @@ func init() {
 		v1beta1ssm.SchemeBuilder.AddToScheme,
 		v1beta1swf.SchemeBuilder.AddToScheme,
 		v1beta1timestreamwrite.SchemeBuilder.AddToScheme,
-		v1beta1transfer.SchemeBuilder.AddToScheme,
 		v1alpha1.SchemeBuilder.AddToScheme,
 		v1beta1apis.SchemeBuilder.AddToScheme,
 		v1beta1waf.SchemeBuilder.AddToScheme,
