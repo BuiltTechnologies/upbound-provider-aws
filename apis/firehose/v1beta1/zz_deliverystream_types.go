@@ -1093,17 +1093,8 @@ type SchemaConfigurationParameters struct {
 	RoleArnSelector *v1.Selector `json:"roleArnSelector,omitempty" tf:"-"`
 
 	// Specifies the AWS Glue table that contains the column information that constitutes your data schema.
-	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/glue/v1beta1.CatalogTable
-	// +kubebuilder:validation:Optional
-	TableName *string `json:"tableName,omitempty" tf:"table_name,omitempty"`
-
-	// Reference to a CatalogTable in glue to populate tableName.
-	// +kubebuilder:validation:Optional
-	TableNameRef *v1.Reference `json:"tableNameRef,omitempty" tf:"-"`
-
-	// Selector for a CatalogTable in glue to populate tableName.
-	// +kubebuilder:validation:Optional
-	TableNameSelector *v1.Selector `json:"tableNameSelector,omitempty" tf:"-"`
+	// +kubebuilder:validation:Required
+	TableName *string `json:"tableName" tf:"table_name,omitempty"`
 
 	// Specifies the table version for the output data schema. Defaults to LATEST.
 	// +kubebuilder:validation:Optional

@@ -51,7 +51,7 @@ import (
 	"github.com/upbound/provider-aws/config/fsx"
 	"github.com/upbound/provider-aws/config/gamelift"
 	"github.com/upbound/provider-aws/config/globalaccelerator"
-	"github.com/upbound/provider-aws/config/glue"
+	// "github.com/upbound/provider-aws/config/glue"
 	"github.com/upbound/provider-aws/config/grafana"
 	"github.com/upbound/provider-aws/config/iam"
 	"github.com/upbound/provider-aws/config/kafka"
@@ -62,8 +62,8 @@ import (
 	"github.com/upbound/provider-aws/config/lakeformation"
 	"github.com/upbound/provider-aws/config/lambda"
 	"github.com/upbound/provider-aws/config/licensemanager"
-	"github.com/upbound/provider-aws/config/mq"
-	"github.com/upbound/provider-aws/config/neptune"
+	// "github.com/upbound/provider-aws/config/mq"
+	// "github.com/upbound/provider-aws/config/neptune"
 	"github.com/upbound/provider-aws/config/networkmanager"
 	"github.com/upbound/provider-aws/config/opensearch"
 	"github.com/upbound/provider-aws/config/opsworks"
@@ -188,7 +188,7 @@ func GetProvider() *config.Provider {
 		firehose.Configure,
 		gamelift.Configure,
 		globalaccelerator.Configure,
-		glue.Configure,
+		// glue.Configure,
 		grafana.Configure,
 		iam.Configure,
 		kafka.Configure,
@@ -199,8 +199,8 @@ func GetProvider() *config.Provider {
 		lakeformation.Configure,
 		lambda.Configure,
 		licensemanager.Configure,
-		mq.Configure,
-		neptune.Configure,
+		// mq.Configure,
+		// neptune.Configure,
 		opensearch.Configure,
 		rds.Configure,
 		redshift.Configure,

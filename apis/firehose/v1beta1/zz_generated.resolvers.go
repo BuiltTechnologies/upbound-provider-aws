@@ -10,7 +10,6 @@ import (
 	reference "github.com/crossplane/crossplane-runtime/pkg/reference"
 	errors "github.com/pkg/errors"
 	v1beta1 "github.com/upbound/provider-aws/apis/elasticsearch/v1beta1"
-	v1beta13 "github.com/upbound/provider-aws/apis/glue/v1beta1"
 	v1beta11 "github.com/upbound/provider-aws/apis/iam/v1beta1"
 	v1beta12 "github.com/upbound/provider-aws/apis/s3/v1beta1"
 	common "github.com/upbound/provider-aws/config/common"
@@ -117,28 +116,6 @@ func (mg *DeliveryStream) ResolveReferences(ctx context.Context, c client.Reader
 				}
 				mg.Spec.ForProvider.ExtendedS3Configuration[i3].DataFormatConversionConfiguration[i4].SchemaConfiguration[i5].RoleArn = reference.ToPtrValue(rsp.ResolvedValue)
 				mg.Spec.ForProvider.ExtendedS3Configuration[i3].DataFormatConversionConfiguration[i4].SchemaConfiguration[i5].RoleArnRef = rsp.ResolvedReference
-
-			}
-		}
-	}
-	for i3 := 0; i3 < len(mg.Spec.ForProvider.ExtendedS3Configuration); i3++ {
-		for i4 := 0; i4 < len(mg.Spec.ForProvider.ExtendedS3Configuration[i3].DataFormatConversionConfiguration); i4++ {
-			for i5 := 0; i5 < len(mg.Spec.ForProvider.ExtendedS3Configuration[i3].DataFormatConversionConfiguration[i4].SchemaConfiguration); i5++ {
-				rsp, err = r.Resolve(ctx, reference.ResolutionRequest{
-					CurrentValue: reference.FromPtrValue(mg.Spec.ForProvider.ExtendedS3Configuration[i3].DataFormatConversionConfiguration[i4].SchemaConfiguration[i5].TableName),
-					Extract:      reference.ExternalName(),
-					Reference:    mg.Spec.ForProvider.ExtendedS3Configuration[i3].DataFormatConversionConfiguration[i4].SchemaConfiguration[i5].TableNameRef,
-					Selector:     mg.Spec.ForProvider.ExtendedS3Configuration[i3].DataFormatConversionConfiguration[i4].SchemaConfiguration[i5].TableNameSelector,
-					To: reference.To{
-						List:    &v1beta13.CatalogTableList{},
-						Managed: &v1beta13.CatalogTable{},
-					},
-				})
-				if err != nil {
-					return errors.Wrap(err, "mg.Spec.ForProvider.ExtendedS3Configuration[i3].DataFormatConversionConfiguration[i4].SchemaConfiguration[i5].TableName")
-				}
-				mg.Spec.ForProvider.ExtendedS3Configuration[i3].DataFormatConversionConfiguration[i4].SchemaConfiguration[i5].TableName = reference.ToPtrValue(rsp.ResolvedValue)
-				mg.Spec.ForProvider.ExtendedS3Configuration[i3].DataFormatConversionConfiguration[i4].SchemaConfiguration[i5].TableNameRef = rsp.ResolvedReference
 
 			}
 		}

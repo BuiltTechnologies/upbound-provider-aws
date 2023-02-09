@@ -414,25 +414,25 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// glue
 	//
 	// Imported using "name".
-	"aws_glue_workflow": config.NameAsIdentifier,
+	// "aws_glue_workflow": config.NameAsIdentifier,
 	// Imported using arn: arn:aws:glue:us-west-2:123456789012:schema/example/example
 	// "aws_glue_schema": config.IdentifierFromProvider,
 	// Imported using "name".
-	"aws_glue_trigger":               config.NameAsIdentifier,
-	"aws_glue_user_defined_function": config.TemplatedStringAsIdentifier("name", "{{ .parameters.catalog_id }}:{{ .parameters.database_name }}:{{ .external_name }}"),
+	// "aws_glue_trigger":               config.NameAsIdentifier,
+	// "aws_glue_user_defined_function": config.TemplatedStringAsIdentifier("name", "{{ .parameters.catalog_id }}:{{ .parameters.database_name }}:{{ .external_name }}"),
 	// "aws_glue_security_configuration": config.NameAsIdentifier,
 	// Imported using the account ID: 12356789012
-	"aws_glue_resource_policy":  config.IdentifierFromProvider,
-	"aws_glue_catalog_database": config.TemplatedStringAsIdentifier("name", "{{ .parameters.catalog_id }}:{{ .external_name }}"),
-	"aws_glue_catalog_table":    config.TemplatedStringAsIdentifier("name", "{{ .parameters.catalog_id }}:{{ .parameters.database_name }}:{{ .external_name }}"),
-	"aws_glue_classifier":       config.NameAsIdentifier,
+	// "aws_glue_resource_policy":  config.IdentifierFromProvider,
+	// "aws_glue_catalog_database": config.TemplatedStringAsIdentifier("name", "{{ .parameters.catalog_id }}:{{ .external_name }}"),
+	// "aws_glue_catalog_table":    config.TemplatedStringAsIdentifier("name", "{{ .parameters.catalog_id }}:{{ .parameters.database_name }}:{{ .external_name }}"),
+	// "aws_glue_classifier":       config.NameAsIdentifier,
 	// Imported as CATALOG_ID:name 123456789012:MyConnection
-	"aws_glue_connection": config.TemplatedStringAsIdentifier("name", "{{ .parameters.catalog_id }}:{{ .external_name }}"),
-	"aws_glue_crawler":    config.NameAsIdentifier,
+	// "aws_glue_connection": config.TemplatedStringAsIdentifier("name", "{{ .parameters.catalog_id }}:{{ .external_name }}"),
+	// "aws_glue_crawler":    config.NameAsIdentifier,
 	// Imported using CATALOG-ID (AWS account ID if not custom), e.g., 123456789012
-	"aws_glue_data_catalog_encryption_settings": config.IdentifierFromProvider,
+	// "aws_glue_data_catalog_encryption_settings": config.IdentifierFromProvider,
 	// "aws_glue_dev_endpoint":                     config.NameAsIdentifier,
-	"aws_glue_job": config.NameAsIdentifier,
+	// "aws_glue_job": config.NameAsIdentifier,
 	// Imported using id, e.g., tfm-c2cafbe83b1c575f49eaca9939220e2fcd58e2d5
 	// "aws_glue_ml_transform": config.IdentifierFromProvider,
 	// It has no naming argument, imported with their catalog ID (usually
@@ -443,10 +443,10 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// each with their own name.
 	// "aws_glue_partition_index": config.IdentifierFromProvider,
 	// Imported using ARN: arn:aws:glue:us-west-2:123456789012:registry/example
-	"aws_glue_registry": config.TemplatedStringAsIdentifier("registry_name", "arn:aws:glue:{{ .setup.configuration.region }}:{{ .setup.client_metadata.account_id }}:registry/{{ .external_name }}"),
+	// "aws_glue_registry": config.TemplatedStringAsIdentifier("registry_name", "arn:aws:glue:{{ .setup.configuration.region }}:{{ .setup.client_metadata.account_id }}:registry/{{ .external_name }}"),
 
 	// Imported using "name".
-	"aws_glue_security_configuration": config.NameAsIdentifier,
+	// "aws_glue_security_configuration": config.NameAsIdentifier,
 
 	// iam
 	//
@@ -516,21 +516,21 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// mq
 	//
 	// a1b2c3d4-d5f6-7777-8888-9999aaaabbbbcccc
-	"aws_mq_broker": config.IdentifierFromProvider,
+	// "aws_mq_broker": config.IdentifierFromProvider,
 	// c-0187d1eb-88c8-475a-9b79-16ef5a10c94f
-	"aws_mq_configuration": config.IdentifierFromProvider,
+	// "aws_mq_configuration": config.IdentifierFromProvider,
 
 	// neptune
 	//
-	"aws_neptune_cluster": config.ParameterAsIdentifier("cluster_identifier"),
+	// "aws_neptune_cluster": config.ParameterAsIdentifier("cluster_identifier"),
 	// my_cluster:my_cluster_endpoint
-	"aws_neptune_cluster_endpoint":        FormattedIdentifierUserDefinedNameLast("cluster_endpoint_identifier", ":", "cluster_identifier"),
-	"aws_neptune_cluster_instance":        config.ParameterAsIdentifier("identifier"),
-	"aws_neptune_cluster_parameter_group": config.NameAsIdentifier,
-	"aws_neptune_cluster_snapshot":        config.ParameterAsIdentifier("db_cluster_snapshot_identifier"),
-	"aws_neptune_event_subscription":      config.NameAsIdentifier,
-	"aws_neptune_parameter_group":         config.NameAsIdentifier,
-	"aws_neptune_subnet_group":            config.NameAsIdentifier,
+	// "aws_neptune_cluster_endpoint":        FormattedIdentifierUserDefinedNameLast("cluster_endpoint_identifier", ":", "cluster_identifier"),
+	// "aws_neptune_cluster_instance":        config.ParameterAsIdentifier("identifier"),
+	// "aws_neptune_cluster_parameter_group": config.NameAsIdentifier,
+	// "aws_neptune_cluster_snapshot":        config.ParameterAsIdentifier("db_cluster_snapshot_identifier"),
+	// "aws_neptune_event_subscription":      config.NameAsIdentifier,
+	// "aws_neptune_parameter_group":         config.NameAsIdentifier,
+	// "aws_neptune_subnet_group":            config.NameAsIdentifier,
 
 	// rds
 	//

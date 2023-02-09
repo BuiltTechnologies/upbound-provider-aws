@@ -2434,16 +2434,6 @@ func (in *SchemaConfigurationParameters) DeepCopyInto(out *SchemaConfigurationPa
 		*out = new(string)
 		**out = **in
 	}
-	if in.TableNameRef != nil {
-		in, out := &in.TableNameRef, &out.TableNameRef
-		*out = new(v1.Reference)
-		(*in).DeepCopyInto(*out)
-	}
-	if in.TableNameSelector != nil {
-		in, out := &in.TableNameSelector, &out.TableNameSelector
-		*out = new(v1.Selector)
-		(*in).DeepCopyInto(*out)
-	}
 	if in.VersionID != nil {
 		in, out := &in.VersionID, &out.VersionID
 		*out = new(string)

@@ -392,19 +392,6 @@ import (
 	accelerator "github.com/upbound/provider-aws/internal/controller/globalaccelerator/accelerator"
 	endpointgroup "github.com/upbound/provider-aws/internal/controller/globalaccelerator/endpointgroup"
 	listener "github.com/upbound/provider-aws/internal/controller/globalaccelerator/listener"
-	catalogdatabase "github.com/upbound/provider-aws/internal/controller/glue/catalogdatabase"
-	catalogtable "github.com/upbound/provider-aws/internal/controller/glue/catalogtable"
-	classifier "github.com/upbound/provider-aws/internal/controller/glue/classifier"
-	connectionglue "github.com/upbound/provider-aws/internal/controller/glue/connection"
-	crawler "github.com/upbound/provider-aws/internal/controller/glue/crawler"
-	datacatalogencryptionsettings "github.com/upbound/provider-aws/internal/controller/glue/datacatalogencryptionsettings"
-	job "github.com/upbound/provider-aws/internal/controller/glue/job"
-	registry "github.com/upbound/provider-aws/internal/controller/glue/registry"
-	resourcepolicyglue "github.com/upbound/provider-aws/internal/controller/glue/resourcepolicy"
-	securityconfigurationglue "github.com/upbound/provider-aws/internal/controller/glue/securityconfiguration"
-	triggerglue "github.com/upbound/provider-aws/internal/controller/glue/trigger"
-	userdefinedfunction "github.com/upbound/provider-aws/internal/controller/glue/userdefinedfunction"
-	workflow "github.com/upbound/provider-aws/internal/controller/glue/workflow"
 	licenseassociation "github.com/upbound/provider-aws/internal/controller/grafana/licenseassociation"
 	roleassociation "github.com/upbound/provider-aws/internal/controller/grafana/roleassociation"
 	workspace "github.com/upbound/provider-aws/internal/controller/grafana/workspace"
@@ -514,16 +501,6 @@ import (
 	parametergroupmemorydb "github.com/upbound/provider-aws/internal/controller/memorydb/parametergroup"
 	snapshot "github.com/upbound/provider-aws/internal/controller/memorydb/snapshot"
 	subnetgroupmemorydb "github.com/upbound/provider-aws/internal/controller/memorydb/subnetgroup"
-	broker "github.com/upbound/provider-aws/internal/controller/mq/broker"
-	configurationmq "github.com/upbound/provider-aws/internal/controller/mq/configuration"
-	clusterneptune "github.com/upbound/provider-aws/internal/controller/neptune/cluster"
-	clusterendpoint "github.com/upbound/provider-aws/internal/controller/neptune/clusterendpoint"
-	clusterinstanceneptune "github.com/upbound/provider-aws/internal/controller/neptune/clusterinstance"
-	clusterparametergroupneptune "github.com/upbound/provider-aws/internal/controller/neptune/clusterparametergroup"
-	clustersnapshotneptune "github.com/upbound/provider-aws/internal/controller/neptune/clustersnapshot"
-	eventsubscriptionneptune "github.com/upbound/provider-aws/internal/controller/neptune/eventsubscription"
-	parametergroupneptune "github.com/upbound/provider-aws/internal/controller/neptune/parametergroup"
-	subnetgroupneptune "github.com/upbound/provider-aws/internal/controller/neptune/subnetgroup"
 	firewallpolicy "github.com/upbound/provider-aws/internal/controller/networkfirewall/firewallpolicy"
 	rulegroup "github.com/upbound/provider-aws/internal/controller/networkfirewall/rulegroup"
 	connectionnetworkmanager "github.com/upbound/provider-aws/internal/controller/networkmanager/connection"
@@ -571,7 +548,7 @@ import (
 	resourceshare "github.com/upbound/provider-aws/internal/controller/ram/resourceshare"
 	clusterrds "github.com/upbound/provider-aws/internal/controller/rds/cluster"
 	clusteractivitystream "github.com/upbound/provider-aws/internal/controller/rds/clusteractivitystream"
-	clusterendpointrds "github.com/upbound/provider-aws/internal/controller/rds/clusterendpoint"
+	clusterendpoint "github.com/upbound/provider-aws/internal/controller/rds/clusterendpoint"
 	clusterinstancerds "github.com/upbound/provider-aws/internal/controller/rds/clusterinstance"
 	clusterparametergrouprds "github.com/upbound/provider-aws/internal/controller/rds/clusterparametergroup"
 	clusterroleassociation "github.com/upbound/provider-aws/internal/controller/rds/clusterroleassociation"
@@ -669,7 +646,7 @@ import (
 	workforce "github.com/upbound/provider-aws/internal/controller/sagemaker/workforce"
 	workteam "github.com/upbound/provider-aws/internal/controller/sagemaker/workteam"
 	discoverer "github.com/upbound/provider-aws/internal/controller/schemas/discoverer"
-	registryschemas "github.com/upbound/provider-aws/internal/controller/schemas/registry"
+	registry "github.com/upbound/provider-aws/internal/controller/schemas/registry"
 	schema "github.com/upbound/provider-aws/internal/controller/schemas/schema"
 	secret "github.com/upbound/provider-aws/internal/controller/secretsmanager/secret"
 	secretpolicy "github.com/upbound/provider-aws/internal/controller/secretsmanager/secretpolicy"
@@ -1159,19 +1136,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		accelerator.Setup,
 		endpointgroup.Setup,
 		listener.Setup,
-		catalogdatabase.Setup,
-		catalogtable.Setup,
-		classifier.Setup,
-		connectionglue.Setup,
-		crawler.Setup,
-		datacatalogencryptionsettings.Setup,
-		job.Setup,
-		registry.Setup,
-		resourcepolicyglue.Setup,
-		securityconfigurationglue.Setup,
-		triggerglue.Setup,
-		userdefinedfunction.Setup,
-		workflow.Setup,
 		licenseassociation.Setup,
 		roleassociation.Setup,
 		workspace.Setup,
@@ -1281,16 +1245,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		parametergroupmemorydb.Setup,
 		snapshot.Setup,
 		subnetgroupmemorydb.Setup,
-		broker.Setup,
-		configurationmq.Setup,
-		clusterneptune.Setup,
-		clusterendpoint.Setup,
-		clusterinstanceneptune.Setup,
-		clusterparametergroupneptune.Setup,
-		clustersnapshotneptune.Setup,
-		eventsubscriptionneptune.Setup,
-		parametergroupneptune.Setup,
-		subnetgroupneptune.Setup,
 		firewallpolicy.Setup,
 		rulegroup.Setup,
 		connectionnetworkmanager.Setup,
@@ -1338,7 +1292,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		resourceshare.Setup,
 		clusterrds.Setup,
 		clusteractivitystream.Setup,
-		clusterendpointrds.Setup,
+		clusterendpoint.Setup,
 		clusterinstancerds.Setup,
 		clusterparametergrouprds.Setup,
 		clusterroleassociation.Setup,
@@ -1436,7 +1390,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		workforce.Setup,
 		workteam.Setup,
 		discoverer.Setup,
-		registryschemas.Setup,
+		registry.Setup,
 		schema.Setup,
 		secret.Setup,
 		secretpolicy.Setup,
