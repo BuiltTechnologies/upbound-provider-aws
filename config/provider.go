@@ -13,7 +13,7 @@ import (
 
 	// "github.com/upbound/provider-aws/config/acm"
 	// "github.com/upbound/provider-aws/config/acmpca"
-	"github.com/upbound/provider-aws/config/apigateway"
+	// "github.com/upbound/provider-aws/config/apigateway"
 	// "github.com/upbound/provider-aws/config/apigatewayv2"
 	"github.com/upbound/provider-aws/config/apprunner"
 	"github.com/upbound/provider-aws/config/appstream"
@@ -23,7 +23,7 @@ import (
 	// "github.com/upbound/provider-aws/config/backup"
 	"github.com/upbound/provider-aws/config/budgets"
 	// "github.com/upbound/provider-aws/config/cloudfront"
-	"github.com/upbound/provider-aws/config/cloudsearch"
+	// "github.com/upbound/provider-aws/config/cloudsearch"
 	"github.com/upbound/provider-aws/config/cloudwatch"
 	"github.com/upbound/provider-aws/config/cloudwatchevents"
 	"github.com/upbound/provider-aws/config/cloudwatchlogs"
@@ -58,7 +58,7 @@ import (
 	// "github.com/upbound/provider-aws/config/glue"
 	// "github.com/upbound/provider-aws/config/grafana"
 	"github.com/upbound/provider-aws/config/iam"
-	"github.com/upbound/provider-aws/config/kafka"
+	// "github.com/upbound/provider-aws/config/kafka"
 	"github.com/upbound/provider-aws/config/kinesis"
 	"github.com/upbound/provider-aws/config/kinesisanalytics"
 	kinesisanalytics2 "github.com/upbound/provider-aws/config/kinesisanalyticsv2"
@@ -75,7 +75,8 @@ import (
 	"github.com/upbound/provider-aws/config/organization"
 	"github.com/upbound/provider-aws/config/qldb"
 	"github.com/upbound/provider-aws/config/rds"
-	"github.com/upbound/provider-aws/config/redshift"
+
+	// "github.com/upbound/provider-aws/config/redshift"
 	"github.com/upbound/provider-aws/config/route53"
 	"github.com/upbound/provider-aws/config/route53recoverycontrolconfig"
 	"github.com/upbound/provider-aws/config/route53resolver"
@@ -160,7 +161,7 @@ func GetProvider() *config.Provider {
 	for _, configure := range []func(provider *config.Provider){
 		// acm.Configure,
 		// acmpca.Configure,
-		apigateway.Configure,
+		// apigateway.Configure,
 		// apigatewayv2.Configure,
 		apprunner.Configure,
 		appstream.Configure,
@@ -168,7 +169,7 @@ func GetProvider() *config.Provider {
 		// autoscaling.Configure,
 		// backup.Configure,
 		// cloudfront.Configure,
-		cloudsearch.Configure,
+		// cloudsearch.Configure,
 		cloudwatch.Configure,
 		cloudwatchlogs.Configure,
 		// cognitoidentity.Configure,
@@ -196,7 +197,7 @@ func GetProvider() *config.Provider {
 		// glue.Configure,
 		// grafana.Configure,
 		iam.Configure,
-		kafka.Configure,
+		// kafka.Configure,
 		kinesis.Configure,
 		kinesisanalytics.Configure,
 		kinesisanalytics2.Configure,
@@ -208,7 +209,7 @@ func GetProvider() *config.Provider {
 		// neptune.Configure,
 		opensearch.Configure,
 		rds.Configure,
-		redshift.Configure,
+		// redshift.Configure,
 		route53.Configure,
 		route53resolver.Configure,
 		route53recoverycontrolconfig.Configure,

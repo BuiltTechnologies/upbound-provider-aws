@@ -13,7 +13,6 @@ import (
 	v1beta1 "github.com/upbound/provider-aws/apis/accessanalyzer/v1beta1"
 	v1beta1account "github.com/upbound/provider-aws/apis/account/v1beta1"
 	v1beta1amplify "github.com/upbound/provider-aws/apis/amplify/v1beta1"
-	v1beta1apigateway "github.com/upbound/provider-aws/apis/apigateway/v1beta1"
 	v1beta1appautoscaling "github.com/upbound/provider-aws/apis/appautoscaling/v1beta1"
 	v1beta1appconfig "github.com/upbound/provider-aws/apis/appconfig/v1beta1"
 	v1beta1appflow "github.com/upbound/provider-aws/apis/appflow/v1beta1"
@@ -30,7 +29,6 @@ import (
 	v1beta1cloud9 "github.com/upbound/provider-aws/apis/cloud9/v1beta1"
 	v1beta1cloudcontrol "github.com/upbound/provider-aws/apis/cloudcontrol/v1beta1"
 	v1beta1cloudformation "github.com/upbound/provider-aws/apis/cloudformation/v1beta1"
-	v1beta1cloudsearch "github.com/upbound/provider-aws/apis/cloudsearch/v1beta1"
 	v1beta1cloudtrail "github.com/upbound/provider-aws/apis/cloudtrail/v1beta1"
 	v1beta1cloudwatch "github.com/upbound/provider-aws/apis/cloudwatch/v1beta1"
 	v1beta1cloudwatchevents "github.com/upbound/provider-aws/apis/cloudwatchevents/v1beta1"
@@ -75,7 +73,6 @@ import (
 	v1beta1iam "github.com/upbound/provider-aws/apis/iam/v1beta1"
 	v1beta1imagebuilder "github.com/upbound/provider-aws/apis/imagebuilder/v1beta1"
 	v1beta1inspector "github.com/upbound/provider-aws/apis/inspector/v1beta1"
-	v1beta1kafka "github.com/upbound/provider-aws/apis/kafka/v1beta1"
 	v1beta1keyspaces "github.com/upbound/provider-aws/apis/keyspaces/v1beta1"
 	v1beta1kinesis "github.com/upbound/provider-aws/apis/kinesis/v1beta1"
 	v1beta1kinesisanalytics "github.com/upbound/provider-aws/apis/kinesisanalytics/v1beta1"
@@ -99,7 +96,6 @@ import (
 	v1beta1quicksight "github.com/upbound/provider-aws/apis/quicksight/v1beta1"
 	v1beta1ram "github.com/upbound/provider-aws/apis/ram/v1beta1"
 	v1beta1rds "github.com/upbound/provider-aws/apis/rds/v1beta1"
-	v1beta1redshift "github.com/upbound/provider-aws/apis/redshift/v1beta1"
 	v1beta1resourcegroups "github.com/upbound/provider-aws/apis/resourcegroups/v1beta1"
 	v1beta1route53 "github.com/upbound/provider-aws/apis/route53/v1beta1"
 	v1beta1route53recoverycontrolconfig "github.com/upbound/provider-aws/apis/route53recoverycontrolconfig/v1beta1"
@@ -139,7 +135,6 @@ func init() {
 		v1beta1.SchemeBuilder.AddToScheme,
 		v1beta1account.SchemeBuilder.AddToScheme,
 		v1beta1amplify.SchemeBuilder.AddToScheme,
-		v1beta1apigateway.SchemeBuilder.AddToScheme,
 		v1beta1appautoscaling.SchemeBuilder.AddToScheme,
 		v1beta1appconfig.SchemeBuilder.AddToScheme,
 		v1beta1appflow.SchemeBuilder.AddToScheme,
@@ -156,7 +151,6 @@ func init() {
 		v1beta1cloud9.SchemeBuilder.AddToScheme,
 		v1beta1cloudcontrol.SchemeBuilder.AddToScheme,
 		v1beta1cloudformation.SchemeBuilder.AddToScheme,
-		v1beta1cloudsearch.SchemeBuilder.AddToScheme,
 		v1beta1cloudtrail.SchemeBuilder.AddToScheme,
 		v1beta1cloudwatch.SchemeBuilder.AddToScheme,
 		v1beta1cloudwatchevents.SchemeBuilder.AddToScheme,
@@ -201,7 +195,6 @@ func init() {
 		v1beta1iam.SchemeBuilder.AddToScheme,
 		v1beta1imagebuilder.SchemeBuilder.AddToScheme,
 		v1beta1inspector.SchemeBuilder.AddToScheme,
-		v1beta1kafka.SchemeBuilder.AddToScheme,
 		v1beta1keyspaces.SchemeBuilder.AddToScheme,
 		v1beta1kinesis.SchemeBuilder.AddToScheme,
 		v1beta1kinesisanalytics.SchemeBuilder.AddToScheme,
@@ -225,7 +218,6 @@ func init() {
 		v1beta1quicksight.SchemeBuilder.AddToScheme,
 		v1beta1ram.SchemeBuilder.AddToScheme,
 		v1beta1rds.SchemeBuilder.AddToScheme,
-		v1beta1redshift.SchemeBuilder.AddToScheme,
 		v1beta1resourcegroups.SchemeBuilder.AddToScheme,
 		v1beta1route53.SchemeBuilder.AddToScheme,
 		v1beta1route53recoverycontrolconfig.SchemeBuilder.AddToScheme,

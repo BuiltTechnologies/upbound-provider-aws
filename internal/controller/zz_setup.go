@@ -15,36 +15,12 @@ import (
 	backendenvironment "github.com/upbound/provider-aws/internal/controller/amplify/backendenvironment"
 	branch "github.com/upbound/provider-aws/internal/controller/amplify/branch"
 	webhook "github.com/upbound/provider-aws/internal/controller/amplify/webhook"
-	account "github.com/upbound/provider-aws/internal/controller/apigateway/account"
-	apikey "github.com/upbound/provider-aws/internal/controller/apigateway/apikey"
-	authorizer "github.com/upbound/provider-aws/internal/controller/apigateway/authorizer"
-	basepathmapping "github.com/upbound/provider-aws/internal/controller/apigateway/basepathmapping"
-	clientcertificate "github.com/upbound/provider-aws/internal/controller/apigateway/clientcertificate"
-	deployment "github.com/upbound/provider-aws/internal/controller/apigateway/deployment"
-	documentationpart "github.com/upbound/provider-aws/internal/controller/apigateway/documentationpart"
-	documentationversion "github.com/upbound/provider-aws/internal/controller/apigateway/documentationversion"
-	domainname "github.com/upbound/provider-aws/internal/controller/apigateway/domainname"
-	gatewayresponse "github.com/upbound/provider-aws/internal/controller/apigateway/gatewayresponse"
-	integration "github.com/upbound/provider-aws/internal/controller/apigateway/integration"
-	integrationresponse "github.com/upbound/provider-aws/internal/controller/apigateway/integrationresponse"
-	method "github.com/upbound/provider-aws/internal/controller/apigateway/method"
-	methodresponse "github.com/upbound/provider-aws/internal/controller/apigateway/methodresponse"
-	methodsettings "github.com/upbound/provider-aws/internal/controller/apigateway/methodsettings"
-	model "github.com/upbound/provider-aws/internal/controller/apigateway/model"
-	requestvalidator "github.com/upbound/provider-aws/internal/controller/apigateway/requestvalidator"
-	resource "github.com/upbound/provider-aws/internal/controller/apigateway/resource"
-	restapi "github.com/upbound/provider-aws/internal/controller/apigateway/restapi"
-	restapipolicy "github.com/upbound/provider-aws/internal/controller/apigateway/restapipolicy"
-	stage "github.com/upbound/provider-aws/internal/controller/apigateway/stage"
-	usageplan "github.com/upbound/provider-aws/internal/controller/apigateway/usageplan"
-	usageplankey "github.com/upbound/provider-aws/internal/controller/apigateway/usageplankey"
-	vpclink "github.com/upbound/provider-aws/internal/controller/apigateway/vpclink"
 	policy "github.com/upbound/provider-aws/internal/controller/appautoscaling/policy"
 	scheduledaction "github.com/upbound/provider-aws/internal/controller/appautoscaling/scheduledaction"
 	target "github.com/upbound/provider-aws/internal/controller/appautoscaling/target"
 	application "github.com/upbound/provider-aws/internal/controller/appconfig/application"
 	configurationprofile "github.com/upbound/provider-aws/internal/controller/appconfig/configurationprofile"
-	deploymentappconfig "github.com/upbound/provider-aws/internal/controller/appconfig/deployment"
+	deployment "github.com/upbound/provider-aws/internal/controller/appconfig/deployment"
 	deploymentstrategy "github.com/upbound/provider-aws/internal/controller/appconfig/deploymentstrategy"
 	environment "github.com/upbound/provider-aws/internal/controller/appconfig/environment"
 	hostedconfigurationversion "github.com/upbound/provider-aws/internal/controller/appconfig/hostedconfigurationversion"
@@ -69,7 +45,7 @@ import (
 	user "github.com/upbound/provider-aws/internal/controller/appstream/user"
 	userstackassociation "github.com/upbound/provider-aws/internal/controller/appstream/userstackassociation"
 	apicache "github.com/upbound/provider-aws/internal/controller/appsync/apicache"
-	apikeyappsync "github.com/upbound/provider-aws/internal/controller/appsync/apikey"
+	apikey "github.com/upbound/provider-aws/internal/controller/appsync/apikey"
 	datasource "github.com/upbound/provider-aws/internal/controller/appsync/datasource"
 	function "github.com/upbound/provider-aws/internal/controller/appsync/function"
 	graphqlapi "github.com/upbound/provider-aws/internal/controller/appsync/graphqlapi"
@@ -93,11 +69,9 @@ import (
 	voiceconnectorterminationcredentials "github.com/upbound/provider-aws/internal/controller/chime/voiceconnectorterminationcredentials"
 	environmentec2 "github.com/upbound/provider-aws/internal/controller/cloud9/environmentec2"
 	environmentmembership "github.com/upbound/provider-aws/internal/controller/cloud9/environmentmembership"
-	resourcecloudcontrol "github.com/upbound/provider-aws/internal/controller/cloudcontrol/resource"
+	resource "github.com/upbound/provider-aws/internal/controller/cloudcontrol/resource"
 	stackcloudformation "github.com/upbound/provider-aws/internal/controller/cloudformation/stack"
 	stackset "github.com/upbound/provider-aws/internal/controller/cloudformation/stackset"
-	domain "github.com/upbound/provider-aws/internal/controller/cloudsearch/domain"
-	domainserviceaccesspolicy "github.com/upbound/provider-aws/internal/controller/cloudsearch/domainserviceaccesspolicy"
 	eventdatastore "github.com/upbound/provider-aws/internal/controller/cloudtrail/eventdatastore"
 	trail "github.com/upbound/provider-aws/internal/controller/cloudtrail/trail"
 	compositealarm "github.com/upbound/provider-aws/internal/controller/cloudwatch/compositealarm"
@@ -324,7 +298,7 @@ import (
 	usergroup "github.com/upbound/provider-aws/internal/controller/elasticache/usergroup"
 	applicationelasticbeanstalk "github.com/upbound/provider-aws/internal/controller/elasticbeanstalk/application"
 	configurationtemplate "github.com/upbound/provider-aws/internal/controller/elasticbeanstalk/configurationtemplate"
-	domainelasticsearch "github.com/upbound/provider-aws/internal/controller/elasticsearch/domain"
+	domain "github.com/upbound/provider-aws/internal/controller/elasticsearch/domain"
 	pipelineelastictranscoder "github.com/upbound/provider-aws/internal/controller/elastictranscoder/pipeline"
 	preset "github.com/upbound/provider-aws/internal/controller/elastictranscoder/preset"
 	appcookiestickinesspolicy "github.com/upbound/provider-aws/internal/controller/elb/appcookiestickinesspolicy"
@@ -389,8 +363,6 @@ import (
 	assessmenttarget "github.com/upbound/provider-aws/internal/controller/inspector/assessmenttarget"
 	assessmenttemplate "github.com/upbound/provider-aws/internal/controller/inspector/assessmenttemplate"
 	resourcegroup "github.com/upbound/provider-aws/internal/controller/inspector/resourcegroup"
-	clusterkafka "github.com/upbound/provider-aws/internal/controller/kafka/cluster"
-	configuration "github.com/upbound/provider-aws/internal/controller/kafka/configuration"
 	keyspace "github.com/upbound/provider-aws/internal/controller/keyspaces/keyspace"
 	tablekeyspaces "github.com/upbound/provider-aws/internal/controller/keyspaces/table"
 	streamkinesis "github.com/upbound/provider-aws/internal/controller/kinesis/stream"
@@ -423,7 +395,7 @@ import (
 	keypairlightsail "github.com/upbound/provider-aws/internal/controller/lightsail/keypair"
 	staticip "github.com/upbound/provider-aws/internal/controller/lightsail/staticip"
 	staticipattachment "github.com/upbound/provider-aws/internal/controller/lightsail/staticipattachment"
-	accountmacie2 "github.com/upbound/provider-aws/internal/controller/macie2/account"
+	account "github.com/upbound/provider-aws/internal/controller/macie2/account"
 	classificationjob "github.com/upbound/provider-aws/internal/controller/macie2/classificationjob"
 	customdataidentifier "github.com/upbound/provider-aws/internal/controller/macie2/customdataidentifier"
 	findingsfilter "github.com/upbound/provider-aws/internal/controller/macie2/findingsfilter"
@@ -505,14 +477,6 @@ import (
 	securitygrouprds "github.com/upbound/provider-aws/internal/controller/rds/securitygroup"
 	snapshotrds "github.com/upbound/provider-aws/internal/controller/rds/snapshot"
 	subnetgrouprds "github.com/upbound/provider-aws/internal/controller/rds/subnetgroup"
-	clusterredshift "github.com/upbound/provider-aws/internal/controller/redshift/cluster"
-	eventsubscriptionredshift "github.com/upbound/provider-aws/internal/controller/redshift/eventsubscription"
-	parametergroupredshift "github.com/upbound/provider-aws/internal/controller/redshift/parametergroup"
-	scheduledactionredshift "github.com/upbound/provider-aws/internal/controller/redshift/scheduledaction"
-	snapshotcopygrant "github.com/upbound/provider-aws/internal/controller/redshift/snapshotcopygrant"
-	snapshotschedule "github.com/upbound/provider-aws/internal/controller/redshift/snapshotschedule"
-	snapshotscheduleassociation "github.com/upbound/provider-aws/internal/controller/redshift/snapshotscheduleassociation"
-	subnetgroupredshift "github.com/upbound/provider-aws/internal/controller/redshift/subnetgroup"
 	groupresourcegroups "github.com/upbound/provider-aws/internal/controller/resourcegroups/group"
 	delegationset "github.com/upbound/provider-aws/internal/controller/route53/delegationset"
 	healthcheck "github.com/upbound/provider-aws/internal/controller/route53/healthcheck"
@@ -573,7 +537,7 @@ import (
 	featuregroup "github.com/upbound/provider-aws/internal/controller/sagemaker/featuregroup"
 	imagesagemaker "github.com/upbound/provider-aws/internal/controller/sagemaker/image"
 	imageversion "github.com/upbound/provider-aws/internal/controller/sagemaker/imageversion"
-	modelsagemaker "github.com/upbound/provider-aws/internal/controller/sagemaker/model"
+	model "github.com/upbound/provider-aws/internal/controller/sagemaker/model"
 	modelpackagegroup "github.com/upbound/provider-aws/internal/controller/sagemaker/modelpackagegroup"
 	modelpackagegrouppolicy "github.com/upbound/provider-aws/internal/controller/sagemaker/modelpackagegrouppolicy"
 	notebookinstance "github.com/upbound/provider-aws/internal/controller/sagemaker/notebookinstance"
@@ -694,36 +658,12 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		backendenvironment.Setup,
 		branch.Setup,
 		webhook.Setup,
-		account.Setup,
-		apikey.Setup,
-		authorizer.Setup,
-		basepathmapping.Setup,
-		clientcertificate.Setup,
-		deployment.Setup,
-		documentationpart.Setup,
-		documentationversion.Setup,
-		domainname.Setup,
-		gatewayresponse.Setup,
-		integration.Setup,
-		integrationresponse.Setup,
-		method.Setup,
-		methodresponse.Setup,
-		methodsettings.Setup,
-		model.Setup,
-		requestvalidator.Setup,
-		resource.Setup,
-		restapi.Setup,
-		restapipolicy.Setup,
-		stage.Setup,
-		usageplan.Setup,
-		usageplankey.Setup,
-		vpclink.Setup,
 		policy.Setup,
 		scheduledaction.Setup,
 		target.Setup,
 		application.Setup,
 		configurationprofile.Setup,
-		deploymentappconfig.Setup,
+		deployment.Setup,
 		deploymentstrategy.Setup,
 		environment.Setup,
 		hostedconfigurationversion.Setup,
@@ -748,7 +688,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		user.Setup,
 		userstackassociation.Setup,
 		apicache.Setup,
-		apikeyappsync.Setup,
+		apikey.Setup,
 		datasource.Setup,
 		function.Setup,
 		graphqlapi.Setup,
@@ -772,11 +712,9 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		voiceconnectorterminationcredentials.Setup,
 		environmentec2.Setup,
 		environmentmembership.Setup,
-		resourcecloudcontrol.Setup,
+		resource.Setup,
 		stackcloudformation.Setup,
 		stackset.Setup,
-		domain.Setup,
-		domainserviceaccesspolicy.Setup,
 		eventdatastore.Setup,
 		trail.Setup,
 		compositealarm.Setup,
@@ -1003,7 +941,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		usergroup.Setup,
 		applicationelasticbeanstalk.Setup,
 		configurationtemplate.Setup,
-		domainelasticsearch.Setup,
+		domain.Setup,
 		pipelineelastictranscoder.Setup,
 		preset.Setup,
 		appcookiestickinesspolicy.Setup,
@@ -1068,8 +1006,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		assessmenttarget.Setup,
 		assessmenttemplate.Setup,
 		resourcegroup.Setup,
-		clusterkafka.Setup,
-		configuration.Setup,
 		keyspace.Setup,
 		tablekeyspaces.Setup,
 		streamkinesis.Setup,
@@ -1102,7 +1038,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		keypairlightsail.Setup,
 		staticip.Setup,
 		staticipattachment.Setup,
-		accountmacie2.Setup,
+		account.Setup,
 		classificationjob.Setup,
 		customdataidentifier.Setup,
 		findingsfilter.Setup,
@@ -1184,14 +1120,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		securitygrouprds.Setup,
 		snapshotrds.Setup,
 		subnetgrouprds.Setup,
-		clusterredshift.Setup,
-		eventsubscriptionredshift.Setup,
-		parametergroupredshift.Setup,
-		scheduledactionredshift.Setup,
-		snapshotcopygrant.Setup,
-		snapshotschedule.Setup,
-		snapshotscheduleassociation.Setup,
-		subnetgroupredshift.Setup,
 		groupresourcegroups.Setup,
 		delegationset.Setup,
 		healthcheck.Setup,
@@ -1252,7 +1180,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		featuregroup.Setup,
 		imagesagemaker.Setup,
 		imageversion.Setup,
-		modelsagemaker.Setup,
+		model.Setup,
 		modelpackagegroup.Setup,
 		modelpackagegrouppolicy.Setup,
 		notebookinstance.Setup,
