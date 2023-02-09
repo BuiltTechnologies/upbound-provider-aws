@@ -34,18 +34,13 @@ import (
 	v1beta1ecr "github.com/upbound/provider-aws/apis/ecr/v1beta1"
 	v1beta1efs "github.com/upbound/provider-aws/apis/efs/v1beta1"
 	v1beta1eks "github.com/upbound/provider-aws/apis/eks/v1beta1"
-	v1beta1elasticbeanstalk "github.com/upbound/provider-aws/apis/elasticbeanstalk/v1beta1"
 	v1beta1elasticsearch "github.com/upbound/provider-aws/apis/elasticsearch/v1beta1"
 	v1beta1elb "github.com/upbound/provider-aws/apis/elb/v1beta1"
 	v1beta1elbv2 "github.com/upbound/provider-aws/apis/elbv2/v1beta1"
-	v1beta1emr "github.com/upbound/provider-aws/apis/emr/v1beta1"
 	v1beta1firehose "github.com/upbound/provider-aws/apis/firehose/v1beta1"
-	v1beta1fsx "github.com/upbound/provider-aws/apis/fsx/v1beta1"
-	v1beta1glacier "github.com/upbound/provider-aws/apis/glacier/v1beta1"
 	v1beta1grafana "github.com/upbound/provider-aws/apis/grafana/v1beta1"
 	v1beta1guardduty "github.com/upbound/provider-aws/apis/guardduty/v1beta1"
 	v1beta1iam "github.com/upbound/provider-aws/apis/iam/v1beta1"
-	v1beta1imagebuilder "github.com/upbound/provider-aws/apis/imagebuilder/v1beta1"
 	v1beta1inspector "github.com/upbound/provider-aws/apis/inspector/v1beta1"
 	v1beta1kinesis "github.com/upbound/provider-aws/apis/kinesis/v1beta1"
 	v1beta1kinesisanalytics "github.com/upbound/provider-aws/apis/kinesisanalytics/v1beta1"
@@ -54,10 +49,6 @@ import (
 	v1beta1kms "github.com/upbound/provider-aws/apis/kms/v1beta1"
 	v1beta1lambda "github.com/upbound/provider-aws/apis/lambda/v1beta1"
 	v1beta1lightsail "github.com/upbound/provider-aws/apis/lightsail/v1beta1"
-	v1beta1macie2 "github.com/upbound/provider-aws/apis/macie2/v1beta1"
-	v1beta1memorydb "github.com/upbound/provider-aws/apis/memorydb/v1beta1"
-	v1beta1pinpoint "github.com/upbound/provider-aws/apis/pinpoint/v1beta1"
-	v1beta1qldb "github.com/upbound/provider-aws/apis/qldb/v1beta1"
 	v1beta1quicksight "github.com/upbound/provider-aws/apis/quicksight/v1beta1"
 	v1beta1ram "github.com/upbound/provider-aws/apis/ram/v1beta1"
 	v1beta1rds "github.com/upbound/provider-aws/apis/rds/v1beta1"
@@ -111,18 +102,13 @@ func init() {
 		v1beta1ecr.SchemeBuilder.AddToScheme,
 		v1beta1efs.SchemeBuilder.AddToScheme,
 		v1beta1eks.SchemeBuilder.AddToScheme,
-		v1beta1elasticbeanstalk.SchemeBuilder.AddToScheme,
 		v1beta1elasticsearch.SchemeBuilder.AddToScheme,
 		v1beta1elb.SchemeBuilder.AddToScheme,
 		v1beta1elbv2.SchemeBuilder.AddToScheme,
-		v1beta1emr.SchemeBuilder.AddToScheme,
 		v1beta1firehose.SchemeBuilder.AddToScheme,
-		v1beta1fsx.SchemeBuilder.AddToScheme,
-		v1beta1glacier.SchemeBuilder.AddToScheme,
 		v1beta1grafana.SchemeBuilder.AddToScheme,
 		v1beta1guardduty.SchemeBuilder.AddToScheme,
 		v1beta1iam.SchemeBuilder.AddToScheme,
-		v1beta1imagebuilder.SchemeBuilder.AddToScheme,
 		v1beta1inspector.SchemeBuilder.AddToScheme,
 		v1beta1kinesis.SchemeBuilder.AddToScheme,
 		v1beta1kinesisanalytics.SchemeBuilder.AddToScheme,
@@ -131,10 +117,6 @@ func init() {
 		v1beta1kms.SchemeBuilder.AddToScheme,
 		v1beta1lambda.SchemeBuilder.AddToScheme,
 		v1beta1lightsail.SchemeBuilder.AddToScheme,
-		v1beta1macie2.SchemeBuilder.AddToScheme,
-		v1beta1memorydb.SchemeBuilder.AddToScheme,
-		v1beta1pinpoint.SchemeBuilder.AddToScheme,
-		v1beta1qldb.SchemeBuilder.AddToScheme,
 		v1beta1quicksight.SchemeBuilder.AddToScheme,
 		v1beta1ram.SchemeBuilder.AddToScheme,
 		v1beta1rds.SchemeBuilder.AddToScheme,

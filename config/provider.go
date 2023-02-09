@@ -51,7 +51,7 @@ import (
 	"github.com/upbound/provider-aws/config/elb"
 	"github.com/upbound/provider-aws/config/elbv2"
 	"github.com/upbound/provider-aws/config/firehose"
-	"github.com/upbound/provider-aws/config/fsx"
+	// "github.com/upbound/provider-aws/config/fsx"
 
 	// "github.com/upbound/provider-aws/config/gamelift"
 	// "github.com/upbound/provider-aws/config/globalaccelerator"
@@ -73,7 +73,7 @@ import (
 	// "github.com/upbound/provider-aws/config/opensearch"
 	// "github.com/upbound/provider-aws/config/opsworks"
 	// "github.com/upbound/provider-aws/config/organization"
-	"github.com/upbound/provider-aws/config/qldb"
+	// "github.com/upbound/provider-aws/config/qldb"
 	"github.com/upbound/provider-aws/config/rds"
 
 	// "github.com/upbound/provider-aws/config/redshift"
@@ -226,8 +226,8 @@ func GetProvider() *config.Provider {
 		// transfer.Configure,
 		directconnect.Configure,
 		// ds.Configure,
-		qldb.Configure,
-		fsx.Configure,
+		// qldb.Configure,
+		// fsx.Configure,
 		// networkmanager.Configure,
 		// opsworks.Configure,
 		// sagemaker.Configure,

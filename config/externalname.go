@@ -1799,17 +1799,17 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// macie2
 	//
 	// aws_macie2_account can be imported using the id
-	"aws_macie2_account": config.IdentifierFromProvider,
+	// "aws_macie2_account": config.IdentifierFromProvider,
 	// aws_macie2_classification_job can be imported using the id
-	"aws_macie2_classification_job": config.IdentifierFromProvider,
+	// "aws_macie2_classification_job": config.IdentifierFromProvider,
 	// aws_macie2_custom_data_identifier can be imported using the id
-	"aws_macie2_custom_data_identifier": config.IdentifierFromProvider,
+	// "aws_macie2_custom_data_identifier": config.IdentifierFromProvider,
 	// aws_macie2_findings_filter can be imported using the id
-	"aws_macie2_findings_filter": config.IdentifierFromProvider,
+	// "aws_macie2_findings_filter": config.IdentifierFromProvider,
 	// aws_macie2_invitation_accepter can be imported using the admin account ID
-	"aws_macie2_invitation_accepter": FormattedIdentifierFromProvider("", "administrator_account_id"),
+	// "aws_macie2_invitation_accepter": FormattedIdentifierFromProvider("", "administrator_account_id"),
 	// aws_macie2_member can be imported using the account ID of the member account
-	"aws_macie2_member": FormattedIdentifierFromProvider("", "account_id"),
+	// "aws_macie2_member": FormattedIdentifierFromProvider("", "account_id"),
 
 	// mediaconvert
 	//
@@ -1825,16 +1825,16 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// pinpoint
 	//
 	// Pinpoint App can be imported using the application-id
-	"aws_pinpoint_app": config.IdentifierFromProvider,
+	// "aws_pinpoint_app": config.IdentifierFromProvider,
 	// Pinpoint SMS Channel can be imported using the application-id
-	"aws_pinpoint_sms_channel": FormattedIdentifierFromProvider("", "application_id"),
+	// "aws_pinpoint_sms_channel": FormattedIdentifierFromProvider("", "application_id"),
 
 	// elasticbeanstalk
 	//
 	// Elastic Beanstalk Applications can be imported using the name
-	"aws_elastic_beanstalk_application": config.NameAsIdentifier,
+	// "aws_elastic_beanstalk_application": config.NameAsIdentifier,
 	// No import
-	"aws_elastic_beanstalk_configuration_template": config.NameAsIdentifier,
+	// "aws_elastic_beanstalk_configuration_template": config.NameAsIdentifier,
 
 	// ssm
 	//
@@ -1863,22 +1863,22 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// emr
 	//
 	// EMR Security Configurations can be imported using the name
-	"aws_emr_security_configuration": config.NameAsIdentifier,
+	// "aws_emr_security_configuration": config.NameAsIdentifier,
 
 	// qldb
 	//
 	// QLDB Ledgers can be imported using the name
-	"aws_qldb_ledger": config.NameAsIdentifier,
+	// "aws_qldb_ledger": config.NameAsIdentifier,
 	// No import
 	// TODO: For now API is not normalized. While testing resource we can check the actual ID and normalize the API.
-	"aws_qldb_stream": config.IdentifierFromProvider,
+	// "aws_qldb_stream": config.IdentifierFromProvider,
 
 	// glacier
 	//
 	// Glacier Vaults can be imported using the name
-	"aws_glacier_vault": config.NameAsIdentifier,
+	// "aws_glacier_vault": config.NameAsIdentifier,
 	// Glacier Vault Locks can be imported using the Glacier Vault name
-	"aws_glacier_vault_lock": FormattedIdentifierFromProvider("", "vault_name"),
+	// "aws_glacier_vault_lock": FormattedIdentifierFromProvider("", "vault_name"),
 
 	// iot
 	//
@@ -1961,17 +1961,17 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// fsx
 	//
 	// FSx File Systems can be imported using the id
-	"aws_fsx_windows_file_system": config.IdentifierFromProvider,
+	// "aws_fsx_windows_file_system": config.IdentifierFromProvider,
 	// FSx File Systems can be imported using the id
-	"aws_fsx_lustre_file_system": config.IdentifierFromProvider,
+	// "aws_fsx_lustre_file_system": config.IdentifierFromProvider,
 	// FSx Backups can be imported using the id
-	"aws_fsx_backup": config.IdentifierFromProvider,
+	// "aws_fsx_backup": config.IdentifierFromProvider,
 	// FSx Data Repository Associations can be imported using the id
-	"aws_fsx_data_repository_association": config.IdentifierFromProvider,
+	// "aws_fsx_data_repository_association": config.IdentifierFromProvider,
 	// FSx File Systems can be imported using the id
-	"aws_fsx_ontap_file_system": config.IdentifierFromProvider,
+	// "aws_fsx_ontap_file_system": config.IdentifierFromProvider,
 	// FSx Storage Virtual Machine can be imported using the id
-	"aws_fsx_ontap_storage_virtual_machine": config.IdentifierFromProvider,
+	// "aws_fsx_ontap_storage_virtual_machine": config.IdentifierFromProvider,
 
 	// route53recoverycontrolconfig
 	//
@@ -1991,37 +1991,37 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// memorydb
 	//
 	// Use the name to import a parameter group
-	"aws_memorydb_parameter_group": config.NameAsIdentifier,
+	// "aws_memorydb_parameter_group": config.NameAsIdentifier,
 	// Use the name to import a subnet group
-	"aws_memorydb_subnet_group": config.NameAsIdentifier,
+	// "aws_memorydb_subnet_group": config.NameAsIdentifier,
 	// Use the name to import a cluster
-	"aws_memorydb_cluster": config.NameAsIdentifier,
+	// "aws_memorydb_cluster": config.NameAsIdentifier,
 	// Use the name to import an ACL
-	"aws_memorydb_acl": config.NameAsIdentifier,
+	// "aws_memorydb_acl": config.NameAsIdentifier,
 	// Use the name to import a snapshot
-	"aws_memorydb_snapshot": config.NameAsIdentifier,
+	// "aws_memorydb_snapshot": config.NameAsIdentifier,
 
 	// imagebuilder
 	//
 	// aws_imagebuilder_container_recipe resources can be imported by using the Amazon Resource Name (ARN)
 	// Example: arn:aws:imagebuilder:us-east-1:123456789012:container-recipe/example/1.0.0
-	"aws_imagebuilder_container_recipe": config.IdentifierFromProvider,
+	// "aws_imagebuilder_container_recipe": config.IdentifierFromProvider,
 	// aws_imagebuilder_distribution_configurations resources can be imported by using the Amazon Resource Name (ARN)
 	// Example: arn:aws:imagebuilder:us-east-1:123456789012:distribution-configuration/example
-	"aws_imagebuilder_distribution_configuration": config.IdentifierFromProvider,
+	// "aws_imagebuilder_distribution_configuration": config.IdentifierFromProvider,
 	// aws_imagebuilder_image resources can be imported using the Amazon Resource Name (ARN)
 	// Example: arn:aws:imagebuilder:us-east-1:123456789012:image/example/1.0.0/1
 	// TODO: Normalize external_name while testing
-	"aws_imagebuilder_image": config.IdentifierFromProvider,
+	// "aws_imagebuilder_image": config.IdentifierFromProvider,
 	// aws_imagebuilder_image_pipeline resources can be imported using the Amazon Resource Name (ARN)
 	// Example: arn:aws:imagebuilder:us-east-1:123456789012:image-pipeline/example
-	"aws_imagebuilder_image_pipeline": config.IdentifierFromProvider,
+	// "aws_imagebuilder_image_pipeline": config.IdentifierFromProvider,
 	// aws_imagebuilder_image_recipe resources can be imported by using the Amazon Resource Name (ARN)
 	// Example: arn:aws:imagebuilder:us-east-1:123456789012:image-recipe/example/1.0.0
-	"aws_imagebuilder_image_recipe": config.IdentifierFromProvider,
+	// "aws_imagebuilder_image_recipe": config.IdentifierFromProvider,
 	// aws_imagebuilder_infrastructure_configuration can be imported using the Amazon Resource Name (ARN)
 	// Example: arn:aws:imagebuilder:us-east-1:123456789012:infrastructure-configuration/example
-	"aws_imagebuilder_infrastructure_configuration": config.IdentifierFromProvider,
+	// "aws_imagebuilder_infrastructure_configuration": config.IdentifierFromProvider,
 
 	// inspector
 	//

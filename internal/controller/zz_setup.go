@@ -202,8 +202,6 @@ import (
 	fargateprofile "github.com/upbound/provider-aws/internal/controller/eks/fargateprofile"
 	identityproviderconfig "github.com/upbound/provider-aws/internal/controller/eks/identityproviderconfig"
 	nodegroup "github.com/upbound/provider-aws/internal/controller/eks/nodegroup"
-	applicationelasticbeanstalk "github.com/upbound/provider-aws/internal/controller/elasticbeanstalk/application"
-	configurationtemplate "github.com/upbound/provider-aws/internal/controller/elasticbeanstalk/configurationtemplate"
 	domain "github.com/upbound/provider-aws/internal/controller/elasticsearch/domain"
 	appcookiestickinesspolicy "github.com/upbound/provider-aws/internal/controller/elb/appcookiestickinesspolicy"
 	attachment "github.com/upbound/provider-aws/internal/controller/elb/attachment"
@@ -219,16 +217,7 @@ import (
 	lblistenerrule "github.com/upbound/provider-aws/internal/controller/elbv2/lblistenerrule"
 	lbtargetgroup "github.com/upbound/provider-aws/internal/controller/elbv2/lbtargetgroup"
 	lbtargetgroupattachment "github.com/upbound/provider-aws/internal/controller/elbv2/lbtargetgroupattachment"
-	securityconfiguration "github.com/upbound/provider-aws/internal/controller/emr/securityconfiguration"
 	deliverystream "github.com/upbound/provider-aws/internal/controller/firehose/deliverystream"
-	backup "github.com/upbound/provider-aws/internal/controller/fsx/backup"
-	datarepositoryassociation "github.com/upbound/provider-aws/internal/controller/fsx/datarepositoryassociation"
-	lustrefilesystem "github.com/upbound/provider-aws/internal/controller/fsx/lustrefilesystem"
-	ontapfilesystem "github.com/upbound/provider-aws/internal/controller/fsx/ontapfilesystem"
-	ontapstoragevirtualmachine "github.com/upbound/provider-aws/internal/controller/fsx/ontapstoragevirtualmachine"
-	windowsfilesystem "github.com/upbound/provider-aws/internal/controller/fsx/windowsfilesystem"
-	vault "github.com/upbound/provider-aws/internal/controller/glacier/vault"
-	vaultlock "github.com/upbound/provider-aws/internal/controller/glacier/vaultlock"
 	licenseassociation "github.com/upbound/provider-aws/internal/controller/grafana/licenseassociation"
 	detector "github.com/upbound/provider-aws/internal/controller/guardduty/detector"
 	filter "github.com/upbound/provider-aws/internal/controller/guardduty/filter"
@@ -255,12 +244,6 @@ import (
 	userpolicyattachment "github.com/upbound/provider-aws/internal/controller/iam/userpolicyattachment"
 	usersshkey "github.com/upbound/provider-aws/internal/controller/iam/usersshkey"
 	virtualmfadevice "github.com/upbound/provider-aws/internal/controller/iam/virtualmfadevice"
-	containerrecipe "github.com/upbound/provider-aws/internal/controller/imagebuilder/containerrecipe"
-	distributionconfiguration "github.com/upbound/provider-aws/internal/controller/imagebuilder/distributionconfiguration"
-	image "github.com/upbound/provider-aws/internal/controller/imagebuilder/image"
-	imagepipeline "github.com/upbound/provider-aws/internal/controller/imagebuilder/imagepipeline"
-	imagerecipe "github.com/upbound/provider-aws/internal/controller/imagebuilder/imagerecipe"
-	infrastructureconfiguration "github.com/upbound/provider-aws/internal/controller/imagebuilder/infrastructureconfiguration"
 	assessmenttarget "github.com/upbound/provider-aws/internal/controller/inspector/assessmenttarget"
 	assessmenttemplate "github.com/upbound/provider-aws/internal/controller/inspector/assessmenttemplate"
 	resourcegroup "github.com/upbound/provider-aws/internal/controller/inspector/resourcegroup"
@@ -294,22 +277,7 @@ import (
 	keypairlightsail "github.com/upbound/provider-aws/internal/controller/lightsail/keypair"
 	staticip "github.com/upbound/provider-aws/internal/controller/lightsail/staticip"
 	staticipattachment "github.com/upbound/provider-aws/internal/controller/lightsail/staticipattachment"
-	account "github.com/upbound/provider-aws/internal/controller/macie2/account"
-	classificationjob "github.com/upbound/provider-aws/internal/controller/macie2/classificationjob"
-	customdataidentifier "github.com/upbound/provider-aws/internal/controller/macie2/customdataidentifier"
-	findingsfilter "github.com/upbound/provider-aws/internal/controller/macie2/findingsfilter"
-	invitationaccepter "github.com/upbound/provider-aws/internal/controller/macie2/invitationaccepter"
-	membermacie2 "github.com/upbound/provider-aws/internal/controller/macie2/member"
-	acl "github.com/upbound/provider-aws/internal/controller/memorydb/acl"
-	clustermemorydb "github.com/upbound/provider-aws/internal/controller/memorydb/cluster"
-	parametergroup "github.com/upbound/provider-aws/internal/controller/memorydb/parametergroup"
-	snapshot "github.com/upbound/provider-aws/internal/controller/memorydb/snapshot"
-	subnetgroup "github.com/upbound/provider-aws/internal/controller/memorydb/subnetgroup"
-	app "github.com/upbound/provider-aws/internal/controller/pinpoint/app"
-	smschannel "github.com/upbound/provider-aws/internal/controller/pinpoint/smschannel"
 	providerconfig "github.com/upbound/provider-aws/internal/controller/providerconfig"
-	ledger "github.com/upbound/provider-aws/internal/controller/qldb/ledger"
-	streamqldb "github.com/upbound/provider-aws/internal/controller/qldb/stream"
 	groupquicksight "github.com/upbound/provider-aws/internal/controller/quicksight/group"
 	userquicksight "github.com/upbound/provider-aws/internal/controller/quicksight/user"
 	resourceshare "github.com/upbound/provider-aws/internal/controller/ram/resourceshare"
@@ -327,14 +295,14 @@ import (
 	instancerds "github.com/upbound/provider-aws/internal/controller/rds/instance"
 	instanceroleassociation "github.com/upbound/provider-aws/internal/controller/rds/instanceroleassociation"
 	optiongroup "github.com/upbound/provider-aws/internal/controller/rds/optiongroup"
-	parametergrouprds "github.com/upbound/provider-aws/internal/controller/rds/parametergroup"
+	parametergroup "github.com/upbound/provider-aws/internal/controller/rds/parametergroup"
 	proxy "github.com/upbound/provider-aws/internal/controller/rds/proxy"
 	proxydefaulttargetgroup "github.com/upbound/provider-aws/internal/controller/rds/proxydefaulttargetgroup"
 	proxyendpoint "github.com/upbound/provider-aws/internal/controller/rds/proxyendpoint"
 	proxytarget "github.com/upbound/provider-aws/internal/controller/rds/proxytarget"
 	securitygrouprds "github.com/upbound/provider-aws/internal/controller/rds/securitygroup"
-	snapshotrds "github.com/upbound/provider-aws/internal/controller/rds/snapshot"
-	subnetgrouprds "github.com/upbound/provider-aws/internal/controller/rds/subnetgroup"
+	snapshot "github.com/upbound/provider-aws/internal/controller/rds/snapshot"
+	subnetgroup "github.com/upbound/provider-aws/internal/controller/rds/subnetgroup"
 	groupresourcegroups "github.com/upbound/provider-aws/internal/controller/resourcegroups/group"
 	delegationset "github.com/upbound/provider-aws/internal/controller/route53/delegationset"
 	healthcheck "github.com/upbound/provider-aws/internal/controller/route53/healthcheck"
@@ -392,7 +360,7 @@ import (
 	secretpolicy "github.com/upbound/provider-aws/internal/controller/secretsmanager/secretpolicy"
 	secretrotation "github.com/upbound/provider-aws/internal/controller/secretsmanager/secretrotation"
 	secretversion "github.com/upbound/provider-aws/internal/controller/secretsmanager/secretversion"
-	accountsecurityhub "github.com/upbound/provider-aws/internal/controller/securityhub/account"
+	account "github.com/upbound/provider-aws/internal/controller/securityhub/account"
 	actiontarget "github.com/upbound/provider-aws/internal/controller/securityhub/actiontarget"
 	findingaggregator "github.com/upbound/provider-aws/internal/controller/securityhub/findingaggregator"
 	insight "github.com/upbound/provider-aws/internal/controller/securityhub/insight"
@@ -625,8 +593,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		fargateprofile.Setup,
 		identityproviderconfig.Setup,
 		nodegroup.Setup,
-		applicationelasticbeanstalk.Setup,
-		configurationtemplate.Setup,
 		domain.Setup,
 		appcookiestickinesspolicy.Setup,
 		attachment.Setup,
@@ -642,16 +608,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		lblistenerrule.Setup,
 		lbtargetgroup.Setup,
 		lbtargetgroupattachment.Setup,
-		securityconfiguration.Setup,
 		deliverystream.Setup,
-		backup.Setup,
-		datarepositoryassociation.Setup,
-		lustrefilesystem.Setup,
-		ontapfilesystem.Setup,
-		ontapstoragevirtualmachine.Setup,
-		windowsfilesystem.Setup,
-		vault.Setup,
-		vaultlock.Setup,
 		licenseassociation.Setup,
 		detector.Setup,
 		filter.Setup,
@@ -678,12 +635,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		userpolicyattachment.Setup,
 		usersshkey.Setup,
 		virtualmfadevice.Setup,
-		containerrecipe.Setup,
-		distributionconfiguration.Setup,
-		image.Setup,
-		imagepipeline.Setup,
-		imagerecipe.Setup,
-		infrastructureconfiguration.Setup,
 		assessmenttarget.Setup,
 		assessmenttemplate.Setup,
 		resourcegroup.Setup,
@@ -717,22 +668,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		keypairlightsail.Setup,
 		staticip.Setup,
 		staticipattachment.Setup,
-		account.Setup,
-		classificationjob.Setup,
-		customdataidentifier.Setup,
-		findingsfilter.Setup,
-		invitationaccepter.Setup,
-		membermacie2.Setup,
-		acl.Setup,
-		clustermemorydb.Setup,
-		parametergroup.Setup,
-		snapshot.Setup,
-		subnetgroup.Setup,
-		app.Setup,
-		smschannel.Setup,
 		providerconfig.Setup,
-		ledger.Setup,
-		streamqldb.Setup,
 		groupquicksight.Setup,
 		userquicksight.Setup,
 		resourceshare.Setup,
@@ -750,14 +686,14 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		instancerds.Setup,
 		instanceroleassociation.Setup,
 		optiongroup.Setup,
-		parametergrouprds.Setup,
+		parametergroup.Setup,
 		proxy.Setup,
 		proxydefaulttargetgroup.Setup,
 		proxyendpoint.Setup,
 		proxytarget.Setup,
 		securitygrouprds.Setup,
-		snapshotrds.Setup,
-		subnetgrouprds.Setup,
+		snapshot.Setup,
+		subnetgroup.Setup,
 		groupresourcegroups.Setup,
 		delegationset.Setup,
 		healthcheck.Setup,
@@ -815,7 +751,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		secretpolicy.Setup,
 		secretrotation.Setup,
 		secretversion.Setup,
-		accountsecurityhub.Setup,
+		account.Setup,
 		actiontarget.Setup,
 		findingaggregator.Setup,
 		insight.Setup,
