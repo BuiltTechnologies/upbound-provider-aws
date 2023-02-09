@@ -1914,44 +1914,44 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// sagemaker
 	//
 	// SageMaker App Image Configs can be imported using the name
-	"aws_sagemaker_app_image_config": config.ParameterAsIdentifier("app_image_config_name"),
+	// "aws_sagemaker_app_image_config": config.ParameterAsIdentifier("app_image_config_name"),
 	// SageMaker Code Repositories can be imported using the name
-	"aws_sagemaker_code_repository": config.ParameterAsIdentifier("code_repository_name"),
+	// "aws_sagemaker_code_repository": config.ParameterAsIdentifier("code_repository_name"),
 	// SageMaker Domains can be imported using the id
-	"aws_sagemaker_domain": config.IdentifierFromProvider,
+	// "aws_sagemaker_domain": config.IdentifierFromProvider,
 	// Feature Groups can be imported using the name
-	"aws_sagemaker_feature_group": config.ParameterAsIdentifier("feature_group_name"),
+	// "aws_sagemaker_feature_group": config.ParameterAsIdentifier("feature_group_name"),
 	// SageMaker Code Images can be imported using the name
-	"aws_sagemaker_image": config.ParameterAsIdentifier("image_name"),
+	// "aws_sagemaker_image": config.ParameterAsIdentifier("image_name"),
 	// SageMaker Model Package Groups can be imported using the name
-	"aws_sagemaker_model_package_group": config.ParameterAsIdentifier("model_package_group_name"),
+	// "aws_sagemaker_model_package_group": config.ParameterAsIdentifier("model_package_group_name"),
 	// SageMaker Notebook Instances can be imported using the name
-	"aws_sagemaker_notebook_instance": config.NameAsIdentifier,
+	// "aws_sagemaker_notebook_instance": config.NameAsIdentifier,
 	// Models can be imported using the name
-	"aws_sagemaker_notebook_instance_lifecycle_configuration": config.NameAsIdentifier,
+	// "aws_sagemaker_notebook_instance_lifecycle_configuration": config.NameAsIdentifier,
 	// SageMaker Studio Lifecycle Configs can be imported using the studio_lifecycle_config_name
-	"aws_sagemaker_studio_lifecycle_config": config.ParameterAsIdentifier("studio_lifecycle_config_name"),
+	// "aws_sagemaker_studio_lifecycle_config": config.ParameterAsIdentifier("studio_lifecycle_config_name"),
 	// SageMaker User Profiles can be imported using the arn
-	"aws_sagemaker_user_profile": config.IdentifierFromProvider,
+	// "aws_sagemaker_user_profile": config.IdentifierFromProvider,
 	// SageMaker Apps can be imported using the id
-	"aws_sagemaker_app": config.IdentifierFromProvider,
+	// "aws_sagemaker_app": config.IdentifierFromProvider,
 	// SageMaker Devices can be imported using the device-fleet-name/device-name
 	// my-fleet/my-device
-	"aws_sagemaker_device": config.IdentifierFromProvider,
+	// "aws_sagemaker_device": config.IdentifierFromProvider,
 	// SageMaker Device Fleets can be imported using the name
-	"aws_sagemaker_device_fleet": config.ParameterAsIdentifier("device_fleet_name"),
+	// "aws_sagemaker_device_fleet": config.ParameterAsIdentifier("device_fleet_name"),
 	// Models can be imported using the name
-	"aws_sagemaker_model": config.NameAsIdentifier,
+	// "aws_sagemaker_model": config.NameAsIdentifier,
 	// SageMaker Model Package Groups can be imported using the name
-	"aws_sagemaker_model_package_group_policy": config.IdentifierFromProvider,
+	// "aws_sagemaker_model_package_group_policy": config.IdentifierFromProvider,
 	// SageMaker Workforces can be imported using the workforce_name
-	"aws_sagemaker_workforce": config.ParameterAsIdentifier("workforce_name"),
+	// "aws_sagemaker_workforce": config.ParameterAsIdentifier("workforce_name"),
 	// SageMaker Workteams can be imported using the workteam_name
-	"aws_sagemaker_workteam": config.ParameterAsIdentifier("workteam_name"),
+	// "aws_sagemaker_workteam": config.ParameterAsIdentifier("workteam_name"),
 	// Endpoint configurations can be imported using the name
-	"aws_sagemaker_endpoint_configuration": config.NameAsIdentifier,
+	// "aws_sagemaker_endpoint_configuration": config.NameAsIdentifier,
 	// SageMaker Code Images can be imported using the name
-	"aws_sagemaker_image_version": config.IdentifierFromProvider,
+	// "aws_sagemaker_image_version": config.IdentifierFromProvider,
 
 	// elbv2
 	//
@@ -2123,52 +2123,52 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// waf
 	//
 	// WAF Byte Match Set can be imported using the id
-	"aws_waf_byte_match_set": config.IdentifierFromProvider,
+	// "aws_waf_byte_match_set": config.IdentifierFromProvider,
 	// WAF Geo Match Set can be imported using their ID
-	"aws_waf_geo_match_set": config.IdentifierFromProvider,
+	// "aws_waf_geo_match_set": config.IdentifierFromProvider,
 	// WAF IPSets can be imported using their ID
-	"aws_waf_ipset": config.IdentifierFromProvider,
+	// "aws_waf_ipset": config.IdentifierFromProvider,
 	// WAF Rated Based Rule can be imported using the id
-	"aws_waf_rate_based_rule": config.IdentifierFromProvider,
+	// "aws_waf_rate_based_rule": config.IdentifierFromProvider,
 	// WAF Regex Match Set can be imported using their ID
-	"aws_waf_regex_match_set": config.IdentifierFromProvider,
+	// "aws_waf_regex_match_set": config.IdentifierFromProvider,
 	// AWS WAF Regex Pattern Set can be imported using their ID
-	"aws_waf_regex_pattern_set": config.IdentifierFromProvider,
+	// "aws_waf_regex_pattern_set": config.IdentifierFromProvider,
 	// WAF rules can be imported using the id
-	"aws_waf_rule": config.IdentifierFromProvider,
+	// "aws_waf_rule": config.IdentifierFromProvider,
 	// AWS WAF Size Constraint Set can be imported using their ID
-	"aws_waf_size_constraint_set": config.IdentifierFromProvider,
+	// "aws_waf_size_constraint_set": config.IdentifierFromProvider,
 	// AWS WAF SQL Injection Match Set can be imported using their ID
-	"aws_waf_sql_injection_match_set": config.IdentifierFromProvider,
+	// "aws_waf_sql_injection_match_set": config.IdentifierFromProvider,
 	// WAF Web ACL can be imported using the id
-	"aws_waf_web_acl": config.IdentifierFromProvider,
+	// "aws_waf_web_acl": config.IdentifierFromProvider,
 	// WAF XSS Match Set can be imported using their ID
-	"aws_waf_xss_match_set": config.IdentifierFromProvider,
+	// "aws_waf_xss_match_set": config.IdentifierFromProvider,
 
 	// wafregional
 	//
 	// WAF Regional Byte Match Set can be imported using the id
-	"aws_wafregional_byte_match_set": config.IdentifierFromProvider,
+	// "aws_wafregional_byte_match_set": config.IdentifierFromProvider,
 	// WAF Regional Geo Match Set can be imported using the id
-	"aws_wafregional_geo_match_set": config.IdentifierFromProvider,
+	// "aws_wafregional_geo_match_set": config.IdentifierFromProvider,
 	// WAF Regional IPSets can be imported using their ID
-	"aws_wafregional_ipset": config.IdentifierFromProvider,
+	// "aws_wafregional_ipset": config.IdentifierFromProvider,
 	// WAF Regional Rate Based Rule can be imported using the id
-	"aws_wafregional_rate_based_rule": config.IdentifierFromProvider,
+	// "aws_wafregional_rate_based_rule": config.IdentifierFromProvider,
 	// WAF Regional Regex Match Set can be imported using the id
-	"aws_wafregional_regex_match_set": config.IdentifierFromProvider,
+	// "aws_wafregional_regex_match_set": config.IdentifierFromProvider,
 	// WAF Regional Regex Pattern Set can be imported using the id
-	"aws_wafregional_regex_pattern_set": config.IdentifierFromProvider,
+	// "aws_wafregional_regex_pattern_set": config.IdentifierFromProvider,
 	// WAF Regional Rule can be imported using the id
-	"aws_wafregional_rule": config.IdentifierFromProvider,
+	// "aws_wafregional_rule": config.IdentifierFromProvider,
 	// WAF Size Constraint Set can be imported using the id
-	"aws_wafregional_size_constraint_set": config.IdentifierFromProvider,
+	// "aws_wafregional_size_constraint_set": config.IdentifierFromProvider,
 	// WAF Regional Sql Injection Match Set can be imported using the id
-	"aws_wafregional_sql_injection_match_set": config.IdentifierFromProvider,
+	// "aws_wafregional_sql_injection_match_set": config.IdentifierFromProvider,
 	// WAF Regional Web ACL can be imported using the id
-	"aws_wafregional_web_acl": config.IdentifierFromProvider,
+	// "aws_wafregional_web_acl": config.IdentifierFromProvider,
 	// AWS WAF Regional XSS Match can be imported using the id
-	"aws_wafregional_xss_match_set": config.IdentifierFromProvider,
+	// "aws_wafregional_xss_match_set": config.IdentifierFromProvider,
 
 	// swf
 	//
@@ -2186,9 +2186,9 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// wafv2
 	//
 	// WAFv2 IP Sets can be imported using ID/name/scope
-	"aws_wafv2_ip_set": config.IdentifierFromProvider,
+	// "aws_wafv2_ip_set": config.IdentifierFromProvider,
 	// WAFv2 Regex Pattern Sets can be imported using ID/name/scope
-	"aws_wafv2_regex_pattern_set": config.IdentifierFromProvider,
+	// "aws_wafv2_regex_pattern_set": config.IdentifierFromProvider,
 	// WAFv2 Rule Group can be imported using ID/name/scope
 	// TODO(bump): Request entity too large: limit is 3145728
 	// "aws_wafv2_rule_group": config.IdentifierFromProvider,

@@ -483,25 +483,6 @@ import (
 	multiregionaccesspointpolicy "github.com/upbound/provider-aws/internal/controller/s3control/multiregionaccesspointpolicy"
 	objectlambdaaccesspoint "github.com/upbound/provider-aws/internal/controller/s3control/objectlambdaaccesspoint"
 	objectlambdaaccesspointpolicy "github.com/upbound/provider-aws/internal/controller/s3control/objectlambdaaccesspointpolicy"
-	appsagemaker "github.com/upbound/provider-aws/internal/controller/sagemaker/app"
-	appimageconfig "github.com/upbound/provider-aws/internal/controller/sagemaker/appimageconfig"
-	coderepository "github.com/upbound/provider-aws/internal/controller/sagemaker/coderepository"
-	devicesagemaker "github.com/upbound/provider-aws/internal/controller/sagemaker/device"
-	devicefleet "github.com/upbound/provider-aws/internal/controller/sagemaker/devicefleet"
-	domainsagemaker "github.com/upbound/provider-aws/internal/controller/sagemaker/domain"
-	endpointconfiguration "github.com/upbound/provider-aws/internal/controller/sagemaker/endpointconfiguration"
-	featuregroup "github.com/upbound/provider-aws/internal/controller/sagemaker/featuregroup"
-	imagesagemaker "github.com/upbound/provider-aws/internal/controller/sagemaker/image"
-	imageversion "github.com/upbound/provider-aws/internal/controller/sagemaker/imageversion"
-	model "github.com/upbound/provider-aws/internal/controller/sagemaker/model"
-	modelpackagegroup "github.com/upbound/provider-aws/internal/controller/sagemaker/modelpackagegroup"
-	modelpackagegrouppolicy "github.com/upbound/provider-aws/internal/controller/sagemaker/modelpackagegrouppolicy"
-	notebookinstance "github.com/upbound/provider-aws/internal/controller/sagemaker/notebookinstance"
-	notebookinstancelifecycleconfiguration "github.com/upbound/provider-aws/internal/controller/sagemaker/notebookinstancelifecycleconfiguration"
-	studiolifecycleconfig "github.com/upbound/provider-aws/internal/controller/sagemaker/studiolifecycleconfig"
-	userprofilesagemaker "github.com/upbound/provider-aws/internal/controller/sagemaker/userprofile"
-	workforce "github.com/upbound/provider-aws/internal/controller/sagemaker/workforce"
-	workteam "github.com/upbound/provider-aws/internal/controller/sagemaker/workteam"
 	discoverer "github.com/upbound/provider-aws/internal/controller/schemas/discoverer"
 	registry "github.com/upbound/provider-aws/internal/controller/schemas/registry"
 	schema "github.com/upbound/provider-aws/internal/controller/schemas/schema"
@@ -573,30 +554,6 @@ import (
 	domainswf "github.com/upbound/provider-aws/internal/controller/swf/domain"
 	database "github.com/upbound/provider-aws/internal/controller/timestreamwrite/database"
 	tabletimestreamwrite "github.com/upbound/provider-aws/internal/controller/timestreamwrite/table"
-	bytematchset "github.com/upbound/provider-aws/internal/controller/waf/bytematchset"
-	geomatchset "github.com/upbound/provider-aws/internal/controller/waf/geomatchset"
-	ipset "github.com/upbound/provider-aws/internal/controller/waf/ipset"
-	ratebasedrule "github.com/upbound/provider-aws/internal/controller/waf/ratebasedrule"
-	regexmatchset "github.com/upbound/provider-aws/internal/controller/waf/regexmatchset"
-	regexpatternset "github.com/upbound/provider-aws/internal/controller/waf/regexpatternset"
-	rulewaf "github.com/upbound/provider-aws/internal/controller/waf/rule"
-	sizeconstraintset "github.com/upbound/provider-aws/internal/controller/waf/sizeconstraintset"
-	sqlinjectionmatchset "github.com/upbound/provider-aws/internal/controller/waf/sqlinjectionmatchset"
-	webacl "github.com/upbound/provider-aws/internal/controller/waf/webacl"
-	xssmatchset "github.com/upbound/provider-aws/internal/controller/waf/xssmatchset"
-	bytematchsetwafregional "github.com/upbound/provider-aws/internal/controller/wafregional/bytematchset"
-	geomatchsetwafregional "github.com/upbound/provider-aws/internal/controller/wafregional/geomatchset"
-	ipsetwafregional "github.com/upbound/provider-aws/internal/controller/wafregional/ipset"
-	ratebasedrulewafregional "github.com/upbound/provider-aws/internal/controller/wafregional/ratebasedrule"
-	regexmatchsetwafregional "github.com/upbound/provider-aws/internal/controller/wafregional/regexmatchset"
-	regexpatternsetwafregional "github.com/upbound/provider-aws/internal/controller/wafregional/regexpatternset"
-	rulewafregional "github.com/upbound/provider-aws/internal/controller/wafregional/rule"
-	sizeconstraintsetwafregional "github.com/upbound/provider-aws/internal/controller/wafregional/sizeconstraintset"
-	sqlinjectionmatchsetwafregional "github.com/upbound/provider-aws/internal/controller/wafregional/sqlinjectionmatchset"
-	webaclwafregional "github.com/upbound/provider-aws/internal/controller/wafregional/webacl"
-	xssmatchsetwafregional "github.com/upbound/provider-aws/internal/controller/wafregional/xssmatchset"
-	ipsetwafv2 "github.com/upbound/provider-aws/internal/controller/wafv2/ipset"
-	regexpatternsetwafv2 "github.com/upbound/provider-aws/internal/controller/wafv2/regexpatternset"
 	directoryworkspaces "github.com/upbound/provider-aws/internal/controller/workspaces/directory"
 	ipgroup "github.com/upbound/provider-aws/internal/controller/workspaces/ipgroup"
 	encryptionconfig "github.com/upbound/provider-aws/internal/controller/xray/encryptionconfig"
@@ -1082,25 +1039,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		multiregionaccesspointpolicy.Setup,
 		objectlambdaaccesspoint.Setup,
 		objectlambdaaccesspointpolicy.Setup,
-		appsagemaker.Setup,
-		appimageconfig.Setup,
-		coderepository.Setup,
-		devicesagemaker.Setup,
-		devicefleet.Setup,
-		domainsagemaker.Setup,
-		endpointconfiguration.Setup,
-		featuregroup.Setup,
-		imagesagemaker.Setup,
-		imageversion.Setup,
-		model.Setup,
-		modelpackagegroup.Setup,
-		modelpackagegrouppolicy.Setup,
-		notebookinstance.Setup,
-		notebookinstancelifecycleconfiguration.Setup,
-		studiolifecycleconfig.Setup,
-		userprofilesagemaker.Setup,
-		workforce.Setup,
-		workteam.Setup,
 		discoverer.Setup,
 		registry.Setup,
 		schema.Setup,
@@ -1172,30 +1110,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		domainswf.Setup,
 		database.Setup,
 		tabletimestreamwrite.Setup,
-		bytematchset.Setup,
-		geomatchset.Setup,
-		ipset.Setup,
-		ratebasedrule.Setup,
-		regexmatchset.Setup,
-		regexpatternset.Setup,
-		rulewaf.Setup,
-		sizeconstraintset.Setup,
-		sqlinjectionmatchset.Setup,
-		webacl.Setup,
-		xssmatchset.Setup,
-		bytematchsetwafregional.Setup,
-		geomatchsetwafregional.Setup,
-		ipsetwafregional.Setup,
-		ratebasedrulewafregional.Setup,
-		regexmatchsetwafregional.Setup,
-		regexpatternsetwafregional.Setup,
-		rulewafregional.Setup,
-		sizeconstraintsetwafregional.Setup,
-		sqlinjectionmatchsetwafregional.Setup,
-		webaclwafregional.Setup,
-		xssmatchsetwafregional.Setup,
-		ipsetwafv2.Setup,
-		regexpatternsetwafv2.Setup,
 		directoryworkspaces.Setup,
 		ipgroup.Setup,
 		encryptionconfig.Setup,
