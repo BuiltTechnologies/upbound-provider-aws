@@ -32,7 +32,7 @@ import (
 	// "github.com/upbound/provider-aws/config/cognitoidp"
 	// "github.com/upbound/provider-aws/config/connect"
 	"github.com/upbound/provider-aws/config/cur"
-	"github.com/upbound/provider-aws/config/dax"
+	// "github.com/upbound/provider-aws/config/dax"
 	"github.com/upbound/provider-aws/config/devicefarm"
 	"github.com/upbound/provider-aws/config/directconnect"
 
@@ -46,7 +46,7 @@ import (
 	// "github.com/upbound/provider-aws/config/ecs"
 	"github.com/upbound/provider-aws/config/efs"
 	"github.com/upbound/provider-aws/config/eks"
-	"github.com/upbound/provider-aws/config/elasticache"
+	// "github.com/upbound/provider-aws/config/elasticache"
 	"github.com/upbound/provider-aws/config/elasticloadbalancing"
 	"github.com/upbound/provider-aws/config/elb"
 	"github.com/upbound/provider-aws/config/elbv2"
@@ -54,7 +54,7 @@ import (
 	"github.com/upbound/provider-aws/config/fsx"
 
 	// "github.com/upbound/provider-aws/config/gamelift"
-	"github.com/upbound/provider-aws/config/globalaccelerator"
+	// "github.com/upbound/provider-aws/config/globalaccelerator"
 	// "github.com/upbound/provider-aws/config/glue"
 	// "github.com/upbound/provider-aws/config/grafana"
 	"github.com/upbound/provider-aws/config/iam"
@@ -70,7 +70,7 @@ import (
 	// "github.com/upbound/provider-aws/config/mq"
 	// "github.com/upbound/provider-aws/config/neptune"
 	// "github.com/upbound/provider-aws/config/networkmanager"
-	"github.com/upbound/provider-aws/config/opensearch"
+	// "github.com/upbound/provider-aws/config/opensearch"
 	// "github.com/upbound/provider-aws/config/opsworks"
 	"github.com/upbound/provider-aws/config/organization"
 	"github.com/upbound/provider-aws/config/qldb"
@@ -84,8 +84,8 @@ import (
 	// "github.com/upbound/provider-aws/config/sagemaker"
 	"github.com/upbound/provider-aws/config/secretsmanager"
 	"github.com/upbound/provider-aws/config/servicecatalog"
-	"github.com/upbound/provider-aws/config/servicediscovery"
-	"github.com/upbound/provider-aws/config/sfn"
+	// "github.com/upbound/provider-aws/config/servicediscovery"
+	// "github.com/upbound/provider-aws/config/sfn"
 	"github.com/upbound/provider-aws/config/sns"
 	"github.com/upbound/provider-aws/config/sqs"
 	// "github.com/upbound/provider-aws/config/transfer"
@@ -176,7 +176,7 @@ func GetProvider() *config.Provider {
 		// cognitoidp.Configure,
 		// connect.Configure,
 		cur.Configure,
-		dax.Configure,
+		// dax.Configure,
 		devicefarm.Configure,
 		// docdb.Configure,
 		dynamodb.Configure,
@@ -187,13 +187,13 @@ func GetProvider() *config.Provider {
 		// ecs.Configure,
 		efs.Configure,
 		eks.Configure,
-		elasticache.Configure,
+		// elasticache.Configure,
 		elasticloadbalancing.Configure,
 		elb.Configure,
 		elbv2.Configure,
 		firehose.Configure,
 		// gamelift.Configure,
-		globalaccelerator.Configure,
+		// globalaccelerator.Configure,
 		// glue.Configure,
 		// grafana.Configure,
 		iam.Configure,
@@ -207,7 +207,7 @@ func GetProvider() *config.Provider {
 		// licensemanager.Configure,
 		// mq.Configure,
 		// neptune.Configure,
-		opensearch.Configure,
+		// opensearch.Configure,
 		rds.Configure,
 		// redshift.Configure,
 		route53.Configure,
@@ -219,8 +219,8 @@ func GetProvider() *config.Provider {
 		organization.Configure,
 		cloudwatchevents.Configure,
 		budgets.Configure,
-		servicediscovery.Configure,
-		sfn.Configure,
+		// servicediscovery.Configure,
+		// sfn.Configure,
 		sns.Configure,
 		sqs.Configure,
 		// transfer.Configure,

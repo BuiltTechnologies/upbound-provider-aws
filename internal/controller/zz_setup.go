@@ -73,20 +73,10 @@ import (
 	resourcepolicy "github.com/upbound/provider-aws/internal/controller/cloudwatchlogs/resourcepolicy"
 	stream "github.com/upbound/provider-aws/internal/controller/cloudwatchlogs/stream"
 	subscriptionfilter "github.com/upbound/provider-aws/internal/controller/cloudwatchlogs/subscriptionfilter"
-	awsconfigurationrecorderstatus "github.com/upbound/provider-aws/internal/controller/configservice/awsconfigurationrecorderstatus"
-	configrule "github.com/upbound/provider-aws/internal/controller/configservice/configrule"
-	configurationaggregator "github.com/upbound/provider-aws/internal/controller/configservice/configurationaggregator"
-	configurationrecorder "github.com/upbound/provider-aws/internal/controller/configservice/configurationrecorder"
-	conformancepack "github.com/upbound/provider-aws/internal/controller/configservice/conformancepack"
-	deliverychannel "github.com/upbound/provider-aws/internal/controller/configservice/deliverychannel"
-	remediationconfiguration "github.com/upbound/provider-aws/internal/controller/configservice/remediationconfiguration"
 	reportdefinition "github.com/upbound/provider-aws/internal/controller/cur/reportdefinition"
 	dataset "github.com/upbound/provider-aws/internal/controller/dataexchange/dataset"
 	revision "github.com/upbound/provider-aws/internal/controller/dataexchange/revision"
 	pipeline "github.com/upbound/provider-aws/internal/controller/datapipeline/pipeline"
-	cluster "github.com/upbound/provider-aws/internal/controller/dax/cluster"
-	parametergroup "github.com/upbound/provider-aws/internal/controller/dax/parametergroup"
-	subnetgroup "github.com/upbound/provider-aws/internal/controller/dax/subnetgroup"
 	graph "github.com/upbound/provider-aws/internal/controller/detective/graph"
 	invitationaccepter "github.com/upbound/provider-aws/internal/controller/detective/invitationaccepter"
 	member "github.com/upbound/provider-aws/internal/controller/detective/member"
@@ -233,17 +223,11 @@ import (
 	filesystempolicy "github.com/upbound/provider-aws/internal/controller/efs/filesystempolicy"
 	mounttarget "github.com/upbound/provider-aws/internal/controller/efs/mounttarget"
 	addon "github.com/upbound/provider-aws/internal/controller/eks/addon"
-	clustereks "github.com/upbound/provider-aws/internal/controller/eks/cluster"
+	cluster "github.com/upbound/provider-aws/internal/controller/eks/cluster"
 	clusterauth "github.com/upbound/provider-aws/internal/controller/eks/clusterauth"
 	fargateprofile "github.com/upbound/provider-aws/internal/controller/eks/fargateprofile"
 	identityproviderconfig "github.com/upbound/provider-aws/internal/controller/eks/identityproviderconfig"
 	nodegroup "github.com/upbound/provider-aws/internal/controller/eks/nodegroup"
-	clusterelasticache "github.com/upbound/provider-aws/internal/controller/elasticache/cluster"
-	parametergroupelasticache "github.com/upbound/provider-aws/internal/controller/elasticache/parametergroup"
-	replicationgroup "github.com/upbound/provider-aws/internal/controller/elasticache/replicationgroup"
-	subnetgroupelasticache "github.com/upbound/provider-aws/internal/controller/elasticache/subnetgroup"
-	user "github.com/upbound/provider-aws/internal/controller/elasticache/user"
-	usergroup "github.com/upbound/provider-aws/internal/controller/elasticache/usergroup"
 	applicationelasticbeanstalk "github.com/upbound/provider-aws/internal/controller/elasticbeanstalk/application"
 	configurationtemplate "github.com/upbound/provider-aws/internal/controller/elasticbeanstalk/configurationtemplate"
 	domain "github.com/upbound/provider-aws/internal/controller/elasticsearch/domain"
@@ -273,9 +257,6 @@ import (
 	windowsfilesystem "github.com/upbound/provider-aws/internal/controller/fsx/windowsfilesystem"
 	vault "github.com/upbound/provider-aws/internal/controller/glacier/vault"
 	vaultlock "github.com/upbound/provider-aws/internal/controller/glacier/vaultlock"
-	accelerator "github.com/upbound/provider-aws/internal/controller/globalaccelerator/accelerator"
-	endpointgroup "github.com/upbound/provider-aws/internal/controller/globalaccelerator/endpointgroup"
-	listener "github.com/upbound/provider-aws/internal/controller/globalaccelerator/listener"
 	licenseassociation "github.com/upbound/provider-aws/internal/controller/grafana/licenseassociation"
 	detector "github.com/upbound/provider-aws/internal/controller/guardduty/detector"
 	filter "github.com/upbound/provider-aws/internal/controller/guardduty/filter"
@@ -296,7 +277,7 @@ import (
 	servicelinkedrole "github.com/upbound/provider-aws/internal/controller/iam/servicelinkedrole"
 	servicespecificcredential "github.com/upbound/provider-aws/internal/controller/iam/servicespecificcredential"
 	signingcertificate "github.com/upbound/provider-aws/internal/controller/iam/signingcertificate"
-	useriam "github.com/upbound/provider-aws/internal/controller/iam/user"
+	user "github.com/upbound/provider-aws/internal/controller/iam/user"
 	usergroupmembership "github.com/upbound/provider-aws/internal/controller/iam/usergroupmembership"
 	userloginprofile "github.com/upbound/provider-aws/internal/controller/iam/userloginprofile"
 	userpolicyattachment "github.com/upbound/provider-aws/internal/controller/iam/userpolicyattachment"
@@ -355,12 +336,9 @@ import (
 	containerpolicy "github.com/upbound/provider-aws/internal/controller/mediastore/containerpolicy"
 	acl "github.com/upbound/provider-aws/internal/controller/memorydb/acl"
 	clustermemorydb "github.com/upbound/provider-aws/internal/controller/memorydb/cluster"
-	parametergroupmemorydb "github.com/upbound/provider-aws/internal/controller/memorydb/parametergroup"
+	parametergroup "github.com/upbound/provider-aws/internal/controller/memorydb/parametergroup"
 	snapshot "github.com/upbound/provider-aws/internal/controller/memorydb/snapshot"
-	subnetgroupmemorydb "github.com/upbound/provider-aws/internal/controller/memorydb/subnetgroup"
-	domainopensearch "github.com/upbound/provider-aws/internal/controller/opensearch/domain"
-	domainpolicy "github.com/upbound/provider-aws/internal/controller/opensearch/domainpolicy"
-	domainsamloptions "github.com/upbound/provider-aws/internal/controller/opensearch/domainsamloptions"
+	subnetgroup "github.com/upbound/provider-aws/internal/controller/memorydb/subnetgroup"
 	accountorganizations "github.com/upbound/provider-aws/internal/controller/organizations/account"
 	delegatedadministrator "github.com/upbound/provider-aws/internal/controller/organizations/delegatedadministrator"
 	organization "github.com/upbound/provider-aws/internal/controller/organizations/organization"
@@ -474,13 +452,7 @@ import (
 	serviceaction "github.com/upbound/provider-aws/internal/controller/servicecatalog/serviceaction"
 	tagoption "github.com/upbound/provider-aws/internal/controller/servicecatalog/tagoption"
 	tagoptionresourceassociation "github.com/upbound/provider-aws/internal/controller/servicecatalog/tagoptionresourceassociation"
-	httpnamespace "github.com/upbound/provider-aws/internal/controller/servicediscovery/httpnamespace"
-	privatednsnamespace "github.com/upbound/provider-aws/internal/controller/servicediscovery/privatednsnamespace"
-	publicdnsnamespace "github.com/upbound/provider-aws/internal/controller/servicediscovery/publicdnsnamespace"
-	service "github.com/upbound/provider-aws/internal/controller/servicediscovery/service"
 	servicequota "github.com/upbound/provider-aws/internal/controller/servicequotas/servicequota"
-	activity "github.com/upbound/provider-aws/internal/controller/sfn/activity"
-	statemachine "github.com/upbound/provider-aws/internal/controller/sfn/statemachine"
 	signingjob "github.com/upbound/provider-aws/internal/controller/signer/signingjob"
 	signingprofile "github.com/upbound/provider-aws/internal/controller/signer/signingprofile"
 	signingprofilepermission "github.com/upbound/provider-aws/internal/controller/signer/signingprofilepermission"
@@ -575,20 +547,10 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		resourcepolicy.Setup,
 		stream.Setup,
 		subscriptionfilter.Setup,
-		awsconfigurationrecorderstatus.Setup,
-		configrule.Setup,
-		configurationaggregator.Setup,
-		configurationrecorder.Setup,
-		conformancepack.Setup,
-		deliverychannel.Setup,
-		remediationconfiguration.Setup,
 		reportdefinition.Setup,
 		dataset.Setup,
 		revision.Setup,
 		pipeline.Setup,
-		cluster.Setup,
-		parametergroup.Setup,
-		subnetgroup.Setup,
 		graph.Setup,
 		invitationaccepter.Setup,
 		member.Setup,
@@ -735,17 +697,11 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		filesystempolicy.Setup,
 		mounttarget.Setup,
 		addon.Setup,
-		clustereks.Setup,
+		cluster.Setup,
 		clusterauth.Setup,
 		fargateprofile.Setup,
 		identityproviderconfig.Setup,
 		nodegroup.Setup,
-		clusterelasticache.Setup,
-		parametergroupelasticache.Setup,
-		replicationgroup.Setup,
-		subnetgroupelasticache.Setup,
-		user.Setup,
-		usergroup.Setup,
 		applicationelasticbeanstalk.Setup,
 		configurationtemplate.Setup,
 		domain.Setup,
@@ -775,9 +731,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		windowsfilesystem.Setup,
 		vault.Setup,
 		vaultlock.Setup,
-		accelerator.Setup,
-		endpointgroup.Setup,
-		listener.Setup,
 		licenseassociation.Setup,
 		detector.Setup,
 		filter.Setup,
@@ -798,7 +751,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		servicelinkedrole.Setup,
 		servicespecificcredential.Setup,
 		signingcertificate.Setup,
-		useriam.Setup,
+		user.Setup,
 		usergroupmembership.Setup,
 		userloginprofile.Setup,
 		userpolicyattachment.Setup,
@@ -857,12 +810,9 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		containerpolicy.Setup,
 		acl.Setup,
 		clustermemorydb.Setup,
-		parametergroupmemorydb.Setup,
+		parametergroup.Setup,
 		snapshot.Setup,
-		subnetgroupmemorydb.Setup,
-		domainopensearch.Setup,
-		domainpolicy.Setup,
-		domainsamloptions.Setup,
+		subnetgroup.Setup,
 		accountorganizations.Setup,
 		delegatedadministrator.Setup,
 		organization.Setup,
@@ -976,13 +926,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		serviceaction.Setup,
 		tagoption.Setup,
 		tagoptionresourceassociation.Setup,
-		httpnamespace.Setup,
-		privatednsnamespace.Setup,
-		publicdnsnamespace.Setup,
-		service.Setup,
 		servicequota.Setup,
-		activity.Setup,
-		statemachine.Setup,
 		signingjob.Setup,
 		signingprofile.Setup,
 		signingprofilepermission.Setup,

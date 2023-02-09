@@ -29,11 +29,9 @@ import (
 	v1beta1cloudwatch "github.com/upbound/provider-aws/apis/cloudwatch/v1beta1"
 	v1beta1cloudwatchevents "github.com/upbound/provider-aws/apis/cloudwatchevents/v1beta1"
 	v1beta1cloudwatchlogs "github.com/upbound/provider-aws/apis/cloudwatchlogs/v1beta1"
-	v1beta1configservice "github.com/upbound/provider-aws/apis/configservice/v1beta1"
 	v1beta1cur "github.com/upbound/provider-aws/apis/cur/v1beta1"
 	v1beta1dataexchange "github.com/upbound/provider-aws/apis/dataexchange/v1beta1"
 	v1beta1datapipeline "github.com/upbound/provider-aws/apis/datapipeline/v1beta1"
-	v1beta1dax "github.com/upbound/provider-aws/apis/dax/v1beta1"
 	v1beta1detective "github.com/upbound/provider-aws/apis/detective/v1beta1"
 	v1beta1devicefarm "github.com/upbound/provider-aws/apis/devicefarm/v1beta1"
 	v1beta1directconnect "github.com/upbound/provider-aws/apis/directconnect/v1beta1"
@@ -45,7 +43,6 @@ import (
 	v1beta1ecr "github.com/upbound/provider-aws/apis/ecr/v1beta1"
 	v1beta1efs "github.com/upbound/provider-aws/apis/efs/v1beta1"
 	v1beta1eks "github.com/upbound/provider-aws/apis/eks/v1beta1"
-	v1beta1elasticache "github.com/upbound/provider-aws/apis/elasticache/v1beta1"
 	v1beta1elasticbeanstalk "github.com/upbound/provider-aws/apis/elasticbeanstalk/v1beta1"
 	v1beta1elasticsearch "github.com/upbound/provider-aws/apis/elasticsearch/v1beta1"
 	v1beta1elastictranscoder "github.com/upbound/provider-aws/apis/elastictranscoder/v1beta1"
@@ -55,7 +52,6 @@ import (
 	v1beta1firehose "github.com/upbound/provider-aws/apis/firehose/v1beta1"
 	v1beta1fsx "github.com/upbound/provider-aws/apis/fsx/v1beta1"
 	v1beta1glacier "github.com/upbound/provider-aws/apis/glacier/v1beta1"
-	v1beta1globalaccelerator "github.com/upbound/provider-aws/apis/globalaccelerator/v1beta1"
 	v1beta1grafana "github.com/upbound/provider-aws/apis/grafana/v1beta1"
 	v1beta1guardduty "github.com/upbound/provider-aws/apis/guardduty/v1beta1"
 	v1beta1iam "github.com/upbound/provider-aws/apis/iam/v1beta1"
@@ -74,7 +70,6 @@ import (
 	v1beta1mediapackage "github.com/upbound/provider-aws/apis/mediapackage/v1beta1"
 	v1beta1mediastore "github.com/upbound/provider-aws/apis/mediastore/v1beta1"
 	v1beta1memorydb "github.com/upbound/provider-aws/apis/memorydb/v1beta1"
-	v1beta1opensearch "github.com/upbound/provider-aws/apis/opensearch/v1beta1"
 	v1beta1organizations "github.com/upbound/provider-aws/apis/organizations/v1beta1"
 	v1beta1pinpoint "github.com/upbound/provider-aws/apis/pinpoint/v1beta1"
 	v1beta1qldb "github.com/upbound/provider-aws/apis/qldb/v1beta1"
@@ -93,9 +88,7 @@ import (
 	v1beta1securityhub "github.com/upbound/provider-aws/apis/securityhub/v1beta1"
 	v1beta1serverlessrepo "github.com/upbound/provider-aws/apis/serverlessrepo/v1beta1"
 	v1beta1servicecatalog "github.com/upbound/provider-aws/apis/servicecatalog/v1beta1"
-	v1beta1servicediscovery "github.com/upbound/provider-aws/apis/servicediscovery/v1beta1"
 	v1beta1servicequotas "github.com/upbound/provider-aws/apis/servicequotas/v1beta1"
-	v1beta1sfn "github.com/upbound/provider-aws/apis/sfn/v1beta1"
 	v1beta1signer "github.com/upbound/provider-aws/apis/signer/v1beta1"
 	v1beta1simpledb "github.com/upbound/provider-aws/apis/simpledb/v1beta1"
 	v1beta1sns "github.com/upbound/provider-aws/apis/sns/v1beta1"
@@ -129,11 +122,9 @@ func init() {
 		v1beta1cloudwatch.SchemeBuilder.AddToScheme,
 		v1beta1cloudwatchevents.SchemeBuilder.AddToScheme,
 		v1beta1cloudwatchlogs.SchemeBuilder.AddToScheme,
-		v1beta1configservice.SchemeBuilder.AddToScheme,
 		v1beta1cur.SchemeBuilder.AddToScheme,
 		v1beta1dataexchange.SchemeBuilder.AddToScheme,
 		v1beta1datapipeline.SchemeBuilder.AddToScheme,
-		v1beta1dax.SchemeBuilder.AddToScheme,
 		v1beta1detective.SchemeBuilder.AddToScheme,
 		v1beta1devicefarm.SchemeBuilder.AddToScheme,
 		v1beta1directconnect.SchemeBuilder.AddToScheme,
@@ -145,7 +136,6 @@ func init() {
 		v1beta1ecr.SchemeBuilder.AddToScheme,
 		v1beta1efs.SchemeBuilder.AddToScheme,
 		v1beta1eks.SchemeBuilder.AddToScheme,
-		v1beta1elasticache.SchemeBuilder.AddToScheme,
 		v1beta1elasticbeanstalk.SchemeBuilder.AddToScheme,
 		v1beta1elasticsearch.SchemeBuilder.AddToScheme,
 		v1beta1elastictranscoder.SchemeBuilder.AddToScheme,
@@ -155,7 +145,6 @@ func init() {
 		v1beta1firehose.SchemeBuilder.AddToScheme,
 		v1beta1fsx.SchemeBuilder.AddToScheme,
 		v1beta1glacier.SchemeBuilder.AddToScheme,
-		v1beta1globalaccelerator.SchemeBuilder.AddToScheme,
 		v1beta1grafana.SchemeBuilder.AddToScheme,
 		v1beta1guardduty.SchemeBuilder.AddToScheme,
 		v1beta1iam.SchemeBuilder.AddToScheme,
@@ -174,7 +163,6 @@ func init() {
 		v1beta1mediapackage.SchemeBuilder.AddToScheme,
 		v1beta1mediastore.SchemeBuilder.AddToScheme,
 		v1beta1memorydb.SchemeBuilder.AddToScheme,
-		v1beta1opensearch.SchemeBuilder.AddToScheme,
 		v1beta1organizations.SchemeBuilder.AddToScheme,
 		v1beta1pinpoint.SchemeBuilder.AddToScheme,
 		v1beta1qldb.SchemeBuilder.AddToScheme,
@@ -193,9 +181,7 @@ func init() {
 		v1beta1securityhub.SchemeBuilder.AddToScheme,
 		v1beta1serverlessrepo.SchemeBuilder.AddToScheme,
 		v1beta1servicecatalog.SchemeBuilder.AddToScheme,
-		v1beta1servicediscovery.SchemeBuilder.AddToScheme,
 		v1beta1servicequotas.SchemeBuilder.AddToScheme,
-		v1beta1sfn.SchemeBuilder.AddToScheme,
 		v1beta1signer.SchemeBuilder.AddToScheme,
 		v1beta1simpledb.SchemeBuilder.AddToScheme,
 		v1beta1sns.SchemeBuilder.AddToScheme,

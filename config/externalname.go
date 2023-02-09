@@ -384,12 +384,12 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 
 	// elasticache
 	//
-	"aws_elasticache_parameter_group":   config.IdentifierFromProvider,
-	"aws_elasticache_subnet_group":      config.NameAsIdentifier,
-	"aws_elasticache_cluster":           config.ParameterAsIdentifier("cluster_id"),
-	"aws_elasticache_replication_group": config.ParameterAsIdentifier("replication_group_id"),
-	"aws_elasticache_user":              config.ParameterAsIdentifier("user_id"),
-	"aws_elasticache_user_group":        config.ParameterAsIdentifier("user_group_id"),
+	// "aws_elasticache_parameter_group":   config.IdentifierFromProvider,
+	// "aws_elasticache_subnet_group":      config.NameAsIdentifier,
+	// "aws_elasticache_cluster":           config.ParameterAsIdentifier("cluster_id"),
+	// "aws_elasticache_replication_group": config.ParameterAsIdentifier("replication_group_id"),
+	// "aws_elasticache_user":              config.ParameterAsIdentifier("user_id"),
+	// "aws_elasticache_user_group":        config.ParameterAsIdentifier("user_group_id"),
 
 	// elasticloadbalancing
 	//
@@ -405,11 +405,11 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// globalaccelerator
 	//
 	// arn:aws:globalaccelerator::111111111111:accelerator/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-	"aws_globalaccelerator_accelerator": config.IdentifierFromProvider,
+	// "aws_globalaccelerator_accelerator": config.IdentifierFromProvider,
 	// arn:aws:globalaccelerator::111111111111:accelerator/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/listener/xxxxxxx/endpoint-group/xxxxxxxx
-	"aws_globalaccelerator_endpoint_group": config.IdentifierFromProvider,
+	// "aws_globalaccelerator_endpoint_group": config.IdentifierFromProvider,
 	// arn:aws:globalaccelerator::111111111111:accelerator/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/listener/xxxxxxxx
-	"aws_globalaccelerator_listener": config.IdentifierFromProvider,
+	// "aws_globalaccelerator_listener": config.IdentifierFromProvider,
 
 	// glue
 	//
@@ -764,13 +764,13 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// servicediscovery
 	//
 	// Service Discovery Private DNS Namespace can be imported using the namespace ID and VPC ID: 0123456789:vpc-123345
-	"aws_service_discovery_private_dns_namespace": config.IdentifierFromProvider,
+	// "aws_service_discovery_private_dns_namespace": config.IdentifierFromProvider,
 	// Service Discovery Public DNS Namespace can be imported using the namespace ID
-	"aws_service_discovery_public_dns_namespace": config.IdentifierFromProvider,
+	// "aws_service_discovery_public_dns_namespace": config.IdentifierFromProvider,
 	// Service Discovery HTTP Namespace can be imported using the namespace ID,
-	"aws_service_discovery_http_namespace": config.IdentifierFromProvider,
+	// "aws_service_discovery_http_namespace": config.IdentifierFromProvider,
 	// Service Discovery Service can be imported using the service ID
-	"aws_service_discovery_service": config.IdentifierFromProvider,
+	// "aws_service_discovery_service": config.IdentifierFromProvider,
 
 	// sqs
 	//
@@ -1054,17 +1054,17 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 
 	// sfn
 	//
-	"aws_sfn_activity":      config.TemplatedStringAsIdentifier("name", "arn:aws:states:{{ .setup.configuration.region }}:{{ .setup.client_metadata.account_id }}:activity/{{ .external_name }}"),
-	"aws_sfn_state_machine": config.TemplatedStringAsIdentifier("name", "arn:aws:states:{{ .setup.configuration.region }}:{{ .setup.client_metadata.account_id }}:stateMachine/{{ .external_name }}"),
+	// "aws_sfn_activity":      config.TemplatedStringAsIdentifier("name", "arn:aws:states:{{ .setup.configuration.region }}:{{ .setup.client_metadata.account_id }}:activity/{{ .external_name }}"),
+	// "aws_sfn_state_machine": config.TemplatedStringAsIdentifier("name", "arn:aws:states:{{ .setup.configuration.region }}:{{ .setup.client_metadata.account_id }}:stateMachine/{{ .external_name }}"),
 
 	// dax
 	//
 	// DAX Clusters can be imported using the cluster_name
-	"aws_dax_cluster": config.ParameterAsIdentifier("cluster_name"),
+	// "aws_dax_cluster": config.ParameterAsIdentifier("cluster_name"),
 	// DAX Parameter Group can be imported using the name
-	"aws_dax_parameter_group": config.NameAsIdentifier,
+	// "aws_dax_parameter_group": config.NameAsIdentifier,
 	// DAX Subnet Group can be imported using the name
-	"aws_dax_subnet_group": config.NameAsIdentifier,
+	// "aws_dax_subnet_group": config.NameAsIdentifier,
 
 	// cloudsearch
 	//
@@ -1132,14 +1132,14 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// overrides the id after terraform calls.
 	// Please see the following issue in upjet: https://github.com/upbound/upjet/issues/32
 	// OpenSearch domains can be imported using the domain_name
-	"aws_opensearch_domain": config.IdentifierFromProvider,
+	// "aws_opensearch_domain": config.IdentifierFromProvider,
 	// No imports
-	"aws_opensearch_domain_policy": config.IdentifierFromProvider,
+	// "aws_opensearch_domain_policy": config.IdentifierFromProvider,
 	// NOTE(sergen): Parameter as identifier cannot be used, because terraform
 	// overrides the id after terraform calls.
 	// Please see the following issue in upjet: https://github.com/upbound/upjet/issues/32
 	// OpenSearch domains can be imported using the domain_name
-	"aws_opensearch_domain_saml_options": config.IdentifierFromProvider,
+	// "aws_opensearch_domain_saml_options": config.IdentifierFromProvider,
 
 	// eventbridge
 	//
@@ -1294,19 +1294,19 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// configservice
 	//
 	// Config Rule can be imported using the name
-	"aws_config_config_rule": config.NameAsIdentifier,
+	// "aws_config_config_rule": config.NameAsIdentifier,
 	// Configuration Aggregators can be imported using the name
-	"aws_config_configuration_aggregator": config.NameAsIdentifier,
+	// "aws_config_configuration_aggregator": config.NameAsIdentifier,
 	// Configuration Recorder can be imported using the name
-	"aws_config_configuration_recorder": config.NameAsIdentifier,
+	// "aws_config_configuration_recorder": config.NameAsIdentifier,
 	// Configuration Recorder Status can be imported using the name of the Configuration Recorder
-	"aws_config_configuration_recorder_status": config.NameAsIdentifier,
+	// "aws_config_configuration_recorder_status": config.NameAsIdentifier,
 	// Config Conformance Packs can be imported using the name
-	"aws_config_conformance_pack": config.NameAsIdentifier,
+	// "aws_config_conformance_pack": config.NameAsIdentifier,
 	// Delivery Channel can be imported using the name
-	"aws_config_delivery_channel": config.NameAsIdentifier,
+	// "aws_config_delivery_channel": config.NameAsIdentifier,
 	// Remediation Configurations can be imported using the name config_rule_name
-	"aws_config_remediation_configuration": config.ParameterAsIdentifier("config_rule_name"),
+	// "aws_config_remediation_configuration": config.ParameterAsIdentifier("config_rule_name"),
 
 	// appsync
 	//
