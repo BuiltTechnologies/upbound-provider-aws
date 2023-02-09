@@ -1174,76 +1174,76 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// appautoscaling
 	//
 	// No import
-	"aws_appautoscaling_scheduled_action": config.IdentifierFromProvider,
+	// "aws_appautoscaling_scheduled_action": config.IdentifierFromProvider,
 	// Application AutoScaling Policy can be imported using the service-namespace, resource-id, scalable-dimension and policy-name separated by /
-	"aws_appautoscaling_policy": config.TemplatedStringAsIdentifier("name", "{{ .parameters.service_namespace }}/{{ .parameters.resource_id }}/{{ .parameters.scalable_dimension }}/{{ .external_name }}"),
+	// "aws_appautoscaling_policy": config.TemplatedStringAsIdentifier("name", "{{ .parameters.service_namespace }}/{{ .parameters.resource_id }}/{{ .parameters.scalable_dimension }}/{{ .external_name }}"),
 	// Application AutoScaling Target can be imported using the service-namespace , resource-id and scalable-dimension separated by /
-	"aws_appautoscaling_target": TemplatedStringAsIdentifierWithNoName("{{ .parameters.service_namespace }}/{{ .parameters.resource_id }}/{{ .parameters.scalable_dimension }}"),
+	// "aws_appautoscaling_target": TemplatedStringAsIdentifierWithNoName("{{ .parameters.service_namespace }}/{{ .parameters.resource_id }}/{{ .parameters.scalable_dimension }}"),
 
 	// codecommit
 	//
 	// Codecommit repository can be imported using repository name
-	"aws_codecommit_repository": config.ParameterAsIdentifier("repository_name"),
+	// "aws_codecommit_repository": config.ParameterAsIdentifier("repository_name"),
 	// CodeCommit approval rule templates can be imported using the name
-	"aws_codecommit_approval_rule_template": config.NameAsIdentifier,
+	// "aws_codecommit_approval_rule_template": config.NameAsIdentifier,
 	// CodeCommit approval rule template associations can be imported using the approval_rule_template_name and repository_name separated by a comma (,)
-	"aws_codecommit_approval_rule_template_association": config.TemplatedStringAsIdentifier("", "{{ .parameters.approval_rule_template_name }},{{ .parameters.repository_name }}"),
+	// "aws_codecommit_approval_rule_template_association": config.TemplatedStringAsIdentifier("", "{{ .parameters.approval_rule_template_name }},{{ .parameters.repository_name }}"),
 	// No import
-	"aws_codecommit_trigger": config.IdentifierFromProvider,
+	// "aws_codecommit_trigger": config.IdentifierFromProvider,
 
 	// deploy
 	//
 	// CodeDeploy Applications can be imported using the name
-	"aws_codedeploy_app": config.TemplatedStringAsIdentifier("name", "{{ .parameters.application_id }}:{{ .external_name }}"),
+	// "aws_codedeploy_app": config.TemplatedStringAsIdentifier("name", "{{ .parameters.application_id }}:{{ .external_name }}"),
 	// CodeDeploy Deployment Configurations can be imported using the deployment_config_name
-	"aws_codedeploy_deployment_config": config.ParameterAsIdentifier("deployment_config_name"),
+	// "aws_codedeploy_deployment_config": config.ParameterAsIdentifier("deployment_config_name"),
 	// CodeDeploy Deployment Groups can be imported by their app_name, a colon, and deployment_group_name
-	"aws_codedeploy_deployment_group": config.TemplatedStringAsIdentifier("deployment_group_name", "{{ .parameters.app_name }}:{{ .external_name }}"),
+	// "aws_codedeploy_deployment_group": config.TemplatedStringAsIdentifier("deployment_group_name", "{{ .parameters.app_name }}:{{ .external_name }}"),
 
 	// codepipeline
 	//
 	// CodePipelines can be imported using the name
-	"aws_codepipeline": config.NameAsIdentifier,
+	// "aws_codepipeline": config.NameAsIdentifier,
 	// CodePipeline Webhooks can be imported by their ARN: arn:aws:codepipeline:us-west-2:123456789012:webhook:example
-	"aws_codepipeline_webhook": config.TemplatedStringAsIdentifier("name", "arn:aws:codepipeline:{{ .setup.configuration.region }}:{{ .setup.client_metadata.account_id }}:webhook:{{ .external_name }}"),
+	// "aws_codepipeline_webhook": config.TemplatedStringAsIdentifier("name", "arn:aws:codepipeline:{{ .setup.configuration.region }}:{{ .setup.client_metadata.account_id }}:webhook:{{ .external_name }}"),
 
 	// codestarconnections
 	//
 	// CodeStar connections can be imported using the ARN
-	"aws_codestarconnections_connection": config.IdentifierFromProvider,
+	// "aws_codestarconnections_connection": config.IdentifierFromProvider,
 	// CodeStar Host can be imported using the ARN
-	"aws_codestarconnections_host": config.IdentifierFromProvider,
+	// "aws_codestarconnections_host": config.IdentifierFromProvider,
 
 	// codestarnotifications
 	//
 	// CodeStar notification rule can be imported using the ARN
-	"aws_codestarnotifications_notification_rule": config.IdentifierFromProvider,
+	// "aws_codestarnotifications_notification_rule": config.IdentifierFromProvider,
 
 	// connect
 	//
 	// aws_connect_bot_association can be imported by using the Amazon Connect instance ID, Lex (V1) bot name, and Lex (V1) bot region separated by colons (:)
 	// TODO: lex_bot.lex_region parameter is not `Required` in TF schema. But we use this field in id construction. So, please mark as required this field while configuration
-	"aws_connect_bot_association": config.TemplatedStringAsIdentifier("", "{{ .parameters.instance_id }}:{{ (index .parameters.lex_bot 0).name }}:{{ (index .parameters.lex_bot 0).lex_region }}"),
+	// "aws_connect_bot_association": config.TemplatedStringAsIdentifier("", "{{ .parameters.instance_id }}:{{ (index .parameters.lex_bot 0).name }}:{{ (index .parameters.lex_bot 0).lex_region }}"),
 	// Amazon Connect Contact Flows can be imported using the instance_id and contact_flow_id separated by a colon (:)
-	"aws_connect_contact_flow": config.IdentifierFromProvider,
+	// "aws_connect_contact_flow": config.IdentifierFromProvider,
 	// Amazon Connect Contact Flow Modules can be imported using the instance_id and contact_flow_module_id separated by a colon (:)
-	"aws_connect_contact_flow_module": config.IdentifierFromProvider,
+	// "aws_connect_contact_flow_module": config.IdentifierFromProvider,
 	// Amazon Connect Hours of Operations can be imported using the instance_id and hours_of_operation_id separated by a colon (:)
-	"aws_connect_hours_of_operation": config.IdentifierFromProvider,
+	// "aws_connect_hours_of_operation": config.IdentifierFromProvider,
 	// Connect instances can be imported using the id
-	"aws_connect_instance": config.IdentifierFromProvider,
+	// "aws_connect_instance": config.IdentifierFromProvider,
 	// aws_connect_lambda_function_association can be imported using the instance_id and function_arn separated by a comma (,)
-	"aws_connect_lambda_function_association": config.TemplatedStringAsIdentifier("", "{{ .parameters.instance_id }},{{ .parameters.function_arn }}"),
+	// "aws_connect_lambda_function_association": config.TemplatedStringAsIdentifier("", "{{ .parameters.instance_id }},{{ .parameters.function_arn }}"),
 	// Amazon Connect Queues can be imported using the instance_id and queue_id separated by a colon (:)
-	"aws_connect_queue": config.IdentifierFromProvider,
+	// "aws_connect_queue": config.IdentifierFromProvider,
 	// Amazon Connect Quick Connects can be imported using the instance_id and quick_connect_id separated by a colon (:)
-	"aws_connect_quick_connect": config.IdentifierFromProvider,
+	// "aws_connect_quick_connect": config.IdentifierFromProvider,
 	// Amazon Connect Routing Profiles can be imported using the instance_id and routing_profile_id separated by a colon (:)
-	"aws_connect_routing_profile": config.IdentifierFromProvider,
+	// "aws_connect_routing_profile": config.IdentifierFromProvider,
 	// Amazon Connect Security Profiles can be imported using the instance_id and security_profile_id separated by a colon (:)
-	"aws_connect_security_profile": config.IdentifierFromProvider,
+	// "aws_connect_security_profile": config.IdentifierFromProvider,
 	// Amazon Connect User Hierarchy Structures can be imported using the instance_id
-	"aws_connect_user_hierarchy_structure": config.IdentifierFromProvider,
+	// "aws_connect_user_hierarchy_structure": config.IdentifierFromProvider,
 
 	// apprunner
 	//

@@ -30,7 +30,7 @@ import (
 
 	// "github.com/upbound/provider-aws/config/cognitoidentity"
 	// "github.com/upbound/provider-aws/config/cognitoidp"
-	"github.com/upbound/provider-aws/config/connect"
+	// "github.com/upbound/provider-aws/config/connect"
 	"github.com/upbound/provider-aws/config/cur"
 	"github.com/upbound/provider-aws/config/dax"
 	"github.com/upbound/provider-aws/config/devicefarm"
@@ -174,7 +174,7 @@ func GetProvider() *config.Provider {
 		cloudwatchlogs.Configure,
 		// cognitoidentity.Configure,
 		// cognitoidp.Configure,
-		connect.Configure,
+		// connect.Configure,
 		cur.Configure,
 		dax.Configure,
 		devicefarm.Configure,

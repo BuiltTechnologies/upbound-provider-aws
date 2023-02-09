@@ -15,9 +15,6 @@ import (
 	backendenvironment "github.com/upbound/provider-aws/internal/controller/amplify/backendenvironment"
 	branch "github.com/upbound/provider-aws/internal/controller/amplify/branch"
 	webhook "github.com/upbound/provider-aws/internal/controller/amplify/webhook"
-	policy "github.com/upbound/provider-aws/internal/controller/appautoscaling/policy"
-	scheduledaction "github.com/upbound/provider-aws/internal/controller/appautoscaling/scheduledaction"
-	target "github.com/upbound/provider-aws/internal/controller/appautoscaling/target"
 	application "github.com/upbound/provider-aws/internal/controller/appconfig/application"
 	configurationprofile "github.com/upbound/provider-aws/internal/controller/appconfig/configurationprofile"
 	deployment "github.com/upbound/provider-aws/internal/controller/appconfig/deployment"
@@ -54,7 +51,7 @@ import (
 	launchconfiguration "github.com/upbound/provider-aws/internal/controller/autoscaling/launchconfiguration"
 	lifecyclehook "github.com/upbound/provider-aws/internal/controller/autoscaling/lifecyclehook"
 	notification "github.com/upbound/provider-aws/internal/controller/autoscaling/notification"
-	policyautoscaling "github.com/upbound/provider-aws/internal/controller/autoscaling/policy"
+	policy "github.com/upbound/provider-aws/internal/controller/autoscaling/policy"
 	schedule "github.com/upbound/provider-aws/internal/controller/autoscaling/schedule"
 	scalingplan "github.com/upbound/provider-aws/internal/controller/autoscalingplans/scalingplan"
 	schedulingpolicy "github.com/upbound/provider-aws/internal/controller/batch/schedulingpolicy"
@@ -85,7 +82,7 @@ import (
 	connectioncloudwatchevents "github.com/upbound/provider-aws/internal/controller/cloudwatchevents/connection"
 	permission "github.com/upbound/provider-aws/internal/controller/cloudwatchevents/permission"
 	rule "github.com/upbound/provider-aws/internal/controller/cloudwatchevents/rule"
-	targetcloudwatchevents "github.com/upbound/provider-aws/internal/controller/cloudwatchevents/target"
+	target "github.com/upbound/provider-aws/internal/controller/cloudwatchevents/target"
 	definition "github.com/upbound/provider-aws/internal/controller/cloudwatchlogs/definition"
 	destination "github.com/upbound/provider-aws/internal/controller/cloudwatchlogs/destination"
 	destinationpolicy "github.com/upbound/provider-aws/internal/controller/cloudwatchlogs/destinationpolicy"
@@ -94,15 +91,6 @@ import (
 	resourcepolicy "github.com/upbound/provider-aws/internal/controller/cloudwatchlogs/resourcepolicy"
 	stream "github.com/upbound/provider-aws/internal/controller/cloudwatchlogs/stream"
 	subscriptionfilter "github.com/upbound/provider-aws/internal/controller/cloudwatchlogs/subscriptionfilter"
-	approvalruletemplate "github.com/upbound/provider-aws/internal/controller/codecommit/approvalruletemplate"
-	approvalruletemplateassociation "github.com/upbound/provider-aws/internal/controller/codecommit/approvalruletemplateassociation"
-	repository "github.com/upbound/provider-aws/internal/controller/codecommit/repository"
-	trigger "github.com/upbound/provider-aws/internal/controller/codecommit/trigger"
-	codepipeline "github.com/upbound/provider-aws/internal/controller/codepipeline/codepipeline"
-	webhookcodepipeline "github.com/upbound/provider-aws/internal/controller/codepipeline/webhook"
-	connectioncodestarconnections "github.com/upbound/provider-aws/internal/controller/codestarconnections/connection"
-	host "github.com/upbound/provider-aws/internal/controller/codestarconnections/host"
-	notificationrule "github.com/upbound/provider-aws/internal/controller/codestarnotifications/notificationrule"
 	awsconfigurationrecorderstatus "github.com/upbound/provider-aws/internal/controller/configservice/awsconfigurationrecorderstatus"
 	configrule "github.com/upbound/provider-aws/internal/controller/configservice/configrule"
 	configurationaggregator "github.com/upbound/provider-aws/internal/controller/configservice/configurationaggregator"
@@ -110,17 +98,6 @@ import (
 	conformancepack "github.com/upbound/provider-aws/internal/controller/configservice/conformancepack"
 	deliverychannel "github.com/upbound/provider-aws/internal/controller/configservice/deliverychannel"
 	remediationconfiguration "github.com/upbound/provider-aws/internal/controller/configservice/remediationconfiguration"
-	botassociation "github.com/upbound/provider-aws/internal/controller/connect/botassociation"
-	contactflow "github.com/upbound/provider-aws/internal/controller/connect/contactflow"
-	contactflowmodule "github.com/upbound/provider-aws/internal/controller/connect/contactflowmodule"
-	hoursofoperation "github.com/upbound/provider-aws/internal/controller/connect/hoursofoperation"
-	instance "github.com/upbound/provider-aws/internal/controller/connect/instance"
-	lambdafunctionassociation "github.com/upbound/provider-aws/internal/controller/connect/lambdafunctionassociation"
-	queue "github.com/upbound/provider-aws/internal/controller/connect/queue"
-	quickconnect "github.com/upbound/provider-aws/internal/controller/connect/quickconnect"
-	routingprofile "github.com/upbound/provider-aws/internal/controller/connect/routingprofile"
-	securityprofile "github.com/upbound/provider-aws/internal/controller/connect/securityprofile"
-	userhierarchystructure "github.com/upbound/provider-aws/internal/controller/connect/userhierarchystructure"
 	reportdefinition "github.com/upbound/provider-aws/internal/controller/cur/reportdefinition"
 	dataset "github.com/upbound/provider-aws/internal/controller/dataexchange/dataset"
 	revision "github.com/upbound/provider-aws/internal/controller/dataexchange/revision"
@@ -128,9 +105,6 @@ import (
 	cluster "github.com/upbound/provider-aws/internal/controller/dax/cluster"
 	parametergroup "github.com/upbound/provider-aws/internal/controller/dax/parametergroup"
 	subnetgroup "github.com/upbound/provider-aws/internal/controller/dax/subnetgroup"
-	appdeploy "github.com/upbound/provider-aws/internal/controller/deploy/app"
-	deploymentconfig "github.com/upbound/provider-aws/internal/controller/deploy/deploymentconfig"
-	deploymentgroup "github.com/upbound/provider-aws/internal/controller/deploy/deploymentgroup"
 	graph "github.com/upbound/provider-aws/internal/controller/detective/graph"
 	invitationaccepter "github.com/upbound/provider-aws/internal/controller/detective/invitationaccepter"
 	member "github.com/upbound/provider-aws/internal/controller/detective/member"
@@ -193,8 +167,8 @@ import (
 	eip "github.com/upbound/provider-aws/internal/controller/ec2/eip"
 	eipassociation "github.com/upbound/provider-aws/internal/controller/ec2/eipassociation"
 	flowlog "github.com/upbound/provider-aws/internal/controller/ec2/flowlog"
-	hostec2 "github.com/upbound/provider-aws/internal/controller/ec2/host"
-	instanceec2 "github.com/upbound/provider-aws/internal/controller/ec2/instance"
+	host "github.com/upbound/provider-aws/internal/controller/ec2/host"
+	instance "github.com/upbound/provider-aws/internal/controller/ec2/instance"
 	internetgateway "github.com/upbound/provider-aws/internal/controller/ec2/internetgateway"
 	keypair "github.com/upbound/provider-aws/internal/controller/ec2/keypair"
 	launchtemplate "github.com/upbound/provider-aws/internal/controller/ec2/launchtemplate"
@@ -269,7 +243,7 @@ import (
 	registrypolicy "github.com/upbound/provider-aws/internal/controller/ecr/registrypolicy"
 	registryscanningconfiguration "github.com/upbound/provider-aws/internal/controller/ecr/registryscanningconfiguration"
 	replicationconfiguration "github.com/upbound/provider-aws/internal/controller/ecr/replicationconfiguration"
-	repositoryecr "github.com/upbound/provider-aws/internal/controller/ecr/repository"
+	repository "github.com/upbound/provider-aws/internal/controller/ecr/repository"
 	repositorypolicy "github.com/upbound/provider-aws/internal/controller/ecr/repositorypolicy"
 	repositoryecrpublic "github.com/upbound/provider-aws/internal/controller/ecrpublic/repository"
 	repositorypolicyecrpublic "github.com/upbound/provider-aws/internal/controller/ecrpublic/repositorypolicy"
@@ -401,7 +375,7 @@ import (
 	findingsfilter "github.com/upbound/provider-aws/internal/controller/macie2/findingsfilter"
 	invitationacceptermacie2 "github.com/upbound/provider-aws/internal/controller/macie2/invitationaccepter"
 	membermacie2 "github.com/upbound/provider-aws/internal/controller/macie2/member"
-	queuemediaconvert "github.com/upbound/provider-aws/internal/controller/mediaconvert/queue"
+	queue "github.com/upbound/provider-aws/internal/controller/mediaconvert/queue"
 	channel "github.com/upbound/provider-aws/internal/controller/mediapackage/channel"
 	container "github.com/upbound/provider-aws/internal/controller/mediastore/container"
 	containerpolicy "github.com/upbound/provider-aws/internal/controller/mediastore/containerpolicy"
@@ -658,9 +632,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		backendenvironment.Setup,
 		branch.Setup,
 		webhook.Setup,
-		policy.Setup,
-		scheduledaction.Setup,
-		target.Setup,
 		application.Setup,
 		configurationprofile.Setup,
 		deployment.Setup,
@@ -697,7 +668,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		launchconfiguration.Setup,
 		lifecyclehook.Setup,
 		notification.Setup,
-		policyautoscaling.Setup,
+		policy.Setup,
 		schedule.Setup,
 		scalingplan.Setup,
 		schedulingpolicy.Setup,
@@ -728,7 +699,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		connectioncloudwatchevents.Setup,
 		permission.Setup,
 		rule.Setup,
-		targetcloudwatchevents.Setup,
+		target.Setup,
 		definition.Setup,
 		destination.Setup,
 		destinationpolicy.Setup,
@@ -737,15 +708,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		resourcepolicy.Setup,
 		stream.Setup,
 		subscriptionfilter.Setup,
-		approvalruletemplate.Setup,
-		approvalruletemplateassociation.Setup,
-		repository.Setup,
-		trigger.Setup,
-		codepipeline.Setup,
-		webhookcodepipeline.Setup,
-		connectioncodestarconnections.Setup,
-		host.Setup,
-		notificationrule.Setup,
 		awsconfigurationrecorderstatus.Setup,
 		configrule.Setup,
 		configurationaggregator.Setup,
@@ -753,17 +715,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		conformancepack.Setup,
 		deliverychannel.Setup,
 		remediationconfiguration.Setup,
-		botassociation.Setup,
-		contactflow.Setup,
-		contactflowmodule.Setup,
-		hoursofoperation.Setup,
-		instance.Setup,
-		lambdafunctionassociation.Setup,
-		queue.Setup,
-		quickconnect.Setup,
-		routingprofile.Setup,
-		securityprofile.Setup,
-		userhierarchystructure.Setup,
 		reportdefinition.Setup,
 		dataset.Setup,
 		revision.Setup,
@@ -771,9 +722,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		cluster.Setup,
 		parametergroup.Setup,
 		subnetgroup.Setup,
-		appdeploy.Setup,
-		deploymentconfig.Setup,
-		deploymentgroup.Setup,
 		graph.Setup,
 		invitationaccepter.Setup,
 		member.Setup,
@@ -836,8 +784,8 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		eip.Setup,
 		eipassociation.Setup,
 		flowlog.Setup,
-		hostec2.Setup,
-		instanceec2.Setup,
+		host.Setup,
+		instance.Setup,
 		internetgateway.Setup,
 		keypair.Setup,
 		launchtemplate.Setup,
@@ -912,7 +860,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		registrypolicy.Setup,
 		registryscanningconfiguration.Setup,
 		replicationconfiguration.Setup,
-		repositoryecr.Setup,
+		repository.Setup,
 		repositorypolicy.Setup,
 		repositoryecrpublic.Setup,
 		repositorypolicyecrpublic.Setup,
@@ -1044,7 +992,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		findingsfilter.Setup,
 		invitationacceptermacie2.Setup,
 		membermacie2.Setup,
-		queuemediaconvert.Setup,
+		queue.Setup,
 		channel.Setup,
 		container.Setup,
 		containerpolicy.Setup,

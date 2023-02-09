@@ -13,7 +13,6 @@ import (
 	v1beta1 "github.com/upbound/provider-aws/apis/accessanalyzer/v1beta1"
 	v1beta1account "github.com/upbound/provider-aws/apis/account/v1beta1"
 	v1beta1amplify "github.com/upbound/provider-aws/apis/amplify/v1beta1"
-	v1beta1appautoscaling "github.com/upbound/provider-aws/apis/appautoscaling/v1beta1"
 	v1beta1appconfig "github.com/upbound/provider-aws/apis/appconfig/v1beta1"
 	v1beta1appflow "github.com/upbound/provider-aws/apis/appflow/v1beta1"
 	v1beta1appintegrations "github.com/upbound/provider-aws/apis/appintegrations/v1beta1"
@@ -33,17 +32,11 @@ import (
 	v1beta1cloudwatch "github.com/upbound/provider-aws/apis/cloudwatch/v1beta1"
 	v1beta1cloudwatchevents "github.com/upbound/provider-aws/apis/cloudwatchevents/v1beta1"
 	v1beta1cloudwatchlogs "github.com/upbound/provider-aws/apis/cloudwatchlogs/v1beta1"
-	v1beta1codecommit "github.com/upbound/provider-aws/apis/codecommit/v1beta1"
-	v1beta1codepipeline "github.com/upbound/provider-aws/apis/codepipeline/v1beta1"
-	v1beta1codestarconnections "github.com/upbound/provider-aws/apis/codestarconnections/v1beta1"
-	v1beta1codestarnotifications "github.com/upbound/provider-aws/apis/codestarnotifications/v1beta1"
 	v1beta1configservice "github.com/upbound/provider-aws/apis/configservice/v1beta1"
-	v1beta1connect "github.com/upbound/provider-aws/apis/connect/v1beta1"
 	v1beta1cur "github.com/upbound/provider-aws/apis/cur/v1beta1"
 	v1beta1dataexchange "github.com/upbound/provider-aws/apis/dataexchange/v1beta1"
 	v1beta1datapipeline "github.com/upbound/provider-aws/apis/datapipeline/v1beta1"
 	v1beta1dax "github.com/upbound/provider-aws/apis/dax/v1beta1"
-	v1beta1deploy "github.com/upbound/provider-aws/apis/deploy/v1beta1"
 	v1beta1detective "github.com/upbound/provider-aws/apis/detective/v1beta1"
 	v1beta1devicefarm "github.com/upbound/provider-aws/apis/devicefarm/v1beta1"
 	v1beta1directconnect "github.com/upbound/provider-aws/apis/directconnect/v1beta1"
@@ -135,7 +128,6 @@ func init() {
 		v1beta1.SchemeBuilder.AddToScheme,
 		v1beta1account.SchemeBuilder.AddToScheme,
 		v1beta1amplify.SchemeBuilder.AddToScheme,
-		v1beta1appautoscaling.SchemeBuilder.AddToScheme,
 		v1beta1appconfig.SchemeBuilder.AddToScheme,
 		v1beta1appflow.SchemeBuilder.AddToScheme,
 		v1beta1appintegrations.SchemeBuilder.AddToScheme,
@@ -155,17 +147,11 @@ func init() {
 		v1beta1cloudwatch.SchemeBuilder.AddToScheme,
 		v1beta1cloudwatchevents.SchemeBuilder.AddToScheme,
 		v1beta1cloudwatchlogs.SchemeBuilder.AddToScheme,
-		v1beta1codecommit.SchemeBuilder.AddToScheme,
-		v1beta1codepipeline.SchemeBuilder.AddToScheme,
-		v1beta1codestarconnections.SchemeBuilder.AddToScheme,
-		v1beta1codestarnotifications.SchemeBuilder.AddToScheme,
 		v1beta1configservice.SchemeBuilder.AddToScheme,
-		v1beta1connect.SchemeBuilder.AddToScheme,
 		v1beta1cur.SchemeBuilder.AddToScheme,
 		v1beta1dataexchange.SchemeBuilder.AddToScheme,
 		v1beta1datapipeline.SchemeBuilder.AddToScheme,
 		v1beta1dax.SchemeBuilder.AddToScheme,
-		v1beta1deploy.SchemeBuilder.AddToScheme,
 		v1beta1detective.SchemeBuilder.AddToScheme,
 		v1beta1devicefarm.SchemeBuilder.AddToScheme,
 		v1beta1directconnect.SchemeBuilder.AddToScheme,
