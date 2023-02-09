@@ -896,22 +896,22 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// lakeformation
 	//
 	// No import
-	"aws_lakeformation_data_lake_settings": config.IdentifierFromProvider,
+	// "aws_lakeformation_data_lake_settings": config.IdentifierFromProvider,
 	// No import
-	"aws_lakeformation_permissions": config.IdentifierFromProvider,
+	// "aws_lakeformation_permissions": config.IdentifierFromProvider,
 	// No import
-	"aws_lakeformation_resource": config.IdentifierFromProvider,
+	// "aws_lakeformation_resource": config.IdentifierFromProvider,
 
 	// lexmodels
 	//
 	// Bots can be imported using their name.
-	"aws_lex_bot": config.NameAsIdentifier,
+	// "aws_lex_bot": config.NameAsIdentifier,
 	// Bot aliases can be imported using an ID with the format bot_name:bot_alias_name
-	"aws_lex_bot_alias": FormattedIdentifierUserDefinedNameLast("name", ":", "bot_name"),
+	// "aws_lex_bot_alias": FormattedIdentifierUserDefinedNameLast("name", ":", "bot_name"),
 	// Intents can be imported using their name.
-	"aws_lex_intent": config.NameAsIdentifier,
+	// "aws_lex_intent": config.NameAsIdentifier,
 	// Slot types can be imported using their name.
-	"aws_lex_slot_type": config.NameAsIdentifier,
+	// "aws_lex_slot_type": config.NameAsIdentifier,
 
 	// licensemanager
 	//

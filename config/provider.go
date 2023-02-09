@@ -59,7 +59,7 @@ import (
 	"github.com/upbound/provider-aws/config/kinesisanalytics"
 	kinesisanalytics2 "github.com/upbound/provider-aws/config/kinesisanalyticsv2"
 	"github.com/upbound/provider-aws/config/kms"
-	"github.com/upbound/provider-aws/config/lakeformation"
+	// "github.com/upbound/provider-aws/config/lakeformation"
 	"github.com/upbound/provider-aws/config/lambda"
 	"github.com/upbound/provider-aws/config/licensemanager"
 	// "github.com/upbound/provider-aws/config/mq"
@@ -196,7 +196,7 @@ func GetProvider() *config.Provider {
 		kinesisanalytics.Configure,
 		kinesisanalytics2.Configure,
 		kms.Configure,
-		lakeformation.Configure,
+		// lakeformation.Configure,
 		lambda.Configure,
 		licensemanager.Configure,
 		// mq.Configure,

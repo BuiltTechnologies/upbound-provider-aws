@@ -84,9 +84,7 @@ import (
 	v1beta1kinesisanalyticsv2 "github.com/upbound/provider-aws/apis/kinesisanalyticsv2/v1beta1"
 	v1beta1kinesisvideo "github.com/upbound/provider-aws/apis/kinesisvideo/v1beta1"
 	v1beta1kms "github.com/upbound/provider-aws/apis/kms/v1beta1"
-	v1beta1lakeformation "github.com/upbound/provider-aws/apis/lakeformation/v1beta1"
 	v1beta1lambda "github.com/upbound/provider-aws/apis/lambda/v1beta1"
-	v1beta1lexmodels "github.com/upbound/provider-aws/apis/lexmodels/v1beta1"
 	v1beta1licensemanager "github.com/upbound/provider-aws/apis/licensemanager/v1beta1"
 	v1beta1lightsail "github.com/upbound/provider-aws/apis/lightsail/v1beta1"
 	v1beta1macie2 "github.com/upbound/provider-aws/apis/macie2/v1beta1"
@@ -215,9 +213,7 @@ func init() {
 		v1beta1kinesisanalyticsv2.SchemeBuilder.AddToScheme,
 		v1beta1kinesisvideo.SchemeBuilder.AddToScheme,
 		v1beta1kms.SchemeBuilder.AddToScheme,
-		v1beta1lakeformation.SchemeBuilder.AddToScheme,
 		v1beta1lambda.SchemeBuilder.AddToScheme,
-		v1beta1lexmodels.SchemeBuilder.AddToScheme,
 		v1beta1licensemanager.SchemeBuilder.AddToScheme,
 		v1beta1lightsail.SchemeBuilder.AddToScheme,
 		v1beta1macie2.SchemeBuilder.AddToScheme,

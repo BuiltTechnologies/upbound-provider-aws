@@ -13,9 +13,7 @@ spec:
         testing.upbound.io/example-name: example
     lexBot:
     - lexRegion: us-west-2
-      nameSelector:
-        matchLabels:
-          testing.upbound.io/example-name: example
+      name: Test
     region: us-west-1
 
 ---

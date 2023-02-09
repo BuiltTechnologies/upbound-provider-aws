@@ -423,9 +423,6 @@ import (
 	key "github.com/upbound/provider-aws/internal/controller/kms/key"
 	replicaexternalkey "github.com/upbound/provider-aws/internal/controller/kms/replicaexternalkey"
 	replicakey "github.com/upbound/provider-aws/internal/controller/kms/replicakey"
-	datalakesettings "github.com/upbound/provider-aws/internal/controller/lakeformation/datalakesettings"
-	permissions "github.com/upbound/provider-aws/internal/controller/lakeformation/permissions"
-	resourcelakeformation "github.com/upbound/provider-aws/internal/controller/lakeformation/resource"
 	aliaslambda "github.com/upbound/provider-aws/internal/controller/lambda/alias"
 	codesigningconfig "github.com/upbound/provider-aws/internal/controller/lambda/codesigningconfig"
 	eventsourcemapping "github.com/upbound/provider-aws/internal/controller/lambda/eventsourcemapping"
@@ -437,10 +434,6 @@ import (
 	layerversionpermission "github.com/upbound/provider-aws/internal/controller/lambda/layerversionpermission"
 	permissionlambda "github.com/upbound/provider-aws/internal/controller/lambda/permission"
 	provisionedconcurrencyconfig "github.com/upbound/provider-aws/internal/controller/lambda/provisionedconcurrencyconfig"
-	bot "github.com/upbound/provider-aws/internal/controller/lexmodels/bot"
-	botalias "github.com/upbound/provider-aws/internal/controller/lexmodels/botalias"
-	intent "github.com/upbound/provider-aws/internal/controller/lexmodels/intent"
-	slottype "github.com/upbound/provider-aws/internal/controller/lexmodels/slottype"
 	association "github.com/upbound/provider-aws/internal/controller/licensemanager/association"
 	licenseconfiguration "github.com/upbound/provider-aws/internal/controller/licensemanager/licenseconfiguration"
 	domainlightsail "github.com/upbound/provider-aws/internal/controller/lightsail/domain"
@@ -1128,9 +1121,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		key.Setup,
 		replicaexternalkey.Setup,
 		replicakey.Setup,
-		datalakesettings.Setup,
-		permissions.Setup,
-		resourcelakeformation.Setup,
 		aliaslambda.Setup,
 		codesigningconfig.Setup,
 		eventsourcemapping.Setup,
@@ -1142,10 +1132,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		layerversionpermission.Setup,
 		permissionlambda.Setup,
 		provisionedconcurrencyconfig.Setup,
-		bot.Setup,
-		botalias.Setup,
-		intent.Setup,
-		slottype.Setup,
 		association.Setup,
 		licenseconfiguration.Setup,
 		domainlightsail.Setup,
