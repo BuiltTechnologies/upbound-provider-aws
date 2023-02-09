@@ -204,17 +204,6 @@ import (
 	provisionedconcurrencyconfig "github.com/upbound/provider-aws/internal/controller/lambda/provisionedconcurrencyconfig"
 	providerconfig "github.com/upbound/provider-aws/internal/controller/providerconfig"
 	groupresourcegroups "github.com/upbound/provider-aws/internal/controller/resourcegroups/group"
-	delegationset "github.com/upbound/provider-aws/internal/controller/route53/delegationset"
-	healthcheck "github.com/upbound/provider-aws/internal/controller/route53/healthcheck"
-	hostedzonednssec "github.com/upbound/provider-aws/internal/controller/route53/hostedzonednssec"
-	record "github.com/upbound/provider-aws/internal/controller/route53/record"
-	trafficpolicy "github.com/upbound/provider-aws/internal/controller/route53/trafficpolicy"
-	trafficpolicyinstance "github.com/upbound/provider-aws/internal/controller/route53/trafficpolicyinstance"
-	vpcassociationauthorization "github.com/upbound/provider-aws/internal/controller/route53/vpcassociationauthorization"
-	zone "github.com/upbound/provider-aws/internal/controller/route53/zone"
-	endpointroute53resolver "github.com/upbound/provider-aws/internal/controller/route53resolver/endpoint"
-	rule "github.com/upbound/provider-aws/internal/controller/route53resolver/rule"
-	ruleassociation "github.com/upbound/provider-aws/internal/controller/route53resolver/ruleassociation"
 	bucket "github.com/upbound/provider-aws/internal/controller/s3/bucket"
 	bucketaccelerateconfiguration "github.com/upbound/provider-aws/internal/controller/s3/bucketaccelerateconfiguration"
 	bucketacl "github.com/upbound/provider-aws/internal/controller/s3/bucketacl"
@@ -470,17 +459,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		provisionedconcurrencyconfig.Setup,
 		providerconfig.Setup,
 		groupresourcegroups.Setup,
-		delegationset.Setup,
-		healthcheck.Setup,
-		hostedzonednssec.Setup,
-		record.Setup,
-		trafficpolicy.Setup,
-		trafficpolicyinstance.Setup,
-		vpcassociationauthorization.Setup,
-		zone.Setup,
-		endpointroute53resolver.Setup,
-		rule.Setup,
-		ruleassociation.Setup,
 		bucket.Setup,
 		bucketaccelerateconfiguration.Setup,
 		bucketacl.Setup,

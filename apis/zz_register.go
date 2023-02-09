@@ -29,8 +29,6 @@ import (
 	v1beta1kms "github.com/upbound/provider-aws/apis/kms/v1beta1"
 	v1beta1lambda "github.com/upbound/provider-aws/apis/lambda/v1beta1"
 	v1beta1resourcegroups "github.com/upbound/provider-aws/apis/resourcegroups/v1beta1"
-	v1beta1route53 "github.com/upbound/provider-aws/apis/route53/v1beta1"
-	v1beta1route53resolver "github.com/upbound/provider-aws/apis/route53resolver/v1beta1"
 	v1beta1s3 "github.com/upbound/provider-aws/apis/s3/v1beta1"
 	v1beta1s3control "github.com/upbound/provider-aws/apis/s3control/v1beta1"
 	v1beta1secretsmanager "github.com/upbound/provider-aws/apis/secretsmanager/v1beta1"
@@ -64,8 +62,6 @@ func init() {
 		v1beta1kms.SchemeBuilder.AddToScheme,
 		v1beta1lambda.SchemeBuilder.AddToScheme,
 		v1beta1resourcegroups.SchemeBuilder.AddToScheme,
-		v1beta1route53.SchemeBuilder.AddToScheme,
-		v1beta1route53resolver.SchemeBuilder.AddToScheme,
 		v1beta1s3.SchemeBuilder.AddToScheme,
 		v1beta1s3control.SchemeBuilder.AddToScheme,
 		v1beta1secretsmanager.SchemeBuilder.AddToScheme,

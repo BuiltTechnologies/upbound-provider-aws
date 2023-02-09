@@ -580,11 +580,11 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// route53
 	//
 	// N1PA6795SAMPLE
-	"aws_route53_delegation_set": config.IdentifierFromProvider,
+	// "aws_route53_delegation_set": config.IdentifierFromProvider,
 	// abcdef11-2222-3333-4444-555555fedcba
-	"aws_route53_health_check": config.IdentifierFromProvider,
+	// "aws_route53_health_check": config.IdentifierFromProvider,
 	// Z1D633PJN98FT9
-	"aws_route53_hosted_zone_dnssec": config.IdentifierFromProvider,
+	// "aws_route53_hosted_zone_dnssec": config.IdentifierFromProvider,
 	// Imported by using the Route 53 Hosted Zone identifier and KMS Key
 	// identifier, separated by a comma (,), e.g., Z1D633PJN98FT9,example
 	// disabled until it's successfully tested
@@ -595,20 +595,20 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// Imported using ID of the record, which is the zone identifier, record
 	// name, and record type, separated by underscores (_)
 	// Z4KAPRWWNC7JR_dev.example.com_NS
-	"aws_route53_record": config.IdentifierFromProvider,
+	// "aws_route53_record": config.IdentifierFromProvider,
 	// Z123456ABCDEFG:vpc-12345678
-	"aws_route53_vpc_association_authorization": FormattedIdentifierFromProvider(":", "zone_id", "vpc_id"),
+	// "aws_route53_vpc_association_authorization": FormattedIdentifierFromProvider(":", "zone_id", "vpc_id"),
 	// Z1D633PJN98FT9
-	"aws_route53_zone": config.IdentifierFromProvider,
+	// "aws_route53_zone": config.IdentifierFromProvider,
 	// Z123456ABCDEFG:vpc-12345678
 	// aws_route53_zone_association is disabled as it is not recommended for usage by terraform,
 	// see https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/route53_zone_association
 	// "aws_route53_zone_association": FormattedIdentifierFromProvider(":", "zone_id", "vpc_id"),
 	// Imported using the id and version, e.g.,
 	// 01a52019-d16f-422a-ae72-c306d2b6df7e/1
-	"aws_route53_traffic_policy": config.IdentifierFromProvider,
+	// "aws_route53_traffic_policy": config.IdentifierFromProvider,
 	// df579d9a-6396-410e-ac22-e7ad60cf9e7e
-	"aws_route53_traffic_policy_instance": config.IdentifierFromProvider,
+	// "aws_route53_traffic_policy_instance": config.IdentifierFromProvider,
 
 	// route53resolver
 	//
@@ -616,7 +616,7 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// disabled until it's successfully tested
 	// "aws_route53_resolver_dnssec_config": config.IdentifierFromProvider,
 	// rslvr-in-abcdef01234567890
-	"aws_route53_resolver_endpoint": config.IdentifierFromProvider,
+	// "aws_route53_resolver_endpoint": config.IdentifierFromProvider,
 	// rdsc-be1866ecc1683e95
 	// disabled until it's successfully tested
 	// "aws_route53_resolver_firewall_config": config.IdentifierFromProvider,
@@ -641,9 +641,9 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// disabled until it's successfully tested
 	// "aws_route53_resolver_query_log_config_association": config.IdentifierFromProvider,
 	// rslvr-rr-0123456789abcdef0
-	"aws_route53_resolver_rule": config.IdentifierFromProvider,
+	// "aws_route53_resolver_rule": config.IdentifierFromProvider,
 	// rslvr-rrassoc-97242eaf88example
-	"aws_route53_resolver_rule_association": config.IdentifierFromProvider,
+	// "aws_route53_resolver_rule_association": config.IdentifierFromProvider,
 
 	// s3
 	//
