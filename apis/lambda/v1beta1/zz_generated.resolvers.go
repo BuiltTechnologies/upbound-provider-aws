@@ -9,15 +9,13 @@ import (
 	"context"
 	reference "github.com/crossplane/crossplane-runtime/pkg/reference"
 	errors "github.com/pkg/errors"
-	v1beta11 "github.com/upbound/provider-aws/apis/efs/v1beta1"
-	v1beta13 "github.com/upbound/provider-aws/apis/iam/v1beta1"
-	v1beta12 "github.com/upbound/provider-aws/apis/kms/v1beta1"
-	v1beta14 "github.com/upbound/provider-aws/apis/s3/v1beta1"
+	v1beta12 "github.com/upbound/provider-aws/apis/iam/v1beta1"
+	v1beta11 "github.com/upbound/provider-aws/apis/kms/v1beta1"
+	v1beta13 "github.com/upbound/provider-aws/apis/s3/v1beta1"
 	v1beta1 "github.com/upbound/provider-aws/apis/signer/v1beta1"
-	v1beta16 "github.com/upbound/provider-aws/apis/sns/v1beta1"
-	v1beta15 "github.com/upbound/provider-aws/apis/sqs/v1beta1"
+	v1beta15 "github.com/upbound/provider-aws/apis/sns/v1beta1"
+	v1beta14 "github.com/upbound/provider-aws/apis/sqs/v1beta1"
 	common "github.com/upbound/provider-aws/config/common"
-	resource "github.com/upbound/upjet/pkg/resource"
 	client "sigs.k8s.io/controller-runtime/pkg/client"
 )
 
@@ -109,32 +107,14 @@ func (mg *Function) ResolveReferences(ctx context.Context, c client.Reader) erro
 	var rsp reference.ResolutionResponse
 	var err error
 
-	for i3 := 0; i3 < len(mg.Spec.ForProvider.FileSystemConfig); i3++ {
-		rsp, err = r.Resolve(ctx, reference.ResolutionRequest{
-			CurrentValue: reference.FromPtrValue(mg.Spec.ForProvider.FileSystemConfig[i3].Arn),
-			Extract:      resource.ExtractParamPath("arn", true),
-			Reference:    mg.Spec.ForProvider.FileSystemConfig[i3].ArnRef,
-			Selector:     mg.Spec.ForProvider.FileSystemConfig[i3].ArnSelector,
-			To: reference.To{
-				List:    &v1beta11.AccessPointList{},
-				Managed: &v1beta11.AccessPoint{},
-			},
-		})
-		if err != nil {
-			return errors.Wrap(err, "mg.Spec.ForProvider.FileSystemConfig[i3].Arn")
-		}
-		mg.Spec.ForProvider.FileSystemConfig[i3].Arn = reference.ToPtrValue(rsp.ResolvedValue)
-		mg.Spec.ForProvider.FileSystemConfig[i3].ArnRef = rsp.ResolvedReference
-
-	}
 	rsp, err = r.Resolve(ctx, reference.ResolutionRequest{
 		CurrentValue: reference.FromPtrValue(mg.Spec.ForProvider.KMSKeyArn),
 		Extract:      reference.ExternalName(),
 		Reference:    mg.Spec.ForProvider.KMSKeyArnRef,
 		Selector:     mg.Spec.ForProvider.KMSKeyArnSelector,
 		To: reference.To{
-			List:    &v1beta12.KeyList{},
-			Managed: &v1beta12.Key{},
+			List:    &v1beta11.KeyList{},
+			Managed: &v1beta11.Key{},
 		},
 	})
 	if err != nil {
@@ -149,8 +129,8 @@ func (mg *Function) ResolveReferences(ctx context.Context, c client.Reader) erro
 		Reference:    mg.Spec.ForProvider.RoleRef,
 		Selector:     mg.Spec.ForProvider.RoleSelector,
 		To: reference.To{
-			List:    &v1beta13.RoleList{},
-			Managed: &v1beta13.Role{},
+			List:    &v1beta12.RoleList{},
+			Managed: &v1beta12.Role{},
 		},
 	})
 	if err != nil {
@@ -165,8 +145,8 @@ func (mg *Function) ResolveReferences(ctx context.Context, c client.Reader) erro
 		Reference:    mg.Spec.ForProvider.S3BucketRef,
 		Selector:     mg.Spec.ForProvider.S3BucketSelector,
 		To: reference.To{
-			List:    &v1beta14.BucketList{},
-			Managed: &v1beta14.Bucket{},
+			List:    &v1beta13.BucketList{},
+			Managed: &v1beta13.Bucket{},
 		},
 	})
 	if err != nil {
@@ -193,8 +173,8 @@ func (mg *FunctionEventInvokeConfig) ResolveReferences(ctx context.Context, c cl
 				Reference:    mg.Spec.ForProvider.DestinationConfig[i3].OnFailure[i4].DestinationRef,
 				Selector:     mg.Spec.ForProvider.DestinationConfig[i3].OnFailure[i4].DestinationSelector,
 				To: reference.To{
-					List:    &v1beta15.QueueList{},
-					Managed: &v1beta15.Queue{},
+					List:    &v1beta14.QueueList{},
+					Managed: &v1beta14.Queue{},
 				},
 			})
 			if err != nil {
@@ -213,8 +193,8 @@ func (mg *FunctionEventInvokeConfig) ResolveReferences(ctx context.Context, c cl
 				Reference:    mg.Spec.ForProvider.DestinationConfig[i3].OnSuccess[i4].DestinationRef,
 				Selector:     mg.Spec.ForProvider.DestinationConfig[i3].OnSuccess[i4].DestinationSelector,
 				To: reference.To{
-					List:    &v1beta16.TopicList{},
-					Managed: &v1beta16.Topic{},
+					List:    &v1beta15.TopicList{},
+					Managed: &v1beta15.Topic{},
 				},
 			})
 			if err != nil {

@@ -11,14 +11,12 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 
 	v1beta1 "github.com/upbound/provider-aws/apis/autoscaling/v1beta1"
-	v1beta1cloudtrail "github.com/upbound/provider-aws/apis/cloudtrail/v1beta1"
 	v1beta1cloudwatch "github.com/upbound/provider-aws/apis/cloudwatch/v1beta1"
 	v1beta1cloudwatchlogs "github.com/upbound/provider-aws/apis/cloudwatchlogs/v1beta1"
 	v1beta1dms "github.com/upbound/provider-aws/apis/dms/v1beta1"
 	v1beta1dynamodb "github.com/upbound/provider-aws/apis/dynamodb/v1beta1"
 	v1beta1ec2 "github.com/upbound/provider-aws/apis/ec2/v1beta1"
 	v1beta1ecr "github.com/upbound/provider-aws/apis/ecr/v1beta1"
-	v1beta1efs "github.com/upbound/provider-aws/apis/efs/v1beta1"
 	v1beta1eks "github.com/upbound/provider-aws/apis/eks/v1beta1"
 	v1beta1elb "github.com/upbound/provider-aws/apis/elb/v1beta1"
 	v1beta1elbv2 "github.com/upbound/provider-aws/apis/elbv2/v1beta1"
@@ -49,14 +47,12 @@ func init() {
 	// Register the types with the Scheme so the components can map objects to GroupVersionKinds and back
 	AddToSchemes = append(AddToSchemes,
 		v1beta1.SchemeBuilder.AddToScheme,
-		v1beta1cloudtrail.SchemeBuilder.AddToScheme,
 		v1beta1cloudwatch.SchemeBuilder.AddToScheme,
 		v1beta1cloudwatchlogs.SchemeBuilder.AddToScheme,
 		v1beta1dms.SchemeBuilder.AddToScheme,
 		v1beta1dynamodb.SchemeBuilder.AddToScheme,
 		v1beta1ec2.SchemeBuilder.AddToScheme,
 		v1beta1ecr.SchemeBuilder.AddToScheme,
-		v1beta1efs.SchemeBuilder.AddToScheme,
 		v1beta1eks.SchemeBuilder.AddToScheme,
 		v1beta1elb.SchemeBuilder.AddToScheme,
 		v1beta1elbv2.SchemeBuilder.AddToScheme,

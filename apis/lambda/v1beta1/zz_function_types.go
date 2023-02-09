@@ -49,18 +49,8 @@ type FileSystemConfigObservation struct {
 type FileSystemConfigParameters struct {
 
 	// Amazon Resource Name (ARN) of the Amazon EFS Access Point that provides access to the file system.
-	// +crossplane:generate:reference:type=github.com/upbound/provider-aws/apis/efs/v1beta1.AccessPoint
-	// +crossplane:generate:reference:extractor=github.com/upbound/upjet/pkg/resource.ExtractParamPath("arn",true)
-	// +kubebuilder:validation:Optional
-	Arn *string `json:"arn,omitempty" tf:"arn,omitempty"`
-
-	// Reference to a AccessPoint in efs to populate arn.
-	// +kubebuilder:validation:Optional
-	ArnRef *v1.Reference `json:"arnRef,omitempty" tf:"-"`
-
-	// Selector for a AccessPoint in efs to populate arn.
-	// +kubebuilder:validation:Optional
-	ArnSelector *v1.Selector `json:"arnSelector,omitempty" tf:"-"`
+	// +kubebuilder:validation:Required
+	Arn *string `json:"arn" tf:"arn,omitempty"`
 
 	// Path where the function can access the file system, starting with /mnt/.
 	// +kubebuilder:validation:Required

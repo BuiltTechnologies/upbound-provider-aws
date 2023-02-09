@@ -25,7 +25,7 @@ import (
 	// "github.com/upbound/provider-aws/config/cloudfront"
 	// "github.com/upbound/provider-aws/config/cloudsearch"
 	"github.com/upbound/provider-aws/config/cloudwatch"
-	"github.com/upbound/provider-aws/config/cloudwatchevents"
+	// "github.com/upbound/provider-aws/config/cloudwatchevents"
 	"github.com/upbound/provider-aws/config/cloudwatchlogs"
 
 	// "github.com/upbound/provider-aws/config/cognitoidentity"
@@ -44,7 +44,7 @@ import (
 	"github.com/upbound/provider-aws/config/ecr"
 	// "github.com/upbound/provider-aws/config/ecrpublic"
 	// "github.com/upbound/provider-aws/config/ecs"
-	"github.com/upbound/provider-aws/config/efs"
+	// "github.com/upbound/provider-aws/config/efs"
 	"github.com/upbound/provider-aws/config/eks"
 	// "github.com/upbound/provider-aws/config/elasticache"
 	"github.com/upbound/provider-aws/config/elasticloadbalancing"
@@ -185,7 +185,7 @@ func GetProvider() *config.Provider {
 		ecr.Configure,
 		// ecrpublic.Configure,
 		// ecs.Configure,
-		efs.Configure,
+		// efs.Configure,
 		eks.Configure,
 		// elasticache.Configure,
 		elasticloadbalancing.Configure,
@@ -217,7 +217,7 @@ func GetProvider() *config.Provider {
 		secretsmanager.Configure,
 		// servicecatalog.Configure,
 		// organization.Configure,
-		cloudwatchevents.Configure,
+		// cloudwatchevents.Configure,
 		// budgets.Configure,
 		// servicediscovery.Configure,
 		// sfn.Configure,

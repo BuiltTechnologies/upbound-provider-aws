@@ -10,8 +10,6 @@ import (
 	"github.com/upbound/upjet/pkg/controller"
 
 	launchconfiguration "github.com/upbound/provider-aws/internal/controller/autoscaling/launchconfiguration"
-	eventdatastore "github.com/upbound/provider-aws/internal/controller/cloudtrail/eventdatastore"
-	trail "github.com/upbound/provider-aws/internal/controller/cloudtrail/trail"
 	compositealarm "github.com/upbound/provider-aws/internal/controller/cloudwatch/compositealarm"
 	dashboard "github.com/upbound/provider-aws/internal/controller/cloudwatch/dashboard"
 	metricalarm "github.com/upbound/provider-aws/internal/controller/cloudwatch/metricalarm"
@@ -137,11 +135,6 @@ import (
 	replicationconfiguration "github.com/upbound/provider-aws/internal/controller/ecr/replicationconfiguration"
 	repository "github.com/upbound/provider-aws/internal/controller/ecr/repository"
 	repositorypolicy "github.com/upbound/provider-aws/internal/controller/ecr/repositorypolicy"
-	accesspoint "github.com/upbound/provider-aws/internal/controller/efs/accesspoint"
-	backuppolicy "github.com/upbound/provider-aws/internal/controller/efs/backuppolicy"
-	filesystem "github.com/upbound/provider-aws/internal/controller/efs/filesystem"
-	filesystempolicy "github.com/upbound/provider-aws/internal/controller/efs/filesystempolicy"
-	mounttarget "github.com/upbound/provider-aws/internal/controller/efs/mounttarget"
 	addon "github.com/upbound/provider-aws/internal/controller/eks/addon"
 	cluster "github.com/upbound/provider-aws/internal/controller/eks/cluster"
 	clusterauth "github.com/upbound/provider-aws/internal/controller/eks/clusterauth"
@@ -267,7 +260,7 @@ import (
 	bucketwebsiteconfiguration "github.com/upbound/provider-aws/internal/controller/s3/bucketwebsiteconfiguration"
 	object "github.com/upbound/provider-aws/internal/controller/s3/object"
 	objectcopy "github.com/upbound/provider-aws/internal/controller/s3/objectcopy"
-	accesspoints3control "github.com/upbound/provider-aws/internal/controller/s3control/accesspoint"
+	accesspoint "github.com/upbound/provider-aws/internal/controller/s3control/accesspoint"
 	accesspointpolicy "github.com/upbound/provider-aws/internal/controller/s3control/accesspointpolicy"
 	accountpublicaccessblock "github.com/upbound/provider-aws/internal/controller/s3control/accountpublicaccessblock"
 	multiregionaccesspoint "github.com/upbound/provider-aws/internal/controller/s3control/multiregionaccesspoint"
@@ -305,8 +298,6 @@ import (
 func Setup(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
 		launchconfiguration.Setup,
-		eventdatastore.Setup,
-		trail.Setup,
 		compositealarm.Setup,
 		dashboard.Setup,
 		metricalarm.Setup,
@@ -432,11 +423,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		replicationconfiguration.Setup,
 		repository.Setup,
 		repositorypolicy.Setup,
-		accesspoint.Setup,
-		backuppolicy.Setup,
-		filesystem.Setup,
-		filesystempolicy.Setup,
-		mounttarget.Setup,
 		addon.Setup,
 		cluster.Setup,
 		clusterauth.Setup,
@@ -562,7 +548,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		bucketwebsiteconfiguration.Setup,
 		object.Setup,
 		objectcopy.Setup,
-		accesspoints3control.Setup,
+		accesspoint.Setup,
 		accesspointpolicy.Setup,
 		accountpublicaccessblock.Setup,
 		multiregionaccesspoint.Setup,

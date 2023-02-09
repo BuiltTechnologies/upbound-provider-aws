@@ -88,9 +88,9 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// cloudtrail
 	//
 	// Cloudtrails can be imported using the name
-	"aws_cloudtrail": config.NameAsIdentifier,
+	// "aws_cloudtrail": config.NameAsIdentifier,
 	// Event data stores can be imported using their arn
-	"aws_cloudtrail_event_data_store": config.IdentifierFromProvider,
+	// "aws_cloudtrail_event_data_store": config.IdentifierFromProvider,
 
 	// cognitoidentity
 	//
@@ -751,15 +751,15 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// efs
 	//
 	// The EFS file systems can be imported using the id
-	"aws_efs_file_system": config.IdentifierFromProvider,
+	// "aws_efs_file_system": config.IdentifierFromProvider,
 	// The EFS mount targets can be imported using the id
-	"aws_efs_mount_target": config.IdentifierFromProvider,
+	// "aws_efs_mount_target": config.IdentifierFromProvider,
 	// The EFS access points can be imported using the id
-	"aws_efs_access_point": config.IdentifierFromProvider,
+	// "aws_efs_access_point": config.IdentifierFromProvider,
 	// The EFS backup policies can be imported using the id
-	"aws_efs_backup_policy": config.IdentifierFromProvider,
+	// "aws_efs_backup_policy": config.IdentifierFromProvider,
 	// The EFS file system policies can be imported using the id
-	"aws_efs_file_system_policy": config.IdentifierFromProvider,
+	// "aws_efs_file_system_policy": config.IdentifierFromProvider,
 
 	// servicediscovery
 	//
