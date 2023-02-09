@@ -34,7 +34,7 @@ import (
 	"github.com/upbound/provider-aws/config/cur"
 	// "github.com/upbound/provider-aws/config/dax"
 	// "github.com/upbound/provider-aws/config/devicefarm"
-	"github.com/upbound/provider-aws/config/directconnect"
+	// "github.com/upbound/provider-aws/config/directconnect"
 
 	// "github.com/upbound/provider-aws/config/docdb"
 	// "github.com/upbound/provider-aws/config/ds"
@@ -224,7 +224,7 @@ func GetProvider() *config.Provider {
 		sns.Configure,
 		sqs.Configure,
 		// transfer.Configure,
-		directconnect.Configure,
+		// directconnect.Configure,
 		// ds.Configure,
 		// qldb.Configure,
 		// fsx.Configure,

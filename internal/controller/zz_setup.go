@@ -10,14 +10,6 @@ import (
 	"github.com/upbound/upjet/pkg/controller"
 
 	alternatecontact "github.com/upbound/provider-aws/internal/controller/account/alternatecontact"
-	application "github.com/upbound/provider-aws/internal/controller/appconfig/application"
-	configurationprofile "github.com/upbound/provider-aws/internal/controller/appconfig/configurationprofile"
-	deployment "github.com/upbound/provider-aws/internal/controller/appconfig/deployment"
-	deploymentstrategy "github.com/upbound/provider-aws/internal/controller/appconfig/deploymentstrategy"
-	environment "github.com/upbound/provider-aws/internal/controller/appconfig/environment"
-	hostedconfigurationversion "github.com/upbound/provider-aws/internal/controller/appconfig/hostedconfigurationversion"
-	flow "github.com/upbound/provider-aws/internal/controller/appflow/flow"
-	eventintegration "github.com/upbound/provider-aws/internal/controller/appintegrations/eventintegration"
 	grouptag "github.com/upbound/provider-aws/internal/controller/autoscaling/grouptag"
 	launchconfiguration "github.com/upbound/provider-aws/internal/controller/autoscaling/launchconfiguration"
 	lifecyclehook "github.com/upbound/provider-aws/internal/controller/autoscaling/lifecyclehook"
@@ -61,22 +53,6 @@ import (
 	stream "github.com/upbound/provider-aws/internal/controller/cloudwatchlogs/stream"
 	subscriptionfilter "github.com/upbound/provider-aws/internal/controller/cloudwatchlogs/subscriptionfilter"
 	reportdefinition "github.com/upbound/provider-aws/internal/controller/cur/reportdefinition"
-	bgppeer "github.com/upbound/provider-aws/internal/controller/directconnect/bgppeer"
-	connectiondirectconnect "github.com/upbound/provider-aws/internal/controller/directconnect/connection"
-	connectionassociation "github.com/upbound/provider-aws/internal/controller/directconnect/connectionassociation"
-	gateway "github.com/upbound/provider-aws/internal/controller/directconnect/gateway"
-	gatewayassociation "github.com/upbound/provider-aws/internal/controller/directconnect/gatewayassociation"
-	gatewayassociationproposal "github.com/upbound/provider-aws/internal/controller/directconnect/gatewayassociationproposal"
-	hostedprivatevirtualinterface "github.com/upbound/provider-aws/internal/controller/directconnect/hostedprivatevirtualinterface"
-	hostedprivatevirtualinterfaceaccepter "github.com/upbound/provider-aws/internal/controller/directconnect/hostedprivatevirtualinterfaceaccepter"
-	hostedpublicvirtualinterface "github.com/upbound/provider-aws/internal/controller/directconnect/hostedpublicvirtualinterface"
-	hostedpublicvirtualinterfaceaccepter "github.com/upbound/provider-aws/internal/controller/directconnect/hostedpublicvirtualinterfaceaccepter"
-	hostedtransitvirtualinterface "github.com/upbound/provider-aws/internal/controller/directconnect/hostedtransitvirtualinterface"
-	hostedtransitvirtualinterfaceaccepter "github.com/upbound/provider-aws/internal/controller/directconnect/hostedtransitvirtualinterfaceaccepter"
-	lag "github.com/upbound/provider-aws/internal/controller/directconnect/lag"
-	privatevirtualinterface "github.com/upbound/provider-aws/internal/controller/directconnect/privatevirtualinterface"
-	publicvirtualinterface "github.com/upbound/provider-aws/internal/controller/directconnect/publicvirtualinterface"
-	transitvirtualinterface "github.com/upbound/provider-aws/internal/controller/directconnect/transitvirtualinterface"
 	lifecyclepolicy "github.com/upbound/provider-aws/internal/controller/dlm/lifecyclepolicy"
 	certificate "github.com/upbound/provider-aws/internal/controller/dms/certificate"
 	endpoint "github.com/upbound/provider-aws/internal/controller/dms/endpoint"
@@ -218,10 +194,6 @@ import (
 	lbtargetgroup "github.com/upbound/provider-aws/internal/controller/elbv2/lbtargetgroup"
 	lbtargetgroupattachment "github.com/upbound/provider-aws/internal/controller/elbv2/lbtargetgroupattachment"
 	deliverystream "github.com/upbound/provider-aws/internal/controller/firehose/deliverystream"
-	licenseassociation "github.com/upbound/provider-aws/internal/controller/grafana/licenseassociation"
-	detector "github.com/upbound/provider-aws/internal/controller/guardduty/detector"
-	filter "github.com/upbound/provider-aws/internal/controller/guardduty/filter"
-	member "github.com/upbound/provider-aws/internal/controller/guardduty/member"
 	accesskey "github.com/upbound/provider-aws/internal/controller/iam/accesskey"
 	accountalias "github.com/upbound/provider-aws/internal/controller/iam/accountalias"
 	accountpasswordpolicy "github.com/upbound/provider-aws/internal/controller/iam/accountpasswordpolicy"
@@ -249,7 +221,7 @@ import (
 	resourcegroup "github.com/upbound/provider-aws/internal/controller/inspector/resourcegroup"
 	streamkinesis "github.com/upbound/provider-aws/internal/controller/kinesis/stream"
 	streamconsumer "github.com/upbound/provider-aws/internal/controller/kinesis/streamconsumer"
-	applicationkinesisanalytics "github.com/upbound/provider-aws/internal/controller/kinesisanalytics/application"
+	application "github.com/upbound/provider-aws/internal/controller/kinesisanalytics/application"
 	applicationkinesisanalyticsv2 "github.com/upbound/provider-aws/internal/controller/kinesisanalyticsv2/application"
 	applicationsnapshot "github.com/upbound/provider-aws/internal/controller/kinesisanalyticsv2/applicationsnapshot"
 	streamkinesisvideo "github.com/upbound/provider-aws/internal/controller/kinesisvideo/stream"
@@ -316,10 +288,6 @@ import (
 	controlpanel "github.com/upbound/provider-aws/internal/controller/route53recoverycontrolconfig/controlpanel"
 	routingcontrol "github.com/upbound/provider-aws/internal/controller/route53recoverycontrolconfig/routingcontrol"
 	safetyrule "github.com/upbound/provider-aws/internal/controller/route53recoverycontrolconfig/safetyrule"
-	cell "github.com/upbound/provider-aws/internal/controller/route53recoveryreadiness/cell"
-	readinesscheck "github.com/upbound/provider-aws/internal/controller/route53recoveryreadiness/readinesscheck"
-	recoverygroup "github.com/upbound/provider-aws/internal/controller/route53recoveryreadiness/recoverygroup"
-	resourceset "github.com/upbound/provider-aws/internal/controller/route53recoveryreadiness/resourceset"
 	endpointroute53resolver "github.com/upbound/provider-aws/internal/controller/route53resolver/endpoint"
 	ruleroute53resolver "github.com/upbound/provider-aws/internal/controller/route53resolver/rule"
 	ruleassociation "github.com/upbound/provider-aws/internal/controller/route53resolver/ruleassociation"
@@ -365,7 +333,7 @@ import (
 	findingaggregator "github.com/upbound/provider-aws/internal/controller/securityhub/findingaggregator"
 	insight "github.com/upbound/provider-aws/internal/controller/securityhub/insight"
 	inviteaccepter "github.com/upbound/provider-aws/internal/controller/securityhub/inviteaccepter"
-	membersecurityhub "github.com/upbound/provider-aws/internal/controller/securityhub/member"
+	member "github.com/upbound/provider-aws/internal/controller/securityhub/member"
 	productsubscription "github.com/upbound/provider-aws/internal/controller/securityhub/productsubscription"
 	standardssubscription "github.com/upbound/provider-aws/internal/controller/securityhub/standardssubscription"
 	cloudformationstack "github.com/upbound/provider-aws/internal/controller/serverlessrepo/cloudformationstack"
@@ -401,14 +369,6 @@ import (
 func Setup(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
 		alternatecontact.Setup,
-		application.Setup,
-		configurationprofile.Setup,
-		deployment.Setup,
-		deploymentstrategy.Setup,
-		environment.Setup,
-		hostedconfigurationversion.Setup,
-		flow.Setup,
-		eventintegration.Setup,
 		grouptag.Setup,
 		launchconfiguration.Setup,
 		lifecyclehook.Setup,
@@ -452,22 +412,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		stream.Setup,
 		subscriptionfilter.Setup,
 		reportdefinition.Setup,
-		bgppeer.Setup,
-		connectiondirectconnect.Setup,
-		connectionassociation.Setup,
-		gateway.Setup,
-		gatewayassociation.Setup,
-		gatewayassociationproposal.Setup,
-		hostedprivatevirtualinterface.Setup,
-		hostedprivatevirtualinterfaceaccepter.Setup,
-		hostedpublicvirtualinterface.Setup,
-		hostedpublicvirtualinterfaceaccepter.Setup,
-		hostedtransitvirtualinterface.Setup,
-		hostedtransitvirtualinterfaceaccepter.Setup,
-		lag.Setup,
-		privatevirtualinterface.Setup,
-		publicvirtualinterface.Setup,
-		transitvirtualinterface.Setup,
 		lifecyclepolicy.Setup,
 		certificate.Setup,
 		endpoint.Setup,
@@ -609,10 +553,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		lbtargetgroup.Setup,
 		lbtargetgroupattachment.Setup,
 		deliverystream.Setup,
-		licenseassociation.Setup,
-		detector.Setup,
-		filter.Setup,
-		member.Setup,
 		accesskey.Setup,
 		accountalias.Setup,
 		accountpasswordpolicy.Setup,
@@ -640,7 +580,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		resourcegroup.Setup,
 		streamkinesis.Setup,
 		streamconsumer.Setup,
-		applicationkinesisanalytics.Setup,
+		application.Setup,
 		applicationkinesisanalyticsv2.Setup,
 		applicationsnapshot.Setup,
 		streamkinesisvideo.Setup,
@@ -707,10 +647,6 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		controlpanel.Setup,
 		routingcontrol.Setup,
 		safetyrule.Setup,
-		cell.Setup,
-		readinesscheck.Setup,
-		recoverygroup.Setup,
-		resourceset.Setup,
 		endpointroute53resolver.Setup,
 		ruleroute53resolver.Setup,
 		ruleassociation.Setup,
@@ -756,7 +692,7 @@ func Setup(mgr ctrl.Manager, o controller.Options) error {
 		findingaggregator.Setup,
 		insight.Setup,
 		inviteaccepter.Setup,
-		membersecurityhub.Setup,
+		member.Setup,
 		productsubscription.Setup,
 		standardssubscription.Setup,
 		cloudformationstack.Setup,

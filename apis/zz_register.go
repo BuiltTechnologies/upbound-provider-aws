@@ -11,9 +11,6 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 
 	v1beta1 "github.com/upbound/provider-aws/apis/account/v1beta1"
-	v1beta1appconfig "github.com/upbound/provider-aws/apis/appconfig/v1beta1"
-	v1beta1appflow "github.com/upbound/provider-aws/apis/appflow/v1beta1"
-	v1beta1appintegrations "github.com/upbound/provider-aws/apis/appintegrations/v1beta1"
 	v1beta1autoscaling "github.com/upbound/provider-aws/apis/autoscaling/v1beta1"
 	v1beta1autoscalingplans "github.com/upbound/provider-aws/apis/autoscalingplans/v1beta1"
 	v1beta1batch "github.com/upbound/provider-aws/apis/batch/v1beta1"
@@ -26,7 +23,6 @@ import (
 	v1beta1cloudwatchevents "github.com/upbound/provider-aws/apis/cloudwatchevents/v1beta1"
 	v1beta1cloudwatchlogs "github.com/upbound/provider-aws/apis/cloudwatchlogs/v1beta1"
 	v1beta1cur "github.com/upbound/provider-aws/apis/cur/v1beta1"
-	v1beta1directconnect "github.com/upbound/provider-aws/apis/directconnect/v1beta1"
 	v1beta1dlm "github.com/upbound/provider-aws/apis/dlm/v1beta1"
 	v1beta1dms "github.com/upbound/provider-aws/apis/dms/v1beta1"
 	v1beta1dynamodb "github.com/upbound/provider-aws/apis/dynamodb/v1beta1"
@@ -38,8 +34,6 @@ import (
 	v1beta1elb "github.com/upbound/provider-aws/apis/elb/v1beta1"
 	v1beta1elbv2 "github.com/upbound/provider-aws/apis/elbv2/v1beta1"
 	v1beta1firehose "github.com/upbound/provider-aws/apis/firehose/v1beta1"
-	v1beta1grafana "github.com/upbound/provider-aws/apis/grafana/v1beta1"
-	v1beta1guardduty "github.com/upbound/provider-aws/apis/guardduty/v1beta1"
 	v1beta1iam "github.com/upbound/provider-aws/apis/iam/v1beta1"
 	v1beta1inspector "github.com/upbound/provider-aws/apis/inspector/v1beta1"
 	v1beta1kinesis "github.com/upbound/provider-aws/apis/kinesis/v1beta1"
@@ -55,7 +49,6 @@ import (
 	v1beta1resourcegroups "github.com/upbound/provider-aws/apis/resourcegroups/v1beta1"
 	v1beta1route53 "github.com/upbound/provider-aws/apis/route53/v1beta1"
 	v1beta1route53recoverycontrolconfig "github.com/upbound/provider-aws/apis/route53recoverycontrolconfig/v1beta1"
-	v1beta1route53recoveryreadiness "github.com/upbound/provider-aws/apis/route53recoveryreadiness/v1beta1"
 	v1beta1route53resolver "github.com/upbound/provider-aws/apis/route53resolver/v1beta1"
 	v1beta1s3 "github.com/upbound/provider-aws/apis/s3/v1beta1"
 	v1beta1s3control "github.com/upbound/provider-aws/apis/s3control/v1beta1"
@@ -79,9 +72,6 @@ func init() {
 	// Register the types with the Scheme so the components can map objects to GroupVersionKinds and back
 	AddToSchemes = append(AddToSchemes,
 		v1beta1.SchemeBuilder.AddToScheme,
-		v1beta1appconfig.SchemeBuilder.AddToScheme,
-		v1beta1appflow.SchemeBuilder.AddToScheme,
-		v1beta1appintegrations.SchemeBuilder.AddToScheme,
 		v1beta1autoscaling.SchemeBuilder.AddToScheme,
 		v1beta1autoscalingplans.SchemeBuilder.AddToScheme,
 		v1beta1batch.SchemeBuilder.AddToScheme,
@@ -94,7 +84,6 @@ func init() {
 		v1beta1cloudwatchevents.SchemeBuilder.AddToScheme,
 		v1beta1cloudwatchlogs.SchemeBuilder.AddToScheme,
 		v1beta1cur.SchemeBuilder.AddToScheme,
-		v1beta1directconnect.SchemeBuilder.AddToScheme,
 		v1beta1dlm.SchemeBuilder.AddToScheme,
 		v1beta1dms.SchemeBuilder.AddToScheme,
 		v1beta1dynamodb.SchemeBuilder.AddToScheme,
@@ -106,8 +95,6 @@ func init() {
 		v1beta1elb.SchemeBuilder.AddToScheme,
 		v1beta1elbv2.SchemeBuilder.AddToScheme,
 		v1beta1firehose.SchemeBuilder.AddToScheme,
-		v1beta1grafana.SchemeBuilder.AddToScheme,
-		v1beta1guardduty.SchemeBuilder.AddToScheme,
 		v1beta1iam.SchemeBuilder.AddToScheme,
 		v1beta1inspector.SchemeBuilder.AddToScheme,
 		v1beta1kinesis.SchemeBuilder.AddToScheme,
@@ -123,7 +110,6 @@ func init() {
 		v1beta1resourcegroups.SchemeBuilder.AddToScheme,
 		v1beta1route53.SchemeBuilder.AddToScheme,
 		v1beta1route53recoverycontrolconfig.SchemeBuilder.AddToScheme,
-		v1beta1route53recoveryreadiness.SchemeBuilder.AddToScheme,
 		v1beta1route53resolver.SchemeBuilder.AddToScheme,
 		v1beta1s3.SchemeBuilder.AddToScheme,
 		v1beta1s3control.SchemeBuilder.AddToScheme,

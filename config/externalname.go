@@ -1554,79 +1554,79 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// directconnect
 	//
 	// Direct Connect Gateways can be imported using the gateway id
-	"aws_dx_gateway": config.IdentifierFromProvider,
+	// "aws_dx_gateway": config.IdentifierFromProvider,
 	// Direct Connect connections can be imported using the connection id
-	"aws_dx_connection": config.IdentifierFromProvider,
+	// "aws_dx_connection": config.IdentifierFromProvider,
 	// Direct Connect public virtual interfaces can be imported using the vif id
-	"aws_dx_public_virtual_interface": config.IdentifierFromProvider,
+	// "aws_dx_public_virtual_interface": config.IdentifierFromProvider,
 	// No import
-	"aws_dx_connection_association": config.IdentifierFromProvider,
+	// "aws_dx_connection_association": config.IdentifierFromProvider,
 	// Direct Connect LAGs can be imported using the lag id
-	"aws_dx_lag": config.IdentifierFromProvider,
+	// "aws_dx_lag": config.IdentifierFromProvider,
 	// Direct Connect transit virtual interfaces can be imported using the vif id
-	"aws_dx_transit_virtual_interface": config.IdentifierFromProvider,
+	// "aws_dx_transit_virtual_interface": config.IdentifierFromProvider,
 	// Direct Connect private virtual interfaces can be imported using the vif id
-	"aws_dx_private_virtual_interface": config.IdentifierFromProvider,
+	// "aws_dx_private_virtual_interface": config.IdentifierFromProvider,
 	//
-	"aws_dx_gateway_association_proposal": config.IdentifierFromProvider,
+	// "aws_dx_gateway_association_proposal": config.IdentifierFromProvider,
 	// Direct Connect gateway associations can be imported using dx_gateway_id together with associated_gateway_id
 	// TODO: associated_gateway_id parameter is not `Required` in TF schema. But we use this field in id construction. So, please mark as required this field while configuration
-	"aws_dx_gateway_association": config.IdentifierFromProvider,
+	// "aws_dx_gateway_association": config.IdentifierFromProvider,
 	// No import
-	"aws_dx_bgp_peer": config.IdentifierFromProvider,
+	// "aws_dx_bgp_peer": config.IdentifierFromProvider,
 	// Direct Connect hosted private virtual interfaces can be imported using the vif id
-	"aws_dx_hosted_private_virtual_interface": config.IdentifierFromProvider,
+	// "aws_dx_hosted_private_virtual_interface": config.IdentifierFromProvider,
 	// Direct Connect hosted private virtual interfaces can be imported using the vif id
-	"aws_dx_hosted_private_virtual_interface_accepter": config.IdentifierFromProvider,
+	// "aws_dx_hosted_private_virtual_interface_accepter": config.IdentifierFromProvider,
 	// Direct Connect hosted public virtual interfaces can be imported using the vif id
-	"aws_dx_hosted_public_virtual_interface": config.IdentifierFromProvider,
+	// "aws_dx_hosted_public_virtual_interface": config.IdentifierFromProvider,
 	// Direct Connect hosted public virtual interfaces can be imported using the vif id
-	"aws_dx_hosted_public_virtual_interface_accepter": config.IdentifierFromProvider,
+	// "aws_dx_hosted_public_virtual_interface_accepter": config.IdentifierFromProvider,
 	// Direct Connect hosted transit virtual interfaces can be imported using the vif id
-	"aws_dx_hosted_transit_virtual_interface": config.IdentifierFromProvider,
+	// "aws_dx_hosted_transit_virtual_interface": config.IdentifierFromProvider,
 	// Direct Connect hosted transit virtual interfaces can be imported using the vif id
-	"aws_dx_hosted_transit_virtual_interface_accepter": config.IdentifierFromProvider,
+	// "aws_dx_hosted_transit_virtual_interface_accepter": config.IdentifierFromProvider,
 
 	// guardduty
 	//
 	// GuardDuty detectors can be imported using the detector ID
-	"aws_guardduty_detector": config.IdentifierFromProvider,
+	// "aws_guardduty_detector": config.IdentifierFromProvider,
 	// GuardDuty filters can be imported using the detector ID and filter's name separated by a colon
 	// 00b00fd5aecc0ab60a708659477e9617:MyFilter
-	"aws_guardduty_filter": config.TemplatedStringAsIdentifier("name", "{{ .parameters.detector_id }}:{{ .external_name }}"),
+	// "aws_guardduty_filter": config.TemplatedStringAsIdentifier("name", "{{ .parameters.detector_id }}:{{ .external_name }}"),
 	// GuardDuty members can be imported using the primary GuardDuty detector ID and member AWS account ID
 	// 00b00fd5aecc0ab60a708659477e9617:123456789012
-	"aws_guardduty_member": config.IdentifierFromProvider,
+	// "aws_guardduty_member": config.IdentifierFromProvider,
 
 	// appconfig
 	//
 	// AppConfig Applications can be imported using their application ID,
-	"aws_appconfig_application": config.IdentifierFromProvider,
+	// "aws_appconfig_application": config.IdentifierFromProvider,
 	// AppConfig Deployment Strategies can be imported by using their deployment strategy ID
-	"aws_appconfig_deployment_strategy": config.IdentifierFromProvider,
+	// "aws_appconfig_deployment_strategy": config.IdentifierFromProvider,
 	// AppConfig Environments can be imported by using the environment ID and application ID separated by a colon (:)
-	"aws_appconfig_environment": config.IdentifierFromProvider,
+	// "aws_appconfig_environment": config.IdentifierFromProvider,
 	// AppConfig Configuration Profiles can be imported by using the configuration profile ID and application ID separated by a colon (:)
-	"aws_appconfig_configuration_profile": config.IdentifierFromProvider,
+	// "aws_appconfig_configuration_profile": config.IdentifierFromProvider,
 	// AppConfig Hosted Configuration Versions can be imported by using the application ID, configuration profile ID, and version number separated by a slash (/)
-	"aws_appconfig_hosted_configuration_version": config.IdentifierFromProvider,
+	// "aws_appconfig_hosted_configuration_version": config.IdentifierFromProvider,
 	// AppConfig Deployments can be imported by using the application ID, environment ID, and deployment number separated by a slash (/)
-	"aws_appconfig_deployment": config.IdentifierFromProvider,
+	// "aws_appconfig_deployment": config.IdentifierFromProvider,
 
 	// appintegrations
 	//
 	// Amazon AppIntegrations Event Integrations can be imported using the name
-	"aws_appintegrations_event_integration": config.NameAsIdentifier,
+	// "aws_appintegrations_event_integration": config.NameAsIdentifier,
 
 	// grafana
 	//
 	// Grafana workspace license association can be imported using the workspace's id
-	"aws_grafana_license_association": FormattedIdentifierFromProvider("", "workspace_id"),
+	// "aws_grafana_license_association": FormattedIdentifierFromProvider("", "workspace_id"),
 
 	// appflow
 	//
 	// arn:aws:appflow:us-west-2:123456789012:flow/example-flow
-	"aws_appflow_flow": config.TemplatedStringAsIdentifier("name", "arn:aws:appflow:{{ .parameters.region }}:{{ .client_metadata.account_id }}:flow/{{ .external_name }}"),
+	// "aws_appflow_flow": config.TemplatedStringAsIdentifier("name", "arn:aws:appflow:{{ .parameters.region }}:{{ .client_metadata.account_id }}:flow/{{ .external_name }}"),
 
 	// sns
 	//
@@ -1709,13 +1709,13 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	// route53recoveryreadiness
 	//
 	// Route53 Recovery Readiness recovery groups can be imported via the recovery group name
-	"aws_route53recoveryreadiness_recovery_group": config.ParameterAsIdentifier("recovery_group_name"),
+	// "aws_route53recoveryreadiness_recovery_group": config.ParameterAsIdentifier("recovery_group_name"),
 	// Route53 Recovery Readiness resource set name can be imported via the resource set name
-	"aws_route53recoveryreadiness_resource_set": config.ParameterAsIdentifier("resource_set_name"),
+	// "aws_route53recoveryreadiness_resource_set": config.ParameterAsIdentifier("resource_set_name"),
 	// Route53 Recovery Readiness cells can be imported via the cell name
-	"aws_route53recoveryreadiness_cell": config.ParameterAsIdentifier("cell_name"),
+	// "aws_route53recoveryreadiness_cell": config.ParameterAsIdentifier("cell_name"),
 	// Route53 Recovery Readiness readiness checks can be imported via the readiness check name
-	"aws_route53recoveryreadiness_readiness_check": config.ParameterAsIdentifier("readiness_check_name"),
+	// "aws_route53recoveryreadiness_readiness_check": config.ParameterAsIdentifier("readiness_check_name"),
 
 	// s3control
 	//
