@@ -34,17 +34,17 @@ VERSION=v0.29.0 PROJECT_VERSION_TAG_GROUP=built make build
 ## Manually Publish to ECR
 
 ```bash
+# * must be on a branch named "main" or "release-*"
+# * git must be in a clean state
+export AWS_REGION=us-east-2
+export DOCKER_CLI_EXPERIMENTAL=enabled
+export BUILD_REGISTRY=325405374407.dkr.ecr.us-east-2.amazonaws.com
+
 # build image
 make build PLATFORMS=linux_amd64
 
 # login to ECR
 AWS_PROFILE=eksdev-admin aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 325405374407.dkr.ecr.us-east-2.amazonaws.com
-
-# * must be on a branch named "main" or "release-*"
-# * git must be in a clean state
-export AWS_REGION=us-east-2
-export DOCKER_CLI_EXPERIMENTAL=enabled
-export REGISTRY_ORGS=325405374407.dkr.ecr.us-east-2.amazonaws.com/upbound-provider-aws
 
 make built.publish V=1 PLATFORMS=linux_amd64
 ```

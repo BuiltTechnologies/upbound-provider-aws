@@ -19,7 +19,7 @@ built.img.release.publish.$(1).$(2).$(3):
 	@$(OK) docker manifest annotate --arch $(3) $(1)/$(2):$(VERSION) $(1)/$(2):$(VERSION)-$(3)
 built.img.release.publish: built.img.release.publish.$(1).$(2).$(3)
 endef
-$(foreach r,$(REGISTRY_ORGS), $(foreach i,$(IMAGES), $(foreach a,$(IMAGE_ARCHS),$(eval $(call built.repo.targets,$(r),$(i),$(a))))))
+$(foreach r,$(BUILD_REGISTRY), $(foreach i,$(IMAGES), $(foreach a,$(IMAGE_ARCHS),$(eval $(call built.repo.targets,$(r),$(i),$(a))))))
 
 built.img.release.manifest.publish.%: built.img.release.publish
 	@$(INFO) docker manifest push --purge $(DOCKER_REGISTRY)/$*:$(VERSION)
