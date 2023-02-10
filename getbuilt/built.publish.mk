@@ -5,21 +5,21 @@
 
 define built.repo.targets
 built.img.release.publish.$(1).$(2).$(3):
-	@$(INFO) docker tag $(1)/$(2):$(VERSION) $(1)/$(2):$(VERSION)
-	@docker tag $(1)/$(2):$(VERSION) $(1)/$(2):$(VERSION) || $(FAIL)
-	@$(OK) docker tag $(1)/$(2):$(VERSION) $(1)/$(2):$(VERSION)
+	@$(INFO) docker tag $(1)/$(2)-$(3) $(1)/$(2)-$(3):$(VERSION)
+	@docker tag $(1)/$(2)-$(3) $(1)/$(2)-$(3):$(VERSION) || $(FAIL)
+	@$(OK) docker tag $(1)/$(2)-$(3) $(1)/$(2)-$(3):$(VERSION)
 
-	@$(INFO) docker push $(1)/$(2):$(VERSION)
-	@docker push $(1)/$(2):$(VERSION) || $(FAIL)
-	@$(OK) docker push $(1)/$(2):$(VERSION)
+	@$(INFO) docker push $(1)/$(2)-$(3):$(VERSION)
+	@docker push $(1)/$(2)-$(3):$(VERSION) || $(FAIL)
+	@$(OK) docker push $(1)/$(2)-$(3):$(VERSION)
 
-	@$(INFO) docker manifest create --amend $(1)/$(2):$(VERSION) $(1)/$(2):$(VERSION)
-	@docker manifest create --amend $(1)/$(2):$(VERSION) $(1)/$(2):$(VERSION) || $(FAIL)
-	@$(OK) docker manifest create --amend $(1)/$(2):$(VERSION) $(1)/$(2):$(VERSION)
+	@$(INFO) docker manifest create --amend $(1)/$(2)-$(3) $(1)/$(2)-$(3):$(VERSION)
+	@docker manifest create --amend $(1)/$(2)-$(3) $(1)/$(2)-$(3):$(VERSION) || $(FAIL)
+	@$(OK) docker manifest create --amend $(1)/$(2)-$(3) $(1)/$(2)-$(3):$(VERSION)
 
-	@$(INFO) docker manifest annotate --arch $(3) $(1)/$(2):$(VERSION) $(1)/$(2):$(VERSION)
-	@docker manifest annotate --arch $(3) $(1)/$(2):$(VERSION) $(1)/$(2):$(VERSION) || $(FAIL)
-	@$(OK) docker manifest annotate --arch $(3) $(1)/$(2):$(VERSION) $(1)/$(2):$(VERSION)
+	@$(INFO) docker manifest annotate --arch $(3) $(1)/$(2)-$(3) $(1)/$(2)-$(3):$(VERSION)
+	@docker manifest annotate --arch $(3) $(1)/$(2)-$(3) $(1)/$(2)-$(3):$(VERSION) || $(FAIL)
+	@$(OK) docker manifest annotate --arch $(3) $(1)/$(2)-$(3) $(1)/$(2)-$(3):$(VERSION)
 built.img.release.publish: built.img.release.publish.$(1).$(2).$(3)
 endef
 $(foreach r,$(BUILD_REGISTRY), $(foreach i,$(IMAGES), $(foreach a,$(IMAGE_ARCHS),$(eval $(call built.repo.targets,$(r),$(i),$(a))))))
@@ -37,6 +37,6 @@ endif
 
 # publish all releasable artifacts
 built.publish: version.isdirty
-	@echo "$(BRANCH_NAME) $(PLATFORMS) $(IMAGES) $(REGISTRY_ORGS)"
+	@echo "$(BRANCH_NAME) $(PLATFORMS) $(IMAGES) $(BUILD_REGISTRY)"
 	@$(MAKE) publish.init
 	@$(MAKE) built.publish.artifacts
