@@ -17,15 +17,26 @@ env:
   # Common users. We can't run a step 'if secrets.XXX != ""' but we can run a
   # step 'if env.XXX' != ""', so we copy these to succinctly test whether
   # credentials have been provided before trying to run steps that need them.
-  UPBOUND_MARKETPLACE_PUSH_ROBOT_USR: ${{ secrets.UPBOUND_MARKETPLACE_PUSH_ROBOT_USR }}
+  # UPBOUND_MARKETPLACE_PUSH_ROBOT_USR: ${{ secrets.UPBOUND_MARKETPLACE_PUSH_ROBOT_USR }}
+  AWS_USR: ${{ secrets.AWS_USR }}
+
+  AWS_REGION: us-east-2
+  DOCKER_CLI_EXPERIMENTAL: enabled
+  DOCKER_REGISTRY: 325405374407.dkr.ecr.us-east-2.amazonaws.com/upbound-provider-aws
+
 jobs:
   detect-noop:
     runs-on: ubuntu-22.04
     outputs:
-      noop: ${{ steps.noop.outputs.should_skip }}
+      noop: ${{ steps.noop-local.outputs.should_skip }} || ${{ steps.noop.outputs.should_skip }}
     steps:
       - name: Detect No-op Changes
+        id: noop-local
+        if: ${{ env.ACT }}
+        run: echo "should_skip=false" >> $GITHUB_OUTPUT
+      - name: Detect No-op Changes
         id: noop
+        if: ${{ !env.ACT }}
         uses: fkirc/skip-duplicate-actions@v5.3.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -247,6 +258,8 @@ jobs:
           submodules: true
 
       - name: Fetch History
+        # skip when testing locally
+        if: ${{ !env.ACT }}
         run: git fetch --prune --unshallow
 
       - name: Setup Go
@@ -281,8 +294,11 @@ jobs:
           # We're using docker buildx, which doesn't actually load the images it
           # builds by default. Specifying --load does so.
           BUILD_ARGS: "--load"
+          # PLATFORM: linux_amd64
 
       - name: Publish Artifacts to GitHub
+        # skip when testing locally
+        if: ${{ !env.ACT }}
         uses: actions/upload-artifact@v3
         with:
           name: output

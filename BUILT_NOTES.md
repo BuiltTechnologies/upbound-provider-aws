@@ -31,6 +31,29 @@ VERSION=v0.29.0 PROJECT_VERSION_TAG_GROUP=built make build
 |---|---|
 |iam.aws.upbound.io||
 
+## GitHub CI Workflow
+
+```bash
+# set PAT
+# devcontainer uses GH_TOKEN
+export GH_TOKEN=xxx
+
+# pull test image
+docker pull nektos/act-environments-ubuntu:18.04
+
+# nektos/act setup
+#   --secret-file: store your token in a non-tracked location
+#   -P: specifies how to modify the "runs-on" value
+alias act='act --secret-file tmp/act-secrets.env -P ubuntu-22.04=catthehacker/ubuntu:act-22.04 '
+
+# run job "publish" locally
+act workflow_dispatch -j publish-artifacts
+
+# run on GitHub
+gh auth login
+gh workflow run 'Publish Helm Charts' --ref roller/gha-charts
+```
+
 ---
 
 # Appendix
