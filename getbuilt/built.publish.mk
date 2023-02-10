@@ -25,9 +25,9 @@ endef
 $(foreach r,$(BUILD_REGISTRY), $(foreach i,$(IMAGES), $(foreach a,$(IMAGE_ARCHS),$(eval $(call built.repo.targets,$(r),$(i),$(a))))))
 
 built.img.release.manifest.publish.%: built.img.release.publish
-	@$(INFO) docker manifest push --purge $(DOCKER_REGISTRY)/$*:$(VERSION)
-	@docker manifest push --purge $(DOCKER_REGISTRY)/$*:$(VERSION) || $(FAIL)
-	@$(OK) docker manifest push --purge $(DOCKER_REGISTRY)/$*:$(VERSION)
+	@$(INFO) docker manifest push --purge $(BUILD_REGISTRY)/$*:$(VERSION)
+	@docker manifest push --purge $(BUILD_REGISTRY)/$*:$(VERSION) || $(FAIL)
+	@$(OK) docker manifest push --purge $(BUILD_REGISTRY)/$*:$(VERSION)
 
 
 # only publish images for main and release branches
