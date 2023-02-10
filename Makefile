@@ -74,6 +74,7 @@ XPKG_REG_ORGS ?= xpkg.upbound.io/upbound
 XPKG_REG_ORGS_NO_PROMOTE ?= xpkg.upbound.io/upbound
 XPKGS = provider-aws
 -include build/makelib/xpkg.mk
+-include getbuilt/built.publish.mk
 
 # NOTE(hasheddan): we force image building to happen prior to xpkg build so that
 # we ensure image is present in daemon.
