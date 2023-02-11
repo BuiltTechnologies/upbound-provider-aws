@@ -14,3 +14,6 @@ metadata:
       If you encounter an issue please reach out on our support@upbound.io
       email address.
     friendly-name.meta.crossplane.io: Provider AWS
+spec:
+  controller:
+    image: 325405374407.dkr.ecr.us-east-2.amazonaws.com/provider-aws:latest
