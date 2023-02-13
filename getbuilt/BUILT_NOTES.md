@@ -31,6 +31,27 @@ VERSION=v0.29.0 PROJECT_VERSION_TAG_GROUP=built make build
 |---|---|
 |iam.aws.upbound.io||
 
+## Publish to Upbound
+* create an account
+* create an API Token under User Settings
+
+```bash
+up login
+
+# only allowed 1 free repository
+up repository create provider-aws
+
+# create token for access
+up ctp pull-secret create -n crossplane-system
+
+# build / publish
+make VERSION=v0.29.0 PLATFORMS=linux_amd64 build
+make VERSION=v0.29.0 PLATFORMS=linux_amd64 publish
+```
+
+Verify your Marketplace package (replace `builtroller` with org/user): [marketplace.upbound.io/providers/builtroller/provider-aws](https://marketplace.upbound.io/providers/builtroller/provider-aws).
+
+
 ## Manually Publish to ECR
 
 ```bash
