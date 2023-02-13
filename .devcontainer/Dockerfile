@@ -172,6 +172,11 @@ RUN curl -sL https://raw.githubusercontent.com/crossplane/crossplane/master/inst
     && mv kubectl-crossplane /usr/local/bin \
     && kubectl crossplane --version
 
+# upbound cli
+ARG UP_VER=v0.15.0
+RUN curl -fsSL "https://cli.upbound.io" | VERSION="${UP_VER}" sh \
+    && mv up /usr/local/bin \
+    && up --version
 
 # helper commands
 COPY bin/* /usr/local/bin/
