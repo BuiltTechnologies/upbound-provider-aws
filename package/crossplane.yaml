@@ -10,9 +10,7 @@ metadata:
       Services (AWS) resources in Kubernetes. Created to reduce the CRD count.
     meta.crossplane.io/readme: |
       Provider AWS is a Crossplane provider for [Amazon Web Services
-      (AWS)](https://aws.amazon.com/) developed and supported by Upbound.
-      If you encounter an issue please reach out on our support@upbound.io
-      email address.
+      (AWS)](https://aws.amazon.com/) forked from Upbound for Built Technologies.
     friendly-name.meta.crossplane.io: Provider AWS
 # spec:
 #   controller:
