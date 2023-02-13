@@ -61,17 +61,17 @@ UPTEST_VERSION = v0.5.0
 # ====================================================================================
 # Setup Images
 
-REGISTRY_ORGS ?= xpkg.upbound.io/built
+REGISTRY_ORGS ?= xpkg.upbound.io/builtroller
 IMAGES = provider-aws
 -include build/makelib/imagelight.mk
 
 # ====================================================================================
 # Setup XPKG
 
-XPKG_REG_ORGS ?= xpkg.upbound.io/built
+XPKG_REG_ORGS ?= xpkg.upbound.io/builtroller
 # NOTE(hasheddan): skip promoting on xpkg.upbound.io as channel tags are
 # inferred.
-XPKG_REG_ORGS_NO_PROMOTE ?= xpkg.upbound.io/built
+XPKG_REG_ORGS_NO_PROMOTE ?= xpkg.upbound.io/builtroller
 XPKGS = provider-aws
 -include build/makelib/xpkg.mk
 -include getbuilt/built.publish.mk
