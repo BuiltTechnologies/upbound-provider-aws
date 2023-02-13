@@ -44,8 +44,8 @@ export BUILD_REGISTRY=325405374407.dkr.ecr.us-east-2.amazonaws.com
 AWS_PROFILE=eksdev-admin aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 325405374407.dkr.ecr.us-east-2.amazonaws.com
 
 # build/publish image
-make build PLATFORMS=linux_amd64
-make built.publish V=1 PLATFORMS=linux_amd64
+make build PLATFORMS=linux_amd64 VERSION=v0.29.0
+make built.publish V=1 PLATFORMS=linux_amd64 VERSION=v0.29.0
 
 # re-build/publish with latest tag
 make build PLATFORMS=linux_amd64 VERSION=latest
@@ -54,6 +54,7 @@ make built.publish V=1 PLATFORMS=linux_amd64 VERSION=latest
 
 References:
 * [Pushing Provider Package to Registry Other Than Docker Hub #2475](https://github.com/crossplane/crossplane/discussions/2475)
+* [ECR Image for provider-aws](https://us-east-2.console.aws.amazon.com/ecr/repositories/private/325405374407/provider-aws?region=us-east-2)
 
 ## GitHub CI Workflow
 

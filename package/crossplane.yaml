@@ -16,4 +16,4 @@ metadata:
     friendly-name.meta.crossplane.io: Provider AWS
 spec:
   controller:
-    image: 325405374407.dkr.ecr.us-east-2.amazonaws.com/provider-aws:latest
+    image: 325405374407.dkr.ecr.us-east-2.amazonaws.com/provider-aws:v0.29.0
