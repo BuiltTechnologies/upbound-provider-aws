@@ -3,17 +3,17 @@ kind: Provider
 metadata:
   name: provider-aws
   annotations:
-    meta.crossplane.io/maintainer: Upbound <support@upbound.io>
-    meta.crossplane.io/source: github.com/upbound/provider-aws
+    meta.crossplane.io/maintainer: Built Technologies <support@getbuilt.com>
+    meta.crossplane.io/source: github.com/BuiltTechnologies/upbound-provider-aws
     meta.crossplane.io/description: |
-      Upbound's official Crossplane provider to manage Amazon Web Services (AWS)
-      resources in Kubernetes.
+      Built Technologies's unofficial Crossplane provider to manage Amazon Web
+      Services (AWS) resources in Kubernetes. Created to reduce the CRD count.
     meta.crossplane.io/readme: |
       Provider AWS is a Crossplane provider for [Amazon Web Services
       (AWS)](https://aws.amazon.com/) developed and supported by Upbound.
       If you encounter an issue please reach out on our support@upbound.io
       email address.
     friendly-name.meta.crossplane.io: Provider AWS
-spec:
-  controller:
-    image: 325405374407.dkr.ecr.us-east-2.amazonaws.com/provider-aws:v0.29.0
+# spec:
+#   controller:
+#     image: 325405374407.dkr.ecr.us-east-2.amazonaws.com/provider-aws:v0.29.0
