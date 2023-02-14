@@ -12,6 +12,3 @@ metadata:
       Provider AWS is a Crossplane provider for [Amazon Web Services
       (AWS)](https://aws.amazon.com/) forked from Upbound for Built Technologies.
     friendly-name.meta.crossplane.io: Provider AWS
-# spec:
-#   controller:
-#     image: 325405374407.dkr.ecr.us-east-2.amazonaws.com/provider-aws:v0.29.0
