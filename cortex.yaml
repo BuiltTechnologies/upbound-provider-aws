@@ -1,0 +1,24 @@
+openapi: 3.0.1
+info:
+  title: upbound-provider-aws
+  description: Upbound Provider AWS
+  x-cortex-tag: upbound-provider-aws
+  x-cortex-type: service
+  x-cortex-groups:
+    - platform
+    - operations
+  x-cortex-git:
+    github:
+      repository: BuiltTechnologies/upbound-provider-aws
+  x-cortex-owners:
+    - type: group
+      name: BuiltTechnologies/goat-floaters
+      provider: GITHUB
+      description: Ops Team
+    - type: SLACK
+      channel: ops-cortex-alerts
+      notificationsEnabled: true #optional
+      description: This is the Cloud Infrastructure Slack Channel
+    - type: EMAIL
+      email: infrastructure+cortex@getbuilt.com
+      description: The ops teams mailing group
